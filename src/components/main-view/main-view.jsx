@@ -32,11 +32,6 @@ export default class MainView extends React.Component {
     });
   }
 
-  componentWillUnmount() {
-    console.log('componentWillUnmount()');
-    document.removeEventListener('keypress', this.keypressCallback);
-  }
-
   render() {
     const { movies, selectedMovie } = this.state;
 
