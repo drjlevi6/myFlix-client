@@ -40,8 +40,8 @@ export default class MainView extends React.Component {
     });``
   }
 
-  componentWillUnMount() {
-    console.log('componentWillUnMount()');
+  componentWillUnmount() {
+    console.log('componentWillUnmount()');
     document.removeEventListener('keypress', this.keypressCallback);
   }
 
