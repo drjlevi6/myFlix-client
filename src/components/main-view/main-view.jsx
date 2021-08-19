@@ -17,12 +17,6 @@ export default class MainView extends React.Component {
     console.log('keypressCallback()', event.key);
   }
 
-  setSelectedMovie(newSelectedMovie) {
-    this.setState({
-      selectedMovie: newSelectedMovie
-    });``
-  }
-
   componentDidMount(){  /* We insert the addEventListener()
                       between axios.get and the error routine. */
     axios.get('https://drjs-myflix-app.herokuapp.com/movies')
@@ -38,6 +32,12 @@ export default class MainView extends React.Component {
       .catch(error => {
         console.log(error);
       });
+  }
+  
+  setSelectedMovie(newSelectedMovie) {
+    this.setState({
+      selectedMovie: newSelectedMovie
+    });``
   }
 
   componentWillUnMount() {
