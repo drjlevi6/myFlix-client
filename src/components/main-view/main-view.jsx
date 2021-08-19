@@ -13,10 +13,6 @@ export default class MainView extends React.Component {
     };
   }
 
-  keypressCallback(event) {
-    console.log('keypressCallback()', event.key);
-  }
-
   componentDidMount(){
     axios.get('https://drjs-myflix-app.herokuapp.com/movies')
       .then(response => {
