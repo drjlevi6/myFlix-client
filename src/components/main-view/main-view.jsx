@@ -17,8 +17,7 @@ export default class MainView extends React.Component {
     console.log('keypressCallback()', event.key);
   }
 
-  componentDidMount(){  /* We insert the addEventListener()
-                      between axios.get and the error routine. */
+  componentDidMount(){
     axios.get('https://drjs-myflix-app.herokuapp.com/movies')
       .then(response => {
         console.log(response.data);
