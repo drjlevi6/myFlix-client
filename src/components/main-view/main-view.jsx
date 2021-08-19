@@ -26,10 +26,7 @@ export default class MainView extends React.Component {
           movies: response.data
         });
       })
-      .then(
-        document.addEventListener('keypress', this.keypressCallback)
-      )
-      .catch(error => {
+     .catch(error => {
         console.log(error);
       });
   }
