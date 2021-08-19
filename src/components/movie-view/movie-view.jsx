@@ -14,7 +14,7 @@ export class MovieView extends React.Component {
 
 
   componentWillUnmount() {
-    console.log('componentWillUnmount()');
+    console.log('movie-view.jsx" componentWillUnmount()');
     document.removeEventListener('keypress', this.keypressCallback);
   }
 
