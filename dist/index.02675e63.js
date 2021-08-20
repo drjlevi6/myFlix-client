@@ -25763,6 +25763,8 @@ try {
         }) : movies.map(movie => /*#__PURE__*/_reactDefault.default.createElement(_movieCardMovieCard.MovieCard, {
           key: movie._id,
           movie: movie,
+          title: movie.title,
+          imagePath: movie.imagePath,
           onMovieClick: newSelectedMovie => {
             this.setSelectedMovie(newSelectedMovie);
           },
@@ -25783,7 +25785,7 @@ try {
   window.$RefreshSig$ = prevRefreshSig;
 }
 
-},{"react":"2HTbi","axios":"7rA65","../movie-card/movie-card":"7v6h3","../movie-view/movie-view":"3xBbr","@parcel/transformer-js/lib/esmodule-helpers.js":"2pjgc","../../../../../../../.nvm/versions/node/v14.16.1/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"79DY8","../login-view/login-view":"6M7fu"}],"7rA65":[function(require,module,exports) {
+},{"react":"2HTbi","axios":"7rA65","../login-view/login-view":"6M7fu","../movie-card/movie-card":"7v6h3","../movie-view/movie-view":"3xBbr","@parcel/transformer-js/lib/esmodule-helpers.js":"2pjgc","../../../../../../../.nvm/versions/node/v14.16.1/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"79DY8"}],"7rA65":[function(require,module,exports) {
 module.exports = require('./lib/axios');
 },{"./lib/axios":"4qfhW"}],"4qfhW":[function(require,module,exports) {
 'use strict';
@@ -27528,7 +27530,7 @@ module.exports = function isAxiosError(payload) {
   return (typeof payload === 'object') && (payload.isAxiosError === true);
 };
 
-},{}],"7v6h3":[function(require,module,exports) {
+},{}],"6M7fu":[function(require,module,exports) {
 var helpers = require("../../../../../../../.nvm/versions/node/v14.16.1/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -27536,48 +27538,102 @@ helpers.prelude(module);
 try {
   var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
   _parcelHelpers.defineInteropFlag(exports);
-  _parcelHelpers.export(exports, "MovieCard", function () {
-    return MovieCard;
+  _parcelHelpers.export(exports, "LoginView", function () {
+    return LoginView;
   });
   var _react = require('react');
   var _reactDefault = _parcelHelpers.interopDefault(_react);
-  var _propTypes = require('prop-types');
-  var _propTypesDefault = _parcelHelpers.interopDefault(_propTypes);
-  var _jsxFileName = "/Users/jonathan/Documents/GitHub/portfolio_website/myFlix-client/src/components/movie-card/movie-card.jsx";
-  class MovieCard extends _reactDefault.default.Component {
+  var _jsxFileName = "/Users/jonathan/Documents/GitHub/portfolio_website/myFlix-client/src/components/login-view/login-view.jsx";
+  class LoginView extends _reactDefault.default.Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+        username: '',
+        password: ''
+      };
+      this.onUsernameChange = this.onUsernameChange.bind(this);
+      this.onPasswordChange = this.onPasswordChange.bind(this);
+      this.handleSubmit = this.handleSubmit.bind(this);
+    }
+    onUsernameChange(event) {
+      this.setState({
+        username: event.target.value
+      });
+    }
+    onPasswordChange(event) {
+      this.setState({
+        password: event.target.value
+      });
+    }
+    handleSubmit() {
+      const {username, password} = this.state;
+      /*Send a request to the server for authentication*/
+      /*then call this.props.onLoggedIn(username)*/
+      this.props.onLoggedIn(username);
+    }
     render() {
-      const {movie, onMovieClick} = this.props;
       return (
-        /*#__PURE__*/_reactDefault.default.createElement("div", {
-          className: "movie-card",
-          onClick: () => {
-            onMovieClick(movie);
-          },
+        /*#__PURE__*/_reactDefault.default.createElement("form", {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 7,
-            columnNumber: 13
+            lineNumber: 38,
+            columnNumber: 7
           }
-        }, movie.title)
+        }, /*#__PURE__*/_reactDefault.default.createElement("label", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 39,
+            columnNumber: 9
+          }
+        }, "Username:", /*#__PURE__*/_reactDefault.default.createElement("input", {
+          type: "text",
+          value: this.state.username,
+          onChange: this.onUsernameChange,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 41,
+            columnNumber: 11
+          }
+        })), /*#__PURE__*/_reactDefault.default.createElement("label", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 43,
+            columnNumber: 9
+          }
+        }, "Password:", /*#__PURE__*/_reactDefault.default.createElement("input", {
+          type: "password",
+          value: this.state.password,
+          onChange: this.onPasswordChange,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 45,
+            columnNumber: 11
+          }
+        })), /*#__PURE__*/_reactDefault.default.createElement("button", {
+          type: "button",
+          onClick: this.handleSubmit,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 47,
+            columnNumber: 9
+          }
+        }, "Submit"))
       );
     }
   }
-  MovieCard.propTypes = {
-    movie: _propTypesDefault.default.shape({
-      Title: _propTypesDefault.default.string.isRequired,
-      Description: _propTypesDefault.default.string.isRequired,
-      ImagePath: _propTypesDefault.default.string.isRequired
-    }).isRequired,
-    onMovieClick: _propTypesDefault.default.func.isRequired
-  };
   helpers.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
 
-},{"react":"2HTbi","@parcel/transformer-js/lib/esmodule-helpers.js":"2pjgc","../../../../../../../.nvm/versions/node/v14.16.1/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"79DY8","prop-types":"4dfy5"}],"2pjgc":[function(require,module,exports) {
+},{"react":"2HTbi","@parcel/transformer-js/lib/esmodule-helpers.js":"2pjgc","../../../../../../../.nvm/versions/node/v14.16.1/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"79DY8"}],"2pjgc":[function(require,module,exports) {
 "use strict";
 
 exports.interopDefault = function (a) {
@@ -28365,7 +28421,56 @@ if ("development" !== "production") {
   })();
 }
 
-},{}],"4dfy5":[function(require,module,exports) {
+},{}],"7v6h3":[function(require,module,exports) {
+var helpers = require("../../../../../../../.nvm/versions/node/v14.16.1/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+try {
+  var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+  _parcelHelpers.defineInteropFlag(exports);
+  _parcelHelpers.export(exports, "MovieCard", function () {
+    return MovieCard;
+  });
+  var _react = require('react');
+  var _reactDefault = _parcelHelpers.interopDefault(_react);
+  var _propTypes = require('prop-types');
+  var _propTypesDefault = _parcelHelpers.interopDefault(_propTypes);
+  var _jsxFileName = "/Users/jonathan/Documents/GitHub/portfolio_website/myFlix-client/src/components/movie-card/movie-card.jsx";
+  class MovieCard extends _reactDefault.default.Component {
+    render() {
+      const {movie, onMovieClick} = this.props;
+      return (
+        /*#__PURE__*/_reactDefault.default.createElement("div", {
+          className: "movie-card",
+          onClick: () => {
+            onMovieClick(movie);
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 7,
+            columnNumber: 13
+          }
+        }, movie.title)
+      );
+    }
+  }
+  MovieCard.propTypes = {
+    movie: _propTypesDefault.default.shape({
+      title: _propTypesDefault.default.string.isRequired,
+      description: _propTypesDefault.default.string.isRequired,
+      imagePath: _propTypesDefault.default.string.isRequired
+    }).isRequired,
+    onMovieClick: _propTypesDefault.default.func.isRequired
+  };
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+
+},{"react":"2HTbi","prop-types":"4dfy5","@parcel/transformer-js/lib/esmodule-helpers.js":"2pjgc","../../../../../../../.nvm/versions/node/v14.16.1/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"79DY8"}],"4dfy5":[function(require,module,exports) {
 /**
 * Copyright (c) 2013-present, Facebook, Inc.
 *
@@ -29368,109 +29473,6 @@ try {
             columnNumber: 9
           }
         }, "Back"))
-      );
-    }
-  }
-  helpers.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-
-},{"react":"2HTbi","@parcel/transformer-js/lib/esmodule-helpers.js":"2pjgc","../../../../../../../.nvm/versions/node/v14.16.1/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"79DY8"}],"6M7fu":[function(require,module,exports) {
-var helpers = require("../../../../../../../.nvm/versions/node/v14.16.1/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-helpers.prelude(module);
-try {
-  var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
-  _parcelHelpers.defineInteropFlag(exports);
-  _parcelHelpers.export(exports, "LoginView", function () {
-    return LoginView;
-  });
-  var _react = require('react');
-  var _reactDefault = _parcelHelpers.interopDefault(_react);
-  var _jsxFileName = "/Users/jonathan/Documents/GitHub/portfolio_website/myFlix-client/src/components/login-view/login-view.jsx";
-  class LoginView extends _reactDefault.default.Component {
-    constructor(props) {
-      super(props);
-      this.state = {
-        username: '',
-        password: ''
-      };
-      this.onUsernameChange = this.onUsernameChange.bind(this);
-      this.onPasswordChange = this.onPasswordChange.bind(this);
-      this.handleSubmit = this.handleSubmit.bind(this);
-    }
-    onUsernameChange(event) {
-      this.setState({
-        username: event.target.value
-      });
-    }
-    onPasswordChange(event) {
-      this.setState({
-        password: event.target.value
-      });
-    }
-    handleSubmit() {
-      const {username, password} = this.state;
-      /*Send a request to the server for authentication*/
-      /*then call this.props.onLoggedIn(username)*/
-      this.props.onLoggedIn(username);
-    }
-    render() {
-      return (
-        /*#__PURE__*/_reactDefault.default.createElement("form", {
-          __self: this,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 38,
-            columnNumber: 7
-          }
-        }, /*#__PURE__*/_reactDefault.default.createElement("label", {
-          __self: this,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 39,
-            columnNumber: 9
-          }
-        }, "Username:", /*#__PURE__*/_reactDefault.default.createElement("input", {
-          type: "text",
-          value: this.state.username,
-          onChange: this.onUsernameChange,
-          __self: this,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 41,
-            columnNumber: 11
-          }
-        })), /*#__PURE__*/_reactDefault.default.createElement("label", {
-          __self: this,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 43,
-            columnNumber: 9
-          }
-        }, "Password:", /*#__PURE__*/_reactDefault.default.createElement("input", {
-          type: "password",
-          value: this.state.password,
-          onChange: this.onPasswordChange,
-          __self: this,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 45,
-            columnNumber: 11
-          }
-        })), /*#__PURE__*/_reactDefault.default.createElement("button", {
-          type: "button",
-          onClick: this.handleSubmit,
-          __self: this,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 47,
-            columnNumber: 9
-          }
-        }, "Submit"))
       );
     }
   }

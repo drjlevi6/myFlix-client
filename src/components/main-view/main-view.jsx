@@ -70,6 +70,8 @@ the `user` property in state to that *particular user*/
               <MovieCard 
                 key={movie._id} 
                 movie={movie}
+                title={movie.title}
+                imagePath={movie.imagePath}
                 onMovieClick={(newSelectedMovie) => {
                   this.setSelectedMovie(newSelectedMovie)
                 }}
