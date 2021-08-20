@@ -17,7 +17,6 @@ export default class MainView extends React.Component {
   componentDidMount(){
     axios.get('https://drjs-myflix-app.herokuapp.com/movies')
       .then(response => {
-        console.log(response.data);
         this.setState({   // triggers automatic re-render
           movies: response.data
         });
