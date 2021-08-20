@@ -25697,9 +25697,9 @@ try {
     /*When a movie is clicked, this function is invoked and
     updates the state of the `selectedMovie` *property
     to that movie*/
-    setSelectedMovie(movie) {
+    setSelectedMovie(selectedMovie) {
       this.setState({
-        selectedMovie: movie
+        selectedMovie: Movie
       });
     }
     /*When a user successfully logs in, this function updates
@@ -25709,33 +25709,30 @@ try {
         user
       });
     }
+    /*If there is no user, the LoginView is rendered.
+    If there is a user logged in, the user details are
+    *passed as a prop to the LoginView*/
     render() {
       const {movies, selectedMovie} = this.state;
-      /*<!--If there is no user, the LoginView is rendered.
-      If there is a user logged in, the user details are
-      *passed as a prop to the LoginView-->*/
-      if (!this.state.user) return (
+      if (!user) return (
         /*#__PURE__*/_reactDefault.default.createElement(_loginViewLoginView.LoginView, {
           onLoggedIn: user => this.onLoggedIn(user),
           __self: this,
           __source: {
             fileName: _jsxFileName,
             lineNumber: 54,
-            columnNumber: 14
+            columnNumber: 22
           }
         })
       );
-      // /* <!--Before the movies have been loaded
-      // If the state of `selectedMovie` is not null, that
-      // selected movie will be returned otherwise, all
-      // *movies will be returned.--> */
+      // Before the movies have been loaded
       if (movies.length === 0) return (
         /*#__PURE__*/_reactDefault.default.createElement("div", {
           className: "main-view",
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 62,
+            lineNumber: 59,
             columnNumber: 14
           }
         })
@@ -25746,10 +25743,10 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 64,
+            lineNumber: 61,
             columnNumber: 7
           }
-        }, selectedMovie ? /*#__PURE__*/_reactDefault.default.createElement(_movieViewMovieView.MovieView, {
+        }, "/* If the state of `selectedMovie` is not null, that selected movie will be returned otherwise, all *movies will be returned. */", selectedMovie ? /*#__PURE__*/_reactDefault.default.createElement(_movieViewMovieView.MovieView, {
           movie: selectedMovie,
           onBackClick: newSelectedMovie => {
             this.setSelectedMovie(newSelectedMovie);
@@ -28502,9 +28499,7 @@ try {
     }
     handleSubmit() {
       const {username, password} = this.state;
-      /*Send a request to the server for authentication*/
-      /*then call this.props.onLoggedIn(username)*/
-      this.props.onLoggedIn(username);
+      console.log(username, password);
     }
     render() {
       return (
@@ -28512,14 +28507,14 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 38,
+            lineNumber: 39,
             columnNumber: 7
           }
         }, /*#__PURE__*/_reactDefault.default.createElement("label", {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 39,
+            lineNumber: 40,
             columnNumber: 9
           }
         }, "Username:", /*#__PURE__*/_reactDefault.default.createElement("input", {
@@ -28529,14 +28524,14 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 41,
+            lineNumber: 42,
             columnNumber: 11
           }
         })), /*#__PURE__*/_reactDefault.default.createElement("label", {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 43,
+            lineNumber: 44,
             columnNumber: 9
           }
         }, "Password:", /*#__PURE__*/_reactDefault.default.createElement("input", {
@@ -28546,7 +28541,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 45,
+            lineNumber: 46,
             columnNumber: 11
           }
         })), /*#__PURE__*/_reactDefault.default.createElement("button", {
@@ -28555,7 +28550,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 47,
+            lineNumber: 48,
             columnNumber: 9
           }
         }, "Submit"))
@@ -28570,4 +28565,4 @@ try {
 
 },{"react":"2HTbi","@parcel/transformer-js/lib/esmodule-helpers.js":"2pjgc","../../../../../../../.nvm/versions/node/v14.16.1/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"79DY8"}],"5iJih":[function() {},{}]},["68WUB","1DVjT"], "1DVjT", "parcelRequire279c")
 
-//# sourceMappingURL=index.02675e63.js.map
+//# sourceMappingURL=index.HASH_REF_f9eab60bc3a7a7c3f683683702675e63.js.map

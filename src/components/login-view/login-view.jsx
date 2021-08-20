@@ -28,10 +28,9 @@ export class LoginView extends React.Component {
 
   handleSubmit() {
     const { username, password } = this.state;
-    console.log(username, password);
     /* Send a request to the server for authentication */
     /* then call this.props.onLoggedIn(username) */
-    // this.props.onLoggedIn(username);
+    this.props.onLoggedIn(username);
   }
 
   render() {
