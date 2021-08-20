@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/drjlevi6/myFlix-client#readme",
   "dependencies": {
-    "axios": "^0.21.1"
+    "axios": "^0.21.1",
+    "prop-types": "^15.7.2"
   }
 }
