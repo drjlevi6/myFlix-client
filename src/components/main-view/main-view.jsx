@@ -43,7 +43,7 @@ the `user` property in state to that *particular user*/
       user
     });
   }
-  
+
   render() {
     const { movies, selectedMovie } = this.state;
 

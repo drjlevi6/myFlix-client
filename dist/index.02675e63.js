@@ -25674,6 +25674,7 @@ try {
   var _loginViewLoginView = require('../login-view/login-view');
   var _movieCardMovieCard = require('../movie-card/movie-card');
   var _movieViewMovieView = require('../movie-view/movie-view');
+  require('../registration-view/registration-view');
   var _jsxFileName = "/Users/jonathan/Documents/GitHub/portfolio_website/myFlix-client/src/components/main-view/main-view.jsx";
   class MainView extends _reactDefault.default.Component {
     constructor() {
@@ -25709,6 +25710,9 @@ try {
         user
       });
     }
+    closeWindow() {
+      window.close();
+    }
     render() {
       const {movies, selectedMovie} = this.state;
       /*<!--If there is no user, the LoginView is rendered.
@@ -25720,7 +25724,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 54,
+            lineNumber: 59,
             columnNumber: 14
           }
         })
@@ -25735,7 +25739,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 62,
+            lineNumber: 67,
             columnNumber: 14
           }
         })
@@ -25746,7 +25750,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 64,
+            lineNumber: 69,
             columnNumber: 7
           }
         }, selectedMovie ? /*#__PURE__*/_reactDefault.default.createElement(_movieViewMovieView.MovieView, {
@@ -25757,7 +25761,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 66,
+            lineNumber: 71,
             columnNumber: 11
           }
         }) : movies.map(movie => /*#__PURE__*/_reactDefault.default.createElement(_movieCardMovieCard.MovieCard, {
@@ -25771,7 +25775,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 70,
+            lineNumber: 75,
             columnNumber: 15
           }
         })))
@@ -25785,7 +25789,7 @@ try {
   window.$RefreshSig$ = prevRefreshSig;
 }
 
-},{"react":"2HTbi","axios":"7rA65","../login-view/login-view":"6M7fu","../movie-card/movie-card":"7v6h3","../movie-view/movie-view":"3xBbr","@parcel/transformer-js/lib/esmodule-helpers.js":"2pjgc","../../../../../../../.nvm/versions/node/v14.16.1/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"79DY8"}],"7rA65":[function(require,module,exports) {
+},{"react":"2HTbi","axios":"7rA65","../movie-card/movie-card":"7v6h3","../movie-view/movie-view":"3xBbr","@parcel/transformer-js/lib/esmodule-helpers.js":"2pjgc","../../../../../../../.nvm/versions/node/v14.16.1/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"79DY8","../login-view/login-view":"6M7fu","../registration-view/registration-view":"7gvH2"}],"7rA65":[function(require,module,exports) {
 module.exports = require('./lib/axios');
 },{"./lib/axios":"4qfhW"}],"4qfhW":[function(require,module,exports) {
 'use strict';
@@ -27530,7 +27534,7 @@ module.exports = function isAxiosError(payload) {
   return (typeof payload === 'object') && (payload.isAxiosError === true);
 };
 
-},{}],"6M7fu":[function(require,module,exports) {
+},{}],"7v6h3":[function(require,module,exports) {
 var helpers = require("../../../../../../../.nvm/versions/node/v14.16.1/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -27538,102 +27542,48 @@ helpers.prelude(module);
 try {
   var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
   _parcelHelpers.defineInteropFlag(exports);
-  _parcelHelpers.export(exports, "LoginView", function () {
-    return LoginView;
+  _parcelHelpers.export(exports, "MovieCard", function () {
+    return MovieCard;
   });
   var _react = require('react');
   var _reactDefault = _parcelHelpers.interopDefault(_react);
-  var _jsxFileName = "/Users/jonathan/Documents/GitHub/portfolio_website/myFlix-client/src/components/login-view/login-view.jsx";
-  class LoginView extends _reactDefault.default.Component {
-    constructor(props) {
-      super(props);
-      this.state = {
-        username: '',
-        password: ''
-      };
-      this.onUsernameChange = this.onUsernameChange.bind(this);
-      this.onPasswordChange = this.onPasswordChange.bind(this);
-      this.handleSubmit = this.handleSubmit.bind(this);
-    }
-    onUsernameChange(event) {
-      this.setState({
-        username: event.target.value
-      });
-    }
-    onPasswordChange(event) {
-      this.setState({
-        password: event.target.value
-      });
-    }
-    handleSubmit() {
-      const {username, password} = this.state;
-      /*Send a request to the server for authentication*/
-      /*then call this.props.onLoggedIn(username)*/
-      this.props.onLoggedIn(username);
-    }
+  var _propTypes = require('prop-types');
+  var _propTypesDefault = _parcelHelpers.interopDefault(_propTypes);
+  var _jsxFileName = "/Users/jonathan/Documents/GitHub/portfolio_website/myFlix-client/src/components/movie-card/movie-card.jsx";
+  class MovieCard extends _reactDefault.default.Component {
     render() {
+      const {movie, onMovieClick} = this.props;
       return (
-        /*#__PURE__*/_reactDefault.default.createElement("form", {
+        /*#__PURE__*/_reactDefault.default.createElement("div", {
+          className: "movie-card",
+          onClick: () => {
+            onMovieClick(movie);
+          },
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 38,
-            columnNumber: 7
+            lineNumber: 7,
+            columnNumber: 13
           }
-        }, /*#__PURE__*/_reactDefault.default.createElement("label", {
-          __self: this,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 39,
-            columnNumber: 9
-          }
-        }, "Username:", /*#__PURE__*/_reactDefault.default.createElement("input", {
-          type: "text",
-          value: this.state.username,
-          onChange: this.onUsernameChange,
-          __self: this,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 41,
-            columnNumber: 11
-          }
-        })), /*#__PURE__*/_reactDefault.default.createElement("label", {
-          __self: this,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 43,
-            columnNumber: 9
-          }
-        }, "Password:", /*#__PURE__*/_reactDefault.default.createElement("input", {
-          type: "password",
-          value: this.state.password,
-          onChange: this.onPasswordChange,
-          __self: this,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 45,
-            columnNumber: 11
-          }
-        })), /*#__PURE__*/_reactDefault.default.createElement("button", {
-          type: "button",
-          onClick: this.handleSubmit,
-          __self: this,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 47,
-            columnNumber: 9
-          }
-        }, "Submit"))
+        }, movie.title)
       );
     }
   }
+  MovieCard.propTypes = {
+    movie: _propTypesDefault.default.shape({
+      title: _propTypesDefault.default.string.isRequired,
+      description: _propTypesDefault.default.string.isRequired,
+      imagePath: _propTypesDefault.default.string.isRequired
+    }).isRequired,
+    onMovieClick: _propTypesDefault.default.func.isRequired
+  };
   helpers.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
 
-},{"react":"2HTbi","@parcel/transformer-js/lib/esmodule-helpers.js":"2pjgc","../../../../../../../.nvm/versions/node/v14.16.1/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"79DY8"}],"2pjgc":[function(require,module,exports) {
+},{"react":"2HTbi","@parcel/transformer-js/lib/esmodule-helpers.js":"2pjgc","../../../../../../../.nvm/versions/node/v14.16.1/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"79DY8","prop-types":"4dfy5"}],"2pjgc":[function(require,module,exports) {
 "use strict";
 
 exports.interopDefault = function (a) {
@@ -28421,56 +28371,7 @@ if ("development" !== "production") {
   })();
 }
 
-},{}],"7v6h3":[function(require,module,exports) {
-var helpers = require("../../../../../../../.nvm/versions/node/v14.16.1/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-helpers.prelude(module);
-try {
-  var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
-  _parcelHelpers.defineInteropFlag(exports);
-  _parcelHelpers.export(exports, "MovieCard", function () {
-    return MovieCard;
-  });
-  var _react = require('react');
-  var _reactDefault = _parcelHelpers.interopDefault(_react);
-  var _propTypes = require('prop-types');
-  var _propTypesDefault = _parcelHelpers.interopDefault(_propTypes);
-  var _jsxFileName = "/Users/jonathan/Documents/GitHub/portfolio_website/myFlix-client/src/components/movie-card/movie-card.jsx";
-  class MovieCard extends _reactDefault.default.Component {
-    render() {
-      const {movie, onMovieClick} = this.props;
-      return (
-        /*#__PURE__*/_reactDefault.default.createElement("div", {
-          className: "movie-card",
-          onClick: () => {
-            onMovieClick(movie);
-          },
-          __self: this,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 7,
-            columnNumber: 13
-          }
-        }, movie.title)
-      );
-    }
-  }
-  MovieCard.propTypes = {
-    movie: _propTypesDefault.default.shape({
-      title: _propTypesDefault.default.string.isRequired,
-      description: _propTypesDefault.default.string.isRequired,
-      imagePath: _propTypesDefault.default.string.isRequired
-    }).isRequired,
-    onMovieClick: _propTypesDefault.default.func.isRequired
-  };
-  helpers.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-
-},{"react":"2HTbi","prop-types":"4dfy5","@parcel/transformer-js/lib/esmodule-helpers.js":"2pjgc","../../../../../../../.nvm/versions/node/v14.16.1/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"79DY8"}],"4dfy5":[function(require,module,exports) {
+},{}],"4dfy5":[function(require,module,exports) {
 /**
 * Copyright (c) 2013-present, Facebook, Inc.
 *
@@ -29482,6 +29383,140 @@ try {
   window.$RefreshSig$ = prevRefreshSig;
 }
 
-},{"react":"2HTbi","@parcel/transformer-js/lib/esmodule-helpers.js":"2pjgc","../../../../../../../.nvm/versions/node/v14.16.1/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"79DY8"}],"5iJih":[function() {},{}]},["68WUB","1DVjT"], "1DVjT", "parcelRequire279c")
+},{"react":"2HTbi","@parcel/transformer-js/lib/esmodule-helpers.js":"2pjgc","../../../../../../../.nvm/versions/node/v14.16.1/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"79DY8"}],"6M7fu":[function(require,module,exports) {
+var helpers = require("../../../../../../../.nvm/versions/node/v14.16.1/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+try {
+  var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+  _parcelHelpers.defineInteropFlag(exports);
+  _parcelHelpers.export(exports, "LoginView", function () {
+    return LoginView;
+  });
+  var _react = require('react');
+  var _reactDefault = _parcelHelpers.interopDefault(_react);
+  require('../registration-view/registration-view');
+  var _jsxFileName = "/Users/jonathan/Documents/GitHub/portfolio_website/myFlix-client/src/components/login-view/login-view.jsx";
+  class LoginView extends _reactDefault.default.Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+        username: '',
+        password: ''
+      };
+      this.onUsernameChange = this.onUsernameChange.bind(this);
+      this.onPasswordChange = this.onPasswordChange.bind(this);
+      this.handleSubmit = this.handleSubmit.bind(this);
+    }
+    onUsernameChange(event) {
+      this.setState({
+        username: event.target.value
+      });
+    }
+    onPasswordChange(event) {
+      this.setState({
+        password: event.target.value
+      });
+    }
+    handleSubmit() {
+      const {username, password} = this.state;
+      /*Send a request to the server for authentication*/
+      /*then call this.props.onLoggedIn(username)*/
+      this.props.onLoggedIn(username);
+    }
+    render() {
+      return (
+        /*#__PURE__*/_reactDefault.default.createElement("div", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 39,
+            columnNumber: 7
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("p", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 40,
+            columnNumber: 7
+          }
+        }, "Login or register:"), /*#__PURE__*/_reactDefault.default.createElement("form", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 41,
+            columnNumber: 7
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("p", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 42,
+            columnNumber: 7
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("label", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 43,
+            columnNumber: 9
+          }
+        }, "Username:", /*#__PURE__*/_reactDefault.default.createElement("input", {
+          type: "text",
+          value: this.state.username,
+          onChange: this.onUsernameChange,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 45,
+            columnNumber: 11
+          }
+        }))), /*#__PURE__*/_reactDefault.default.createElement("p", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 49,
+            columnNumber: 7
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("label", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 50,
+            columnNumber: 11
+          }
+        }, "Password:", /*#__PURE__*/_reactDefault.default.createElement("input", {
+          type: "password",
+          value: this.state.password,
+          onChange: this.onPasswordChange,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 52,
+            columnNumber: 11
+          }
+        }))), /*#__PURE__*/_reactDefault.default.createElement("button", {
+          type: "button",
+          onClick: this.handleSubmit,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 56,
+            columnNumber: 9
+          }
+        }, "Submit")))
+      );
+    }
+  }
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+
+},{"react":"2HTbi","@parcel/transformer-js/lib/esmodule-helpers.js":"2pjgc","../../../../../../../.nvm/versions/node/v14.16.1/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"79DY8","../registration-view/registration-view":"7gvH2"}],"7gvH2":[function(require,module,exports) {
+
+},{}],"5iJih":[function() {},{}]},["68WUB","1DVjT"], "1DVjT", "parcelRequire279c")
 
 //# sourceMappingURL=index.02675e63.js.map

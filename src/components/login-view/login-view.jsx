@@ -1,4 +1,5 @@
 import React from 'react';
+import { RegistrationView } from '../registration-view/registration-view';
 
 export class LoginView extends React.Component {
   constructor(props) {
@@ -35,17 +36,26 @@ export class LoginView extends React.Component {
 
   render() {
     return (
+      <div>
+      <p>Login or register:</p>
       <form>
+      <p>
         <label>
-          Username:
-          <input type="text" value={this.state.username} onChange={this.onUsernameChange} />
+         Username:
+          <input type="text" value={this.state.username} 
+            onChange={this.onUsernameChange} />
         </label>
-        <label>
+      </p>
+      <p>
+          <label>
           Password:
-          <input type="password" value={this.state.password} onChange={this.onPasswordChange} />
+          <input type="password" value={this.state.password} 
+            onChange={this.onPasswordChange} />
         </label>
+      </p>
         <button type="button" onClick={this.handleSubmit}>Submit</button>
-      </form>
+       </form>
+      </div>
     );
   }
 }
