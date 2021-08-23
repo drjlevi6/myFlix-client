@@ -56,31 +56,39 @@ export class LoginView extends React.Component {
     } else {
       return (
         <div>
-        <p>Login or &nbsp;
-          <button type="button" 
-            onClick={this.onRequestToRegister}>
-              Register
-          </button>:
-        </p>
-        <form>
-        <p>
-          <label>
-          Username:
-            <input type="text" value={this.state.username} 
-              onChange={this.onUsernameChange} />
-          </label>
-        </p>
-        <p>
-            <label>
-            Password:
-            <input type="password" value={this.state.password} 
-              onChange={this.onPasswordChange} />
-          </label>
-        </p>
-          <button type="button" onClick={this.handleSubmit}>Submit</button>
-        </form>
+
+          <span><h3>Log in or&nbsp;
+          <button className="register-button"  
+            onClick={this.onRequestToRegister}><strong>register:</strong>
+          </button>
+          </h3>
+          </span>
+
+          <form>
+            <tbody>
+              <tr>
+                <td>
+                  <label>Username:&nbsp;</label>
+                </td>
+                <td>
+                    <input type="text" value={this.state.username} 
+                      onChange={this.onUsernameChange} /> 
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label>Password:&nbsp;</label>
+                </td>
+                <td>
+                    <input type="password" value={this.state.password} 
+                      onChange={this.onPasswordChange} />
+                </td>
+              </tr>
+            </tbody>
+            <button type="button" onClick={this.handleSubmit}>Submit</button>
+          </form>
         </div>
       );// end return
     }; //end else
-  }; // end if
-} // end render
+  }; // end render
+} // end class LoginView

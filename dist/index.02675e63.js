@@ -140,9 +140,9 @@
       this[globalName] = mainExports;
     }
   }
-})({"68WUB":[function(require,module,exports) {
+})({"1TnUi":[function(require,module,exports) {
 var HMR_HOST = null;
-var HMR_PORT = 1234;
+var HMR_PORT = 59804;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "d751713988987e9331980363e24189ce";
 module.bundle.HMR_BUNDLE_ID = "f9eab60bc3a7a7c3f683683702675e63";
@@ -29459,85 +29459,134 @@ try {
               lineNumber: 58,
               columnNumber: 9
             }
-          }, /*#__PURE__*/_reactDefault.default.createElement("p", {
-            __self: this,
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 59,
-              columnNumber: 9
-            }
-          }, "Login or  ", /*#__PURE__*/_reactDefault.default.createElement("button", {
-            type: "button",
-            onClick: this.onRequestToRegister,
+          }, /*#__PURE__*/_reactDefault.default.createElement("span", {
             __self: this,
             __source: {
               fileName: _jsxFileName,
               lineNumber: 60,
               columnNumber: 11
             }
-          }, "Register"), ":"), /*#__PURE__*/_reactDefault.default.createElement("form", {
+          }, /*#__PURE__*/_reactDefault.default.createElement("h3", {
             __self: this,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 65,
-              columnNumber: 9
+              lineNumber: 60,
+              columnNumber: 17
             }
-          }, /*#__PURE__*/_reactDefault.default.createElement("p", {
+          }, "Log in or ", /*#__PURE__*/_reactDefault.default.createElement("button", {
+            className: "register-button",
+            onClick: this.onRequestToRegister,
             __self: this,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 66,
-              columnNumber: 9
+              lineNumber: 61,
+              columnNumber: 11
             }
-          }, /*#__PURE__*/_reactDefault.default.createElement("label", {
+          }, /*#__PURE__*/_reactDefault.default.createElement("strong", {
+            __self: this,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 62,
+              columnNumber: 48
+            }
+          }, "register:")))), /*#__PURE__*/_reactDefault.default.createElement("form", {
             __self: this,
             __source: {
               fileName: _jsxFileName,
               lineNumber: 67,
               columnNumber: 11
             }
-          }, "Username:", /*#__PURE__*/_reactDefault.default.createElement("input", {
+          }, /*#__PURE__*/_reactDefault.default.createElement("tbody", {
+            __self: this,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 68,
+              columnNumber: 13
+            }
+          }, /*#__PURE__*/_reactDefault.default.createElement("tr", {
+            __self: this,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 69,
+              columnNumber: 15
+            }
+          }, /*#__PURE__*/_reactDefault.default.createElement("td", {
+            __self: this,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 70,
+              columnNumber: 17
+            }
+          }, /*#__PURE__*/_reactDefault.default.createElement("label", {
+            __self: this,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 71,
+              columnNumber: 19
+            }
+          }, "Username: ")), /*#__PURE__*/_reactDefault.default.createElement("td", {
+            __self: this,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 73,
+              columnNumber: 17
+            }
+          }, /*#__PURE__*/_reactDefault.default.createElement("input", {
             type: "text",
             value: this.state.username,
             onChange: this.onUsernameChange,
             __self: this,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 69,
-              columnNumber: 13
+              lineNumber: 74,
+              columnNumber: 21
             }
-          }))), /*#__PURE__*/_reactDefault.default.createElement("p", {
+          }))), /*#__PURE__*/_reactDefault.default.createElement("tr", {
             __self: this,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 73,
-              columnNumber: 9
+              lineNumber: 78,
+              columnNumber: 15
+            }
+          }, /*#__PURE__*/_reactDefault.default.createElement("td", {
+            __self: this,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 79,
+              columnNumber: 17
             }
           }, /*#__PURE__*/_reactDefault.default.createElement("label", {
             __self: this,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 74,
-              columnNumber: 13
+              lineNumber: 80,
+              columnNumber: 19
             }
-          }, "Password:", /*#__PURE__*/_reactDefault.default.createElement("input", {
+          }, "Password: ")), /*#__PURE__*/_reactDefault.default.createElement("td", {
+            __self: this,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 82,
+              columnNumber: 17
+            }
+          }, /*#__PURE__*/_reactDefault.default.createElement("input", {
             type: "password",
             value: this.state.password,
             onChange: this.onPasswordChange,
             __self: this,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 76,
-              columnNumber: 13
+              lineNumber: 83,
+              columnNumber: 21
             }
-          }))), /*#__PURE__*/_reactDefault.default.createElement("button", {
+          })))), /*#__PURE__*/_reactDefault.default.createElement("button", {
             type: "button",
             onClick: this.handleSubmit,
             __self: this,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 80,
-              columnNumber: 11
+              lineNumber: 88,
+              columnNumber: 13
             }
           }, "Submit")))
         );
@@ -29564,6 +29613,8 @@ try {
   });
   var _react = require('react');
   var _reactDefault = _parcelHelpers.interopDefault(_react);
+  require("react-dom");
+  var _jsxFileName = "/Users/jonathan/Documents/GitHub/portfolio_website/myFlix-client/src/components/registration-view/registration-view.jsx";
   class RegistrationView extends _reactDefault.default.Component {
     constructor() {
       super();
@@ -29576,8 +29627,224 @@ try {
     }
     /*end constructor*/
     render() {
-      alert("registration-view.jsx");
-      return null;
+      return (
+        /*#__PURE__*/_reactDefault.default.createElement("div", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 17,
+            columnNumber: 7
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("h3", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 18,
+            columnNumber: 9
+          }
+        }, "Register for myFlix:"), /*#__PURE__*/_reactDefault.default.createElement("form", {
+          action: "",
+          method: "get",
+          className: "registration-form",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 19,
+            columnNumber: 9
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("table", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 20,
+            columnNumber: 11
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("tbody", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 21,
+            columnNumber: 13
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("tr", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 22,
+            columnNumber: 15
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("td", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 23,
+            columnNumber: 17
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("label", {
+          htmlForm: "Username: ",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 23,
+            columnNumber: 21
+          }
+        }, "Username:")), /*#__PURE__*/_reactDefault.default.createElement("td", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 24,
+            columnNumber: 17
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("input", {
+          type: "text",
+          name: "Username",
+          id: "Username",
+          required: true,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 24,
+            columnNumber: 21
+          }
+        }))), /*#__PURE__*/_reactDefault.default.createElement("tr", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 26,
+            columnNumber: 15
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("td", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 27,
+            columnNumber: 17
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("label", {
+          htmlForm: "Password: ",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 27,
+            columnNumber: 21
+          }
+        }, "Password:")), /*#__PURE__*/_reactDefault.default.createElement("td", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 28,
+            columnNumber: 17
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("input", {
+          type: "text",
+          name: "Password",
+          id: "Password",
+          required: true,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 28,
+            columnNumber: 21
+          }
+        }))), /*#__PURE__*/_reactDefault.default.createElement("tr", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 30,
+            columnNumber: 15
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("td", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 31,
+            columnNumber: 17
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("label", {
+          htmlForm: "Email:",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 31,
+            columnNumber: 21
+          }
+        }, "Email:")), /*#__PURE__*/_reactDefault.default.createElement("td", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 32,
+            columnNumber: 17
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("input", {
+          type: "text",
+          name: "Email",
+          id: "email",
+          required: true,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 32,
+            columnNumber: 21
+          }
+        }))), /*#__PURE__*/_reactDefault.default.createElement("tr", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 34,
+            columnNumber: 15
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("td", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 35,
+            columnNumber: 17
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("label", {
+          htmlForm: "Birthday:",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 35,
+            columnNumber: 21
+          }
+        }, "Birthday:")), /*#__PURE__*/_reactDefault.default.createElement("td", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 36,
+            columnNumber: 17
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("input", {
+          type: "text",
+          name: "Birthday",
+          id: "Birthday",
+          required: true,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 36,
+            columnNumber: 21
+          }
+        }))))), /*#__PURE__*/_reactDefault.default.createElement("div", {
+          className: "form-row",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 40,
+            columnNumber: 11
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("input", {
+          type: "submit",
+          value: "Submit",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 41,
+            columnNumber: 13
+          }
+        }))))
+      );
     }
   }
   helpers.postlude(module);
@@ -29586,6 +29853,6 @@ try {
   window.$RefreshSig$ = prevRefreshSig;
 }
 
-},{"@parcel/transformer-js/lib/esmodule-helpers.js":"2pjgc","react":"2HTbi","../../../../../../../.nvm/versions/node/v14.16.1/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"79DY8"}],"5iJih":[function() {},{}]},["68WUB","1DVjT"], "1DVjT", "parcelRequire279c")
+},{"@parcel/transformer-js/lib/esmodule-helpers.js":"2pjgc","react":"2HTbi","../../../../../../../.nvm/versions/node/v14.16.1/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"79DY8","react-dom":"2Sj1g"}],"5iJih":[function() {},{}]},["1TnUi","1DVjT"], "1DVjT", "parcelRequire279c")
 
 //# sourceMappingURL=index.02675e63.js.map
