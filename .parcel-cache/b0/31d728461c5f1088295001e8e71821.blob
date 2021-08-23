@@ -1,0 +1,25 @@
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+_parcelHelpers.defineInteropFlag(exports);
+var _reactDom = require("react-dom");
+var _jsxFileName = "/Users/jonathan/Documents/GitHub/portfolio_website/myFlix-client/src/components/registration-view/registration-view.jsx";
+class RegistrationView extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      Username: null,
+      Password: null,
+      Email: null,
+      Birthday: null
+    };
+  }
+}
+exports.default = RegistrationView;
+// end class
+_reactDom.render(/*#__PURE__*/React.createElement("form", {
+  __self: undefined,
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 16,
+    columnNumber: 5
+  }
+}));

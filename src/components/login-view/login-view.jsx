@@ -19,9 +19,8 @@ export class LoginView extends React.Component {
   }
 
   onRequestToRegister() {
-    this.setState({
-      doRegister: true
-    });
+    this.doRegister = true;
+    this.setState({});
   }
   onUsernameChange(event) {
     this.setState({
@@ -44,11 +43,15 @@ export class LoginView extends React.Component {
 
   render() {
     if (this.doRegister) {
-      alert("You clicked Register");
+      return (
+        <div>
+          <RegistrationView /> )
+        </div>
+      )
     } else {
       return (
         <div>
-        <p>Login or 
+        <p>Login or &nbsp;
           <button type="button" 
             onClick={this.onRequestToRegister}>
               Register

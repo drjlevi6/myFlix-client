@@ -1,0 +1,17 @@
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+_parcelHelpers.defineInteropFlag(exports);
+var _reactDom = require("react-dom");
+class RegistrationView extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      Username: null,
+      Password: null,
+      Email: null,
+      Birthday: null
+    };
+  }
+}
+exports.default = RegistrationView;
+// end class
+_reactDom.render(alert("registration-view.jsx"));

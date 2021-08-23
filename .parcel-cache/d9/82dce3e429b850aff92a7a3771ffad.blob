@@ -29408,7 +29408,7 @@ try {
       this.onRequestToRegister = this.onRequestToRegister.bind(this);
     }
     onRequestToRegister() {
-      this.doRegister = true;
+      this.doRegister = false;
       this.setState({});
     }
     onUsernameChange(event) {
@@ -29429,37 +29429,21 @@ try {
     }
     render() {
       if (this.doRegister) {
-        return (
-          /*#__PURE__*/_reactDefault.default.createElement("div", {
-            __self: this,
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 47,
-              columnNumber: 9
-            }
-          }, /*#__PURE__*/_reactDefault.default.createElement(_registrationViewRegistrationView.RegistrationView, {
-            __self: this,
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 48,
-              columnNumber: 11
-            }
-          }), " )")
-        );
+        return _registrationViewRegistrationView.RegistrationView;
       } else {
         return (
           /*#__PURE__*/_reactDefault.default.createElement("div", {
             __self: this,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 53,
+              lineNumber: 49,
               columnNumber: 9
             }
           }, /*#__PURE__*/_reactDefault.default.createElement("p", {
             __self: this,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 54,
+              lineNumber: 50,
               columnNumber: 9
             }
           }, "Login or  ", /*#__PURE__*/_reactDefault.default.createElement("button", {
@@ -29468,28 +29452,28 @@ try {
             __self: this,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 55,
+              lineNumber: 51,
               columnNumber: 11
             }
           }, "Register"), ":"), /*#__PURE__*/_reactDefault.default.createElement("form", {
             __self: this,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 60,
+              lineNumber: 56,
               columnNumber: 9
             }
           }, /*#__PURE__*/_reactDefault.default.createElement("p", {
             __self: this,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 61,
+              lineNumber: 57,
               columnNumber: 9
             }
           }, /*#__PURE__*/_reactDefault.default.createElement("label", {
             __self: this,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 62,
+              lineNumber: 58,
               columnNumber: 11
             }
           }, "Username:", /*#__PURE__*/_reactDefault.default.createElement("input", {
@@ -29499,21 +29483,21 @@ try {
             __self: this,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 64,
+              lineNumber: 60,
               columnNumber: 13
             }
           }))), /*#__PURE__*/_reactDefault.default.createElement("p", {
             __self: this,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 68,
+              lineNumber: 64,
               columnNumber: 9
             }
           }, /*#__PURE__*/_reactDefault.default.createElement("label", {
             __self: this,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 69,
+              lineNumber: 65,
               columnNumber: 13
             }
           }, "Password:", /*#__PURE__*/_reactDefault.default.createElement("input", {
@@ -29523,7 +29507,7 @@ try {
             __self: this,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 71,
+              lineNumber: 67,
               columnNumber: 13
             }
           }))), /*#__PURE__*/_reactDefault.default.createElement("button", {
@@ -29532,7 +29516,7 @@ try {
             __self: this,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 75,
+              lineNumber: 71,
               columnNumber: 11
             }
           }, "Submit")))
@@ -29570,7 +29554,6 @@ try {
     /*end constructor*/
     render() {
       alert("registration-view.jsx");
-      return null;
     }
   }
   exports.default = RegistrationView;
@@ -29582,4 +29565,4 @@ try {
 
 },{"@parcel/transformer-js/lib/esmodule-helpers.js":"2pjgc","react":"2HTbi","../../../../../../../.nvm/versions/node/v14.16.1/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"79DY8"}],"5iJih":[function() {},{}]},["68WUB","1DVjT"], "1DVjT", "parcelRequire279c")
 
-//# sourceMappingURL=index.02675e63.js.map
+//# sourceMappingURL=index.HASH_REF_f9eab60bc3a7a7c3f683683702675e63.js.map
