@@ -10,6 +10,8 @@ export class LoginView extends React.Component {
       password: ''
     };
 
+    openRegistrationWindow = false; // open registration window instead of logging in?
+
     this.onUsernameChange = this.onUsernameChange.bind(this);
     this.onPasswordChange = this.onPasswordChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
