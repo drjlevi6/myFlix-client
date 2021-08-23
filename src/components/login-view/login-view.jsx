@@ -7,16 +7,22 @@ export class LoginView extends React.Component {
 
     this.state = {
       username: '',
-      password: ''
+      password: '',
+      doRegister: false // open registration window instead of logging in?
     };
 
-    openRegistrationWindow = false; // open registration window instead of logging in?
 
     this.onUsernameChange = this.onUsernameChange.bind(this);
     this.onPasswordChange = this.onPasswordChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.onRequestToRegister = this.onRequestToRegister.bind(this);
   }
 
+  onRequestToRegister() {
+    this.setState({
+      doRegister: true
+    });
+  }
   onUsernameChange(event) {
     this.setState({
       username: event.target.value
@@ -37,27 +43,36 @@ export class LoginView extends React.Component {
   }
 
   render() {
-    return (
-      <div>
-      <p>Login or register:</p>
-      <form>
-      <p>
-        <label>
-         Username:
-          <input type="text" value={this.state.username} 
-            onChange={this.onUsernameChange} />
-        </label>
-      </p>
-      <p>
+    if (this.doRegister) {
+      alert("You clicked Register");
+    } else {
+      return (
+        <div>
+        <p>Login or 
+          <button type="button" 
+            onClick={this.onRequestToRegister}>
+              Register
+          </button>:
+        </p>
+        <form>
+        <p>
           <label>
-          Password:
-          <input type="password" value={this.state.password} 
-            onChange={this.onPasswordChange} />
-        </label>
-      </p>
-        <button type="button" onClick={this.handleSubmit}>Submit</button>
-       </form>
-      </div>
-    );
-  }
-}
+          Username:
+            <input type="text" value={this.state.username} 
+              onChange={this.onUsernameChange} />
+          </label>
+        </p>
+        <p>
+            <label>
+            Password:
+            <input type="password" value={this.state.password} 
+              onChange={this.onPasswordChange} />
+          </label>
+        </p>
+          <button type="button" onClick={this.handleSubmit}>Submit</button>
+        </form>
+        </div>
+      );// end return
+    }; //end else
+  }; // end if
+} // end render
