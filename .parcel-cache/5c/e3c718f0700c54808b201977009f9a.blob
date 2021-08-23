@@ -29438,44 +29438,31 @@ try {
               columnNumber: 9
             }
           }, /*#__PURE__*/_reactDefault.default.createElement(_registrationViewRegistrationView.RegistrationView, {
-            Username: "",
-            Password: "",
-            Email: "",
-            Birthday: "",
             __self: this,
             __source: {
               fileName: _jsxFileName,
               lineNumber: 48,
               columnNumber: 11
             }
-          }))
+          }), "/*  ", /*#__PURE__*/_reactDefault.default.createElement(MovieCard, {
+            key: movie._id,
+            movie: movie,
+            title: movie.title,
+            imagePath: movie.imagePath,
+            onMovieClick: newSelectedMovie => {
+              this.setSelectedMovie(newSelectedMovie);
+            },
+            __self: this,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 51,
+              columnNumber: 15
+            }
+          }), "*/")
         );
       } else {
         return (
           /*#__PURE__*/_reactDefault.default.createElement("div", {
-            __self: this,
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 58,
-              columnNumber: 9
-            }
-          }, /*#__PURE__*/_reactDefault.default.createElement("p", {
-            __self: this,
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 59,
-              columnNumber: 9
-            }
-          }, "Login or  ", /*#__PURE__*/_reactDefault.default.createElement("button", {
-            type: "button",
-            onClick: this.onRequestToRegister,
-            __self: this,
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 60,
-              columnNumber: 11
-            }
-          }, "Register"), ":"), /*#__PURE__*/_reactDefault.default.createElement("form", {
             __self: this,
             __source: {
               fileName: _jsxFileName,
@@ -29489,24 +29476,23 @@ try {
               lineNumber: 66,
               columnNumber: 9
             }
-          }, /*#__PURE__*/_reactDefault.default.createElement("label", {
+          }, "Login or  ", /*#__PURE__*/_reactDefault.default.createElement("button", {
+            type: "button",
+            onClick: this.onRequestToRegister,
             __self: this,
             __source: {
               fileName: _jsxFileName,
               lineNumber: 67,
               columnNumber: 11
             }
-          }, "Username:", /*#__PURE__*/_reactDefault.default.createElement("input", {
-            type: "text",
-            value: this.state.username,
-            onChange: this.onUsernameChange,
+          }, "Register"), ":"), /*#__PURE__*/_reactDefault.default.createElement("form", {
             __self: this,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 69,
-              columnNumber: 13
+              lineNumber: 72,
+              columnNumber: 9
             }
-          }))), /*#__PURE__*/_reactDefault.default.createElement("p", {
+          }, /*#__PURE__*/_reactDefault.default.createElement("p", {
             __self: this,
             __source: {
               fileName: _jsxFileName,
@@ -29518,6 +29504,30 @@ try {
             __source: {
               fileName: _jsxFileName,
               lineNumber: 74,
+              columnNumber: 11
+            }
+          }, "Username:", /*#__PURE__*/_reactDefault.default.createElement("input", {
+            type: "text",
+            value: this.state.username,
+            onChange: this.onUsernameChange,
+            __self: this,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 76,
+              columnNumber: 13
+            }
+          }))), /*#__PURE__*/_reactDefault.default.createElement("p", {
+            __self: this,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 80,
+              columnNumber: 9
+            }
+          }, /*#__PURE__*/_reactDefault.default.createElement("label", {
+            __self: this,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 81,
               columnNumber: 13
             }
           }, "Password:", /*#__PURE__*/_reactDefault.default.createElement("input", {
@@ -29527,7 +29537,7 @@ try {
             __self: this,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 76,
+              lineNumber: 83,
               columnNumber: 13
             }
           }))), /*#__PURE__*/_reactDefault.default.createElement("button", {
@@ -29536,7 +29546,7 @@ try {
             __self: this,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 80,
+              lineNumber: 87,
               columnNumber: 11
             }
           }, "Submit")))
@@ -29559,9 +29569,6 @@ helpers.prelude(module);
 try {
   var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
   _parcelHelpers.defineInteropFlag(exports);
-  _parcelHelpers.export(exports, "RegistrationView", function () {
-    return RegistrationView;
-  });
   var _react = require('react');
   var _reactDefault = _parcelHelpers.interopDefault(_react);
   class RegistrationView extends _reactDefault.default.Component {
@@ -29580,6 +29587,7 @@ try {
       return null;
     }
   }
+  exports.default = RegistrationView;
   helpers.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
@@ -29588,4 +29596,4 @@ try {
 
 },{"@parcel/transformer-js/lib/esmodule-helpers.js":"2pjgc","react":"2HTbi","../../../../../../../.nvm/versions/node/v14.16.1/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"79DY8"}],"5iJih":[function() {},{}]},["68WUB","1DVjT"], "1DVjT", "parcelRequire279c")
 
-//# sourceMappingURL=index.02675e63.js.map
+//# sourceMappingURL=index.HASH_REF_f9eab60bc3a7a7c3f683683702675e63.js.map

@@ -45,7 +45,12 @@ export class LoginView extends React.Component {
     if (this.doRegister) {
       return (
         <div>
-          <RegistrationView /> )
+          <RegistrationView 
+            Username = ''
+            Password = ''
+            Email = ''
+            Birthday = ''
+          /> 
         </div>
       )
     } else {

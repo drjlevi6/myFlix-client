@@ -29448,7 +29448,21 @@ try {
               lineNumber: 48,
               columnNumber: 11
             }
-          }))
+          }), "/*  ", /*#__PURE__*/_reactDefault.default.createElement(MovieCard, {
+            key: movie._id,
+            movie: movie,
+            title: movie.title,
+            imagePath: movie.imagePath,
+            onMovieClick: newSelectedMovie => {
+              this.setSelectedMovie(newSelectedMovie);
+            },
+            __self: this,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 54,
+              columnNumber: 15
+            }
+          }), "*/")
         );
       } else {
         return (
@@ -29456,14 +29470,14 @@ try {
             __self: this,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 58,
+              lineNumber: 68,
               columnNumber: 9
             }
           }, /*#__PURE__*/_reactDefault.default.createElement("p", {
             __self: this,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 59,
+              lineNumber: 69,
               columnNumber: 9
             }
           }, "Login or  ", /*#__PURE__*/_reactDefault.default.createElement("button", {
@@ -29472,28 +29486,28 @@ try {
             __self: this,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 60,
+              lineNumber: 70,
               columnNumber: 11
             }
           }, "Register"), ":"), /*#__PURE__*/_reactDefault.default.createElement("form", {
             __self: this,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 65,
+              lineNumber: 75,
               columnNumber: 9
             }
           }, /*#__PURE__*/_reactDefault.default.createElement("p", {
             __self: this,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 66,
+              lineNumber: 76,
               columnNumber: 9
             }
           }, /*#__PURE__*/_reactDefault.default.createElement("label", {
             __self: this,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 67,
+              lineNumber: 77,
               columnNumber: 11
             }
           }, "Username:", /*#__PURE__*/_reactDefault.default.createElement("input", {
@@ -29503,21 +29517,21 @@ try {
             __self: this,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 69,
+              lineNumber: 79,
               columnNumber: 13
             }
           }))), /*#__PURE__*/_reactDefault.default.createElement("p", {
             __self: this,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 73,
+              lineNumber: 83,
               columnNumber: 9
             }
           }, /*#__PURE__*/_reactDefault.default.createElement("label", {
             __self: this,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 74,
+              lineNumber: 84,
               columnNumber: 13
             }
           }, "Password:", /*#__PURE__*/_reactDefault.default.createElement("input", {
@@ -29527,7 +29541,7 @@ try {
             __self: this,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 76,
+              lineNumber: 86,
               columnNumber: 13
             }
           }))), /*#__PURE__*/_reactDefault.default.createElement("button", {
@@ -29536,7 +29550,7 @@ try {
             __self: this,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 80,
+              lineNumber: 90,
               columnNumber: 11
             }
           }, "Submit")))
@@ -29559,9 +29573,6 @@ helpers.prelude(module);
 try {
   var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
   _parcelHelpers.defineInteropFlag(exports);
-  _parcelHelpers.export(exports, "RegistrationView", function () {
-    return RegistrationView;
-  });
   var _react = require('react');
   var _reactDefault = _parcelHelpers.interopDefault(_react);
   class RegistrationView extends _reactDefault.default.Component {
@@ -29580,6 +29591,7 @@ try {
       return null;
     }
   }
+  exports.default = RegistrationView;
   helpers.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
@@ -29588,4 +29600,4 @@ try {
 
 },{"@parcel/transformer-js/lib/esmodule-helpers.js":"2pjgc","react":"2HTbi","../../../../../../../.nvm/versions/node/v14.16.1/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"79DY8"}],"5iJih":[function() {},{}]},["68WUB","1DVjT"], "1DVjT", "parcelRequire279c")
 
-//# sourceMappingURL=index.02675e63.js.map
+//# sourceMappingURL=index.HASH_REF_f9eab60bc3a7a7c3f683683702675e63.js.map

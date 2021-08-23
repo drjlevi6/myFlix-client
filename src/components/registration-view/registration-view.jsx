@@ -1,7 +1,7 @@
 import React from 'react';
 //import { ReactDOM } from "react-dom";
 
-export default class RegistrationView extends React.Component {
+export class RegistrationView extends React.Component {
     constructor(){
       super();
       this.state = {
