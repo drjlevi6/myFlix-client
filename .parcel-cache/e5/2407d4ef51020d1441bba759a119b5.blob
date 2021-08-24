@@ -27565,7 +27565,7 @@ try {
       );
     }
   }
-  MovieCard.propTypes = {
+  MovieCard.PropTypes = {
     movie: _propTypesDefault.default.shape({
       title: _propTypesDefault.default.string.isRequired,
       description: _propTypesDefault.default.string.isRequired,
@@ -29393,8 +29393,7 @@ try {
   var _react = require('react');
   var _reactDefault = _parcelHelpers.interopDefault(_react);
   var _registrationViewRegistrationView = require('../registration-view/registration-view');
-  var _propTypes = require('prop-types');
-  var _propTypesDefault = _parcelHelpers.interopDefault(_propTypes);
+  require('prop-types');
   var _jsxFileName = "/Users/jonathan/Documents/GitHub/portfolio_website/myFlix-client/src/components/login-view/login-view.jsx";
   class LoginView extends _reactDefault.default.Component {
     constructor(props) {
@@ -29608,15 +29607,6 @@ try {
       ;
     }
   }
-  // end class LoginView
-  LoginView.propTypes = {
-    login: _propTypesDefault.default.shape({
-      Username: _propTypesDefault.default.string.isRequired,
-      Password: _propTypesDefault.default.string.isRequired
-    }).isRequired,
-    handleSubmit: _propTypesDefault.default.func.isRequired,
-    onRequestToRegister: _propTypesDefault.default.func.isRequired
-  };
   helpers.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
@@ -29878,4 +29868,4 @@ try {
 
 },{"@parcel/transformer-js/lib/esmodule-helpers.js":"2pjgc","react":"2HTbi","../../../../../../../.nvm/versions/node/v14.16.1/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"79DY8","react-dom":"2Sj1g"}],"5iJih":[function() {},{}]},["68WUB","1DVjT"], "1DVjT", "parcelRequire279c")
 
-//# sourceMappingURL=index.02675e63.js.map
+//# sourceMappingURL=index.HASH_REF_f9eab60bc3a7a7c3f683683702675e63.js.map
