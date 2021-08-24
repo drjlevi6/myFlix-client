@@ -20,19 +20,19 @@ export class RegistrationView extends React.Component {
           <table>
             <tbody>
               <tr>
-                <td><label htmlForm='Username: '>Username:</label></td>
+                <td><label htmlFor='Username: '>Username:</label></td>
                 <td><input type='text' name='Username' id='Username' required /></td>
               </tr>
               <tr>
-                <td><label htmlForm='Password: '>Password:</label></td>
+                <td><label htmlFor='Password: '>Password:</label></td>
                 <td><input type='text' name='Password' id='Password' required /></td>
               </tr>
               <tr>
-                <td><label htmlForm='Email:'>Email:</label></td>
+                <td><label htmlFor='Email:'>Email:</label></td>
                 <td><input type='text' name='Email' id='email' required /></td>
               </tr>
               <tr>
-                <td><label htmlForm='Birthday:'>Birthday:</label></td>
+                <td><label htmlFor='Birthday:'>Birthday:</label></td>
                 <td><input type='text' name='Birthday' id='Birthday' required /></td>
               </tr>
             </tbody> 

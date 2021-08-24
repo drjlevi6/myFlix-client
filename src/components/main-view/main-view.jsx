@@ -4,6 +4,7 @@ import axios from 'axios';
 import { LoginView } from '../login-view/login-view';
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
+import PropTypes from 'prop-types';
 
 export default class MainView extends React.Component {
   constructor(){

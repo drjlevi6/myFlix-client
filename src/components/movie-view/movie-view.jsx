@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export class MovieView extends React.Component { 
 
@@ -19,8 +20,12 @@ export class MovieView extends React.Component {
           <span className="value">{movie.description}</span>
         </div>
         <button onClick={() => { onBackClick(null); }}>Back</button>
-       </div>
+      </div>
     );
   }
 }
 
+
+MovieView.propTypes = {
+  
+}

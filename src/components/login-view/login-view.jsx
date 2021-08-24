@@ -20,19 +20,18 @@ export class LoginView extends React.Component {
   }
 
   onRequestToRegister() {
-    this.doRegister = true;
-    this.setState({});
+    this.setState({doRegister: !this.state.doRegister});
   }
 
   onUsernameChange(event) {
     this.setState({
-      username: event.target.value
+      Username: event.target.value
     });
   }
 
   onPasswordChange(event) {
     this.setState({
-      password: event.target.value
+      Password: event.target.value
     });
   }
 
@@ -41,15 +40,15 @@ export class LoginView extends React.Component {
   }
 
   handleSubmit() {
-    const { username, password } = this.state;
+    const { Username, Password } = this.state;
     /* Send a request to the server for authentication */
     /* then call this.props.onLoggedIn(username) */
-    this.props.onLoggedIn(username);
+    this.props.onLoggedIn(Username);
   }
 
   render() {
     const { login, handleSubmit, onRequestToRegister} = this.props;
-    if (this.doRegister) {
+    if (this.state.doRegister) {
       return (
         <div>
           <RegistrationView 
@@ -71,30 +70,18 @@ export class LoginView extends React.Component {
           </h3>
           </span>
 
-          <form onSubmit={this.this.handleSubmit}>
-            <table>
-              <tbody>
-                <tr>
-                  <td>
+          <form onSubmit={this.handleSubmit}>
+            <div>
                     <label>Username:&nbsp;</label>
-                  </td>
-                  <td>
                       <input type="text" value={this.state.Username} 
                         onChange={this.onUsernameChange} /> 
-                  </td>
-                </tr>
-                <tr>
-                  <td>
+            </div>
+            <div>
                     <label>Password:&nbsp;</label>
-                  </td>
-                  <td>
-                      <input type="password" value={this.state.password} 
-                        onChange={this.onPasswordChange} />
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            <button type="button" onClick={this.handleSubmit}>Submit</button>
+                      <input type="password" value={this.state.Password} 
+                      onChange={this.onPasswordChange} />
+           </div>
+            <input type="submit" />
           </form>
         </div>
       );// end return
@@ -103,10 +90,5 @@ export class LoginView extends React.Component {
 } // end class LoginView
 
 LoginView.propTypes = {
-  login: PropTypes.shape({
-    Username: PropTypes.string.isRequired,
-    Password: PropTypes.string.isRequired
-  }).isRequired,
-  handleSubmit: PropTypes.func.isRequired,
-  onRequestToRegister: PropTypes.func.isRequired
+  onLoggedIn: PropTypes.func.isRequired
 };
