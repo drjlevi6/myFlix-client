@@ -1,5 +1,6 @@
 import React from 'react';
 import { ReactDOM } from "react-dom";
+import "./registration-view.scss"
 
 export class RegistrationView extends React.Component {
   constructor(){
@@ -16,32 +17,28 @@ export class RegistrationView extends React.Component {
     return (
       <div>
         <h3>Register for myFlix:</h3>
-        <form action='' method='get' className='registration-form'>
-          <table>
-            <tbody>
-              <tr>
-                <td><label htmlFor='Username: '>Username:</label></td>
-                <td><input type='text' name='Username' id='Username' required /></td>
-              </tr>
-              <tr>
-                <td><label htmlFor='Password: '>Password:</label></td>
-                <td><input type='text' name='Password' id='Password' required /></td>
-              </tr>
-              <tr>
-                <td><label htmlFor='Email:'>Email:</label></td>
-                <td><input type='text' name='Email' id='email' required /></td>
-              </tr>
-              <tr>
-                <td><label htmlFor='Birthday:'>Birthday:</label></td>
-                <td><input type='text' name='Birthday' id='Birthday' required /></td>
-              </tr>
-            </tbody> 
-          </table>
-          <div className='form-row'>
-            <input type='submit' value='Submit'/>
-          </div>
-       </form>
-       </div>
+          <form action='' method='get' className='registration-form'>
+            <div className="text-input-row">
+              <label htmlFor='Username: '>Username:</label>
+              <input type='text' name='Username' id='Username' required />
+            </div>
+            <div className="text-input-row">
+              <label htmlFor='Password: '>Password:</label>
+              <input type='text' name='Password' id='Password' required />
+            </div>
+            <div className="text-input-row">
+              <label htmlFor='Email:'>Email:</label>
+              <input type='text' name='Email' id='email' required />
+            </div>
+            <div className="text-input-row">
+              <label htmlFor='Birthday:'>Birthday:</label>
+              <input type='text' name='Birthday' id='Birthday' required />
+            </div>
+            <div className='submit-row'>
+              <input type='submit' value='Submit'/>
+            </div>
+          </form>
+        </div>
     ) // end return
   } // end render
 } // end class

@@ -1,0 +1,32 @@
+.register-button {
+  font-weight: bold;
+}
+
+.text-row {
+  /* needed in order to align the row's components */
+  display: flex;
+  width: 47%;
+  /*  needed to align text-boxes (!) */
+  flex-direction: row;
+  justify-content: space-between;
+  /* border: solid blue 1px; */
+  margin: 2px;
+}
+
+.button-row {
+  display: flex;
+  width: 46.4%;
+  /*  needed to align text-boxes (!) */
+  flex-direction: row;
+  justify-content: flex-end;
+  margin: 5px;
+}
+
+.label-container {
+  width: 20px;
+}
+
+.text-field {
+  width: 30%;
+  /* border: solid brown 1px; */
+}

@@ -1,0 +1,40 @@
+.register-button {
+  font-weight: bold;
+}
+
+.text-row {
+  /* needed in order to align the row's components */
+  display: flex;
+  width: 200px;
+  /*  needed to align text-boxes (!) */
+  flex-direction: row;
+  justify-content: space-between;
+  /* border: solid blue 1px; */
+  margin: 2px;
+}
+
+.button-row {
+  display: flex;
+  width: 197px;
+  /*  needed to align text-boxes (!) */
+  flex-direction: row;
+  justify-content: center;
+  margin: 5px;
+}
+
+.label-container {
+  width: 20px;
+}
+
+.text-field {
+  width: 55%;
+  /* border: solid brown 1px; */
+}
+.my-flix {
+  color: steelblue;
+}
+
+* {
+  X-Content-Type-Options: nosniff;
+}
+/*# sourceMappingURL=index.HASH_REF_483382a0c90396020ca7c1c4778c89a2.css.map */

@@ -1,6 +1,7 @@
 import React from 'react';
 import { RegistrationView } from '../registration-view/registration-view';
 import PropTypes from 'prop-types';
+import "./login-view.scss";
 
 export class LoginView extends React.Component {
   constructor(props) {
@@ -62,7 +63,6 @@ export class LoginView extends React.Component {
     } else {
       return (
         <div>
-
           <span><h3>Log in or&nbsp;
           <button className="register-button"  
             onClick={this.onRequestToRegister}><strong>register:</strong>
@@ -71,17 +71,19 @@ export class LoginView extends React.Component {
           </span>
 
           <form onSubmit={this.handleSubmit}>
-            <div>
-                    <label>Username:&nbsp;</label>
-                      <input type="text" value={this.state.Username} 
+            <div className="text-row">
+                    <label>Username:</label>
+                      <input className="text-field" type="text" value={this.state.Username} 
                         onChange={this.onUsernameChange} /> 
             </div>
-            <div>
-                    <label>Password:&nbsp;</label>
-                      <input type="password" value={this.state.Password} 
-                      onChange={this.onPasswordChange} />
-           </div>
-            <input type="submit" />
+            <div className="text-row">
+                    <label>Password:</label>
+                      <input className="text-field" type="password" 
+                        value={this.state.Password} onChange={this.onPasswordChange} />
+            </div>
+            <div className="button-row">
+              <input className="submit-input" type="submit" value="Submit" />
+            </div>
           </form>
         </div>
       );// end return
