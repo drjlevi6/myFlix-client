@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import "./main-view.scss"; // file is currently empty, but we might need it later.
 
 import { LoginView } from '../login-view/login-view';
 import { MovieCard } from '../movie-card/movie-card';
