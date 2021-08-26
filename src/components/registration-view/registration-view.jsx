@@ -1,6 +1,7 @@
 import React from 'react';
 import { ReactDOM } from "react-dom";
 import "./registration-view.scss"
+import "../button/button.scss"; // Use for custom-styled submit buttons
 
 export class RegistrationView extends React.Component {
   constructor(){
@@ -35,7 +36,7 @@ export class RegistrationView extends React.Component {
               <input type='text' name='Birthday' id='Birthday' required />
             </div>
             <div className='submit-row'>
-              <input type='submit' value='Submit'/>
+              <input type='submit' className='custom-submit-button' value='Submit'/>
             </div>
           </form>
         </div>

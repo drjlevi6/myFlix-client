@@ -2,6 +2,7 @@ import React from 'react';
 import { RegistrationView } from '../registration-view/registration-view';
 import PropTypes from 'prop-types';
 import "./login-view.scss";
+import "../button/button.scss"; // Use for custom-styled submit buttons
 
 export class LoginView extends React.Component {
   constructor(props) {
@@ -69,8 +70,8 @@ export class LoginView extends React.Component {
           </button>
           </h3>
           </span>
-          
-          <div class="flexContainer">
+
+          <div className="flexContainer">
           <form onSubmit={this.handleSubmit}>
             <div className="text-row">
                     <label>Username:</label>
@@ -83,7 +84,7 @@ export class LoginView extends React.Component {
                         value={this.state.Password} onChange={this.onPasswordChange} />
             </div>
             <div className="button-row">
-              <input className="submit-input" type="submit" value="Submit" />
+              <input className="submit-input custom-submit-button" type="submit" value="Submit" />
             </div>
           </form>
           </div>
