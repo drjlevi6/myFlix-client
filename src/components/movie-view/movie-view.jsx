@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import "./movie-view.scss"; // file is currently empty, but we might need it later.
 
 export class MovieView extends React.Component { 
 
