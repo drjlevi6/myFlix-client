@@ -29510,12 +29510,20 @@ try {
               lineNumber: 68,
               columnNumber: 48
             }
-          }, "register:")))), /*#__PURE__*/_reactDefault.default.createElement("form", {
-            onSubmit: this.handleSubmit,
+          }, "register:")))), /*#__PURE__*/_reactDefault.default.createElement("div", {
+            class: "flexContainer",
             __self: this,
             __source: {
               fileName: _jsxFileName,
               lineNumber: 73,
+              columnNumber: 11
+            }
+          }, /*#__PURE__*/_reactDefault.default.createElement("form", {
+            onSubmit: this.handleSubmit,
+            __self: this,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 74,
               columnNumber: 11
             }
           }, /*#__PURE__*/_reactDefault.default.createElement("div", {
@@ -29523,14 +29531,14 @@ try {
             __self: this,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 74,
+              lineNumber: 75,
               columnNumber: 13
             }
           }, /*#__PURE__*/_reactDefault.default.createElement("label", {
             __self: this,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 75,
+              lineNumber: 76,
               columnNumber: 21
             }
           }, "Username:"), /*#__PURE__*/_reactDefault.default.createElement("input", {
@@ -29541,7 +29549,7 @@ try {
             __self: this,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 76,
+              lineNumber: 77,
               columnNumber: 23
             }
           })), /*#__PURE__*/_reactDefault.default.createElement("div", {
@@ -29549,14 +29557,14 @@ try {
             __self: this,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 79,
+              lineNumber: 80,
               columnNumber: 13
             }
           }, /*#__PURE__*/_reactDefault.default.createElement("label", {
             __self: this,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 80,
+              lineNumber: 81,
               columnNumber: 21
             }
           }, "Password:"), /*#__PURE__*/_reactDefault.default.createElement("input", {
@@ -29567,7 +29575,7 @@ try {
             __self: this,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 81,
+              lineNumber: 82,
               columnNumber: 23
             }
           })), /*#__PURE__*/_reactDefault.default.createElement("div", {
@@ -29575,7 +29583,7 @@ try {
             __self: this,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 84,
+              lineNumber: 85,
               columnNumber: 13
             }
           }, /*#__PURE__*/_reactDefault.default.createElement("input", {
@@ -29585,10 +29593,10 @@ try {
             __self: this,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 85,
+              lineNumber: 86,
               columnNumber: 15
             }
-          }))))
+          })))))
         );
       }
       ;

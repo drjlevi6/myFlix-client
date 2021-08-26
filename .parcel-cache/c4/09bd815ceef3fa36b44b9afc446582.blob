@@ -1,0 +1,32 @@
+.register-button {
+  font-weight: bold;
+}
+
+.flexContainer {
+  display: flex;
+  width: 235px;
+  /* border: solid black 2px; */
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.text-row {
+  /* needed in order to align the row's components */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* border: solid blue 1px; */
+  margin: 5px 0px 2px 0px;
+}
+
+.button-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.text-field {
+  width: 30px;
+  /* border: solid brown 1px; */
+}

@@ -69,7 +69,8 @@ export class LoginView extends React.Component {
           </button>
           </h3>
           </span>
-
+          
+          <div class="flexContainer">
           <form onSubmit={this.handleSubmit}>
             <div className="text-row">
                     <label>Username:</label>
@@ -85,6 +86,7 @@ export class LoginView extends React.Component {
               <input className="submit-input" type="submit" value="Submit" />
             </div>
           </form>
+          </div>
         </div>
       );// end return
     }; //end else
