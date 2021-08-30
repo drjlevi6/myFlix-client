@@ -14,14 +14,11 @@ export function LoginView(props) {
     props.onLoggedIn(username);
   };
 
-
-  return (
+  return ( // onClick={onRequestToRegister}>register: 
     <div className="jl-login-main" >
       <span>
         Log in or&nbsp;
-        <Button className="register-button" 
-          onClick={this.onRequestToRegister}>register:
-        </Button>       
+        <Button className="register-button" >register</Button>       
       </span>
 
       <Form>
