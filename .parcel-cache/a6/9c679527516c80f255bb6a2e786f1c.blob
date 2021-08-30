@@ -1,0 +1,7 @@
+.my-flix {
+  color: steelblue;
+}
+
+* {
+  X-Content-Type-Options: nosniff;
+}
