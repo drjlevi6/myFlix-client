@@ -14,11 +14,18 @@ export function LoginView(props) {
     props.onLoggedIn(username);
   };
 
+  function onRequestToRegister() {
+    console.log("login-view.onRequestToRegister");
+    this.setState({doRegister: !this.state.doRegister});
+  }
+
   return ( // onClick={onRequestToRegister}>register: 
     <div className="jl-login-main" >
       <span>
         Log in or&nbsp;
-        <Button className="register-button" >register</Button>
+        <Button className="register-button" variant="primary" 
+          onClick={onRequestToRegister}>
+          register</Button>
       </span>
 
       <Form>

@@ -23,6 +23,7 @@ export default class MainView extends React.Component {
   componentDidMount(){
     axios.get('https://drjs-myflix-app.herokuapp.com/movies')
       .then(response => {
+        console.log("main-view.componentDidMount:response:", response)
         this.setState({   // triggers automatic re-render
           movies: response.data
         });
@@ -30,6 +31,7 @@ export default class MainView extends React.Component {
      .catch(error => {
         console.log(error);
       });
+    
   }
 
   /* When a movie is clicked, this function is invoked and 
@@ -39,6 +41,7 @@ export default class MainView extends React.Component {
     this.setState({
       selectedMovie: movie
     });
+    console.log("main-view.selectedMovie", this.movie)
   }
 
 /* When a user successfully logs in, this function updates 
@@ -51,7 +54,7 @@ the `user` property in state to that *particular user*/
 
   render() {
     const { movies, selectedMovie } = this.state;
-
+ 
     /* <!--If there is no user, the LoginView is rendered. 
     If there is a user logged in, the user details are 
     *passed as a prop to the LoginView--> */
@@ -63,30 +66,26 @@ the `user` property in state to that *particular user*/
     // If the state of `selectedMovie` is not null, that 
     //  selected movie will be returned otherwise, all 
     //  *movies will be returned.--> */
-    if (movies.length === 0)
-      return <div className="main-view" />;
+    if (movies.length === 0) {
+      // Why isn't the key assignment working? (typeof movies = object)
+
     return (
-      <Row className="justify-content-md-center">
-       {selectedMovie ? (
-            <Col md={8}>
+      <div className="main-view">
+        {selectedMovie ? (
               <MovieView movie={selectedMovie}
                 onBackClick={newSelectedMovie => {
                 this.setSelectedMovie(newSelectedMovie); }}/>
-            </Col>
-            ) :
+             ) :
               movies.map(movie => (
-                <Col md={3}>
                   <MovieCard 
-                    key={movie._id} 
                     movie={movie}
+                    key={movie._id} 
                     title={movie.title}
                     imagePath={movie.imagePath}
                     onMovieClick={(newSelectedMovie) => {
-                      this.setSelectedMovie(newSelectedMovie)
-                    }}/>
-                </Col>
-            ))}
-      </Row>
+                      this.setSelectedMovie(newSelectedMovie); }}>
+            )
+      </div>
     );
   } 
 }

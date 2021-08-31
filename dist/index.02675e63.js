@@ -25702,6 +25702,7 @@ try {
     }
     componentDidMount() {
       _axiosDefault.default.get('https://drjs-myflix-app.herokuapp.com/movies').then(response => {
+        console.log("main-view.componentDidMount:response:", response);
         this.setState({
           // triggers automatic re-render
           movies: response.data
@@ -25717,6 +25718,7 @@ try {
       this.setState({
         selectedMovie: movie
       });
+      console.log("main-view.selectedMovie", this.movie);
     }
     /*When a user successfully logs in, this function updates
     the `user` property in state to that *particular user*/
@@ -25736,7 +25738,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 59,
+            lineNumber: 62,
             columnNumber: 14
           }
         })
@@ -25751,18 +25753,20 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 67,
+            lineNumber: 70,
             columnNumber: 14
           }
         })
       );
+      // Why isn't the key assignment working? (typeof movies = object)
+      console.log("main-view.render: movies =", Array.from(movies));
       return (
         /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapRowDefault.default, {
           className: "justify-content-md-center",
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 69,
+            lineNumber: 76,
             columnNumber: 7
           }
         }, selectedMovie ? /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapColDefault.default, {
@@ -25770,7 +25774,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 71,
+            lineNumber: 78,
             columnNumber: 13
           }
         }, /*#__PURE__*/_reactDefault.default.createElement(_movieViewMovieView.MovieView, {
@@ -25781,7 +25785,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 72,
+            lineNumber: 79,
             columnNumber: 15
           }
         })) : movies.map(movie => /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapColDefault.default, {
@@ -25789,12 +25793,12 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 78,
+            lineNumber: 85,
             columnNumber: 17
           }
         }, /*#__PURE__*/_reactDefault.default.createElement(_movieCardMovieCard.MovieCard, {
-          key: movie._id,
           movie: movie,
+          key: movie._id,
           title: movie.title,
           imagePath: movie.imagePath,
           onMovieClick: newSelectedMovie => {
@@ -25803,10 +25807,10 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 79,
+            lineNumber: 86,
             columnNumber: 19
           }
-        }))))
+        }, movie.title))))
       );
     }
   }
@@ -31030,6 +31034,12 @@ try {
       // then call props.onLoggedIn(username)
       props.onLoggedIn(username);
     };
+    function onRequestToRegister() {
+      console.log("login-view.onRequestToRegister");
+      this.setState({
+        doRegister: !this.state.doRegister
+      });
+    }
     return (
       /*#__PURE__*/
       // onClick={onRequestToRegister}>register:
@@ -31038,29 +31048,31 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 18,
+          lineNumber: 23,
           columnNumber: 5
         }
       }, /*#__PURE__*/_reactDefault.default.createElement("span", {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 19,
+          lineNumber: 24,
           columnNumber: 7
         }
       }, "Log in or ", /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapButtonDefault.default, {
         className: "register-button",
+        variant: "primary",
+        onClick: onRequestToRegister,
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 21,
+          lineNumber: 26,
           columnNumber: 9
         }
       }, "register")), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default, {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 24,
+          lineNumber: 31,
           columnNumber: 7
         }
       }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Group, {
@@ -31068,14 +31080,14 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 25,
+          lineNumber: 32,
           columnNumber: 9
         }
       }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Label, {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 26,
+          lineNumber: 33,
           columnNumber: 11
         }
       }, "Username:"), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Control, {
@@ -31084,7 +31096,7 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 27,
+          lineNumber: 34,
           columnNumber: 11
         }
       })), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Group, {
@@ -31092,14 +31104,14 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 31,
+          lineNumber: 38,
           columnNumber: 9
         }
       }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Label, {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 32,
+          lineNumber: 39,
           columnNumber: 11
         }
       }, "Password:"), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Control, {
@@ -31108,7 +31120,7 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 33,
+          lineNumber: 40,
           columnNumber: 11
         }
       })), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapButtonDefault.default, {
@@ -31118,7 +31130,7 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 37,
+          lineNumber: 44,
           columnNumber: 9
         }
       }, "Submit")))
