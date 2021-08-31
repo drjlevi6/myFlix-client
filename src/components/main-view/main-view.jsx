@@ -4,6 +4,7 @@ import "./main-view.scss"; /* file is currently empty,
                             but we might need it later. */
 import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
+import Col from 'react-bootstrap/Col';
 
 import { LoginView } from '../login-view/login-view';
 import { MovieCard } from '../movie-card/movie-card';
@@ -69,9 +70,11 @@ the `user` property in state to that *particular user*/
         <div className="main-view">
         {selectedMovie ? (
           <Row>
-            <MovieView movie={selectedMovie}
-            onBackClick={newSelectedMovie => {
+            <Col>
+              <MovieView movie={selectedMovie}
+                onBackClick={newSelectedMovie => {
                 this.setSelectedMovie(newSelectedMovie); }}/>
+            </Col>
           </Row>
             ) : (movies.map(movie => (
                 <MovieCard 

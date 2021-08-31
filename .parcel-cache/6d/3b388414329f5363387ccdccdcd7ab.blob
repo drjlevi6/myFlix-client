@@ -25686,8 +25686,7 @@ try {
   var _reactBootstrapRowDefault = _parcelHelpers.interopDefault(_reactBootstrapRow);
   var _reactBootstrapContainer = require('react-bootstrap/Container');
   var _reactBootstrapContainerDefault = _parcelHelpers.interopDefault(_reactBootstrapContainer);
-  var _reactBootstrapCol = require('react-bootstrap/Col');
-  var _reactBootstrapColDefault = _parcelHelpers.interopDefault(_reactBootstrapCol);
+  require('react-bootstrap/Col');
   var _loginViewLoginView = require('../login-view/login-view');
   var _movieCardMovieCard = require('../movie-card/movie-card');
   var _movieViewMovieView = require('../movie-view/movie-view');
@@ -25780,13 +25779,6 @@ try {
             lineNumber: 72,
             columnNumber: 11
           }
-        }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapColDefault.default, {
-          __self: this,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 73,
-            columnNumber: 13
-          }
         }, /*#__PURE__*/_reactDefault.default.createElement(_movieViewMovieView.MovieView, {
           movie: selectedMovie,
           onBackClick: newSelectedMovie => {
@@ -25795,10 +25787,10 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 74,
-            columnNumber: 15
+            lineNumber: 73,
+            columnNumber: 13
           }
-        }))) : movies.map(movie => /*#__PURE__*/_reactDefault.default.createElement(_movieCardMovieCard.MovieCard, {
+        })) : movies.map(movie => /*#__PURE__*/_reactDefault.default.createElement(_movieCardMovieCard.MovieCard, {
           key: movie._id,
           movie: movie,
           title: movie.title,
@@ -25809,7 +25801,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 80,
+            lineNumber: 78,
             columnNumber: 17
           }
         }))))
@@ -32138,4 +32130,4 @@ exports.default = _default;
 module.exports = exports.default;
 },{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","classnames":"5aJRc","react":"3b2NM","./ThemeProvider":"4rz1S","react/jsx-runtime":"7jBZW"}],"5iJih":[function() {},{}],"5GTF8":[function() {},{}]},["68WUB","1DVjT"], "1DVjT", "parcelRequire279c")
 
-//# sourceMappingURL=index.02675e63.js.map
+//# sourceMappingURL=index.HASH_REF_f9eab60bc3a7a7c3f683683702675e63.js.map
