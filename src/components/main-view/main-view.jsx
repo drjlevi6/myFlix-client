@@ -3,6 +3,7 @@ import axios from 'axios';
 import "./main-view.scss"; /* file is currently empty, 
                             but we might need it later. */
 import Row from 'react-bootstrap/Row';
+import Container from 'react-bootstrap/Container';
 
 import { LoginView } from '../login-view/login-view';
 import { MovieCard } from '../movie-card/movie-card';
