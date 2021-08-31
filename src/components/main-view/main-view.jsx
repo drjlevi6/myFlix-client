@@ -1,6 +1,8 @@
 import React from 'react';
 import axios from 'axios';
-import "./main-view.scss"; // file is currently empty, but we might need it later.
+import "./main-view.scss"; /* file is currently empty, 
+                            but we might need it later. */
+import Row from 'react-bootstrap/Row';
 
 import { LoginView } from '../login-view/login-view';
 import { MovieCard } from '../movie-card/movie-card';
@@ -62,25 +64,29 @@ the `user` property in state to that *particular user*/
     if (movies.length === 0)
       return <div className="main-view" />;
     return (
-      <div className="main-view">
-       {selectedMovie ? (
-          <MovieView movie={selectedMovie}
-          onBackClick={newSelectedMovie => {
-              this.setSelectedMovie(newSelectedMovie); }}/>
-           ) : (movies.map(movie => (
-              <MovieCard 
-                key={movie._id} 
-                movie={movie}
-                title={movie.title}
-                imagePath={movie.imagePath}
-                onMovieClick={(newSelectedMovie) => {
-                  this.setSelectedMovie(newSelectedMovie)
-                }}
-              />
-           )
-          ))
-        }
-    </div>
+      <Container>
+        <div className="main-view">
+        {selectedMovie ? (
+          <Row>
+            <MovieView movie={selectedMovie}
+            onBackClick={newSelectedMovie => {
+                this.setSelectedMovie(newSelectedMovie); }}/>
+          </Row>
+            ) : (movies.map(movie => (
+                <MovieCard 
+                  key={movie._id} 
+                  movie={movie}
+                  title={movie.title}
+                  imagePath={movie.imagePath}
+                  onMovieClick={(newSelectedMovie) => {
+                    this.setSelectedMovie(newSelectedMovie)
+                  }}
+                />
+            )
+            ))
+          }
+      </div>
+    </Container>
     );
   } 
 }
