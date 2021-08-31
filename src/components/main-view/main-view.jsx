@@ -53,42 +53,58 @@ the `user` property in state to that *particular user*/
   }
 
   render() {
-    const { movies, selectedMovie } = this.state;
+    const { movies, selectedMovie, user } = this.state;
  
     /* <!--If there is no user, the LoginView is rendered. 
     If there is a user logged in, the user details are 
     *passed as a prop to the LoginView--> */
-    if (!this.state.user) 
+    if (!user) {
       return <LoginView onLoggedIn={user => 
         this.onLoggedIn(user)} />;
+    }
 
     // /* <!--Before the movies have been loaded
     // If the state of `selectedMovie` is not null, that 
     //  selected movie will be returned otherwise, all 
     //  *movies will be returned.--> */
-    if (movies.length === 0) {
+   if (movies.length === 0) {
       // Why isn't the key assignment working? (typeof movies = object)
+      return <div></div>
+    }; // end return
 
     return (
       <div className="main-view">
-        {selectedMovie ? (
+        {selectedMovie ? 
+            <Row className="justify-content-md-center">
+              <Col md={8}>
               <MovieView movie={selectedMovie}
                 onBackClick={newSelectedMovie => {
-                this.setSelectedMovie(newSelectedMovie); }}/>
-             ) :
-              movies.map(movie => (
+                  this.setSelectedMovie(newSelectedMovie) 
+                }}/>
+                </Col>
+            </Row>
+            
+              : (
+                <Row className="justify-content-md-center">
+                  {movies.map(movie => (
+                    <Col md={3} key={movie._id} >
                   <MovieCard 
                     movie={movie}
-                    key={movie._id} 
+                    
                     title={movie.title}
                     imagePath={movie.imagePath}
                     onMovieClick={(newSelectedMovie) => {
-                      this.setSelectedMovie(newSelectedMovie); }}>
-            )
+                      this.setSelectedMovie(newSelectedMovie); }} />
+                      </Col>
+            ))}
+                 </Row>
+              )
+        }
       </div>
-    );
-  } 
-}
+    )
+
+  } // end if
+} // end render
 
 // There's no MainView.propTypes because no props are passed to MainView
 // during instantiation.

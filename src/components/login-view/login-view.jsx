@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import {RegistrationView} from '../registration-view/registration-view'
 
 export function LoginView(props) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [showRegister, setShowRegister] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -16,9 +18,12 @@ export function LoginView(props) {
 
   function onRequestToRegister() {
     console.log("login-view.onRequestToRegister");
-    this.setState({doRegister: !this.state.doRegister});
+    setShowRegister(!showRegister)
   }
 
+  if(showRegister) {
+    return <RegistrationView />
+  }
   return ( // onClick={onRequestToRegister}>register: 
     <div className="jl-login-main" >
       <span>
