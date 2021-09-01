@@ -6,6 +6,8 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import { Collapse } from 'bootstrap';
+//import './login-view.scss';
+import "../universal-components/elements.scss"; // for elements in mult. views 
 
 export function LoginView(props) {
   const [username, setUsername] = useState('');
@@ -29,11 +31,13 @@ export function LoginView(props) {
   }
   return ( // onClick={onRequestToRegister}>register: 
     <Container>
-      <Col md={6}>
-        <Row className="justify-content-md-center mb-1">
-            &nbsp;Log in or 
+      <Col xs={10}>
+        <Row className="justify-content-md-center header-text">
+          <Col>
+            Log in or
+          </Col>
         </Row>
-        <Row  className="justify-content-md-center" >
+        <Row className="justify-content-md-center" >
             <Button className="register-button" variant="primary" 
               onClick={onRequestToRegister}>
               register
@@ -44,7 +48,7 @@ export function LoginView(props) {
       <Form>
        <Form.Group className="mb-2" controlId="formUsername">
         <Row className="justify-content-md-center">
-          <Col md={3}>
+          <Col xs={3}>
             <Form.Label>Username:</Form.Label>
           </Col>
           <Col >
@@ -56,7 +60,7 @@ export function LoginView(props) {
 
         <Form.Group controlId="formPassword">
           <Row className="justify-content-md-center mb-2">
-            <Col md={3}>
+            <Col xs={3}>
               <Form.Label>Password:</Form.Label>
             </Col>
             <Col >

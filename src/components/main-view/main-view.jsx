@@ -23,7 +23,6 @@ export default class MainView extends React.Component {
   componentDidMount(){
     axios.get('https://drjs-myflix-app.herokuapp.com/movies')
       .then(response => {
-        console.log("main-view.componentDidMount:response:", response)
         this.setState({   // triggers automatic re-render
           movies: response.data
         });
@@ -41,7 +40,6 @@ export default class MainView extends React.Component {
     this.setState({
       selectedMovie: movie
     });
-    console.log("main-view.selectedMovie", this.movie)
   }
 
 /* When a user successfully logs in, this function updates 
@@ -76,7 +74,7 @@ the `user` property in state to that *particular user*/
       <div className="main-view">
         {selectedMovie ? 
             <Row className="justify-content-md-center">
-              <Col md={8}>
+              <Col xs={12}>
                 <MovieView movie={selectedMovie}
                   onBackClick={newSelectedMovie => {
                     this.setSelectedMovie(newSelectedMovie) 
@@ -86,8 +84,8 @@ the `user` property in state to that *particular user*/
           : (
               <Row className="justify-content-md-center">
                 {movies.map(movie => (
-                  <Col md={3} key={movie._id} >
-                    <MovieCard 
+                  <Col xs={6} key={movie._id} >
+                    <MovieCard
                       movie={movie}
                       title={movie.title}
                       imagePath={movie.imagePath}

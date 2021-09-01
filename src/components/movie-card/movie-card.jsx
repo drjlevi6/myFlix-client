@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import "./movie-card.scss"; // file is currently empty, but we might need it later.
+import Row from 'react-bootstrap/Row';
+import "./movie-card.scss"; // (might need it later)
 
 export class MovieCard extends React.Component {
   render() {
@@ -11,12 +12,13 @@ export class MovieCard extends React.Component {
       <Card>
         <Card.Img variant="top" src={movie.ImagePath} />
         <Card.Body>
-          <Card.Title>{movie.Title}</Card.Title>
-          <Card.Text>{movie.Description}</Card.Text>
-          <Button onClick={() => onMovieClick(movie)} variant="link">Open</Button>
+          <Card.Title>{movie.title}</Card.Title>
+          <Button onClick={() => onMovieClick(movie)} 
+            variant="primary">Open
+          </Button>
         </Card.Body>
       </Card>
-    );
+    ); // end return
   }
 }
 

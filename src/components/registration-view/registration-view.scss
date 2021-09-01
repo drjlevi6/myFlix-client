@@ -1,14 +1,8 @@
-.text-input-row {
-	display: flex;
-	width: 225px;
-	flex-direction: row;
-	justify-content: space-between;
-	margin-bottom: 5px;
-}
-.submit-row {
-	display: flex;
-	width: 225px;
-	flex-direction: row;
-	justify-content: flex-end;
-	margin-top: 10px;
+.header-text {
+	display: block;
+	font-size: large;
+	font-weight: bold;
+	margin: 5px;
+	/*align-self: center; */
+	text-align: center;
 }
