@@ -29,10 +29,11 @@ export function LoginView(props) {
   }
   return ( // onClick={onRequestToRegister}>register: 
     <Container>
-        <Row className="justify-content-md-center">
+      <Col md={6}>
+        <Row className="justify-content-md-center mb-1">
             &nbsp;Log in or 
         </Row>
-        <Row md={4} className="justify-content-md-center" >
+        <Row  className="justify-content-md-center" >
             <Button className="register-button" variant="primary" 
               onClick={onRequestToRegister}>
               register
@@ -43,10 +44,10 @@ export function LoginView(props) {
       <Form>
        <Form.Group className="mb-2" controlId="formUsername">
         <Row className="justify-content-md-center">
-          <Col md={2}>
+          <Col md={3}>
             <Form.Label>Username:</Form.Label>
           </Col>
-          <Col md={4}>
+          <Col >
             <Form.Control type="text" onChange={e => 
               setUsername(e.target.value)} />
           </Col>
@@ -54,11 +55,11 @@ export function LoginView(props) {
        </Form.Group>
 
         <Form.Group controlId="formPassword">
-          <Row className="justify-content-md-center">
-            <Col md={2}>
+          <Row className="justify-content-md-center mb-2">
+            <Col md={3}>
               <Form.Label>Password:</Form.Label>
             </Col>
-            <Col md={4}>
+            <Col >
               <Form.Control type="password" onChange={
                 e => setPassword(e.target.value)
               } />
@@ -66,17 +67,13 @@ export function LoginView(props) {
           </Row>
         </Form.Group>
 
-        <Row md={4} className="justify-content-md-center">
-          &nbsp;
-        </Row>       
-
-        <Row md={4} className="justify-content-md-center">
+        <Row  className="justify-content-md-center">
           <Button variant="primary" type="submit" onClick={handleSubmit}>
             Submit
           </Button>
          </Row>
-
       </Form>
+      </Col>
     </Container>
   );
 }

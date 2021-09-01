@@ -31097,7 +31097,7 @@ try {
           columnNumber: 7
         }
       }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapRowDefault.default, {
-        className: "justify-content-md-center mb-1",
+        className: "justify-content-md-center",
         __self: this,
         __source: {
           fileName: _jsxFileName,
@@ -31193,7 +31193,7 @@ try {
           columnNumber: 9
         }
       }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapRowDefault.default, {
-        className: "justify-content-md-center mb-2",
+        className: "justify-content-md-center",
         __self: this,
         __source: {
           fileName: _jsxFileName,
@@ -31232,7 +31232,7 @@ try {
           columnNumber: 15
         }
       })))), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapRowDefault.default, {
-        className: "justify-content-md-center",
+        className: "justify-content-md-center mb-2",
         __self: this,
         __source: {
           fileName: _jsxFileName,
@@ -38050,4 +38050,4 @@ exports.preventOverflow = preventOverflow$1;
 
 },{}],"3X8QW":[function() {},{}],"5iJih":[function() {},{}],"5GTF8":[function() {},{}]},["68WUB","1DVjT"], "1DVjT", "parcelRequire279c")
 
-//# sourceMappingURL=index.02675e63.js.map
+//# sourceMappingURL=index.HASH_REF_f9eab60bc3a7a7c3f683683702675e63.js.map
