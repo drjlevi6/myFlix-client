@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import {RegistrationView} from '../registration-view/registration-view'
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Container from 'react-bootstrap/Container';
+import { Collapse } from 'bootstrap';
 
 export function LoginView(props) {
   const [username, setUsername] = useState('');
@@ -10,7 +14,6 @@ export function LoginView(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("login-view.handleSubmit:", username, password);
     // Send a request to the server for authentication, 
     // then call props.onLoggedIn(username)
     props.onLoggedIn(username);
@@ -25,31 +28,55 @@ export function LoginView(props) {
     return <RegistrationView />
   }
   return ( // onClick={onRequestToRegister}>register: 
-    <div className="jl-login-main" >
-      <span>
-        Log in or&nbsp;
-        <Button className="register-button" variant="primary" 
-          onClick={onRequestToRegister}>
-          register</Button>
-      </span>
+    <Container>
+        <Row className="justify-content-md-center">
+            &nbsp;Log in or 
+        </Row>
+        <Row md={4} className="justify-content-md-center" >
+            <Button className="register-button" variant="primary" 
+              onClick={onRequestToRegister}>
+              register
+            </Button>
+        </Row>
+        <Row>&nbsp;</Row>
 
       <Form>
-        <Form.Group controlId="formUsername">
-          <Form.Label>Username:</Form.Label>
-          <Form.Control type="text" onChange={e => 
-            setUsername(e.target.value)} />
-        </Form.Group>
+       <Form.Group className="mb-2" controlId="formUsername">
+        <Row className="justify-content-md-center">
+          <Col md={2}>
+            <Form.Label>Username:</Form.Label>
+          </Col>
+          <Col md={4}>
+            <Form.Control type="text" onChange={e => 
+              setUsername(e.target.value)} />
+          </Col>
+        </Row>
+       </Form.Group>
 
         <Form.Group controlId="formPassword">
-          <Form.Label>Password:</Form.Label>
-          <Form.Control type="password" onChange={
-            e => setPassword(e.target.value)
-          } />
+          <Row className="justify-content-md-center">
+            <Col md={2}>
+              <Form.Label>Password:</Form.Label>
+            </Col>
+            <Col md={4}>
+              <Form.Control type="password" onChange={
+                e => setPassword(e.target.value)
+              } />
+            </Col>
+          </Row>
         </Form.Group>
-        <Button variant="primary" type="submit" onClick={handleSubmit}>
-          Submit
-        </Button>
+
+        <Row md={4} className="justify-content-md-center">
+          &nbsp;
+        </Row>       
+
+        <Row md={4} className="justify-content-md-center">
+          <Button variant="primary" type="submit" onClick={handleSubmit}>
+            Submit
+          </Button>
+         </Row>
+
       </Form>
-    </div>
+    </Container>
   );
 }

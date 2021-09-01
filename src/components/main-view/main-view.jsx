@@ -77,28 +77,26 @@ the `user` property in state to that *particular user*/
         {selectedMovie ? 
             <Row className="justify-content-md-center">
               <Col md={8}>
-              <MovieView movie={selectedMovie}
-                onBackClick={newSelectedMovie => {
-                  this.setSelectedMovie(newSelectedMovie) 
-                }}/>
-                </Col>
+                <MovieView movie={selectedMovie}
+                  onBackClick={newSelectedMovie => {
+                    this.setSelectedMovie(newSelectedMovie) 
+                  }}/>
+              </Col>
             </Row>
-            
-              : (
-                <Row className="justify-content-md-center">
-                  {movies.map(movie => (
-                    <Col md={3} key={movie._id} >
-                  <MovieCard 
-                    movie={movie}
-                    
-                    title={movie.title}
-                    imagePath={movie.imagePath}
-                    onMovieClick={(newSelectedMovie) => {
-                      this.setSelectedMovie(newSelectedMovie); }} />
-                      </Col>
-            ))}
-                 </Row>
-              )
+          : (
+              <Row className="justify-content-md-center">
+                {movies.map(movie => (
+                  <Col md={3} key={movie._id} >
+                    <MovieCard 
+                      movie={movie}
+                      title={movie.title}
+                      imagePath={movie.imagePath}
+                      onMovieClick={(newSelectedMovie) => {
+                        this.setSelectedMovie(newSelectedMovie); }} />
+                  </Col>
+                ))}
+              </Row>
+            )
         }
       </div>
     )
