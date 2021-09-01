@@ -8,6 +8,7 @@ import Container from 'react-bootstrap/Container';
 import { Collapse } from 'bootstrap';
 //import './login-view.scss';
 import "../universal-components/elements.scss"; // for elements in mult. views 
+import axios from 'axios'; // 3.6
 
 export function LoginView(props) {
   const [username, setUsername] = useState('');
@@ -16,12 +17,21 @@ export function LoginView(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Send a request to the server for authentication, 
-    /* then call props.onLoggedIn(username) , which provides the 
-      username to our parent component (child to parent communication) */
-    props.onLoggedIn(username);
+    /* Send a request to the server for authentication */
+    axios.post('http://drjs-myflix-app.herokuapp.com//login', {
+      Username: username,
+      Password: password
+    })
+    .then(response => {
+      const data = response.data;
+      props.onLoggedIn(data);
+    })
+    .catch(e => {
+      console.log('no such user')
+    });
   };
-
+  
+  
   function onRequestToRegister() {
     console.log("login-view.onRequestToRegister");
     setShowRegister(!showRegister)
