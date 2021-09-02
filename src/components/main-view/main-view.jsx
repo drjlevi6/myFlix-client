@@ -42,19 +42,35 @@ export default class MainView extends React.Component {
     });
   }
 
-/* When a user successfully logs in, this function updates 
-the `user` property in state to that *particular user*/
+  /* When a user successfully logs in, this function updates 
+  the `user` property in state to that *particular user*/
 
-onLoggedIn(authData) {
-  console.log("main-view.onLoggedIn.authData:", authData);
-  this.setState({
-    user: authData.user.Username
-  });
+  onLoggedIn(authData) {
+    console.log("main-view.onLoggedIn.authData:", authData);
+    this.setState({
+      user: authData.user.Username
+    });
 
-  localStorage.setItem('token', authData.token);
-  localStorage.setItem('user', authData.user.Username);
-  this.getMovies(authData.token);
-}
+    localStorage.setItem('token', authData.token);
+    localStorage.setItem('user', authData.user.Username);
+    this.getMovies(authData.token);
+  }
+
+  getMovies(token) {
+    axios.get('YOUR_API_URL/movies', {
+      headers: { Authorization: `Bearer ${token}`}
+    })
+    .then(response => {
+      // Assign the result to the state
+      this.setState({
+        movies: response.data
+      });
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  }
+
   render() {
     const { movies, selectedMovie, user } = this.state;
  
