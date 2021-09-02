@@ -19,7 +19,7 @@ export function LoginView(props) {
     e.preventDefault();
     console.log(username, password);
     /* Send a request to the server for authentication */
-    axios.post('http://drjs-myflix-app.herokuapp.com/login', {
+    axios.post('https://drjs-myflix-app.herokuapp.com/login', {
       Username: username,
       Password: password
     })

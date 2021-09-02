@@ -24,17 +24,23 @@ export class RegistrationView extends React.Component {
 
   onSubmitHandler = e => {
     e.preventDefault();
-    console.log("onSubmitHandler:", this.state);
     const {Username, Password, Email, Birthday} = this.state;
     if (!Username || !Password || !Email) {
       return;
     }
-    axios.post('http://drjs-myflix-app.herokuapp.com/users', {
-      Username: Username,
-      Password: Password,
-      Email: Email,
-      Birthday: Birthday
-    })
+    console.log("onSubmitHandler: Username = ", Username, 
+    "Password = ", Password, "Email = ", Email, "Birthday = ", Birthday);
+    axios.post('https://drjs-myflix-app.herokuapp.com/users', 
+      {
+        Username:  Username,
+        Password:  Password,
+        Email:  Email,
+        Birthday: Birthday
+      }
+    )
+    .then(
+    console.log("onSubmitHandler: response:", response)
+    )
     .then(response => {
       const data = response.data;
       this.props.back()
