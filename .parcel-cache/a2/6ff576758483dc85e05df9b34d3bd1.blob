@@ -25868,17 +25868,7 @@ try {
             lineNumber: 131,
             columnNumber: 21
           }
-        })))), /*#__PURE__*/_reactDefault.default.createElement("button", {
-          onClick: () => {
-            this.onLoggedOut();
-          },
-          __self: this,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 142,
-            columnNumber: 9
-          }
-        }, "Logout"))
+        })))))
       );
     }
   }
@@ -32418,7 +32408,7 @@ try {
           }
         })))), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Group, {
           className: "mb-2",
-          controlId: "formPassword",
+          controlId: "formUsername",
           __self: this,
           __source: {
             fileName: _jsxFileName,
@@ -32465,7 +32455,7 @@ try {
           }
         })))), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Group, {
           className: "mb-2",
-          controlId: "formEmail",
+          controlId: "formUsername",
           __self: this,
           __source: {
             fileName: _jsxFileName,
@@ -32512,7 +32502,7 @@ try {
           }
         })))), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Group, {
           className: "mb-2",
-          controlId: "formBirthday",
+          controlId: "formUsername",
           __self: this,
           __source: {
             fileName: _jsxFileName,
@@ -40948,4 +40938,4 @@ exports.preventOverflow = preventOverflow$1;
 
 },{}],"75Xsk":[function() {},{}],"3X8QW":[function() {},{}],"5iJih":[function() {},{}],"5GTF8":[function() {},{}]},["68WUB","1DVjT"], "1DVjT", "parcelRequire279c")
 
-//# sourceMappingURL=index.02675e63.js.map
+//# sourceMappingURL=index.HASH_REF_f9eab60bc3a7a7c3f683683702675e63.js.map

@@ -45,6 +45,15 @@ export default class MainView extends React.Component {
     }
   }
 
+  onLoggedOut() {
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    this.setState({
+      user: null
+    });
+  }
+    
+
   /* When a movie is clicked, this function is invoked and 
     updates the state of the `selectedMovie` *property 
     to that movie */
@@ -104,7 +113,8 @@ export default class MainView extends React.Component {
     }; // end return
 
     return (
-      <div className="main-view">
+    //  <div className="main-view">
+      <Container>
         {selectedMovie ? 
             <Row className="justify-content-md-center">
               <Col xs={12}>
@@ -129,7 +139,9 @@ export default class MainView extends React.Component {
               </Row>
             )
         }
-      </div>
+        <button onClick={() => { this.onLoggedOut() }}>Logout</button>
+        </Container>
+    //  </div>
     )
 
   } // end if

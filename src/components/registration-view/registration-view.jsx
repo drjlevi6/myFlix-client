@@ -49,7 +49,7 @@ export class RegistrationView extends React.Component {
           </Row>
           </Form.Group>
           
-          <Form.Group className="mb-2" controlId="formUsername">
+          <Form.Group className="mb-2" controlId="formPassword">
           <Row className="justify-content-md-center">
           <Col xs={3}>
             <Form.Label>Password:</Form.Label>
@@ -60,7 +60,7 @@ export class RegistrationView extends React.Component {
           </Row>
           </Form.Group>
           
-          <Form.Group className="mb-2" controlId="formUsername">
+          <Form.Group className="mb-2" controlId="formEmail">
           <Row className="justify-content-md-center">
           <Col xs={3}>
             <Form.Label>Email:</Form.Label>
@@ -71,7 +71,7 @@ export class RegistrationView extends React.Component {
           </Row>
           </Form.Group>
           
-          <Form.Group className="mb-2" controlId="formUsername">
+          <Form.Group className="mb-2" controlId="formBirthday">
           <Row className="justify-content-md-center">
           <Col xs={3}>
             <Form.Label>Birthday:</Form.Label>
