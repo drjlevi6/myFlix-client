@@ -15,8 +15,8 @@ export function LoginView(props) {
   const [password, setPassword] = useState('');
   const [showRegister, setShowRegister] = useState(false);
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const handleSubmit = (e) => {
+    e.preventDefault();
     console.log(username, password);
     /* Send a request to the server for authentication */
     axios.post('http://drjs-myflix-app.herokuapp.com/login', {
