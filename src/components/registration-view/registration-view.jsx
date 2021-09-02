@@ -21,9 +21,6 @@ export class RegistrationView extends React.Component {
     }; // end this.state
   } // end constructor
   
-  handleSubmit() {
-  }
-
   render() {
     return (
       <Container>
