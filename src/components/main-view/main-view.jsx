@@ -20,6 +20,7 @@ export default class MainView extends React.Component {
     };
   }
 
+  /*
   componentDidMount(){
     axios.get('https://drjs-myflix-app.herokuapp.com/movies')
       .then(response => {
@@ -32,6 +33,17 @@ export default class MainView extends React.Component {
       });
     
   }
+  */
+
+componentDidMount() {
+  let accessToken = localStorage.getItem('token');
+  if (accessToken !== null) {
+    this.setState({
+      user: localStorage.getItem('user')
+    });
+    this.getMovies(accessToken);
+  }
+}
 
   /* When a movie is clicked, this function is invoked and 
     updates the state of the `selectedMovie` *property 
