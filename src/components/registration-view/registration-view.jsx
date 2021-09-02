@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import { ReactDOM } from "react-dom";
 import "./registration-view.scss"
 import "../button/button.scss"; // Use for custom-styled submit buttons
@@ -14,19 +15,56 @@ export class RegistrationView extends React.Component {
   constructor(){
     super();
     this.state = {
-      Username: null,
-      Password: null,
-      Email: null,
-      Birthday: null
+      Username: '',
+      Password: '',
+      Email: '',
+      Birthday: ''
     }; // end this.state
   } // end constructor
+
+  onSubmitHandler = e => {
+    e.preventDefault();
+    console.log("onSubmitHandler:", this.state);
+    const {Username, Password, Email, Birthday} = this.state;
+    if (!Username || !Password || !Email) {
+      return;
+    }
+    axios.post('http://drjs-myflix-app.herokuapp.com/users', {
+      Username: Username,
+      Password: Password,
+      Email: Email,
+      Birthday: Birthday
+    })
+    .then(response => {
+      const data = response.data;
+      this.props.back()
+    })
+    .catch(e => {
+      console.log('Bad registration parameter');
+    });
+
+  }
+
+  onChangeHandler = e =>  {
+    let {name, value} = e.target;
+    console.log("onChangeHandler():", e.target);
+    if (name==="Username") {
+      this.setState({Username: value})
+    } else if (name==="Password") {
+      this.setState({Password: value})
+    } else if (name==="Email") {
+      this.setState({Email: value})
+    } else if (name==="Birthday") {
+      this.setState({Birthday: value})
+    }
+  }
   
   render() {
     return (
       <Container>
         <Col xs={10}>
-        <Form>
-          <Form.Group controlId="headerWithFiller">
+        <Form onSubmit={this.onSubmitHandler}>
+          <Form.Group controlId="header">
           <Row className="justify-content-md-center header-text">
           <Col className="justify-content-md-center">
             <Form.Label className='header-text'>
@@ -41,7 +79,8 @@ export class RegistrationView extends React.Component {
             <Form.Label>Username:</Form.Label>
           </Col>
           <Col>
-            <Form.Control type='text' />
+            <Form.Control type='text' value={this.state.Username}
+              onChange={this.onChangeHandler} name="Username"/>
           </Col>
           </Row>
           </Form.Group>
@@ -52,7 +91,8 @@ export class RegistrationView extends React.Component {
             <Form.Label>Password:</Form.Label>
           </Col>
           <Col>
-            <Form.Control type='text' />
+            <Form.Control type='password' value={this.state.Password}
+              onChange={this.onChangeHandler} name='Password' />
           </Col>
           </Row>
           </Form.Group>
@@ -63,7 +103,8 @@ export class RegistrationView extends React.Component {
             <Form.Label>Email:</Form.Label>
           </Col>
           <Col>
-            <Form.Control type='text' />
+            <Form.Control type='email' name="Email" value={this.state.Email} 
+              onChange={this.onChangeHandler} />
           </Col>
           </Row>
           </Form.Group>
@@ -74,14 +115,18 @@ export class RegistrationView extends React.Component {
             <Form.Label>Birthday:</Form.Label>
           </Col>
           <Col>
-            <Form.Control type='text' />
+            <Form.Control type='text' name="Birthday" value={this.state.Birthday} 
+              onChange={this.onChangeHandler} />
           </Col>
           </Row>
           </Form.Group>
 
         <Row className="justify-content-md-center">
-          <Button variant="primary" type="submit" onClick={this.handleSubmit}>
+          <Button variant="primary" type="submit">
             Submit
+          </Button>
+          <Button onClick={this.props.back} >
+            Return to Login
           </Button>
          </Row>
 

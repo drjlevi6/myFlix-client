@@ -39,7 +39,7 @@ export function LoginView(props) {
   }
 
   if(showRegister) {
-    return <RegistrationView />
+    return <RegistrationView back={onRequestToRegister} />
   }
   return ( // onClick={onRequestToRegister}>register: 
     <Container>
