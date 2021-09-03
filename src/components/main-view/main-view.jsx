@@ -20,21 +20,6 @@ export default class MainView extends React.Component {
     };
   }
 
-  /*
-  componentDidMount(){
-    axios.get('https://drjs-myflix-app.herokuapp.com/movies')
-      .then(response => {
-        this.setState({   // triggers automatic re-render
-          movies: response.data
-        });
-      })
-     .catch(error => {
-        console.log(error);
-      });
-    
-  }
-  */
-
   componentDidMount() {
     let accessToken = localStorage.getItem('token');
     if (accessToken !== null) {
@@ -127,7 +112,7 @@ export default class MainView extends React.Component {
           : (
               <Row className="justify-content-md-center">
                 {movies.map(movie => (
-                  <Col xs={6} key={movie._id} >
+                  <Col xs={4} key={movie._id} >
                     <MovieCard
                       movie={movie}
                       title={movie.title}

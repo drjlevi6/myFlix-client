@@ -25701,20 +25701,6 @@ try {
         user: null
       };
     }
-    /*
-    componentDidMount(){
-    axios.get('https://drjs-myflix-app.herokuapp.com/movies')
-    .then(response => {
-    this.setState({   // triggers automatic re-render
-    movies: response.data
-    });
-    })
-    .catch(error => {
-    console.log(error);
-    });
-    
-    }
-    */
     componentDidMount() {
       let accessToken = localStorage.getItem('token');
       if (accessToken !== null) {
@@ -25776,7 +25762,7 @@ try {
             __self: this,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 102,
+              lineNumber: 87,
               columnNumber: 14
             }
           })
@@ -25793,7 +25779,7 @@ try {
             __self: this,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 112,
+              lineNumber: 97,
               columnNumber: 14
             }
           })
@@ -25808,7 +25794,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 117,
+            lineNumber: 102,
             columnNumber: 7
           }
         }, selectedMovie ? /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapRowDefault.default, {
@@ -25816,7 +25802,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 119,
+            lineNumber: 104,
             columnNumber: 13
           }
         }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapColDefault.default, {
@@ -25824,7 +25810,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 120,
+            lineNumber: 105,
             columnNumber: 15
           }
         }, /*#__PURE__*/_reactDefault.default.createElement(_movieViewMovieView.MovieView, {
@@ -25835,7 +25821,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 121,
+            lineNumber: 106,
             columnNumber: 17
           }
         }))) : /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapRowDefault.default, {
@@ -25843,16 +25829,16 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 128,
+            lineNumber: 113,
             columnNumber: 15
           }
         }, movies.map(movie => /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapColDefault.default, {
-          xs: 6,
+          xs: 4,
           key: movie._id,
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 130,
+            lineNumber: 115,
             columnNumber: 19
           }
         }, /*#__PURE__*/_reactDefault.default.createElement(_movieCardMovieCard.MovieCard, {
@@ -25865,7 +25851,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 131,
+            lineNumber: 116,
             columnNumber: 21
           }
         })))), /*#__PURE__*/_reactDefault.default.createElement("button", {
@@ -25875,7 +25861,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 142,
+            lineNumber: 127,
             columnNumber: 9
           }
         }, "Logout"))
