@@ -17,7 +17,6 @@ export function LoginView(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(username, password);
     /* Send a request to the server for authentication */
     axios.post('https://drjs-myflix-app.herokuapp.com/login', {
       Username: username,
@@ -64,7 +63,8 @@ export function LoginView(props) {
             <Form.Label>Username:</Form.Label>
           </Col>
           <Col >
-            <Form.Control type="text" onChange={e => 
+            <Form.Control type="text" placeholder="Enter username" 
+              value={username} onChange={e => 
               setUsername(e.target.value)} />
           </Col>
         </Row>
@@ -76,9 +76,11 @@ export function LoginView(props) {
               <Form.Label>Password:</Form.Label>
             </Col>
             <Col >
-              <Form.Control type="password" onChange={
-                e => setPassword(e.target.value)
-              } />
+              <Form.Control type="password" 
+                 placeholder="Password" value={password} 
+                onChange={
+                  e => setPassword(e.target.value)
+                } />
             </Col>
           </Row>
         </Form.Group>
