@@ -5,6 +5,7 @@ import "./main-view.scss"; /* file is currently empty,
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Button from 'react-bootstrap/Button';
 
 import { LoginView } from '../login-view/login-view';
 import { MovieCard } from '../movie-card/movie-card';
@@ -124,7 +125,7 @@ export default class MainView extends React.Component {
               </Row>
             )
         }
-        <button onClick={() => { this.onLoggedOut() }}>Logout</button>
+        <Button onClick={() => { this.onLoggedOut() }}>Logout</Button>
         </Container>
     //  </div>
     )
