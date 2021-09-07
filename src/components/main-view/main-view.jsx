@@ -50,7 +50,8 @@ export default class MainView extends React.Component {
   /* When a movie is clicked, this function is invoked and 
     updates the state of the `selectedMovie` *property 
     to that movie */
-  setSelectedMovie(movie) {
+  setSelectedMovie = movie => {
+    console.log(movie._id);
     this.setState({
       selectedMovie: movie
     });
@@ -95,18 +96,19 @@ export default class MainView extends React.Component {
 
   render() {
     const { movies, selectedMovie, user } = this.state;
+    console.log("main-view.jsx.render(): user =", user);
  
     /* <!--If there is no user, the LoginView is rendered. 
     If there is a user logged in, the user details are 
     *passed as a prop to the LoginView--> */
-    if (!user) return
+    if (!user) return (
       <Row>
         <Col>
           <LoginView onLoggedIn={user => 
             this.onLoggedIn(user)} />
         </Col>
       </Row>
-
+    )
     // /* <!--Before the movies have been loaded
     // If the state of `selectedMovie` is not null, that 
     //  selected movie will be returned otherwise, all 
@@ -115,24 +117,50 @@ export default class MainView extends React.Component {
       return <div className="main-view" />
     }; // end if
 
+    if(selectedMovie) {
+      return <MovieView movie={selectedMovie} onBackClick={
+        () => this.setState({selectedMovie: null})
+      }/>
+    }
+
     return (
+      <Container>
       <Router>
         <Row className="main-view justify-content-md-center">
           <Route exact path="/" render={() => {
-            return movies.map(m => (
-              <Col md={3} key={m._id}>
-                <MovieCard movie={m} />
+            return (
+              movies.map(m => (
+                <Col md={4} key={m._id}>
+                  <MovieCard movie={m} onMovieClick={this.setSelectedMovie} />
+                </Col>
+              )
+            )
+            )
+          } // end arrow-function
+          } // end render
+          />
+          <Route path="/movies/:movieId" render={({ match, history }) => {
+            return (
+              <Col sm={4}>
+                <MovieView movie={movies.find(m => m._id === match.params.movieId)} 
+                 />
               </Col>
-            ))
-          }} />
-          <Route path="/movies/:movieId" render={({ match }) => {
-            return 
-              <Col md={8}>
-                <MovieView movie={movies.find(m => m._id === match.params.movieId)} />
-              </Col>
+            )
           }} />
         </Row>
+      <Row className="justify-content-md-center">
+        <Col sm={4}>
+          <Button variant="dark" onBackClick={
+            () => {
+                    history.push("/");
+            }
+          }>
+            Back
+          </Button>
+        </Col>
+      </Row>
       </Router>
+     </Container>
     );
   }
 }
