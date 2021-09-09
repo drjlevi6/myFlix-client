@@ -1,44 +1,144 @@
 import React from 'react';
+import axios from 'axios';
 import { ReactDOM } from "react-dom";
 import "./registration-view.scss"
+import "../button/button.scss"; // Use for custom-styled submit buttons
+import "../universal-components/elements.scss"; // for elements in mult. views
+import Alert from 'react-bootstrap/Alert';
+import Button from 'react-bootstrap/Button';
+import Col from 'react-bootstrap/Col';
+import Container from 'react-bootstrap/Container';
+import Form from 'react-bootstrap/Form';
+import Row from 'react-bootstrap/Row';
 
 export class RegistrationView extends React.Component {
   constructor(){
     super();
     this.state = {
-      Username: null,
-      Password: null,
-      Email: null,
-      Birthday: null
+      Username: '',
+      Password: '',
+      Email: '',
+      Birthday: ''
     }; // end this.state
   } // end constructor
 
+  onSubmitHandler = e => {
+    e.preventDefault();
+    const {Username, Password, Email, Birthday} = this.state;
+    if (!Username || !Password || !Email) {
+      return;
+    }
+    console.log("onSubmitHandler: Username = ", Username, 
+    "Password = ", Password, "Email = ", Email, "Birthday = ", Birthday);
+    axios.post('https://drjs-myflix-app.herokuapp.com/users', 
+      {
+        Username:  Username,
+        Password:  Password,
+        Email:  Email,
+        Birthday: Birthday
+      }
+    )
+    .then(
+    console.log("onSubmitHandler: response:", response)
+    )
+    .then(response => {
+      const data = response.data;
+      this.props.back()
+    })
+    .catch(e => {
+      console.log('Bad registration parameter');
+    });
+
+  }
+
+  onChangeHandler = e =>  {
+    let {name, value} = e.target;
+    console.log("onChangeHandler():", e.target);
+    if (name==="Username") {
+      this.setState({Username: value})
+    } else if (name==="Password") {
+      this.setState({Password: value})
+    } else if (name==="Email") {
+      this.setState({Email: value})
+    } else if (name==="Birthday") {
+      this.setState({Birthday: value})
+    }
+  }
+  
   render() {
     return (
-      <div>
-        <h3>Register for myFlix:</h3>
-          <form action='' method='get' className='registration-form'>
-            <div className="text-input-row">
-              <label htmlFor='Username: '>Username:</label>
-              <input type='text' name='Username' id='Username' required />
-            </div>
-            <div className="text-input-row">
-              <label htmlFor='Password: '>Password:</label>
-              <input type='text' name='Password' id='Password' required />
-            </div>
-            <div className="text-input-row">
-              <label htmlFor='Email:'>Email:</label>
-              <input type='text' name='Email' id='email' required />
-            </div>
-            <div className="text-input-row">
-              <label htmlFor='Birthday:'>Birthday:</label>
-              <input type='text' name='Birthday' id='Birthday' required />
-            </div>
-            <div className='submit-row'>
-              <input type='submit' value='Submit'/>
-            </div>
-          </form>
-        </div>
+      <Container>
+        <Col xs={10}>
+        <Form onSubmit={this.onSubmitHandler}>
+          <Form.Group controlId="header">
+          <Row className="justify-content-md-center header-text">
+          <Col className="justify-content-md-center">
+            <Form.Label className='header-text'>
+            	Register for myFlix:
+            </Form.Label>
+          </Col>
+          </Row>
+          </Form.Group>
+          <Form.Group className="mb-2" controlId="formUsername">
+          <Row className="justify-content-md-center">
+          <Col xs={3}>
+            <Form.Label>Username:</Form.Label>
+          </Col>
+          <Col>
+            <Form.Control type='text' value={this.state.Username}
+              onChange={this.onChangeHandler} name="Username"/>
+          </Col>
+          </Row>
+          </Form.Group>
+          
+          <Form.Group className="mb-2" controlId="formPassword">
+          <Row className="justify-content-md-center">
+          <Col xs={3}>
+            <Form.Label>Password:</Form.Label>
+          </Col>
+          <Col>
+            <Form.Control type='password' value={this.state.Password}
+              onChange={this.onChangeHandler} name='Password' />
+          </Col>
+          </Row>
+          </Form.Group>
+          
+          <Form.Group className="mb-2" controlId="formEmail">
+          <Row className="justify-content-md-center">
+          <Col xs={3}>
+            <Form.Label>Email:</Form.Label>
+          </Col>
+          <Col>
+            <Form.Control type='email' name="Email" value={this.state.Email} 
+              onChange={this.onChangeHandler} />
+          </Col>
+          </Row>
+          </Form.Group>
+          
+          <Form.Group className="mb-2" controlId="formBirthday">
+          <Row className="justify-content-md-center">
+          <Col xs={3}>
+            <Form.Label>Birthday:</Form.Label>
+          </Col>
+          <Col>
+            <Form.Control type='text' name="Birthday" value={this.state.Birthday} 
+              onChange={this.onChangeHandler} />
+          </Col>
+          </Row>
+          </Form.Group>
+
+        <Row className="justify-content-md-center">
+          <Button variant="primary" type="submit">
+            Submit
+          </Button>
+          <Button onClick={this.props.back} >
+            Return to Login
+          </Button>
+         </Row>
+
+        </Form>
+        </Col>
+      </Container>
     ) // end return
   } // end render
 } // end class

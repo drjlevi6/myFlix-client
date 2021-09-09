@@ -1,0 +1,9 @@
+/* Styles for elements that can't be styled adequately with react-bootstrap
+	and appear in multiple views. */
+.header-text {
+  display: block;
+  font-size: large;
+  font-weight: bold;
+  margin: 5px;
+  text-align: center;
+}

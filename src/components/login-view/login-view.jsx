@@ -1,96 +1,98 @@
-import React from 'react';
-import { RegistrationView } from '../registration-view/registration-view';
-import PropTypes from 'prop-types';
-import "./login-view.scss";
+import React, { useState } from 'react';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+import {RegistrationView} from '../registration-view/registration-view'
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Container from 'react-bootstrap/Container';
+//import { Collapse } from 'bootstrap';
+import { Collapse } from 'react-bootstrap/Collapse';
+//import './login-view.scss';
+import "../universal-components/elements.scss"; // for elements in mult. views 
+import axios from 'axios'; // 3.6
 
-export class LoginView extends React.Component {
-  constructor(props) {
-    super(props);
+export function LoginView(props) {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [showRegister, setShowRegister] = useState(false);
 
-    this.state = {
-      Username: '',
-      Password: '',
-      doRegister: false // open registration window instead of logging in?
-    };
-
-
-    this.onUsernameChange = this.onUsernameChange.bind(this);
-    this.onPasswordChange = this.onPasswordChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.onRequestToRegister = this.onRequestToRegister.bind(this);
-  }
-
-  onRequestToRegister() {
-    this.setState({doRegister: !this.state.doRegister});
-  }
-
-  onUsernameChange(event) {
-    this.setState({
-      Username: event.target.value
-    });
-  }
-
-  onPasswordChange(event) {
-    this.setState({
-      Password: event.target.value
-    });
-  }
-
-  componentWillUnmount() {
-    this.doRegister = false; // go back to submitting the data
-  }
-
-  handleSubmit() {
-    const { Username, Password } = this.state;
+  const handleSubmit = (e) => {
+    e.preventDefault();
     /* Send a request to the server for authentication */
-    /* then call this.props.onLoggedIn(username) */
-    this.props.onLoggedIn(Username);
+    axios.post('https://drjs-myflix-app.herokuapp.com/login', {
+      Username: username,
+      Password: password
+    })
+    .then(response => {
+      const data = response.data;
+      props.onLoggedIn(data);
+    })
+    .catch(e => {
+      console.log('no such user')
+    });
+  };
+  
+  
+  function onRequestToRegister() {
+    console.log("login-view.onRequestToRegister");
+    setShowRegister(!showRegister)
   }
 
-  render() {
-    const { login, handleSubmit, onRequestToRegister} = this.props;
-    if (this.state.doRegister) {
-      return (
-        <div>
-          <RegistrationView 
-            Username = ''
-            Password = ''
-            Email = ''
-            Birthday = ''
-          /> 
-        </div>
-      )
-    } else {
-      return (
-        <div>
-          <span><h3>Log in or&nbsp;
-          <button className="register-button"  
-            onClick={this.onRequestToRegister}><strong>register:</strong>
-          </button>
-          </h3>
-          </span>
+  if(showRegister) {
+    return <RegistrationView back={onRequestToRegister} />
+  }
+  return ( // onClick={onRequestToRegister}>register: 
+    <Container>
+      <Col xs={10}>
+        <Row className="justify-content-md-center header-text">
+          <Col>
+            Log in or
+          </Col>
+        </Row>
+        <Row className="justify-content-md-center" >
+            <Button className="register-button" variant="primary" 
+              onClick={onRequestToRegister}>
+              register
+            </Button>
+        </Row>
+        <Row>&nbsp;</Row>
 
-          <form onSubmit={this.handleSubmit}>
-            <div className="text-row">
-                    <label>Username:</label>
-                      <input className="text-field" type="text" value={this.state.Username} 
-                        onChange={this.onUsernameChange} /> 
-            </div>
-            <div className="text-row">
-                    <label>Password:</label>
-                      <input className="text-field" type="password" 
-                        value={this.state.Password} onChange={this.onPasswordChange} />
-            </div>
-            <div className="button-row">
-              <input className="submit-input" type="submit" value="Submit" />
-            </div>
-          </form>
-        </div>
-      );// end return
-    }; //end else
-  }; // end render
-} // end class LoginView
+      <Form>
+       <Form.Group className="mb-2" controlId="formUsername">
+        <Row className="justify-content-md-center">
+          <Col xs={3}>
+            <Form.Label>Username:</Form.Label>
+          </Col>
+          <Col >
+            <Form.Control type="text" placeholder="Enter username" 
+              value={username} onChange={e => 
+              setUsername(e.target.value)} />
+          </Col>
+        </Row>
+       </Form.Group>
 
-LoginView.propTypes = {
-  onLoggedIn: PropTypes.func.isRequired
-};
+        <Form.Group controlId="formPassword">
+          <Row className="justify-content-md-center mb-2">
+            <Col xs={3}>
+              <Form.Label>Password:</Form.Label>
+            </Col>
+            <Col >
+              <Form.Control type="password" 
+                 placeholder="Password" value={password} 
+                onChange={
+                  e => setPassword(e.target.value)
+                } />
+            </Col>
+          </Row>
+        </Form.Group>
+
+        <Row  className="justify-content-md-center">
+          <Button variant="primary" type="submit" onClick={handleSubmit}>
+            Submit
+          </Button>
+         </Row>
+      </Form>
+      </Col>
+    </Container>
+  );
+}

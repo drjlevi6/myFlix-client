@@ -1,14 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import "./movie-card.scss"; // file is currently empty, but we might need it later.
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+import Row from 'react-bootstrap/Row';
+import "./movie-card.scss"; // (might need it later)
+
+import { Link } from "react-router-dom";
 
 export class MovieCard extends React.Component {
   render() {
-    const { movie, onMovieClick } = this.props;
-    return (<div className="movie-card" onClick={
-      () => { onMovieClick(movie); }
-    }>{movie.title}</div>
-    );
+    const { movie} = this.props;
+    return (
+      <Card>
+        <Card.Img variant="top" src={movie.ImagePath} />
+        <Card.Body>
+          <Card.Title>{movie.title}</Card.Title>
+          <Card.Text>{movie.Description}</Card.Text>
+          <Link to={`/movies/${movie._id}`}>
+            <Button variant="link">Open</Button>
+          </Link>
+        </Card.Body>
+      </Card>
+    ); // end return
   }
 }
 
