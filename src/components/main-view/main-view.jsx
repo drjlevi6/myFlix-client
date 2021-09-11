@@ -1,5 +1,4 @@
 import axios from 'axios';
-<<<<<<< Updated upstream
 import "./main-view.scss"; /* file is currently empty, 
                             but we might need it later. */
 
@@ -8,25 +7,18 @@ import { BrowserRouter as Router, Route } from
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
-=======
 import React from 'react';
->>>>>>> Stashed changes
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { LoginView } from '../login-view/login-view';
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
-<<<<<<< Updated upstream
-import { LoginView } from '../login-view/login-view';
-import { RegistrationView } from 
-  '../registration-view/registration-view';
-=======
+
 import { RegistrationView } from 
   '../registration-view/registration-view';
 import "./main-view.scss"; /* file is currently empty,
                             but we might need it later. */
->>>>>>> Stashed changes
 
 export default class MainView extends React.Component {
   constructor(){
