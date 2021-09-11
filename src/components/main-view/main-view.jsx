@@ -9,6 +9,7 @@ import Container from 'react-bootstrap/Container';
 import React from 'react';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+import Button from 'react-bootstrap/Button';
 
 import { LoginView } from '../login-view/login-view';
 import { MovieCard } from '../movie-card/movie-card';
@@ -129,12 +130,12 @@ export default class MainView extends React.Component {
         <Row className="main-view justify-content-md-center">
           <Route exact path="/" render={() => {
             return movies.map(m => (
-                <Col md={4} key={m._id}>
-                  <MovieCard movie={m} />
-                </Col>
-          ))
-        }} />
-          <Route path="/movies/:movieId" render={({ match }) => {
+              <Col sm={4} key={m._id}>
+                <MovieCard movie={m} />
+              </Col>
+            ))
+          }} />
+          <Route exact path="/movies/:movieId" render={({ match }) => {
             return (
               <Col sm={4}>
                 <MovieView movie={movies.find(m => m._id === match.params.movieId)} 
@@ -142,19 +143,21 @@ export default class MainView extends React.Component {
               </Col>
             )
           }} />
+          <Route exact path="/genres/:name" render={}/>
+          <Route exact path="/directors/:name" render={/* director view */}/>
+       </Row>
 
+        <Row className="justify-content-md-center">
+          <Col sm={3}>
+            <Button variant="dark" onBackClick={
+              () => {
+                history.push("/");
+              }
+            }>
+              Back
+            </Button>
+          </Col>
         </Row>
-      <Row className="justify-content-md-center">
-        <Col sm={4}>
-          <Button variant="dark" onBackClick={
-            () => {
-              history.push("/");
-            }
-          }>
-            Back
-          </Button>
-        </Col>
-      </Row>
       </Router>
     );
   }
