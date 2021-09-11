@@ -6,11 +6,10 @@ import { BrowserRouter as Router, Route } from
   "react-router-dom";
 
 import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
 import React from 'react';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+
 import { LoginView } from '../login-view/login-view';
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
@@ -116,9 +115,8 @@ export default class MainView extends React.Component {
       </Row>
     )
     
-    if (movies.length === 0) {
-      return <div className="main-view" />
-    }; // end if
+    if (movies.length === 0)
+      return <div className="main-view" />;
 
     /*if(selectedMovie) {
       return <MovieView movie={selectedMovie} onBackClick={
@@ -127,22 +125,16 @@ export default class MainView extends React.Component {
     }*/
 
     return (
-      <Container>
       <Router>
         <Row className="main-view justify-content-md-center">
           <Route exact path="/" render={() => {
-            return (
-              movies.map(m => (
+            return movies.map(m => (
                 <Col md={4} key={m._id}>
-                  <MovieCard movie={m} onMovieClick={this.setSelectedMovie} />
+                  <MovieCard movie={m} />
                 </Col>
-              )
-            )
-            )
-          } // end arrow-function
-          } // end render
-          />
-          <Route path="/movies/:movieId" render={({ match, history }) => {
+          ))
+        }} />
+          <Route path="/movies/:movieId" render={({ match }) => {
             return (
               <Col sm={4}>
                 <MovieView movie={movies.find(m => m._id === match.params.movieId)} 
@@ -150,12 +142,13 @@ export default class MainView extends React.Component {
               </Col>
             )
           }} />
+
         </Row>
       <Row className="justify-content-md-center">
         <Col sm={4}>
           <Button variant="dark" onBackClick={
             () => {
-                    history.push("/");
+              history.push("/");
             }
           }>
             Back
@@ -163,7 +156,6 @@ export default class MainView extends React.Component {
         </Col>
       </Row>
       </Router>
-     </Container>
     );
   }
 }

@@ -25679,34 +25679,20 @@ try {
   _parcelHelpers.defineInteropFlag(exports);
   var _axios = require('axios');
   var _axiosDefault = _parcelHelpers.interopDefault(_axios);
-<<<<<<< Updated upstream
   require("./main-view.scss");
   var _reactRouterDom = require("react-router-dom");
-  var _reactBootstrapContainer = require('react-bootstrap/Container');
-  var _reactBootstrapContainerDefault = _parcelHelpers.interopDefault(_reactBootstrapContainer);
-  var _reactBootstrapRow = require('react-bootstrap/Row');
-  var _reactBootstrapRowDefault = _parcelHelpers.interopDefault(_reactBootstrapRow);
-  var _reactBootstrapCol = require('react-bootstrap/Col');
-  var _reactBootstrapColDefault = _parcelHelpers.interopDefault(_reactBootstrapCol);
-  var _reactBootstrapButton = require('react-bootstrap/Button');
-  var _reactBootstrapButtonDefault = _parcelHelpers.interopDefault(_reactBootstrapButton);
-  var _movieCardMovieCard = require('../movie-card/movie-card');
-  var _movieViewMovieView = require('../movie-view/movie-view');
-  var _loginViewLoginView = require('../login-view/login-view');
-  require('../registration-view/registration-view');
-=======
+  require('react-bootstrap/Container');
   var _react = require('react');
   var _reactDefault = _parcelHelpers.interopDefault(_react);
   var _reactBootstrapCol = require('react-bootstrap/Col');
   var _reactBootstrapColDefault = _parcelHelpers.interopDefault(_reactBootstrapCol);
   var _reactBootstrapRow = require('react-bootstrap/Row');
   var _reactBootstrapRowDefault = _parcelHelpers.interopDefault(_reactBootstrapRow);
-  var _reactRouterDom = require("react-router-dom");
   var _loginViewLoginView = require('../login-view/login-view');
   var _movieCardMovieCard = require('../movie-card/movie-card');
   var _movieViewMovieView = require('../movie-view/movie-view');
+  require('../registration-view/registration-view');
   require("./main-view.scss");
->>>>>>> Stashed changes
   var _jsxFileName = "/Users/jonathan/Documents/GitHub/portfolio_website/myFlix-client/src/components/main-view/main-view.jsx";
   class MainView extends _reactDefault.default.Component {
     constructor() {
@@ -25778,7 +25764,6 @@ try {
       });
     }
     render() {
-<<<<<<< Updated upstream
       const {movies, selectedMovie, user} = this.state;
       console.log("main-view.jsx.render(): user =", user);
       /*<!--If there is no user, the LoginView is rendered.
@@ -25789,14 +25774,14 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 105,
+            lineNumber: 110,
             columnNumber: 7
           }
         }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapColDefault.default, {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 106,
+            lineNumber: 111,
             columnNumber: 9
           }
         }, /*#__PURE__*/_reactDefault.default.createElement(_loginViewLoginView.LoginView, {
@@ -25804,108 +25789,33 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 107,
+            lineNumber: 112,
             columnNumber: 11
           }
         })))
       );
-      // /* <!--Before the movies have been loaded
-      // If the state of `selectedMovie` is not null, that
-      // selected movie will be returned otherwise, all
-      // *movies will be returned.--> */
-      if (movies.length === 0) {
-        return (
-          /*#__PURE__*/_reactDefault.default.createElement("div", {
-            className: "main-view",
-            __self: this,
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 117,
-              columnNumber: 14
-=======
-      const {movies, user} = this.state;
-      console.log("main-view.render: user:", user);
-      /*<!--If there is no user, the LoginView is rendered.
-      If there is a user logged in, the user details are
-      *passed as a prop to the LoginView-->*/
-      if (!user) {
-        console.log("render: <LoginView> with user=ø");
-        return (
-          /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapRowDefault.default, {
-            __self: this,
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 92,
-              columnNumber: 9
-            }
-          }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapColDefault.default, {
-            __self: this,
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 93,
-              columnNumber: 11
->>>>>>> Stashed changes
-            }
-          })
-        );
-      }
-      ;
-      // end if
-      if (selectedMovie) {
-        return (
-          /*#__PURE__*/_reactDefault.default.createElement(_movieViewMovieView.MovieView, {
-            movie: selectedMovie,
-            onBackClick: () => this.setState({
-              selectedMovie: null
-            }),
-            __self: this,
-            __source: {
-              fileName: _jsxFileName,
-<<<<<<< Updated upstream
-              lineNumber: 121,
-              columnNumber: 14
-            }
-          })
-        );
-      }
-      return (
-        /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapContainerDefault.default, {
-          __self: this,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 127,
-            columnNumber: 7
-=======
-              lineNumber: 94,
-              columnNumber: 13
-            }
-          })))
-        );
-      }
-      // /* <!--Before the movies have been loaded
-      // If the state of `selectedMovie` is not null, that
-      // selected movie will be returned otherwise, all
-      // *movies will be returned.--> */
-      console.log("MainView.render.{user, movies.length:", user, movies.length);
       if (movies.length === 0) return (
         /*#__PURE__*/_reactDefault.default.createElement("div", {
           className: "main-view",
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 108,
-            columnNumber: 15
->>>>>>> Stashed changes
+            lineNumber: 119,
+            columnNumber: 14
           }
-        }, /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.BrowserRouter, {
+        })
+      );
+      /*if(selectedMovie) {
+      return <MovieView movie={selectedMovie} onBackClick={
+      () => this.setState({selectedMovie: null})
+      }/>
+      }*/
+      return (
+        /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.BrowserRouter, {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-<<<<<<< Updated upstream
             lineNumber: 128,
-=======
-            lineNumber: 111,
->>>>>>> Stashed changes
             columnNumber: 7
           }
         }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapRowDefault.default, {
@@ -25913,11 +25823,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-<<<<<<< Updated upstream
             lineNumber: 129,
-=======
-            lineNumber: 112,
->>>>>>> Stashed changes
             columnNumber: 9
           }
         }, /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
@@ -25925,60 +25831,40 @@ try {
           path: "/",
           render: () => {
             return movies.map(m => /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapColDefault.default, {
-<<<<<<< Updated upstream
               md: 4,
-=======
-              sm: 4,
->>>>>>> Stashed changes
               key: m._id,
               __self: this,
               __source: {
                 fileName: _jsxFileName,
-<<<<<<< Updated upstream
-                lineNumber: 133,
+                lineNumber: 132,
                 columnNumber: 17
-=======
-                lineNumber: 115,
-                columnNumber: 15
->>>>>>> Stashed changes
               }
             }, /*#__PURE__*/_reactDefault.default.createElement(_movieCardMovieCard.MovieCard, {
               movie: m,
-              onMovieClick: this.setSelectedMovie,
               __self: this,
               __source: {
                 fileName: _jsxFileName,
-<<<<<<< Updated upstream
-                lineNumber: 134,
+                lineNumber: 133,
                 columnNumber: 19
-=======
-                lineNumber: 116,
-                columnNumber: 17
->>>>>>> Stashed changes
               }
             })));
           },
           __self: this,
           __source: {
             fileName: _jsxFileName,
-<<<<<<< Updated upstream
             lineNumber: 130,
-=======
-            lineNumber: 113,
->>>>>>> Stashed changes
             columnNumber: 11
           }
         }), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
           path: "/movies/:movieId",
-<<<<<<< Updated upstream
-          render: ({match, history}) => {
+          render: ({match}) => {
             return (
               /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapColDefault.default, {
                 sm: 4,
                 __self: this,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 144,
+                  lineNumber: 139,
                   columnNumber: 15
                 }
               }, /*#__PURE__*/_reactDefault.default.createElement(_movieViewMovieView.MovieView, {
@@ -25986,41 +25872,16 @@ try {
                 __self: this,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 145,
+                  lineNumber: 140,
                   columnNumber: 17
                 }
               }))
             );
-=======
-          render: ({match}) => {
-            return;
-            /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapColDefault.default, {
-              md: 8,
-              __self: this,
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 123,
-                columnNumber: 17
-              }
-            }, /*#__PURE__*/_reactDefault.default.createElement(_movieViewMovieView.MovieView, {
-              movie: movies.find(m => m._id === match.params.movieId),
-              __self: this,
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 124,
-                columnNumber: 19
-              }
-            }));
->>>>>>> Stashed changes
           },
           __self: this,
           __source: {
             fileName: _jsxFileName,
-<<<<<<< Updated upstream
-            lineNumber: 142,
-=======
-            lineNumber: 120,
->>>>>>> Stashed changes
+            lineNumber: 137,
             columnNumber: 11
           }
         })), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapRowDefault.default, {
@@ -26028,7 +25889,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 151,
+            lineNumber: 147,
             columnNumber: 7
           }
         }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapColDefault.default, {
@@ -26036,10 +25897,10 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 152,
+            lineNumber: 148,
             columnNumber: 9
           }
-        }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapButtonDefault.default, {
+        }, /*#__PURE__*/_reactDefault.default.createElement(Button, {
           variant: "dark",
           onBackClick: () => {
             history.push("/");
@@ -26047,10 +25908,10 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 153,
+            lineNumber: 149,
             columnNumber: 11
           }
-        }, "Back")))))
+        }, "Back"))))
       );
     }
   }
@@ -26061,11 +25922,7 @@ try {
   window.$RefreshSig$ = prevRefreshSig;
 }
 
-<<<<<<< Updated upstream
-},{"react":"3b2NM","axios":"7rA65","../movie-card/movie-card":"7v6h3","../movie-view/movie-view":"3xBbr","@parcel/transformer-js/lib/esmodule-helpers.js":"2pjgc","../../../../../../../.nvm/versions/node/v14.16.1/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"79DY8","../login-view/login-view":"6M7fu","./main-view.scss":"3X8QW","react-bootstrap/Row":"3fzwD","react-bootstrap/Container":"3Mt3t","react-bootstrap/Col":"2D0r8","react-bootstrap/Button":"1ru0l","react-router-dom":"1PMSK","../registration-view/registration-view":"7gvH2"}],"7rA65":[function(require,module,exports) {
-=======
-},{"react":"3b2NM","axios":"7rA65","../movie-card/movie-card":"7v6h3","../movie-view/movie-view":"3xBbr","@parcel/transformer-js/lib/esmodule-helpers.js":"2pjgc","../../../../../../../.nvm/versions/node/v14.16.1/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"79DY8","../login-view/login-view":"6M7fu","./main-view.scss":"3X8QW","react-bootstrap/Row":"3fzwD","react-bootstrap/Col":"2D0r8","react-router-dom":"1PMSK"}],"7rA65":[function(require,module,exports) {
->>>>>>> Stashed changes
+},{"react":"3b2NM","axios":"7rA65","../movie-card/movie-card":"7v6h3","../movie-view/movie-view":"3xBbr","@parcel/transformer-js/lib/esmodule-helpers.js":"2pjgc","../../../../../../../.nvm/versions/node/v14.16.1/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"79DY8","../login-view/login-view":"6M7fu","./main-view.scss":"3X8QW","react-bootstrap/Row":"3fzwD","react-bootstrap/Container":"3Mt3t","react-bootstrap/Col":"2D0r8","react-router-dom":"1PMSK","../registration-view/registration-view":"7gvH2"}],"7rA65":[function(require,module,exports) {
 module.exports = require('./lib/axios');
 },{"./lib/axios":"4qfhW"}],"4qfhW":[function(require,module,exports) {
 'use strict';
@@ -27833,22 +27690,13 @@ try {
   var _jsxFileName = "/Users/jonathan/Documents/GitHub/portfolio_website/myFlix-client/src/components/movie-card/movie-card.jsx";
   class MovieCard extends _reactDefault.default.Component {
     render() {
-<<<<<<< Updated upstream
       const {movie, onMovieClick} = this.props;
-=======
-      const {movie} = this.props;
-      console.log("MovieCard._id:", movie._id, movie.title);
->>>>>>> Stashed changes
       return (
         /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapCardDefault.default, {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-<<<<<<< Updated upstream
             lineNumber: 11,
-=======
-            lineNumber: 15,
->>>>>>> Stashed changes
             columnNumber: 7
           }
         }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapCardDefault.default.Img, {
@@ -27857,42 +27705,21 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-<<<<<<< Updated upstream
             lineNumber: 12,
-=======
-            lineNumber: 16,
->>>>>>> Stashed changes
             columnNumber: 9
           }
         }), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapCardDefault.default.Body, {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-<<<<<<< Updated upstream
             lineNumber: 13,
-=======
-            lineNumber: 17,
->>>>>>> Stashed changes
             columnNumber: 9
           }
         }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapCardDefault.default.Title, {
-          className: "movie-title",
           __self: this,
           __source: {
             fileName: _jsxFileName,
-<<<<<<< Updated upstream
             lineNumber: 14,
-=======
-            lineNumber: 18,
-            columnNumber: 11
-          }
-        }, movie.title), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapCardDefault.default.Text, {
-          className: "movie-text",
-          __self: this,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 19,
->>>>>>> Stashed changes
             columnNumber: 11
           }
         }, movie.title), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapButtonDefault.default, {
@@ -27901,25 +27728,10 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-<<<<<<< Updated upstream
             lineNumber: 15,
             columnNumber: 11
           }
         }, "Open")))
-=======
-            lineNumber: 20,
-            columnNumber: 11
-          }
-        }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapButtonDefault.default, {
-          variant: "link",
-          __self: this,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 21,
-            columnNumber: 13
-          }
-        }, "Open"))))
->>>>>>> Stashed changes
       );
     }
   }
@@ -31515,6 +31327,7 @@ try {
     const [password, setPassword] = _react.useState('');
     const [showRegister, setShowRegister] = _react.useState(false);
     const handleSubmit = e => {
+      console.log("handleSubmit, sending to Axios", username, password);
       e.preventDefault();
       /*Send a request to the server for authentication*/
       _axiosDefault.default.post('https://drjs-myflix-app.herokuapp.com/login', {
@@ -31522,6 +31335,7 @@ try {
         Password: password
       }).then(response => {
         const data = response.data;
+        console.log("login-view.handleSubmit.data:", data);
         props.onLoggedIn(data);
       }).catch(e => {
         console.log('no such user');
@@ -31538,7 +31352,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 41,
+            lineNumber: 43,
             columnNumber: 12
           }
         })
@@ -31551,15 +31365,15 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 44,
+          lineNumber: 46,
           columnNumber: 5
         }
       }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapColDefault.default, {
-        xs: 10,
+        sm: 10,
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 45,
+          lineNumber: 47,
           columnNumber: 7
         }
       }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapRowDefault.default, {
@@ -31567,14 +31381,15 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 46,
+          lineNumber: 48,
           columnNumber: 9
         }
       }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapColDefault.default, {
+        sm: 8,
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 47,
+          lineNumber: 49,
           columnNumber: 11
         }
       }, "Log in or")), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapRowDefault.default, {
@@ -31582,8 +31397,16 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 51,
+          lineNumber: 53,
           columnNumber: 9
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapColDefault.default, {
+        sm: 6,
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 54,
+          columnNumber: 11
         }
       }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapButtonDefault.default, {
         className: "register-button",
@@ -31592,21 +31415,21 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 52,
+          lineNumber: 55,
           columnNumber: 13
         }
-      }, "register")), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapRowDefault.default, {
+      }, "register"))), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapRowDefault.default, {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 57,
+          lineNumber: 61,
           columnNumber: 9
         }
       }, " "), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default, {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 59,
+          lineNumber: 63,
           columnNumber: 7
         }
       }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Group, {
@@ -31615,7 +31438,7 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 60,
+          lineNumber: 64,
           columnNumber: 8
         }
       }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapRowDefault.default, {
@@ -31623,29 +31446,30 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 61,
+          lineNumber: 65,
           columnNumber: 9
         }
       }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapColDefault.default, {
-        xs: 3,
+        sm: 3,
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 62,
+          lineNumber: 66,
           columnNumber: 11
         }
       }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Label, {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 63,
+          lineNumber: 67,
           columnNumber: 13
         }
       }, "Username:")), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapColDefault.default, {
+        sm: 6,
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 65,
+          lineNumber: 69,
           columnNumber: 11
         }
       }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Control, {
@@ -31656,7 +31480,7 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 66,
+          lineNumber: 70,
           columnNumber: 13
         }
       })))), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Group, {
@@ -31664,7 +31488,7 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 73,
+          lineNumber: 77,
           columnNumber: 9
         }
       }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapRowDefault.default, {
@@ -31672,29 +31496,30 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 74,
+          lineNumber: 78,
           columnNumber: 11
         }
       }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapColDefault.default, {
-        xs: 3,
+        sm: 3,
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 75,
+          lineNumber: 79,
           columnNumber: 13
         }
       }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Label, {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 76,
+          lineNumber: 80,
           columnNumber: 15
         }
       }, "Password:")), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapColDefault.default, {
+        sm: 6,
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 78,
+          lineNumber: 82,
           columnNumber: 13
         }
       }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Control, {
@@ -31705,7 +31530,7 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 79,
+          lineNumber: 83,
           columnNumber: 15
         }
       })))), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapRowDefault.default, {
@@ -31713,8 +31538,16 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 88,
+          lineNumber: 92,
           columnNumber: 9
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapColDefault.default, {
+        sm: 3,
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 93,
+          columnNumber: 11
         }
       }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapButtonDefault.default, {
         variant: "primary",
@@ -31723,10 +31556,10 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 89,
+          lineNumber: 94,
           columnNumber: 11
         }
-      }, "Submit")))))
+      }, "Submit"))))))
     );
   }
   helpers.postlude(module);
@@ -33284,7 +33117,6 @@ function canAcceptRef(component) {
   return !!component && (typeof component !== 'function' || component.prototype && component.prototype.isReactComponent);
 }
 
-<<<<<<< Updated upstream
 },{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","invariant":"aTvpy"}],"aTvpy":[function(require,module,exports) {
 /**
 * Copyright (c) 2013-present, Facebook, Inc.
@@ -33324,276 +33156,6 @@ var invariant = function (condition, format, a, b, c, d, e, f) {
     error.framesToPop = 1;
     // we don't care about invariant's own frame
     throw error;
-=======
-},{"react":"3b2NM","@parcel/transformer-js/lib/esmodule-helpers.js":"2pjgc","../../../../../../../.nvm/versions/node/v14.16.1/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"79DY8","prop-types":"4dfy5","./movie-view.scss":"4iZ2Z","react-bootstrap/Button":"1ru0l","react-router-dom":"1PMSK"}],"4iZ2Z":[function() {},{}],"6M7fu":[function(require,module,exports) {
-var helpers = require("../../../../../../../.nvm/versions/node/v14.16.1/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-helpers.prelude(module);
-try {
-  var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
-  _parcelHelpers.defineInteropFlag(exports);
-  _parcelHelpers.export(exports, "LoginView", function () {
-    return LoginView;
-  });
-  var _react = require('react');
-  var _reactDefault = _parcelHelpers.interopDefault(_react);
-  var _reactBootstrapForm = require('react-bootstrap/Form');
-  var _reactBootstrapFormDefault = _parcelHelpers.interopDefault(_reactBootstrapForm);
-  var _reactBootstrapButton = require('react-bootstrap/Button');
-  var _reactBootstrapButtonDefault = _parcelHelpers.interopDefault(_reactBootstrapButton);
-  var _registrationViewRegistrationView = require('../registration-view/registration-view');
-  var _reactBootstrapRow = require('react-bootstrap/Row');
-  var _reactBootstrapRowDefault = _parcelHelpers.interopDefault(_reactBootstrapRow);
-  var _reactBootstrapCol = require('react-bootstrap/Col');
-  var _reactBootstrapColDefault = _parcelHelpers.interopDefault(_reactBootstrapCol);
-  var _reactBootstrapContainer = require('react-bootstrap/Container');
-  var _reactBootstrapContainerDefault = _parcelHelpers.interopDefault(_reactBootstrapContainer);
-  require('react-bootstrap/Collapse');
-  require("../universal-components/elements.scss");
-  var _axios = require('axios');
-  var _axiosDefault = _parcelHelpers.interopDefault(_axios);
-  var _jsxFileName = "/Users/jonathan/Documents/GitHub/portfolio_website/myFlix-client/src/components/login-view/login-view.jsx";
-  function LoginView(props) {
-    const [username, setUsername] = _react.useState('');
-    const [password, setPassword] = _react.useState('');
-    const [showRegister, setShowRegister] = _react.useState(false);
-    const handleSubmit = e => {
-      console.log("handleSubmit, sending to Axios", username, password);
-      e.preventDefault();
-      /*Send a request to the server for authentication*/
-      _axiosDefault.default.post('https://drjs-myflix-app.herokuapp.com/login', {
-        Username: username,
-        Password: password
-      }).then(response => {
-        const data = response.data;
-        console.log("login-view.handleSubmit.data:", data);
-        props.onLoggedIn(data);
-      }).catch(e => {
-        console.log('no such user');
-      });
-    };
-    function onRequestToRegister() {
-      console.log("login-view.onRequestToRegister");
-      setShowRegister(!showRegister);
-    }
-    if (showRegister) {
-      return (
-        /*#__PURE__*/_reactDefault.default.createElement(_registrationViewRegistrationView.RegistrationView, {
-          back: onRequestToRegister,
-          __self: this,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 44,
-            columnNumber: 12
-          }
-        })
-      );
-    }
-    return (
-      /*#__PURE__*/
-      // onClick={onRequestToRegister}>register:
-      _reactDefault.default.createElement(_reactBootstrapContainerDefault.default, {
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 47,
-          columnNumber: 5
-        }
-      }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapColDefault.default, {
-        sm: 10,
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 48,
-          columnNumber: 7
-        }
-      }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapRowDefault.default, {
-        className: "justify-content-md-center header-text",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 49,
-          columnNumber: 9
-        }
-      }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapColDefault.default, {
-        sm: 8,
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 50,
-          columnNumber: 11
-        }
-      }, "Log in or")), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapRowDefault.default, {
-        className: "justify-content-md-center",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 54,
-          columnNumber: 9
-        }
-      }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapColDefault.default, {
-        sm: 6,
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 55,
-          columnNumber: 11
-        }
-      }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapButtonDefault.default, {
-        className: "register-button",
-        variant: "primary",
-        onClick: onRequestToRegister,
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 56,
-          columnNumber: 13
-        }
-      }, "register"))), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapRowDefault.default, {
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 62,
-          columnNumber: 9
-        }
-      }, " "), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default, {
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 64,
-          columnNumber: 7
-        }
-      }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Group, {
-        className: "mb-2",
-        controlId: "formUsername",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 65,
-          columnNumber: 8
-        }
-      }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapRowDefault.default, {
-        className: "justify-content-md-center",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 66,
-          columnNumber: 9
-        }
-      }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapColDefault.default, {
-        sm: 3,
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 67,
-          columnNumber: 11
-        }
-      }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Label, {
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 68,
-          columnNumber: 13
-        }
-      }, "Username:")), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapColDefault.default, {
-        sm: 6,
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 70,
-          columnNumber: 11
-        }
-      }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Control, {
-        type: "text",
-        placeholder: "Enter username",
-        value: username,
-        onChange: e => setUsername(e.target.value),
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 71,
-          columnNumber: 13
-        }
-      })))), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Group, {
-        controlId: "formPassword",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 78,
-          columnNumber: 9
-        }
-      }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapRowDefault.default, {
-        className: "justify-content-md-center mb-2",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 79,
-          columnNumber: 11
-        }
-      }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapColDefault.default, {
-        sm: 3,
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 80,
-          columnNumber: 13
-        }
-      }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Label, {
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 81,
-          columnNumber: 15
-        }
-      }, "Password:")), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapColDefault.default, {
-        sm: 6,
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 83,
-          columnNumber: 13
-        }
-      }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Control, {
-        type: "password",
-        placeholder: "Password",
-        value: password,
-        onChange: e => setPassword(e.target.value),
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 84,
-          columnNumber: 15
-        }
-      })))), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapRowDefault.default, {
-        className: "justify-content-md-center",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 93,
-          columnNumber: 9
-        }
-      }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapColDefault.default, {
-        sm: 3,
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 94,
-          columnNumber: 11
-        }
-      }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapButtonDefault.default, {
-        variant: "primary",
-        type: "submit",
-        onClick: handleSubmit,
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 95,
-          columnNumber: 11
-        }
-      }, "Submit"))))))
-    );
->>>>>>> Stashed changes
   }
 };
 module.exports = invariant;
@@ -35918,7 +35480,7 @@ module.exports = exports.default;
 },{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","prop-types":"4dfy5","react":"3b2NM","classnames":"5aJRc","react/jsx-runtime":"7jBZW"}],"75Xsk":[function() {},{}],"2wmtg":[function(require,module,exports) {
 var define;
 /*!
-* Bootstrap v5.1.0 (https://getbootstrap.com/)
+* Bootstrap v5.1.1 (https://getbootstrap.com/)
 * Copyright 2011-2021 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
 * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
 */
@@ -35948,7 +35510,7 @@ var define;
   var Popper__namespace = /*#__PURE__*/_interopNamespace(Popper);
   /**
   * --------------------------------------------------------------------------
-  * Bootstrap (v5.1.0): util/index.js
+  * Bootstrap (v5.1.1): util/index.js
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
   * --------------------------------------------------------------------------
   */
@@ -36191,7 +35753,7 @@ var define;
   };
   /**
   * --------------------------------------------------------------------------
-  * Bootstrap (v5.1.0): dom/event-handler.js
+  * Bootstrap (v5.1.1): dom/event-handler.js
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
   * --------------------------------------------------------------------------
   */
@@ -36243,7 +35805,6 @@ var define;
           if (domElements[i] === target) {
             event.delegateTarget = target;
             if (handler.oneOff) {
-              // eslint-disable-next-line unicorn/consistent-destructuring
               EventHandler.off(element, event.type, selector, fn);
             }
             return fn.apply(target, [event]);
@@ -36427,7 +35988,7 @@ var define;
   };
   /**
   * --------------------------------------------------------------------------
-  * Bootstrap (v5.1.0): dom/data.js
+  * Bootstrap (v5.1.1): dom/data.js
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
   * --------------------------------------------------------------------------
   */
@@ -36472,7 +36033,7 @@ var define;
   };
   /**
   * --------------------------------------------------------------------------
-  * Bootstrap (v5.1.0): base-component.js
+  * Bootstrap (v5.1.1): base-component.js
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
   * --------------------------------------------------------------------------
   */
@@ -36481,7 +36042,7 @@ var define;
   * Constants
   * ------------------------------------------------------------------------
   */
-  const VERSION = '5.1.0';
+  const VERSION = '5.1.1';
   class BaseComponent {
     constructor(element) {
       element = getElement(element);
@@ -36523,7 +36084,7 @@ var define;
   }
   /**
   * --------------------------------------------------------------------------
-  * Bootstrap (v5.1.0): util/component-functions.js
+  * Bootstrap (v5.1.1): util/component-functions.js
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
   * --------------------------------------------------------------------------
   */
@@ -36545,7 +36106,7 @@ var define;
   };
   /**
   * --------------------------------------------------------------------------
-  * Bootstrap (v5.1.0): alert.js
+  * Bootstrap (v5.1.1): alert.js
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
   * --------------------------------------------------------------------------
   */
@@ -36616,7 +36177,7 @@ var define;
   defineJQueryPlugin(Alert);
   /**
   * --------------------------------------------------------------------------
-  * Bootstrap (v5.1.0): button.js
+  * Bootstrap (v5.1.1): button.js
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
   * --------------------------------------------------------------------------
   */
@@ -36677,7 +36238,7 @@ var define;
   defineJQueryPlugin(Button);
   /**
   * --------------------------------------------------------------------------
-  * Bootstrap (v5.1.0): dom/manipulator.js
+  * Bootstrap (v5.1.1): dom/manipulator.js
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
   * --------------------------------------------------------------------------
   */
@@ -36737,7 +36298,7 @@ var define;
   };
   /**
   * --------------------------------------------------------------------------
-  * Bootstrap (v5.1.0): dom/selector-engine.js
+  * Bootstrap (v5.1.1): dom/selector-engine.js
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
   * --------------------------------------------------------------------------
   */
@@ -36790,7 +36351,7 @@ var define;
   };
   /**
   * --------------------------------------------------------------------------
-  * Bootstrap (v5.1.0): carousel.js
+  * Bootstrap (v5.1.1): carousel.js
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
   * --------------------------------------------------------------------------
   */
@@ -36984,8 +36545,11 @@ var define;
       }
     }
     _addTouchEventListeners() {
+      const hasPointerPenTouch = event => {
+        return this._pointerEvent && (event.pointerType === POINTER_TYPE_PEN || event.pointerType === POINTER_TYPE_TOUCH);
+      };
       const start = event => {
-        if (this._pointerEvent && (event.pointerType === POINTER_TYPE_PEN || event.pointerType === POINTER_TYPE_TOUCH)) {
+        if (hasPointerPenTouch(event)) {
           this.touchStartX = event.clientX;
         } else if (!this._pointerEvent) {
           this.touchStartX = event.touches[0].clientX;
@@ -36996,7 +36560,7 @@ var define;
         this.touchDeltaX = event.touches && event.touches.length > 1 ? 0 : event.touches[0].clientX - this.touchStartX;
       };
       const end = event => {
-        if (this._pointerEvent && (event.pointerType === POINTER_TYPE_PEN || event.pointerType === POINTER_TYPE_TOUCH)) {
+        if (hasPointerPenTouch(event)) {
           this.touchDeltaX = event.clientX - this.touchStartX;
         }
         this._handleSwipe();
@@ -37234,7 +36798,7 @@ var define;
   defineJQueryPlugin(Carousel);
   /**
   * --------------------------------------------------------------------------
-  * Bootstrap (v5.1.0): collapse.js
+  * Bootstrap (v5.1.1): collapse.js
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
   * --------------------------------------------------------------------------
   */
@@ -37267,7 +36831,7 @@ var define;
   const CLASS_NAME_HORIZONTAL = 'collapse-horizontal';
   const WIDTH = 'width';
   const HEIGHT = 'height';
-  const SELECTOR_ACTIVES = '.show, .collapsing';
+  const SELECTOR_ACTIVES = '.collapse.show, .collapse.collapsing';
   const SELECTOR_DATA_TOGGLE$4 = '[data-bs-toggle="collapse"]';
   /**
   * ------------------------------------------------------------------------
@@ -37482,7 +37046,7 @@ var define;
   defineJQueryPlugin(Collapse);
   /**
   * --------------------------------------------------------------------------
-  * Bootstrap (v5.1.0): dropdown.js
+  * Bootstrap (v5.1.1): dropdown.js
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
   * --------------------------------------------------------------------------
   */
@@ -37851,7 +37415,7 @@ var define;
   defineJQueryPlugin(Dropdown);
   /**
   * --------------------------------------------------------------------------
-  * Bootstrap (v5.1.0): util/scrollBar.js
+  * Bootstrap (v5.1.1): util/scrollBar.js
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
   * --------------------------------------------------------------------------
   */
@@ -37928,7 +37492,7 @@ var define;
   }
   /**
   * --------------------------------------------------------------------------
-  * Bootstrap (v5.1.0): util/backdrop.js
+  * Bootstrap (v5.1.1): util/backdrop.js
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
   * --------------------------------------------------------------------------
   */
@@ -38029,7 +37593,7 @@ var define;
   }
   /**
   * --------------------------------------------------------------------------
-  * Bootstrap (v5.1.0): util/focustrap.js
+  * Bootstrap (v5.1.1): util/focustrap.js
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
   * --------------------------------------------------------------------------
   */
@@ -38110,7 +37674,7 @@ var define;
   }
   /**
   * --------------------------------------------------------------------------
-  * Bootstrap (v5.1.0): modal.js
+  * Bootstrap (v5.1.1): modal.js
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
   * --------------------------------------------------------------------------
   */
@@ -38149,6 +37713,7 @@ var define;
   const CLASS_NAME_FADE$3 = 'fade';
   const CLASS_NAME_SHOW$4 = 'show';
   const CLASS_NAME_STATIC = 'modal-static';
+  const OPEN_SELECTOR$1 = '.modal.show';
   const SELECTOR_DIALOG = '.modal-dialog';
   const SELECTOR_MODAL_BODY = '.modal-body';
   const SELECTOR_DATA_TOGGLE$2 = '[data-bs-toggle="modal"]';
@@ -38422,6 +37987,11 @@ var define;
         }
       });
     });
+    // avoid conflict when clicking moddal toggler while another one is open
+    const allReadyOpen = SelectorEngine.findOne(OPEN_SELECTOR$1);
+    if (allReadyOpen) {
+      Modal.getInstance(allReadyOpen).hide();
+    }
     const data = Modal.getOrCreateInstance(target);
     data.toggle(this);
   });
@@ -38435,7 +38005,7 @@ var define;
   defineJQueryPlugin(Modal);
   /**
   * --------------------------------------------------------------------------
-  * Bootstrap (v5.1.0): offcanvas.js
+  * Bootstrap (v5.1.1): offcanvas.js
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
   * --------------------------------------------------------------------------
   */
@@ -38637,7 +38207,7 @@ var define;
   defineJQueryPlugin(Offcanvas);
   /**
   * --------------------------------------------------------------------------
-  * Bootstrap (v5.1.0): util/sanitizer.js
+  * Bootstrap (v5.1.1): util/sanitizer.js
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
   * --------------------------------------------------------------------------
   */
@@ -38735,7 +38305,7 @@ var define;
   }
   /**
   * --------------------------------------------------------------------------
-  * Bootstrap (v5.1.0): tooltip.js
+  * Bootstrap (v5.1.1): tooltip.js
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
   * --------------------------------------------------------------------------
   */
@@ -38889,9 +38459,7 @@ var define;
       if (this.tip) {
         this.tip.remove();
       }
-      if (this._popper) {
-        this._popper.destroy();
-      }
+      this._disposePopper();
       super.dispose();
     }
     show() {
@@ -38906,6 +38474,13 @@ var define;
       const isInTheDom = shadowRoot === null ? this._element.ownerDocument.documentElement.contains(this._element) : shadowRoot.contains(this._element);
       if (showEvent.defaultPrevented || !isInTheDom) {
         return;
+      }
+      // A trick to recreate a tooltip in case a new title is given by using the NOT documented `data-bs-original-title`
+      // This will be removed later in favor of a `setContent` method
+      if (this.constructor.NAME === 'tooltip' && this.tip && this.getTitle() !== this.tip.querySelector(SELECTOR_TOOLTIP_INNER).innerHTML) {
+        this._disposePopper();
+        this.tip.remove();
+        this.tip = null;
       }
       const tip = this.getTipElement();
       const tipId = getUID(this.constructor.NAME);
@@ -38968,10 +38543,7 @@ var define;
         this._cleanTipClass();
         this._element.removeAttribute('aria-describedby');
         EventHandler.trigger(this._element, this.constructor.Event.HIDDEN);
-        if (this._popper) {
-          this._popper.destroy();
-          this._popper = null;
-        }
+        this._disposePopper();
       };
       const hideEvent = EventHandler.trigger(this._element, this.constructor.Event.HIDE);
       if (hideEvent.defaultPrevented) {
@@ -39276,6 +38848,12 @@ var define;
       this._cleanTipClass();
       this._addAttachmentClass(this._getAttachment(state.placement));
     }
+    _disposePopper() {
+      if (this._popper) {
+        this._popper.destroy();
+        this._popper = null;
+      }
+    }
     /*Static*/
     static jQueryInterface(config) {
       return this.each(function () {
@@ -39298,7 +38876,7 @@ var define;
   defineJQueryPlugin(Tooltip);
   /**
   * --------------------------------------------------------------------------
-  * Bootstrap (v5.1.0): popover.js
+  * Bootstrap (v5.1.1): popover.js
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
   * --------------------------------------------------------------------------
   */
@@ -39393,7 +38971,7 @@ var define;
   defineJQueryPlugin(Popover);
   /**
   * --------------------------------------------------------------------------
-  * Bootstrap (v5.1.0): scrollspy.js
+  * Bootstrap (v5.1.1): scrollspy.js
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
   * --------------------------------------------------------------------------
   */
@@ -39587,7 +39165,7 @@ var define;
   defineJQueryPlugin(ScrollSpy);
   /**
   * --------------------------------------------------------------------------
-  * Bootstrap (v5.1.0): tab.js
+  * Bootstrap (v5.1.1): tab.js
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
   * --------------------------------------------------------------------------
   */
@@ -39747,7 +39325,7 @@ var define;
   defineJQueryPlugin(Tab);
   /**
   * --------------------------------------------------------------------------
-  * Bootstrap (v5.1.0): toast.js
+  * Bootstrap (v5.1.1): toast.js
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
   * --------------------------------------------------------------------------
   */
@@ -39928,7 +39506,7 @@ var define;
   defineJQueryPlugin(Toast);
   /**
   * --------------------------------------------------------------------------
-  * Bootstrap (v5.1.0): index.umd.js
+  * Bootstrap (v5.1.1): index.umd.js
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
   * --------------------------------------------------------------------------
   */
@@ -39951,7 +39529,7 @@ var define;
 
 },{"@popperjs/core":"3b7Fs"}],"3b7Fs":[function(require,module,exports) {
 /**
-* @popperjs/core v2.9.3 - MIT License
+* @popperjs/core v2.10.1 - MIT License
 */
 "use strict";
 Object.defineProperty(exports, '__esModule', {
@@ -39992,9 +39570,16 @@ function getBoundingClientRect(element, includeScale) {
   var scaleX = 1;
   var scaleY = 1;
   if (isHTMLElement(element) && includeScale) {
+    var offsetHeight = element.offsetHeight;
+    var offsetWidth = element.offsetWidth;
+    // Do not attempt to divide by 0, otherwise we get `Infinity` as scale
     // Fallback to 1 in case both values are `0`
-    scaleX = rect.width / element.offsetWidth || 1;
-    scaleY = rect.height / element.offsetHeight || 1;
+    if (offsetWidth > 0) {
+      scaleX = rect.width / offsetWidth || 1;
+    }
+    if (offsetHeight > 0) {
+      scaleY = rect.height / offsetHeight || 1;
+    }
   }
   return {
     width: round$1(rect.width / scaleX),
@@ -40309,7 +39894,9 @@ var MISSING_DEPENDENCY_ERROR = 'Popper: modifier "%s" requires "%s", but "%s" mo
 var VALID_PROPERTIES = ['name', 'enabled', 'phase', 'fn', 'effect', 'requires', 'options'];
 function validateModifiers(modifiers) {
   modifiers.forEach(function (modifier) {
-    Object.keys(modifier).forEach(function (key) {
+    [].concat(Object.keys(modifier), VALID_PROPERTIES).filter(function (value, index, self) {
+      return self.indexOf(value) === index;
+    }).forEach(function (key) {
       switch (key) {
         case 'name':
           if (typeof modifier.name !== 'string') {
@@ -40320,6 +39907,7 @@ function validateModifiers(modifiers) {
           if (typeof modifier.enabled !== 'boolean') {
             console.error(format(INVALID_MODIFIER_ERROR, modifier.name, '"enabled"', '"boolean"', "\"" + String(modifier.enabled) + "\""));
           }
+          break;
         case 'phase':
           if (modifierPhases.indexOf(modifier.phase) < 0) {
             console.error(format(INVALID_MODIFIER_ERROR, modifier.name, '"phase"', "either " + modifierPhases.join(', '), "\"" + String(modifier.phase) + "\""));
@@ -40331,12 +39919,12 @@ function validateModifiers(modifiers) {
           }
           break;
         case 'effect':
-          if (typeof modifier.effect !== 'function') {
+          if (modifier.effect != null && typeof modifier.effect !== 'function') {
             console.error(format(INVALID_MODIFIER_ERROR, modifier.name, '"effect"', '"function"', "\"" + String(modifier.fn) + "\""));
           }
           break;
         case 'requires':
-          if (!Array.isArray(modifier.requires)) {
+          if (modifier.requires != null && !Array.isArray(modifier.requires)) {
             console.error(format(INVALID_MODIFIER_ERROR, modifier.name, '"requires"', '"array"', "\"" + String(modifier.requires) + "\""));
           }
           break;
@@ -40608,11 +40196,10 @@ function detectOverflow(state, options) {
   var _options = options, _options$placement = _options.placement, placement = _options$placement === void 0 ? state.placement : _options$placement, _options$boundary = _options.boundary, boundary = _options$boundary === void 0 ? clippingParents : _options$boundary, _options$rootBoundary = _options.rootBoundary, rootBoundary = _options$rootBoundary === void 0 ? viewport : _options$rootBoundary, _options$elementConte = _options.elementContext, elementContext = _options$elementConte === void 0 ? popper : _options$elementConte, _options$altBoundary = _options.altBoundary, altBoundary = _options$altBoundary === void 0 ? false : _options$altBoundary, _options$padding = _options.padding, padding = _options$padding === void 0 ? 0 : _options$padding;
   var paddingObject = mergePaddingObject(typeof padding !== 'number' ? padding : expandToHashMap(padding, basePlacements));
   var altContext = elementContext === popper ? reference : popper;
-  var referenceElement = state.elements.reference;
   var popperRect = state.rects.popper;
   var element = state.elements[altBoundary ? altContext : elementContext];
   var clippingClientRect = getClippingRect(isElement(element) ? element : element.contextElement || getDocumentElement(state.elements.popper), boundary, rootBoundary);
-  var referenceClientRect = getBoundingClientRect(referenceElement);
+  var referenceClientRect = getBoundingClientRect(state.elements.reference);
   var popperOffsets = computeOffsets({
     reference: referenceClientRect,
     element: popperRect,
@@ -40681,7 +40268,8 @@ function popperGenerator(generatorOptions) {
     var isDestroyed = false;
     var instance = {
       state: state,
-      setOptions: function setOptions(options) {
+      setOptions: function setOptions(setOptionsAction) {
+        var options = typeof setOptionsAction === 'function' ? setOptionsAction(state.options) : setOptionsAction;
         cleanupModifierEffects();
         state.options = Object.assign({}, defaultOptions, state.options, options);
         state.scrollParents = {
@@ -40916,7 +40504,7 @@ function roundOffsetsByDPR(_ref) {
 }
 function mapToStyles(_ref2) {
   var _Object$assign2;
-  var popper = _ref2.popper, popperRect = _ref2.popperRect, placement = _ref2.placement, offsets = _ref2.offsets, position = _ref2.position, gpuAcceleration = _ref2.gpuAcceleration, adaptive = _ref2.adaptive, roundOffsets = _ref2.roundOffsets;
+  var popper = _ref2.popper, popperRect = _ref2.popperRect, placement = _ref2.placement, variation = _ref2.variation, offsets = _ref2.offsets, position = _ref2.position, gpuAcceleration = _ref2.gpuAcceleration, adaptive = _ref2.adaptive, roundOffsets = _ref2.roundOffsets;
   var _ref3 = roundOffsets === true ? roundOffsetsByDPR(offsets) : typeof roundOffsets === 'function' ? roundOffsets(offsets) : offsets, _ref3$x = _ref3.x, x = _ref3$x === void 0 ? 0 : _ref3$x, _ref3$y = _ref3.y, y = _ref3$y === void 0 ? 0 : _ref3$y;
   var hasX = offsets.hasOwnProperty('x');
   var hasY = offsets.hasOwnProperty('y');
@@ -40929,20 +40517,20 @@ function mapToStyles(_ref2) {
     var widthProp = 'clientWidth';
     if (offsetParent === getWindow(popper)) {
       offsetParent = getDocumentElement(popper);
-      if (getComputedStyle(offsetParent).position !== 'static') {
+      if (getComputedStyle(offsetParent).position !== 'static' && position === 'absolute') {
         heightProp = 'scrollHeight';
         widthProp = 'scrollWidth';
       }
     }
     // $FlowFixMe[incompatible-cast]: force type refinement, we compare offsetParent with window above, but Flow doesn't detect it
     offsetParent = offsetParent;
-    if (placement === top) {
+    if (placement === top || (placement === left || placement === right) && variation === end) {
       sideY = bottom;
       // $FlowFixMe[prop-missing]
       y -= offsetParent[heightProp] - popperRect.height;
       y *= gpuAcceleration ? 1 : -1;
     }
-    if (placement === left) {
+    if (placement === left || (placement === top || placement === bottom) && variation === end) {
       sideX = right;
       // $FlowFixMe[prop-missing]
       x -= offsetParent[widthProp] - popperRect.width;
@@ -40954,7 +40542,7 @@ function mapToStyles(_ref2) {
   }, adaptive && unsetSides);
   if (gpuAcceleration) {
     var _Object$assign;
-    return Object.assign({}, commonStyles, (_Object$assign = {}, _Object$assign[sideY] = hasY ? '0' : '', _Object$assign[sideX] = hasX ? '0' : '', _Object$assign.transform = (win.devicePixelRatio || 1) < 2 ? "translate(" + x + "px, " + y + "px)" : "translate3d(" + x + "px, " + y + "px, 0)", _Object$assign));
+    return Object.assign({}, commonStyles, (_Object$assign = {}, _Object$assign[sideY] = hasY ? '0' : '', _Object$assign[sideX] = hasX ? '0' : '', _Object$assign.transform = (win.devicePixelRatio || 1) <= 1 ? "translate(" + x + "px, " + y + "px)" : "translate3d(" + x + "px, " + y + "px, 0)", _Object$assign));
   }
   return Object.assign({}, commonStyles, (_Object$assign2 = {}, _Object$assign2[sideY] = hasY ? y + "px" : '', _Object$assign2[sideX] = hasX ? x + "px" : '', _Object$assign2.transform = '', _Object$assign2));
 }
@@ -40971,6 +40559,7 @@ function computeStyles(_ref4) {
   }
   var commonStyles = {
     placement: getBasePlacement(state.placement),
+    variation: getVariation(state.placement),
     popper: state.elements.popper,
     popperRect: state.rects.popper,
     gpuAcceleration: gpuAcceleration

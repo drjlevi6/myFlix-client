@@ -9,10 +9,10 @@
   dependencies:
     "regenerator-runtime" "^0.13.4"
 
-"@popperjs/core@^2.9.2", "@popperjs/core@^2.9.3":
-  "integrity" "sha512-xDu17cEfh7Kid/d95kB6tZsLOmSWKCZKtprnhVepjsSaCij+lM3mItSJDuuHDMbCWTh8Ejmebwb+KONcCJ0eXQ=="
-  "resolved" "https://registry.npmjs.org/@popperjs/core/-/core-2.9.3.tgz"
-  "version" "2.9.3"
+"@popperjs/core@^2.10.1", "@popperjs/core@^2.9.2":
+  "integrity" "sha512-HnUhk1Sy9IuKrxEMdIRCxpIqPw6BFsbYSEUO9p/hNw5sMld/+3OLMWQP80F8/db9qsv3qUjs7ZR5bS/R+iinXw=="
+  "resolved" "https://registry.npmjs.org/@popperjs/core/-/core-2.10.1.tgz"
+  "version" "2.10.1"
 
 "@react-aria/ssr@^3.0.1":
   "integrity" "sha512-m7mFU1GGkdlSq++QdAcV6n21B0mc8TEqCSuMdhckkL4psMrnuj5rUoW8pI17LvIxB6RU2tGnjtjJeVBuiE86ow=="
@@ -99,10 +99,10 @@
   dependencies:
     "follow-redirects" "^1.10.0"
 
-"bootstrap@^5.1.0":
-  "integrity" "sha512-bs74WNI9BgBo3cEovmdMHikSKoXnDgA6VQjJ7TyTotU6L7d41ZyCEEelPwkYEzsG/Zjv3ie9IE3EMAje0W9Xew=="
-  "resolved" "https://registry.npmjs.org/bootstrap/-/bootstrap-5.1.0.tgz"
-  "version" "5.1.0"
+"bootstrap@^5.1.1":
+  "integrity" "sha512-/jUa4sSuDZWlDLQ1gwQQR8uoYSvLJzDd8m5o6bPKh3asLAMYVZKdRCjb1joUd5WXf0WwCNzd2EjwQQhupou0dA=="
+  "resolved" "https://registry.npmjs.org/bootstrap/-/bootstrap-5.1.1.tgz"
+  "version" "5.1.1"
 
 "classnames@^2.3.1":
   "integrity" "sha512-OlQdbZ7gLfGarSqxesMesDa5uz7KFbID8Kpq/SxIoNGDqY8lSYs0D+hhtBXhcdB3rcbXArFr7vlHheLk1voeNA=="
