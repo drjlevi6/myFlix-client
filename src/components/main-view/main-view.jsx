@@ -1,5 +1,5 @@
-import React from 'react';
 import axios from 'axios';
+<<<<<<< Updated upstream
 import "./main-view.scss"; /* file is currently empty, 
                             but we might need it later. */
 
@@ -8,14 +8,25 @@ import { BrowserRouter as Router, Route } from
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
+=======
+import React from 'react';
+>>>>>>> Stashed changes
 import Col from 'react-bootstrap/Col';
-import Button from 'react-bootstrap/Button';
-
+import Row from 'react-bootstrap/Row';
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import { LoginView } from '../login-view/login-view';
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
+<<<<<<< Updated upstream
 import { LoginView } from '../login-view/login-view';
 import { RegistrationView } from 
   '../registration-view/registration-view';
+=======
+import { RegistrationView } from 
+  '../registration-view/registration-view';
+import "./main-view.scss"; /* file is currently empty,
+                            but we might need it later. */
+>>>>>>> Stashed changes
 
 export default class MainView extends React.Component {
   constructor(){
@@ -30,6 +41,7 @@ export default class MainView extends React.Component {
 
   componentDidMount() {
     let accessToken = localStorage.getItem('token');
+    console.log("componentDidMount.accessToken:", accessToken);
     if (accessToken !== null) {
       this.setState({
         user: localStorage.getItem('user')
@@ -72,10 +84,12 @@ export default class MainView extends React.Component {
   }
 
   getMovies(token) {
+    console.log("main-view.getMovies: token =", token);
     axios.get('https://drjs-myflix-app.herokuapp.com/movies', {
       headers: { Authorization: `Bearer ${token}`}
     })
     .then(response => {
+      console.log("main-view.getMovies: response =", response);
       // Assign the result to the state
       this.setState({
         movies: response.data
@@ -95,6 +109,7 @@ export default class MainView extends React.Component {
   }
 
   render() {
+<<<<<<< Updated upstream
     const { movies, selectedMovie, user } = this.state;
     console.log("main-view.jsx.render(): user =", user);
  
@@ -109,10 +124,30 @@ export default class MainView extends React.Component {
         </Col>
       </Row>
     )
+=======
+    const { movies, user } = this.state;
+    console.log("main-view.render: user:", user);
+    /* <!--If there is no user, the LoginView is rendered. 
+    If there is a user logged in, the user details are 
+    *passed as a prop to the LoginView--> */
+    if (!user) {
+      console.log("render: <LoginView> with user=ø");
+      return (
+        <Row>
+          <Col>
+            <LoginView onLoggedIn={user => 
+              this.onLoggedIn(user)} />
+          </Col>
+        </Row>
+      )
+    }
+
+>>>>>>> Stashed changes
     // /* <!--Before the movies have been loaded
     // If the state of `selectedMovie` is not null, that 
     //  selected movie will be returned otherwise, all 
     //  *movies will be returned.--> */
+<<<<<<< Updated upstream
     if (movies.length === 0) {
       return <div className="main-view" />
     }; // end if
@@ -122,12 +157,19 @@ export default class MainView extends React.Component {
         () => this.setState({selectedMovie: null})
       }/>
     }
+=======
+    console.log("MainView.render.{user, movies.length:", user,
+      movies.length);
+    if (movies.length === 0)
+       return <div className="main-view" />
+>>>>>>> Stashed changes
 
     return (
       <Container>
       <Router>
         <Row className="main-view justify-content-md-center">
           <Route exact path="/" render={() => {
+<<<<<<< Updated upstream
             return (
               movies.map(m => (
                 <Col md={4} key={m._id}>
@@ -144,6 +186,11 @@ export default class MainView extends React.Component {
               <Col sm={4}>
                 <MovieView movie={movies.find(m => m._id === match.params.movieId)} 
                  />
+=======
+            return movies.map(m => (
+              <Col sm={4} key={m._id}>
+                <MovieCard movie={m} />
+>>>>>>> Stashed changes
               </Col>
             )
           }} />

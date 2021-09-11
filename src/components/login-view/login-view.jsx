@@ -16,6 +16,7 @@ export function LoginView(props) {
   const [showRegister, setShowRegister] = useState(false);
 
   const handleSubmit = (e) => {
+    console.log("handleSubmit, sending to Axios", username, password);
     e.preventDefault();
     /* Send a request to the server for authentication */
     axios.post('https://drjs-myflix-app.herokuapp.com/login', {
@@ -24,6 +25,7 @@ export function LoginView(props) {
     })
     .then(response => {
       const data = response.data;
+      console.log("login-view.handleSubmit.data:", data);
       props.onLoggedIn(data);
     })
     .catch(e => {
@@ -42,27 +44,29 @@ export function LoginView(props) {
   }
   return ( // onClick={onRequestToRegister}>register: 
     <Container>
-      <Col xs={10}>
+      <Col sm={10}>
         <Row className="justify-content-md-center header-text">
-          <Col>
+          <Col sm={8}>
             Log in or
           </Col>
         </Row>
         <Row className="justify-content-md-center" >
+          <Col sm={6}>
             <Button className="register-button" variant="primary" 
               onClick={onRequestToRegister}>
               register
             </Button>
+          </Col>
         </Row>
         <Row>&nbsp;</Row>
 
       <Form>
        <Form.Group className="mb-2" controlId="formUsername">
         <Row className="justify-content-md-center">
-          <Col xs={3}>
+          <Col sm={3}>
             <Form.Label>Username:</Form.Label>
           </Col>
-          <Col >
+          <Col sm={6}>
             <Form.Control type="text" placeholder="Enter username" 
               value={username} onChange={e => 
               setUsername(e.target.value)} />
@@ -72,10 +76,10 @@ export function LoginView(props) {
 
         <Form.Group controlId="formPassword">
           <Row className="justify-content-md-center mb-2">
-            <Col xs={3}>
+            <Col sm={3}>
               <Form.Label>Password:</Form.Label>
             </Col>
-            <Col >
+            <Col sm={6}>
               <Form.Control type="password" 
                  placeholder="Password" value={password} 
                 onChange={
@@ -86,9 +90,11 @@ export function LoginView(props) {
         </Form.Group>
 
         <Row  className="justify-content-md-center">
+          <Col sm={3}>
           <Button variant="primary" type="submit" onClick={handleSubmit}>
             Submit
           </Button>
+          </Col>
          </Row>
       </Form>
       </Col>
