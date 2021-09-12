@@ -6,7 +6,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import { Collapse } from 'bootstrap';
-//import './login-view.scss';
+import './login-view.scss';
 import "../universal-components/elements.scss"; // for elements in mult. views 
 import axios from 'axios'; // 3.6
 
@@ -42,6 +42,8 @@ export function LoginView(props) {
   if(showRegister) {
     return <RegistrationView back={onRequestToRegister} />
   }
+
+  // give Buttons 'className="d-grid gap-2"' to allow full width
   return ( // onClick={onRequestToRegister}>register: 
     <Container>
       <Col sm={10}>
@@ -51,7 +53,7 @@ export function LoginView(props) {
           </Col>
         </Row>
         <Row className="justify-content-md-center" >
-          <Col sm={6}>
+          <Col sm={10} className="d-grid gap-2">
             <Button className="register-button" variant="primary" 
               onClick={onRequestToRegister}>
               register
@@ -90,8 +92,9 @@ export function LoginView(props) {
         </Form.Group>
 
         <Row  className="justify-content-md-center">
-          <Col sm={3}>
-          <Button variant="primary" type="submit" onClick={handleSubmit}>
+          <Col sm={10} className="d-grid gap-2">
+          <Button variant="primary" type="submit" 
+            onClick={handleSubmit}>
             Submit
           </Button>
           </Col>
