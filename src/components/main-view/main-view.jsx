@@ -57,7 +57,7 @@ export default class MainView extends React.Component {
   onLoggedIn(authData) {
     console.log("main-view.onLoggedIn.authData:", authData);
     this.setState({
-      user: authData.user.Username
+      user: authData.user.Username // need this, not just 'user'
     });
 
     localStorage.setItem('token', authData.token);
