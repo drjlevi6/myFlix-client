@@ -46,14 +46,14 @@ export function LoginView(props) {
   // give Buttons 'className="d-grid gap-2"' to allow full width
   return ( // onClick={onRequestToRegister}>register: 
     <Container>
-      <Col xs={10}>
+      <Col>
         <Row className="justify-content-md-center header-text">
-          <Col xs={8}>
+          <Col>
             Log in or
           </Col>
         </Row>
         <Row className="justify-content-md-center" >
-          <Col xs={10} className="d-grid gap-2">
+          <Col className="d-grid gap-2">
             <Button className="register-button" variant="primary" 
               onClick={onRequestToRegister}>
               register
@@ -64,12 +64,14 @@ export function LoginView(props) {
 
       <Form>
        <Form.Group className="mb-2" controlId="formUsername">
-        <Row className="justify-content-md-center">
+        <Row>
           <Col xs={3}>
             <Form.Label>Username:</Form.Label>
           </Col>
-          <Col xs={6}>
-            <Form.Control type="text" placeholder="Enter username" 
+        </Row>
+        <Row className="justify-content-md-center">
+           <Col>
+             <Form.Control type="text" placeholder="Enter username"
               value={username} onChange={e => 
               setUsername(e.target.value)} />
           </Col>
@@ -77,11 +79,13 @@ export function LoginView(props) {
        </Form.Group>
 
         <Form.Group controlId="formPassword">
-          <Row className="justify-content-md-center mb-2">
+          <Row>
             <Col xs={3}>
               <Form.Label>Password:</Form.Label>
             </Col>
-            <Col xs={6}>
+          </Row>
+          <Row className="justify-content-md-center mb-2">
+            <Col>
               <Form.Control type="password" 
                  placeholder="Password" value={password} 
                 onChange={
@@ -92,7 +96,7 @@ export function LoginView(props) {
         </Form.Group>
 
         <Row  className="justify-content-md-center">
-          <Col xs={10} className="d-grid gap-2">
+          <Col className="d-grid gap-2">
           <Button variant="primary" type="submit" 
             onClick={handleSubmit}>
             Submit

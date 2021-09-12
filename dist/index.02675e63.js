@@ -31330,7 +31330,6 @@ try {
           columnNumber: 5
         }
       }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapColDefault.default, {
-        xs: 10,
         __self: this,
         __source: {
           fileName: _jsxFileName,
@@ -31346,7 +31345,6 @@ try {
           columnNumber: 9
         }
       }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapColDefault.default, {
-        xs: 8,
         __self: this,
         __source: {
           fileName: _jsxFileName,
@@ -31362,7 +31360,6 @@ try {
           columnNumber: 9
         }
       }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapColDefault.default, {
-        xs: 10,
         className: "d-grid gap-2",
         __self: this,
         __source: {
@@ -31404,7 +31401,6 @@ try {
           columnNumber: 8
         }
       }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapRowDefault.default, {
-        className: "justify-content-md-center",
         __self: this,
         __source: {
           fileName: _jsxFileName,
@@ -31426,13 +31422,20 @@ try {
           lineNumber: 69,
           columnNumber: 13
         }
-      }, "Username:")), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapColDefault.default, {
-        xs: 6,
+      }, "Username:"))), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapRowDefault.default, {
+        className: "justify-content-md-center",
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 71,
-          columnNumber: 11
+          lineNumber: 72,
+          columnNumber: 9
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapColDefault.default, {
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 73,
+          columnNumber: 12
         }
       }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Control, {
         type: "text",
@@ -31442,23 +31445,22 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 72,
-          columnNumber: 13
+          lineNumber: 74,
+          columnNumber: 14
         }
       })))), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Group, {
         controlId: "formPassword",
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 79,
+          lineNumber: 81,
           columnNumber: 9
         }
       }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapRowDefault.default, {
-        className: "justify-content-md-center mb-2",
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 80,
+          lineNumber: 82,
           columnNumber: 11
         }
       }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapColDefault.default, {
@@ -31466,22 +31468,29 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 81,
+          lineNumber: 83,
           columnNumber: 13
         }
       }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Label, {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 82,
+          lineNumber: 84,
           columnNumber: 15
         }
-      }, "Password:")), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapColDefault.default, {
-        xs: 6,
+      }, "Password:"))), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapRowDefault.default, {
+        className: "justify-content-md-center mb-2",
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 84,
+          lineNumber: 87,
+          columnNumber: 11
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapColDefault.default, {
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 88,
           columnNumber: 13
         }
       }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Control, {
@@ -31492,7 +31501,7 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 85,
+          lineNumber: 89,
           columnNumber: 15
         }
       })))), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapRowDefault.default, {
@@ -31500,16 +31509,15 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 94,
+          lineNumber: 98,
           columnNumber: 9
         }
       }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapColDefault.default, {
-        xs: 10,
         className: "d-grid gap-2",
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 95,
+          lineNumber: 99,
           columnNumber: 11
         }
       }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapButtonDefault.default, {
@@ -31519,7 +31527,7 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 96,
+          lineNumber: 100,
           columnNumber: 11
         }
       }, "Submit"))))))
