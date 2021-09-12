@@ -31330,7 +31330,7 @@ try {
           columnNumber: 5
         }
       }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapColDefault.default, {
-        sm: 10,
+        xs: 10,
         __self: this,
         __source: {
           fileName: _jsxFileName,
@@ -31346,7 +31346,7 @@ try {
           columnNumber: 9
         }
       }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapColDefault.default, {
-        sm: 8,
+        xs: 8,
         __self: this,
         __source: {
           fileName: _jsxFileName,
@@ -31362,7 +31362,7 @@ try {
           columnNumber: 9
         }
       }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapColDefault.default, {
-        sm: 10,
+        xs: 10,
         className: "d-grid gap-2",
         __self: this,
         __source: {
@@ -31412,7 +31412,7 @@ try {
           columnNumber: 9
         }
       }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapColDefault.default, {
-        sm: 3,
+        xs: 3,
         __self: this,
         __source: {
           fileName: _jsxFileName,
@@ -31427,7 +31427,7 @@ try {
           columnNumber: 13
         }
       }, "Username:")), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapColDefault.default, {
-        sm: 6,
+        xs: 6,
         __self: this,
         __source: {
           fileName: _jsxFileName,
@@ -31462,7 +31462,7 @@ try {
           columnNumber: 11
         }
       }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapColDefault.default, {
-        sm: 3,
+        xs: 3,
         __self: this,
         __source: {
           fileName: _jsxFileName,
@@ -31477,7 +31477,7 @@ try {
           columnNumber: 15
         }
       }, "Password:")), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapColDefault.default, {
-        sm: 6,
+        xs: 6,
         __self: this,
         __source: {
           fileName: _jsxFileName,
@@ -31504,7 +31504,7 @@ try {
           columnNumber: 9
         }
       }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapColDefault.default, {
-        sm: 10,
+        xs: 10,
         className: "d-grid gap-2",
         __self: this,
         __source: {
