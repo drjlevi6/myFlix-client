@@ -16,20 +16,16 @@ export function LoginView(props) {
   const [showRegister, setShowRegister] = useState(false);
 
   const handleSubmit = (e) => {
-    console.log("handleSubmit: sending to Axios:", username, password);
+    console.log("handleSubmit, sending to Axios", username, password);
     e.preventDefault();
     /* Send a request to the server for authentication */
     axios.post('https://drjs-myflix-app.herokuapp.com/login', {
       Username: username,
       Password: password
     })
-    
-    /* then call props.onLoggedIn(username), which provides 
-      the username to our parent component (child to parent 
-      communication) */
     .then(response => {
       const data = response.data;
-      console.log("handleSubmit(): Response:", response);
+      console.log("login-view.handleSubmit.data:", data);
       props.onLoggedIn(data);
     })
     .catch(e => {
