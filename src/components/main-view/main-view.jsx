@@ -91,7 +91,7 @@ export default class MainView extends React.Component {
         <Row>
           <Col>
             <LoginView onLoggedIn={user => 
-              this.onLoggedIn(user)} />;
+              this.onLoggedIn(user)} />
           </Col>
         </Row>
       )

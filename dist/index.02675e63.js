@@ -25677,37 +25677,32 @@ helpers.prelude(module);
 try {
   var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
   _parcelHelpers.defineInteropFlag(exports);
+  var _react = require('react');
+  var _reactDefault = _parcelHelpers.interopDefault(_react);
   var _axios = require('axios');
   var _axiosDefault = _parcelHelpers.interopDefault(_axios);
   require("./main-view.scss");
   var _reactRouterDom = require("react-router-dom");
   require('react-bootstrap/Container');
-  var _react = require('react');
-  var _reactDefault = _parcelHelpers.interopDefault(_react);
-  var _reactBootstrapCol = require('react-bootstrap/Col');
-  var _reactBootstrapColDefault = _parcelHelpers.interopDefault(_reactBootstrapCol);
   var _reactBootstrapRow = require('react-bootstrap/Row');
   var _reactBootstrapRowDefault = _parcelHelpers.interopDefault(_reactBootstrapRow);
-  var _reactBootstrapButton = require('react-bootstrap/Button');
-  var _reactBootstrapButtonDefault = _parcelHelpers.interopDefault(_reactBootstrapButton);
-  var _loginViewLoginView = require('../login-view/login-view');
+  var _reactBootstrapCol = require('react-bootstrap/Col');
+  var _reactBootstrapColDefault = _parcelHelpers.interopDefault(_reactBootstrapCol);
+  require('react-bootstrap/Button');
   var _movieCardMovieCard = require('../movie-card/movie-card');
   var _movieViewMovieView = require('../movie-view/movie-view');
-  require('../registration-view/registration-view');
-  require("./main-view.scss");
+  var _loginViewLoginView = require('../login-view/login-view');
   var _jsxFileName = "/Users/jonathan/Documents/GitHub/portfolio_website/myFlix-client/src/components/main-view/main-view.jsx";
   class MainView extends _reactDefault.default.Component {
     constructor() {
       super();
       this.state = {
         movies: [],
-        selectedMovie: null,
         user: null
       };
     }
     componentDidMount() {
       let accessToken = localStorage.getItem('token');
-      console.log("componentDidMount.accessToken:", accessToken);
       if (accessToken !== null) {
         this.setState({
           user: localStorage.getItem('user')
@@ -25725,12 +25720,11 @@ try {
     /*When a movie is clicked, this function is invoked and
     updates the state of the `selectedMovie` *property
     to that movie*/
-    setSelectedMovie = movie => {
-      console.log(movie._id);
+    setSelectedMovie(movie) {
       this.setState({
         selectedMovie: movie
       });
-    };
+    }
     /*When a user successfully logs in, this function updates
     the `user` property in state to that *particular user*/
     onLoggedIn(authData) {
@@ -25743,13 +25737,11 @@ try {
       this.getMovies(authData.token);
     }
     getMovies(token) {
-      console.log("main-view.getMovies: token =", token);
       _axiosDefault.default.get('https://drjs-myflix-app.herokuapp.com/movies', {
         headers: {
           Authorization: `Bearer ${token}`
         }
       }).then(response => {
-        console.log("main-view.getMovies: response =", response);
         // Assign the result to the state
         this.setState({
           movies: response.data
@@ -25758,66 +25750,59 @@ try {
         console.log(error);
       });
     }
-    onLoggedOut() {
-      localStorage.removeItem('token');
-      localStorage.removeItem('user');
-      this.setState({
-        user: null
-      });
-    }
     render() {
-      const {movies, selectedMovie, user} = this.state;
-      console.log("main-view.jsx.render(): user =", user);
+      const {movies, user} = this.state;
       /*<!--If there is no user, the LoginView is rendered.
       If there is a user logged in, the user details are
       *passed as a prop to the LoginView-->*/
-      if (!user) return (
-        /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapRowDefault.default, {
-          __self: this,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 111,
-            columnNumber: 7
-          }
-        }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapColDefault.default, {
-          __self: this,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 112,
-            columnNumber: 9
-          }
-        }, /*#__PURE__*/_reactDefault.default.createElement(_loginViewLoginView.LoginView, {
-          onLoggedIn: user => this.onLoggedIn(user),
-          __self: this,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 113,
-            columnNumber: 11
-          }
-        })))
-      );
+      if (!user) {
+        return (
+          /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapRowDefault.default, {
+            __self: this,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 91,
+              columnNumber: 9
+            }
+          }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapColDefault.default, {
+            __self: this,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 92,
+              columnNumber: 11
+            }
+          }, /*#__PURE__*/_reactDefault.default.createElement(_loginViewLoginView.LoginView, {
+            onLoggedIn: user => this.onLoggedIn(user),
+            __self: this,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 93,
+              columnNumber: 13
+            }
+          })))
+        );
+      }
+      // /* <!--Before the movies have been loaded
+      // If the state of `selectedMovie` is not null, that
+      // selected movie will be returned otherwise, all
+      // *movies will be returned.--> */
       if (movies.length === 0) return (
         /*#__PURE__*/_reactDefault.default.createElement("div", {
           className: "main-view",
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 120,
-            columnNumber: 14
+            lineNumber: 105,
+            columnNumber: 15
           }
         })
       );
-      /*if(selectedMovie) {
-      return <MovieView movie={selectedMovie} onBackClick={
-      () => this.setState({selectedMovie: null})
-      }/>
-      }*/
       return (
         /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.BrowserRouter, {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 129,
+            lineNumber: 108,
             columnNumber: 7
           }
         }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapRowDefault.default, {
@@ -25825,7 +25810,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 130,
+            lineNumber: 109,
             columnNumber: 9
           }
         }, /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
@@ -25833,12 +25818,12 @@ try {
           path: "/",
           render: () => {
             return movies.map(m => /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapColDefault.default, {
-              sm: 4,
+              md: 3,
               key: m._id,
               __self: this,
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 133,
+                lineNumber: 112,
                 columnNumber: 15
               }
             }, /*#__PURE__*/_reactDefault.default.createElement(_movieCardMovieCard.MovieCard, {
@@ -25846,7 +25831,7 @@ try {
               __self: this,
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 134,
+                lineNumber: 113,
                 columnNumber: 17
               }
             })));
@@ -25854,66 +25839,38 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 131,
+            lineNumber: 110,
             columnNumber: 11
           }
         }), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
           path: "/movies/:movieId",
           render: ({match}) => {
-            return (
-              /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapColDefault.default, {
-                sm: 4,
-                __self: this,
-                __source: {
-                  fileName: _jsxFileName,
-                  lineNumber: 140,
-                  columnNumber: 15
-                }
-              }, /*#__PURE__*/_reactDefault.default.createElement(_movieViewMovieView.MovieView, {
-                movie: movies.find(m => m._id === match.params.movieId),
-                __self: this,
-                __source: {
-                  fileName: _jsxFileName,
-                  lineNumber: 141,
-                  columnNumber: 17
-                }
-              }))
-            );
+            return;
+            /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapColDefault.default, {
+              md: 8,
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 120,
+                columnNumber: 17
+              }
+            }, /*#__PURE__*/_reactDefault.default.createElement(_movieViewMovieView.MovieView, {
+              movie: movies.find(m => m._id === match.params.movieId),
+              __self: this,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 121,
+                columnNumber: 19
+              }
+            }));
           },
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 138,
+            lineNumber: 117,
             columnNumber: 11
           }
-        })), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapRowDefault.default, {
-          className: "justify-content-md-center",
-          __self: this,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 148,
-            columnNumber: 7
-          }
-        }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapColDefault.default, {
-          sm: 3,
-          __self: this,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 149,
-            columnNumber: 9
-          }
-        }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapButtonDefault.default, {
-          variant: "dark",
-          onBackClick: () => {
-            history.push("/");
-          },
-          __self: this,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 150,
-            columnNumber: 11
-          }
-        }, "Back"))))
+        })))
       );
     }
   }
@@ -25924,7 +25881,7 @@ try {
   window.$RefreshSig$ = prevRefreshSig;
 }
 
-},{"react":"3b2NM","axios":"7rA65","../movie-card/movie-card":"7v6h3","../movie-view/movie-view":"3xBbr","@parcel/transformer-js/lib/esmodule-helpers.js":"2pjgc","../../../../../../../.nvm/versions/node/v14.16.1/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"79DY8","../login-view/login-view":"6M7fu","./main-view.scss":"3X8QW","react-bootstrap/Row":"3fzwD","react-bootstrap/Container":"3Mt3t","react-bootstrap/Col":"2D0r8","react-router-dom":"1PMSK","../registration-view/registration-view":"7gvH2","react-bootstrap/Button":"1ru0l"}],"7rA65":[function(require,module,exports) {
+},{"react":"3b2NM","axios":"7rA65","../movie-card/movie-card":"7v6h3","../movie-view/movie-view":"3xBbr","@parcel/transformer-js/lib/esmodule-helpers.js":"2pjgc","../../../../../../../.nvm/versions/node/v14.16.1/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"79DY8","../login-view/login-view":"6M7fu","./main-view.scss":"3X8QW","react-bootstrap/Row":"3fzwD","react-bootstrap/Container":"3Mt3t","react-bootstrap/Col":"2D0r8","react-bootstrap/Button":"1ru0l","react-router-dom":"1PMSK"}],"7rA65":[function(require,module,exports) {
 module.exports = require('./lib/axios');
 },{"./lib/axios":"4qfhW"}],"4qfhW":[function(require,module,exports) {
 'use strict';
