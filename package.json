@@ -29,5 +29,8 @@
     "redux": "^4.1.1",
     "store": "^2.0.12",
     "yarn": "^1.22.11"
+  },
+  "devDependencies": {
+    "redux-devtools": "^3.7.0"
   }
 }
