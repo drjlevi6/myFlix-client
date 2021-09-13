@@ -34,6 +34,7 @@ export default class MainView extends React.Component {
   }
 
   onLoggedOut() {
+    console.log("main-view.onLoggedOut: this:", this);
     localStorage.removeItem('token');
     localStorage.removeItem('user');
     this.setState({
@@ -101,23 +102,32 @@ export default class MainView extends React.Component {
     // If the state of `selectedMovie` is not null, that 
     //  selected movie will be returned otherwise, all 
     //  *movies will be returned.--> */
-   if (movies.length === 0)
+    if (movies.length === 0)
        return <div className="main-view" />
-    console.log("main-view: movies.length:", movies.length);
+
     return (
       <Router>
         <Row className="main-view justify-content-md-center">
           <Route path="/" render={() => {
             return movies.map(m => (
-              <Col md={3} key={m._id}>
+              <Col sm={3} key={m._id}>
                 <MovieCard movie={m} />
               </Col>
             ))
           }} />
+        </Row>
+        <Row className="main-view justify-content-md-center">
+          <Col sm={4} className="d-grid">
+            <Button variant="dark" onClick={this.onLoggedOut}>
+              Back
+            </Button>
+          </Col>
+        </Row>
+        <Row className="main-view justify-content-md-center">
           <Route path="/movies/:movieId" 
             render={({ match }) => {
               return 
-                <Col md={8}>
+                <Col sm={8}>
                   <MovieView movie={movies.find(
                     m => m._id === match.params.movieId
                   )
