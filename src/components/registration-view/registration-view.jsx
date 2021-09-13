@@ -3,7 +3,7 @@ import axios from 'axios';
 import { ReactDOM } from "react-dom";
 import "./registration-view.scss"
 import "../button/button.scss"; // Use for custom-styled submit buttons
-import "../universal-components/elements.scss"; // for elements in mult. views
+//import "../universal-components/elements.scss"; // for elements in mult. views
 import Alert from 'react-bootstrap/Alert';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';

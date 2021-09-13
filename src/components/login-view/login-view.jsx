@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import {RegistrationView} from '../registration-view/registration-view'
 import { Collapse } from 'bootstrap';
 import './login-view.scss';
-import "../universal-components/elements.scss"; // for elements in mult. views 
+//import "../universal-components/elements.scss"; // for elements in mult. views 
 
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
