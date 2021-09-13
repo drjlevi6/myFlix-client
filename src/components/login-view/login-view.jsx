@@ -59,9 +59,9 @@ export function LoginView(props) {
         </Row>
         <Row className="justify-content-md-center" >
           <Col className="d-grid gap-2">
-            <Button className="register-button" variant="primary" 
+            <Button className="register-button" variant="dark" 
               onClick={onRequestToRegister}>
-              register
+              Register
             </Button>
           </Col>
         </Row>
@@ -102,7 +102,7 @@ export function LoginView(props) {
 
         <Row  className="justify-content-md-center">
           <Col className="d-grid gap-2">
-          <Button variant="primary" type="submit" 
+          <Button variant="dark" type="submit" 
             onClick={handleSubmit}>
             Submit
           </Button>
