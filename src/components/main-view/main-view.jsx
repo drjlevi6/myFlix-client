@@ -103,11 +103,11 @@ export default class MainView extends React.Component {
     //  *movies will be returned.--> */
    if (movies.length === 0)
        return <div className="main-view" />
-
+    console.log("main-view: movies.length:", movies.length);
     return (
       <Router>
         <Row className="main-view justify-content-md-center">
-          <Route exact path="/" render={() => {
+          <Route path="/" render={() => {
             return movies.map(m => (
               <Col md={3} key={m._id}>
                 <MovieCard movie={m} />
