@@ -25,6 +25,7 @@ export default class MainView extends React.Component {
 
   componentDidMount() {
     let accessToken = localStorage.getItem('token');
+    console.log("componentDidMount(): accessToken:", accessToken);
     if (accessToken !== null) {
       this.setState({
         user: localStorage.getItem('user')
