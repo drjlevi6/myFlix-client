@@ -10,6 +10,10 @@ import './login-view.scss';
 import "../universal-components/elements.scss"; // for elements in mult. views 
 import axios from 'axios'; // 3.6
 
+
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+
 export function LoginView(props) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
