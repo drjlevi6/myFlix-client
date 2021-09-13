@@ -126,6 +126,14 @@ export default class MainView extends React.Component {
                 </Col>
           }} />       
         </Row>
+        <Row className="main-view justify-content-md-center">
+          <Col xs={8} className="d-grid gap-2" >
+            <Button className='logout-button' variant='dark'
+              onClick={() => { this.onLoggedOut() }}>
+              Logout
+            </Button>
+          </Col>
+        </Row>
        </Router>
     );
   } // end if

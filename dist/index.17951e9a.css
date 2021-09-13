@@ -24,7 +24,9 @@
   text-align: center;
 }
 
-
+.logout-button {
+  margin: 5px;
+}
 .my-flix {
   color: steelblue;
 }
