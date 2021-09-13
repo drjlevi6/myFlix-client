@@ -1,4 +1,0 @@
-.card-body {
-  margin: 5px;
-  border: solid red 2px;
-}
