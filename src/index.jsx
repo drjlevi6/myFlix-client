@@ -2,7 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import MainView from './components/main-view/main-view';
 import 'bootstrap/dist/css/bootstrap.min.css'; //React Bootstrap introduction
+
+import Alert from 'react-bootstrap/Alert';
+import Button from 'react-bootstrap/Button';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
+import Form from 'react-bootstrap/Form';
 
 // Import statement to indicate that you need to bundle `./index.scss`
 import './index.scss';

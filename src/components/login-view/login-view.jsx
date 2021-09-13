@@ -1,18 +1,15 @@
+import axios from 'axios'; // 3.6
 import React, { useState } from 'react';
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
 import {RegistrationView} from '../registration-view/registration-view'
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Container from 'react-bootstrap/Container';
 import { Collapse } from 'bootstrap';
 import './login-view.scss';
 import "../universal-components/elements.scss"; // for elements in mult. views 
-import axios from 'axios'; // 3.6
 
-
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Container from 'react-bootstrap/Container';
 
 export function LoginView(props) {
   const [username, setUsername] = useState('');
@@ -62,7 +59,7 @@ export function LoginView(props) {
         </Row>
         <Row className="justify-content-md-center" >
           <Col className="d-grid gap-2">
-            <Button className="register-button" variant="dark" 
+            <Button className="register-button" variant="primary" 
               onClick={onRequestToRegister}>
               register
             </Button>
@@ -105,7 +102,7 @@ export function LoginView(props) {
 
         <Row  className="justify-content-md-center">
           <Col className="d-grid gap-2">
-          <Button variant="dark" type="submit" 
+          <Button variant="primary" type="submit" 
             onClick={handleSubmit}>
             Submit
           </Button>

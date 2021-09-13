@@ -25,7 +25,6 @@ export default class MainView extends React.Component {
 
   componentDidMount() {
     let accessToken = localStorage.getItem('token');
-    console.log("componentDidMount(): accessToken:", accessToken);
     if (accessToken !== null) {
       this.setState({
         user: localStorage.getItem('user')
@@ -58,7 +57,7 @@ export default class MainView extends React.Component {
   onLoggedIn(authData) {
     console.log("main-view.onLoggedIn.authData:", authData);
     this.setState({
-      user: authData.user.Username // need this, not just 'user'
+      user: authData.user.Username
     });
 
     localStorage.setItem('token', authData.token);
@@ -125,14 +124,6 @@ export default class MainView extends React.Component {
                   } />
                 </Col>
           }} />       
-        </Row>
-        <Row className="main-view justify-content-md-center">
-          <Col xs={8} className="d-grid gap-2" >
-            <Button className='logout-button' variant='dark'
-              onClick={() => { this.onLoggedOut() }}>
-              Logout
-            </Button>
-          </Col>
         </Row>
        </Router>
     );
