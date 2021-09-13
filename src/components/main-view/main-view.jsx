@@ -9,6 +9,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
+import { Link } from 'react-router-dom';
 
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
@@ -34,7 +35,7 @@ export default class MainView extends React.Component {
   }
 
   onLoggedOut() {
-    console.log("main-view.onLoggedOut: this:", this);
+    console.log("main-view.onLoggedOut: state:", this.state);
     localStorage.removeItem('token');
     localStorage.removeItem('user');
     this.setState({
@@ -117,11 +118,15 @@ export default class MainView extends React.Component {
           }} />
         </Row>
         <Row className="main-view justify-content-md-center">
-          <Col sm={4} className="d-grid">
-            <Button variant="dark" onClick={this.onLoggedOut}>
-              Back
-            </Button>
-          </Col>
+
+            <Link to={`/`}>
+
+              <Button className="return-button" variant="dark">
+                Log Out
+              </Button>
+
+            </Link>
+
         </Row>
         <Row className="main-view justify-content-md-center">
           <Route path="/movies/:movieId" 
