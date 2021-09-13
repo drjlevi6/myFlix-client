@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 import MainView from './components/main-view/main-view';
 import 'bootstrap/dist/css/bootstrap.min.css'; //React Bootstrap introduction
 
-import Alert from 'react-bootstrap/Alert';
 import Button from 'react-bootstrap/Button';
+import Alert from 'react-bootstrap/Alert';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
