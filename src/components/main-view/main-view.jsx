@@ -34,8 +34,18 @@ export default class MainView extends React.Component {
     }
   }
 
+  /* exitMovieCard() provides a view to the MovieCard's Log Out button,
+  enabling the button to force a re-render using setState(). */
+  exitMovieCard() {
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    window.mainView.setState({
+      movies: [],
+      user: null
+    });
+  }
+
   onLoggedOut() {
-    console.log("main-view.onLoggedOut: state:", this.state);
     localStorage.removeItem('token');
     localStorage.removeItem('user');
     this.setState({
@@ -57,7 +67,7 @@ export default class MainView extends React.Component {
   the `user` property in state to that *particular user*/
 
   onLoggedIn(authData) {
-    console.log("main-view.onLoggedIn.authData:", authData);
+    window.mainView = this;
     this.setState({
       user: authData.user.Username
     });
@@ -117,16 +127,13 @@ export default class MainView extends React.Component {
             ))
           }} />
         </Row>
-        <Row className="main-view justify-content-md-center">
-
-            <Link to={`/`}>
-
-              <Button className="return-button" variant="dark">
+        <Row className="main-view justify-content-sm-center">
+            <Col sm={6} className="d-grid mb-2">
+              <Button className="return-button" variant="dark"
+              onClick={this.exitMovieCard}>
                 Log Out
               </Button>
-
-            </Link>
-
+            </Col>
         </Row>
         <Row className="main-view justify-content-md-center">
           <Route path="/movies/:movieId" 
