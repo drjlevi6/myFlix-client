@@ -129,12 +129,12 @@ export default class MainView extends React.Component {
           }} />
         </Row>
         <Row className="main-view justify-content-sm-center">
-            <Col sm={6} className="d-grid mb-2">
-              <Button className="return-button" variant="dark"
-              onClick={this.exitMovieCard}>
-                Log Out
-              </Button>
-            </Col>
+          <Col sm={6} className="d-grid mb-2">
+            <Button className="return-button" variant="dark"
+            onClick={this.exitMovieCard}>
+              Log Out
+            </Button>
+          </Col>
         </Row>
         <Row className="main-view justify-content-md-center">
           <Route path="/movies/:movieId" 
