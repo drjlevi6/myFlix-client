@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
-import "./main-view.scss"; /* file is currently empty, 
-                            but we might need it later. */
+import PropTypes from 'prop-types';
+import "./main-view.scss";
 
 import { BrowserRouter as Router, Route } from "react-router-dom"; 
 
@@ -14,6 +14,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
 
 export default class MainView extends React.Component {
@@ -119,18 +120,20 @@ export default class MainView extends React.Component {
        return <div className="main-view" />
 
     return (
+      <Container xs={12}>
       <Router>
         <Row className="main-view justify-content-md-center">
           <Route path="/" render={() => {
             return movies.map(m => (
-              <Col sm={3} key={m._id}>
+              <Col md={6} lg={4} xl={3} key={m._id}>
                 <MovieCard movie={m} />
               </Col>
             ))
           }} />
         </Row>
+        <p></p>
         <Row className="main-view justify-content-sm-center">
-          <Col sm={6} className="d-grid mb-2">
+          <Col md={6} className="d-grid mb-2">
             <Button className="return-button" variant="dark"
             onClick={this.exitMovieCard}>
               Log Out
@@ -141,7 +144,7 @@ export default class MainView extends React.Component {
           <Route path="/movies/:movieId" 
             render={({ match }) => {
               return 
-                <Col sm={8}>
+                <Col md={8}>
                   <MovieView movie={movies.find(
                     m => m._id === match.params.movieId
                   )
@@ -150,6 +153,7 @@ export default class MainView extends React.Component {
           }} />       
         </Row>
        </Router>
+       </Container>
     );
   } // end if
 } // end render
