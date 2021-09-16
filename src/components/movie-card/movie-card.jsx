@@ -12,6 +12,7 @@ export class MovieCard extends React.Component {
 
   render() {
     const { movie } = this.props;
+    console.log("movie-card: this.props =", this.props);
 
     return (
       <Card className="card">

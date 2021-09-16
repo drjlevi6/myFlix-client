@@ -122,8 +122,6 @@ export default class MainView extends React.Component {
     return (
       <Container>
        <Router>
-         <Row>
-      <Col xs={12}>
 
         <Row className="main-view justify-content-md-center">
           <Route path="/" render={() => {
@@ -155,8 +153,6 @@ export default class MainView extends React.Component {
                 </Col>
           }} />       
         </Row>
-       </Col>
-       </Row>
        </Router>
        </Container>
     );
