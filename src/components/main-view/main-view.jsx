@@ -97,7 +97,6 @@ export default class MainView extends React.Component {
 
   render() {
     const { movies, user } = this.state;
-    console.log("main-view");
  
     /* <!--If there is no user, the LoginView is rendered. 
     If there is a user logged in, the user details are 
@@ -121,12 +120,15 @@ export default class MainView extends React.Component {
        return <div className="main-view" />
 
     return (
-      <Container xs={12}>
-      <Router>
+      <Container>
+       <Router>
+         <Row>
+      <Col xs={12}>
+
         <Row className="main-view justify-content-md-center">
           <Route path="/" render={() => {
             return movies.map(m => (
-              <Col md={6} lg={4} xl={3} key={m._id}>
+              <Col xs={6} sm={6} md={4} lg={3} xl={3} key={m._id}>
                 <MovieCard movie={m} />
               </Col>
             ))
@@ -134,7 +136,7 @@ export default class MainView extends React.Component {
         </Row>
         <p></p>
         <Row className="main-view justify-content-sm-center">
-          <Col md={6} className="d-grid mb-2">
+          <Col className="d-grid mb-2">
             <Button className="return-button" variant="dark"
             onClick={this.exitMovieCard}>
               Log Out
@@ -147,12 +149,14 @@ export default class MainView extends React.Component {
               return 
                 <Col md={8}>
                   <MovieView movie={movies.find(
-                    m => m._id === match.params.movieId
+                    m => (m._id === match.params.movieId)
                   )
                   } />
                 </Col>
           }} />       
         </Row>
+       </Col>
+       </Row>
        </Router>
        </Container>
     );
