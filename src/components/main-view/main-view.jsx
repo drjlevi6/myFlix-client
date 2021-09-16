@@ -95,14 +95,6 @@ export default class MainView extends React.Component {
     });
   }
 
-  changeOneImageURL(m){ // change movie.imagePath iff title is "Born Yesterday"
-    console.log("movie-Card.changeOneImageURL: movie title =", m.title);
-    if(  m.title === "Born Yesterday")
-      m.imagePath = "https://en.wikipedia.org/wiki/File:Born_Yesterday_(1950_poster).jpg";
-    return m;
-  }
-
-
   render() {
     const { movies, user } = this.state;
     console.log("main-view");
@@ -135,7 +127,7 @@ export default class MainView extends React.Component {
           <Route path="/" render={() => {
             return movies.map(m => (
               <Col md={6} lg={4} xl={3} key={m._id}>
-                <MovieCard movie={this.changeOneImageURL(m)} />
+                <MovieCard movie={m} />
               </Col>
             ))
           }} />
