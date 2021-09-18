@@ -141,6 +141,7 @@ export default class MainView extends React.Component {
             </Button>
           </Col>
         </Row>
+      
         <Row className="main-view justify-content-md-center">
           <Route path="/movies/:movieId" 
             render={({ match }) => {
