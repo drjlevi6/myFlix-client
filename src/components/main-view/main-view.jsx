@@ -85,7 +85,7 @@ export default class MainView extends React.Component {
       headers: { Authorization: `Bearer ${token}`}
     })
     .then(response => {
-      console.log("main-view.getMovies().response:", response);
+      //console.log("main-view.getMovies().response:", response);
       // Assign the result to the state
       this.setState({
         movies: response.data
@@ -98,6 +98,7 @@ export default class MainView extends React.Component {
 
   render() {
     const { movies, user } = this.state;
+    //console.log("main-view.render().{movies, user}", {movies, user});
  
     /* <!--If there is no user, the LoginView is rendered. 
     If there is a user logged in, the user details are 
@@ -119,10 +120,26 @@ export default class MainView extends React.Component {
     //  *movies will be returned.--> */
     if (movies.length === 0)
        return <div className="main-view" />
-
+    /* Since the Route for path "/" either catches nothing (if it's "exact")
+     * or everything if it isn't, we'll move it to the end of the Routes and
+     * use it as a default.
+     */
     return (
       <Container>
        <Router>
+
+       <Row className="main-view justify-content-md-center">
+          <Route path="/movies" // /movies/:movieId
+            render={({ match }) => {
+              return 
+                <Col md={8}>
+                  <MovieView movie={movies.find(
+                    m => (m._id === match.params.movieId)
+                  )
+                  } />
+                </Col>
+          }} />       
+        </Row>
 
         <Row className="main-view justify-content-md-center">
           <Route path="/" render={() => {
@@ -143,18 +160,6 @@ export default class MainView extends React.Component {
           </Col>
         </Row>
       
-        <Row className="main-view justify-content-md-center">
-          <Route path="/movies/:movieId" 
-            render={({ match }) => {
-              return 
-                <Col md={8}>
-                  <MovieView movie={movies.find(
-                    m => (m._id === match.params.movieId)
-                  )
-                  } />
-                </Col>
-          }} />       
-        </Row>
        </Router>
        </Container>
     );
