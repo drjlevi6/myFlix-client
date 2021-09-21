@@ -21,7 +21,11 @@ class MyFlixApplication extends React.Component {
  render() {
     return (
       <Container>
-        <MainView />
+        <Row>
+          <Col className="d-grid mb-2" xs={12}>
+            <MainView className="mainView"/>
+          </Col>
+        </Row>
       </Container>
     );
   }

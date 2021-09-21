@@ -85,6 +85,7 @@ export default class MainView extends React.Component {
       headers: { Authorization: `Bearer ${token}`}
     })
     .then(response => {
+      console.log("main-view.getMovies().response:", response);
       // Assign the result to the state
       this.setState({
         movies: response.data
@@ -126,7 +127,7 @@ export default class MainView extends React.Component {
         <Row className="main-view justify-content-md-center">
           <Route path="/" render={() => {
             return movies.map(m => (
-              <Col xs={6} sm={6} md={4} lg={3} xl={3} key={m._id}>
+              <Col xs={10} md={8} lg={4} key={m._id}>
                 <MovieCard movie={m} />
               </Col>
             ))
