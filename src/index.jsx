@@ -20,11 +20,10 @@ var mainView;
 // Main component (will eventually use all the others)
 class MyFlixApplication extends React.Component {
  render() {
-   console.log("main-view.render(): class MyFlixApplication");
     return (
       <Container>
         <Row>
-          <Col className="d-grid mb-2" xs={12}>
+          <Col className="d-grid mb-2">
             <MainView className="mainView"/>
           </Col>
         </Row>
