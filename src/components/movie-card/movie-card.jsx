@@ -12,23 +12,20 @@ export class MovieCard extends React.Component {
   // capitalized (differs from course text)
 
   openMovieView(cardProps) {
-    console.log("movie-card.openMovieView().this.movie", cardProps);
   }
 
   render() {
     const { movie } = this.props;
+    console.log(":movie-card.render().movie.title:", movie.title);
 
     return (
       <Card className="card">
         <Card.Img crossOrigin="anonymous" variant="top" src={movie.imagePath} />
         <Card.Body>
           <Card.Title>{movie.title}</Card.Title>
-          <Card.Text>{movie.description}</Card.Text>
-          <Link to={`/movies/${movie._id}`}>
-            <Button variant="link" onClick={this.openMovieView(this.props)}>
+            <Button as={Link} to={`/movies/${movie._id}`} variant="primary" >
               Open
             </Button>
-          </Link>
         </Card.Body>
       </Card>
     ); // end return

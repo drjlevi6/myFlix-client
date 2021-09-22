@@ -120,39 +120,34 @@ export default class MainView extends React.Component {
     //  *movies will be returned.--> */
     if (movies.length === 0)
        return <div className="main-view" />
-    /* Since the Route for path "/" either catches nothing (if it's "exact")
-     * or everything if it isn't, we'll move it to the end of the Routes and
-     * use it as a default.
-     */
-    return (
+  
+       return (
       <Container>
        <Router>
-
        <Row className="main-view justify-content-md-center">
-          <Route path="/movies" // /movies/:movieId
-            render={({ match }) => {
-              return 
-                <Col md={8}>
-                  <MovieView movie={movies.find(
-                    m => (m._id === match.params.movieId)
-                  )
-                  } />
-                </Col>
-          }} />       
-        </Row>
-
-        <Row className="main-view justify-content-md-center">
-          <Route path="/" render={() => {
+          <Route exact path="/" render={() => {
             return movies.map(m => (
-              <Col xs={10} md={8} lg={4} key={m._id}>
+              <Col xs={12} sm={6} md={4} lg={4} key={m._id}>
                 <MovieCard movie={m} />
               </Col>
             ))
           }} />
+
+          <Route path="/movies/:movieId"
+            render={({ match, history }) => {
+              return (
+                <Col md={8}>
+                  <MovieView 
+                    movie={movies.find(  m => (m._id === match.params.movieId))} 
+                    onBackClick={() => history.push("/")}
+                  />
+                </Col>
+              )
+          }} />       
         </Row>
-        <p></p>
+
         <Row className="main-view justify-content-sm-center">
-          <Col className="d-grid mb-2">
+          <Col className="d-grid">
             <Button className="return-button" variant="dark"
             onClick={this.exitMovieCard}>
               Log Out
