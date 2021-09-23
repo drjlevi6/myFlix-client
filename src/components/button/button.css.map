@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,qBAAqB,CAAC;EACrB,KAAK,EAAE,KAAK;EACV,aAAa,EAAE,GAAG;EACpB,gBAAgB,EAAE,QAAQ;EACzB,YAAY,EAAE,QAAQ;CACvB",
+    "sources": [
+        "button.scss"
+    ],
+    "names": [],
+    "file": "button.css"
+}

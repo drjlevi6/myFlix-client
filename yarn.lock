@@ -4578,6 +4578,11 @@
     "postcss" "^8.2.1"
     "postcss-selector-parser" "^6.0.2"
 
+"python@^0.0.4":
+  "integrity" "sha1-MJTomO8Xozqpw+lzs4SKOOR9GBg="
+  "resolved" "https://registry.npmjs.org/python/-/python-0.0.4.tgz"
+  "version" "0.0.4"
+
 "qs@~6.5.2":
   "integrity" "sha512-N5ZAX4/LxJmF+7wN74pUD6qAh9/wnvdQcjq9TZjevvXzSUo7bfmw91saqMjzGS2xq91/odN2dW/WOl7qQHNDGA=="
   "resolved" "https://registry.npmjs.org/qs/-/qs-6.5.2.tgz"

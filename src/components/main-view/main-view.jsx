@@ -98,7 +98,8 @@ export default class MainView extends React.Component {
 
   render() {
     const { movies, user } = this.state;
-    //console.log("main-view.render().{movies, user}", {movies, user});
+    console.log("main-view.render().this.state:", this.state);
+    console.log("main-view.render().{movies, user}:", {movies, user});
  
     /* <!--If there is no user, the LoginView is rendered. 
     If there is a user logged in, the user details are 
