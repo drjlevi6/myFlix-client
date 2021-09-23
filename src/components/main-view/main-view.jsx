@@ -44,8 +44,7 @@ export default class MainView extends React.Component {
       user: null
     });
   }
-    
-
+  
   /* When a movie is clicked, this function is invoked and 
     updates the state of the `selectedMovie` *property 
     to that movie */
@@ -59,6 +58,7 @@ export default class MainView extends React.Component {
   the `user` property in state to that *particular user*/
 
   onLoggedIn(authData) {
+
     window.mainView = this;
     this.setState({
       user: authData.user.Username
