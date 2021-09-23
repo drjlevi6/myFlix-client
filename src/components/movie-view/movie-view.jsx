@@ -13,8 +13,8 @@ export class MovieView extends React.Component {
     const { movie, onBackClick } = this.props;
     
     return (
-      <Container>
-        <div className="movie-view">
+      <div className="movie-view">
+
           <div className="movie-poster">
             <img crossOrigin="anonymous" src={movie.imagePath} />
           </div>
@@ -27,8 +27,8 @@ export class MovieView extends React.Component {
             <span className="value">{movie.description}</span>
           </div>
           <Button variant="dark" onClick={() => { onBackClick(null); }}>Back</Button>
-        </div>
-      </Container>
+
+      </div>
     );
   }
 }
