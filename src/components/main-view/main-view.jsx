@@ -36,22 +36,11 @@ export default class MainView extends React.Component {
     }
   }
 
-  /* exitMovieCard() provides a view to the MovieCard's Log Out 
-    button, enabling the button to force a re-render using 
-    setState(). */
-  exitMovieCard() {
+  onLoggedOut() {
     localStorage.removeItem('token');
     localStorage.removeItem('user');
     window.mainView.setState({
       movies: [],
-      user: null
-    });
-  }
-
-  onLoggedOut() {
-    localStorage.removeItem('token');
-    localStorage.removeItem('user');
-    this.setState({
       user: null
     });
   }
