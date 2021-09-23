@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
 import "./main-view.scss";
+import "../../index";
 
 import { BrowserRouter as Router, Route } from "react-router-dom"; 
 
@@ -16,6 +17,9 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
+import { render } from 'react-dom';
+
+var mainView;
 
 export default class MainView extends React.Component {
   constructor(){
@@ -24,6 +28,9 @@ export default class MainView extends React.Component {
       movies: [],
       user: null
     };
+    console.log("MainView: constructor");
+    mainView = this;
+    console.log("MainView: constructor: mainView", mainView);
   }
 
   componentDidMount() {
@@ -40,8 +47,10 @@ export default class MainView extends React.Component {
     console.log("main-view.onLoggedOut()");
     localStorage.removeItem('token');
     localStorage.removeItem('user');
+    var mainView;
+    console.log("main-view.onLoggedOut(), mainView:", mainView);
   }
-  
+
   /* When a movie is clicked, this function is invoked and 
     updates the state of the `selectedMovie` *property 
     to that movie */
@@ -56,7 +65,7 @@ export default class MainView extends React.Component {
 
   onLoggedIn(authData) {
 
-    window.mainView = this;
+    var mainView = this;
     this.setState({
       user: authData.user.Username
     });
@@ -77,15 +86,16 @@ export default class MainView extends React.Component {
         movies: response.data
       });
     })
-    .catch(function (error) {
+   .catch(function (error) {
       console.log(error);
     });
-  }
+   }
 
   render() {
     const { movies, user } = this.state;
     console.log("main-view.render().this.state:", this.state);
     console.log("main-view.render().{movies, user}:", {movies, user});
+    var mainView = this;
  
     /* <!--If there is no user, the LoginView is rendered. 
     If there is a user logged in, the user details are 
