@@ -6,6 +6,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
+import { scrollParent } from 'dom-helpers';
 
 export class MovieView extends React.Component { 
 
@@ -15,19 +16,31 @@ export class MovieView extends React.Component {
     return (
       <Container className="movie-view">
 
-          <div className="movie-poster">
+          <Row className="movie-poster-row">
+            <Col xs={6}>
             <img crossOrigin="anonymous" src={movie.imagePath} />
-          </div>
-          <div className="movie-title">
+            </Col>
+          </Row>
+          <Row className="movie-title-row">
+            <Col>
             <span className="label">Title: </span>
             <span className="value">{movie.title}</span>
-          </div>
-          <div className="movie-description">
-            <span className="label">Description: </span>
-            <span className="value">{movie.description}</span>
-          </div>
-          <Button variant="dark" onClick={() => { onBackClick(null); }}>Back</Button>
+            </Col>
+          </Row>
+          <Row className="movie-description-row">
+            <Col>
+            <span className="label">Description:&nbsp;</span>
+            <span className="value movie-description">{movie.description}</span>
+            </Col>
+          </Row>
+          <Row className="back-button-row">
 
+            <Button className="back-button"
+              variant="dark" onClick={() => { onBackClick(null); }}>
+              Back
+            </Button>
+
+          </Row>
       </Container>
     );
   }
