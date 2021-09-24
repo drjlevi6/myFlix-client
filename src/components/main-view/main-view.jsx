@@ -47,7 +47,7 @@ export default class MainView extends React.Component {
     console.log("main-view.onLoggedOut()");
     localStorage.removeItem('token');
     localStorage.removeItem('user');
-    //document.location.pathname="/";
+    window.location.pathname="/";
   }
 
   /* When a movie is clicked, this function is invoked and 
