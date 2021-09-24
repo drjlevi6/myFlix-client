@@ -13,10 +13,6 @@ import Form from 'react-bootstrap/Form';
 // Import statement to indicate that you need to bundle `./index.scss`
 import './index.scss';
 
-
-// This global will be used by the MovieCard's Log Out button
-var mainView;
-
 // Main component (will eventually use all the others)
 class MyFlixApplication extends React.Component {
  render() {

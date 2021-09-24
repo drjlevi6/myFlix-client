@@ -483,35 +483,33 @@ var _form = require("react-bootstrap/Form");
 var _formDefault = parcelHelpers.interopDefault(_form);
 // Import statement to indicate that you need to bundle `./index.scss`
 var _indexScss = require("./index.scss");
-// This global will be used by the MovieCard's Log Out button
-var mainView;
 // Main component (will eventually use all the others)
 class MyFlixApplication extends _reactDefault.default.Component {
     render() {
         return(/*#__PURE__*/ _reactDefault.default.createElement(_containerDefault.default, {
             __source: {
                 fileName: "src/index.jsx",
-                lineNumber: 24
+                lineNumber: 20
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
             __source: {
                 fileName: "src/index.jsx",
-                lineNumber: 25
+                lineNumber: 21
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
             className: "d-grid mb-2",
             __source: {
                 fileName: "src/index.jsx",
-                lineNumber: 26
+                lineNumber: 22
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_mainViewDefault.default, {
             className: "mainView",
             __source: {
                 fileName: "src/index.jsx",
-                lineNumber: 27
+                lineNumber: 23
             },
             __self: this
         })))));
