@@ -47,8 +47,7 @@ export default class MainView extends React.Component {
     console.log("main-view.onLoggedOut()");
     localStorage.removeItem('token');
     localStorage.removeItem('user');
-    var mainView;
-    console.log("main-view.onLoggedOut(), mainView:", mainView);
+    document.location.pathname="/";
   }
 
   /* When a movie is clicked, this function is invoked and 
@@ -117,16 +116,7 @@ export default class MainView extends React.Component {
     //  *movies will be returned.--> */
     if (movies.length === 0)
        return <div className="main-view" />
-  /*
-      <Route exact path="/" render={() => {
-            return movies.map(m => (
-              <Col xs={12} sm={6} md={4} lg={4} key={m._id}>
-                <MovieCard movie={m} />
-              </Col>
-            ))
-          }} />
-  */
-  
+
        return (
       <Container>
        <Router>
