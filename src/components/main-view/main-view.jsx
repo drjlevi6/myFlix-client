@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
 import "./main-view.scss";
-import "../../index";
+//import "../../index";
 
 import { BrowserRouter as Router, Route } from "react-router-dom"; 
 
