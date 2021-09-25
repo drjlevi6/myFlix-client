@@ -22,14 +22,17 @@ export class RegistrationView extends React.Component {
     }; // end this.state
   } // end constructor
 
-  onSubmitHandler = e => {
+  onSubmitRegistrationHandler = e => {
     e.preventDefault();
     const {Username, Password, Email, Birthday} = this.state;
     if (!Username || !Password || !Email) {
       return;
     }
-    console.log("onSubmitHandler: Username = ", Username, 
-    "Password = ", Password, "Email = ", Email, "Birthday = ", Birthday);
+    console.log(
+      "registration-view.onSubmitRegistrationHandler:" + 
+        "\nUsername: " + Username + "\nPassword: " +  Password + 
+        "\nEmail: "+ Email + "\nBirthday: " + Birthday
+      );
     axios.post('https://drjs-myflix-app.herokuapp.com/users', 
       {
         Username:  Username,
@@ -38,15 +41,16 @@ export class RegistrationView extends React.Component {
         Birthday: Birthday
       }
     )
-    .then(
-    console.log("onSubmitHandler: response:", response)
-    )
     .then(response => {
+      console.log(
+        "registration-view.onSubmitRegistrationHandler.response:\n" + 
+          response
+      )
       const data = response.data;
       this.props.back()
     })
     .catch(e => {
-      console.log('Bad registration parameter');
+      console.log('registration-view.onSubmitRegistrationHandler: \n', e);
     });
 
   }
@@ -69,7 +73,7 @@ export class RegistrationView extends React.Component {
     return (
       <Container>
         <Col xs={10}>
-        <Form onSubmit={this.onSubmitHandler}>
+        <Form onSubmit={this.onSubmitRegistrationHandler}>
           <Form.Group controlId="header">
           <Row className="justify-content-md-center header-text">
           <Col className="justify-content-md-center">
