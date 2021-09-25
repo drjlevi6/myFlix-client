@@ -3,3 +3,4 @@ node_modules
 .parcel-cache
 src/components/.DS_Store
 prev/*
+dist/*
