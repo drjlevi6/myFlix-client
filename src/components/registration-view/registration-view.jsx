@@ -53,7 +53,7 @@ export class RegistrationView extends React.Component {
 
   onChangeHandler = e =>  {
     let {name, value} = e.target;
-    console.log("onChangeHandler():", e.target);
+    //console.log("onChangeHandler():", e.target);
     if (name==="Username") {
       this.setState({Username: value})
     } else if (name==="Password") {

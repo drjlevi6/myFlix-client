@@ -27,7 +27,8 @@ export function LoginView(props) {
     /* then call props.onLoggedIn(username), which provides 
       the username to our parent component (child to parent 
       communication) */
-    .then(response => {
+    .then (response => {
+      console.log("loginview.handleSubmit().response:", response);
       const data = response.data;
       props.onLoggedIn(data);
     })

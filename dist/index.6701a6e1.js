@@ -28721,6 +28721,7 @@ function LoginView(props) {
         })/* then call props.onLoggedIn(username), which provides 
       the username to our parent component (child to parent 
       communication) */ .then((response)=>{
+            console.log("loginview.handleSubmit().response:", response);
             const data = response.data;
             props.onLoggedIn(data);
         }).catch((e1)=>{
@@ -28735,7 +28736,7 @@ function LoginView(props) {
         back: onRequestToRegister,
         __source: {
             fileName: "src/components/login-view/login-view.jsx",
-            lineNumber: 46
+            lineNumber: 47
         },
         __self: this
     }));
@@ -28743,40 +28744,40 @@ function LoginView(props) {
     return(/*#__PURE__*/ _reactDefault.default.createElement(_containerDefault.default, {
         __source: {
             fileName: "src/components/login-view/login-view.jsx",
-            lineNumber: 51
+            lineNumber: 52
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
         __source: {
             fileName: "src/components/login-view/login-view.jsx",
-            lineNumber: 52
+            lineNumber: 53
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
         className: "justify-content-md-center header-text",
         __source: {
             fileName: "src/components/login-view/login-view.jsx",
-            lineNumber: 53
+            lineNumber: 54
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
         __source: {
             fileName: "src/components/login-view/login-view.jsx",
-            lineNumber: 54
+            lineNumber: 55
         },
         __self: this
     }, "Log in or")), /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
         className: "justify-content-md-center",
         __source: {
             fileName: "src/components/login-view/login-view.jsx",
-            lineNumber: 58
+            lineNumber: 59
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
         className: "d-grid gap-2",
         __source: {
             fileName: "src/components/login-view/login-view.jsx",
-            lineNumber: 59
+            lineNumber: 60
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
@@ -28785,19 +28786,19 @@ function LoginView(props) {
         onClick: onRequestToRegister,
         __source: {
             fileName: "src/components/login-view/login-view.jsx",
-            lineNumber: 60
+            lineNumber: 61
         },
         __self: this
     }, "Register"))), /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
         __source: {
             fileName: "src/components/login-view/login-view.jsx",
-            lineNumber: 66
+            lineNumber: 67
         },
         __self: this
     }, "\xa0"), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default, {
         __source: {
             fileName: "src/components/login-view/login-view.jsx",
-            lineNumber: 68
+            lineNumber: 69
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
@@ -28805,39 +28806,39 @@ function LoginView(props) {
         controlId: "formUsername",
         __source: {
             fileName: "src/components/login-view/login-view.jsx",
-            lineNumber: 69
+            lineNumber: 70
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
         __source: {
             fileName: "src/components/login-view/login-view.jsx",
-            lineNumber: 70
+            lineNumber: 71
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
         xs: 3,
         __source: {
             fileName: "src/components/login-view/login-view.jsx",
-            lineNumber: 71
+            lineNumber: 72
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Label, {
         __source: {
             fileName: "src/components/login-view/login-view.jsx",
-            lineNumber: 72
+            lineNumber: 73
         },
         __self: this
     }, "Username:"))), /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
         className: "justify-content-md-center",
         __source: {
             fileName: "src/components/login-view/login-view.jsx",
-            lineNumber: 75
+            lineNumber: 76
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
         __source: {
             fileName: "src/components/login-view/login-view.jsx",
-            lineNumber: 76
+            lineNumber: 77
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control, {
@@ -28848,46 +28849,46 @@ function LoginView(props) {
         ,
         __source: {
             fileName: "src/components/login-view/login-view.jsx",
-            lineNumber: 77
+            lineNumber: 78
         },
         __self: this
     })))), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
         controlId: "formPassword",
         __source: {
             fileName: "src/components/login-view/login-view.jsx",
-            lineNumber: 84
+            lineNumber: 85
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
         __source: {
             fileName: "src/components/login-view/login-view.jsx",
-            lineNumber: 85
+            lineNumber: 86
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
         xs: 3,
         __source: {
             fileName: "src/components/login-view/login-view.jsx",
-            lineNumber: 86
+            lineNumber: 87
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Label, {
         __source: {
             fileName: "src/components/login-view/login-view.jsx",
-            lineNumber: 87
+            lineNumber: 88
         },
         __self: this
     }, "Password:"))), /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
         className: "justify-content-md-center mb-2",
         __source: {
             fileName: "src/components/login-view/login-view.jsx",
-            lineNumber: 90
+            lineNumber: 91
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
         __source: {
             fileName: "src/components/login-view/login-view.jsx",
-            lineNumber: 91
+            lineNumber: 92
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control, {
@@ -28898,21 +28899,21 @@ function LoginView(props) {
         ,
         __source: {
             fileName: "src/components/login-view/login-view.jsx",
-            lineNumber: 92
+            lineNumber: 93
         },
         __self: this
     })))), /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
         className: "justify-content-md-center",
         __source: {
             fileName: "src/components/login-view/login-view.jsx",
-            lineNumber: 101
+            lineNumber: 102
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
         className: "d-grid gap-2",
         __source: {
             fileName: "src/components/login-view/login-view.jsx",
-            lineNumber: 102
+            lineNumber: 103
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
@@ -28921,7 +28922,7 @@ function LoginView(props) {
         onClick: handleSubmit,
         __source: {
             fileName: "src/components/login-view/login-view.jsx",
-            lineNumber: 103
+            lineNumber: 104
         },
         __self: this
     }, "Submit")))))));
@@ -28993,7 +28994,7 @@ class RegistrationView extends _reactDefault.default.Component {
     };
     onChangeHandler = (e)=>{
         let { name , value  } = e.target;
-        console.log("onChangeHandler():", e.target);
+        //console.log("onChangeHandler():", e.target);
         if (name === "Username") this.setState({
             Username: value
         });
