@@ -50,6 +50,10 @@
   /*align-self: center; */
   text-align: center;
 }
+
+.submit-registration-button {
+  margin-bottom: 12px;
+}
 .custom-submit-button {
   color: white;
   border-radius: 5px;

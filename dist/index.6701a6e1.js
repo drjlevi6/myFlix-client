@@ -29242,7 +29242,8 @@ class RegistrationView extends _reactDefault.default.Component {
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
-            variant: "primary",
+            variant: "dark",
+            className: "submit-registration-button",
             type: "submit",
             __source: {
                 fileName: "src/components/registration-view/registration-view.jsx",
@@ -29250,10 +29251,11 @@ class RegistrationView extends _reactDefault.default.Component {
             },
             __self: this
         }, "Submit"), /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
+            variant: "dark",
             onClick: this.props.back,
             __source: {
                 fileName: "src/components/registration-view/registration-view.jsx",
-                lineNumber: 138
+                lineNumber: 139
             },
             __self: this
         }, "Return to Login")))))); // end return
