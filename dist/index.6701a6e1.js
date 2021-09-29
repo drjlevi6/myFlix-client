@@ -28990,7 +28990,12 @@ class RegistrationView extends _reactDefault.default.Component {
             const data = response.data;
             this.props.back();
         }).catch((e1)=>{
-            console.log('registration-view.onSubmitRegistrationHandler: \n', e1);
+            console.log('registration-view.onSubmitRegistrationHandler: \n', e1.response);
+            //    for (let key in e) {
+            //     console.log('registration-view.onSubmitRegistrationHandler: \n',
+            //       key, e[key]);
+            //   }
+            alert(e1.response.data);
         });
     };
     onChangeHandler = (e)=>{
@@ -29013,49 +29018,49 @@ class RegistrationView extends _reactDefault.default.Component {
         return(/*#__PURE__*/ _reactDefault.default.createElement(_containerDefault.default, {
             __source: {
                 fileName: "src/components/registration-view/registration-view.jsx",
-                lineNumber: 74
+                lineNumber: 79
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
             xs: 10,
             __source: {
                 fileName: "src/components/registration-view/registration-view.jsx",
-                lineNumber: 75
+                lineNumber: 80
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default, {
             onSubmit: this.onSubmitRegistrationHandler,
             __source: {
                 fileName: "src/components/registration-view/registration-view.jsx",
-                lineNumber: 76
+                lineNumber: 81
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
             controlId: "header",
             __source: {
                 fileName: "src/components/registration-view/registration-view.jsx",
-                lineNumber: 77
+                lineNumber: 82
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
             className: "justify-content-md-center header-text",
             __source: {
                 fileName: "src/components/registration-view/registration-view.jsx",
-                lineNumber: 78
+                lineNumber: 83
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
             className: "justify-content-md-center",
             __source: {
                 fileName: "src/components/registration-view/registration-view.jsx",
-                lineNumber: 79
+                lineNumber: 84
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Label, {
             className: "header-text",
             __source: {
                 fileName: "src/components/registration-view/registration-view.jsx",
-                lineNumber: 80
+                lineNumber: 85
             },
             __self: this
         }, "Register for myFlix:")))), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
@@ -29063,33 +29068,33 @@ class RegistrationView extends _reactDefault.default.Component {
             controlId: "formUsername",
             __source: {
                 fileName: "src/components/registration-view/registration-view.jsx",
-                lineNumber: 86
+                lineNumber: 91
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
             className: "justify-content-md-center",
             __source: {
                 fileName: "src/components/registration-view/registration-view.jsx",
-                lineNumber: 87
+                lineNumber: 92
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
             xs: 3,
             __source: {
                 fileName: "src/components/registration-view/registration-view.jsx",
-                lineNumber: 88
+                lineNumber: 93
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Label, {
             __source: {
                 fileName: "src/components/registration-view/registration-view.jsx",
-                lineNumber: 89
+                lineNumber: 94
             },
             __self: this
         }, "Username:")), /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
             __source: {
                 fileName: "src/components/registration-view/registration-view.jsx",
-                lineNumber: 91
+                lineNumber: 96
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control, {
@@ -29099,7 +29104,7 @@ class RegistrationView extends _reactDefault.default.Component {
             name: "Username",
             __source: {
                 fileName: "src/components/registration-view/registration-view.jsx",
-                lineNumber: 92
+                lineNumber: 97
             },
             __self: this
         })))), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
@@ -29107,33 +29112,33 @@ class RegistrationView extends _reactDefault.default.Component {
             controlId: "formPassword",
             __source: {
                 fileName: "src/components/registration-view/registration-view.jsx",
-                lineNumber: 98
+                lineNumber: 103
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
             className: "justify-content-md-center",
             __source: {
                 fileName: "src/components/registration-view/registration-view.jsx",
-                lineNumber: 99
+                lineNumber: 104
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
             xs: 3,
             __source: {
                 fileName: "src/components/registration-view/registration-view.jsx",
-                lineNumber: 100
+                lineNumber: 105
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Label, {
             __source: {
                 fileName: "src/components/registration-view/registration-view.jsx",
-                lineNumber: 101
+                lineNumber: 106
             },
             __self: this
         }, "Password:")), /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
             __source: {
                 fileName: "src/components/registration-view/registration-view.jsx",
-                lineNumber: 103
+                lineNumber: 108
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control, {
@@ -29143,7 +29148,7 @@ class RegistrationView extends _reactDefault.default.Component {
             name: "Password",
             __source: {
                 fileName: "src/components/registration-view/registration-view.jsx",
-                lineNumber: 104
+                lineNumber: 109
             },
             __self: this
         })))), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
@@ -29151,33 +29156,33 @@ class RegistrationView extends _reactDefault.default.Component {
             controlId: "formEmail",
             __source: {
                 fileName: "src/components/registration-view/registration-view.jsx",
-                lineNumber: 110
+                lineNumber: 115
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
             className: "justify-content-md-center",
             __source: {
                 fileName: "src/components/registration-view/registration-view.jsx",
-                lineNumber: 111
+                lineNumber: 116
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
             xs: 3,
             __source: {
                 fileName: "src/components/registration-view/registration-view.jsx",
-                lineNumber: 112
+                lineNumber: 117
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Label, {
             __source: {
                 fileName: "src/components/registration-view/registration-view.jsx",
-                lineNumber: 113
+                lineNumber: 118
             },
             __self: this
         }, "Email:")), /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
             __source: {
                 fileName: "src/components/registration-view/registration-view.jsx",
-                lineNumber: 115
+                lineNumber: 120
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control, {
@@ -29187,7 +29192,7 @@ class RegistrationView extends _reactDefault.default.Component {
             onChange: this.onChangeHandler,
             __source: {
                 fileName: "src/components/registration-view/registration-view.jsx",
-                lineNumber: 116
+                lineNumber: 121
             },
             __self: this
         })))), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
@@ -29195,33 +29200,33 @@ class RegistrationView extends _reactDefault.default.Component {
             controlId: "formBirthday",
             __source: {
                 fileName: "src/components/registration-view/registration-view.jsx",
-                lineNumber: 122
+                lineNumber: 127
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
             className: "justify-content-md-center",
             __source: {
                 fileName: "src/components/registration-view/registration-view.jsx",
-                lineNumber: 123
+                lineNumber: 128
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
             xs: 3,
             __source: {
                 fileName: "src/components/registration-view/registration-view.jsx",
-                lineNumber: 124
+                lineNumber: 129
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Label, {
             __source: {
                 fileName: "src/components/registration-view/registration-view.jsx",
-                lineNumber: 125
+                lineNumber: 130
             },
             __self: this
         }, "Birthday:")), /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
             __source: {
                 fileName: "src/components/registration-view/registration-view.jsx",
-                lineNumber: 127
+                lineNumber: 132
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control, {
@@ -29231,14 +29236,14 @@ class RegistrationView extends _reactDefault.default.Component {
             onChange: this.onChangeHandler,
             __source: {
                 fileName: "src/components/registration-view/registration-view.jsx",
-                lineNumber: 128
+                lineNumber: 133
             },
             __self: this
         })))), /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
             className: "justify-content-md-center",
             __source: {
                 fileName: "src/components/registration-view/registration-view.jsx",
-                lineNumber: 134
+                lineNumber: 139
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
@@ -29247,7 +29252,7 @@ class RegistrationView extends _reactDefault.default.Component {
             type: "submit",
             __source: {
                 fileName: "src/components/registration-view/registration-view.jsx",
-                lineNumber: 135
+                lineNumber: 140
             },
             __self: this
         }, "Submit"), /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
@@ -29255,7 +29260,7 @@ class RegistrationView extends _reactDefault.default.Component {
             onClick: this.props.back,
             __source: {
                 fileName: "src/components/registration-view/registration-view.jsx",
-                lineNumber: 139
+                lineNumber: 144
             },
             __self: this
         }, "Return to Login")))))); // end return

@@ -140,6 +140,17 @@ export default class MainView extends React.Component {
                 </Col>
               )
           }} />       
+          <Route path="/genre"
+            render={({ match, history }) => {
+              return (
+                <Col md={8}>
+                  <MovieView 
+                    movie={movies.find(  m => (m._id === match.params.movieId))} 
+                    onBackClick={() => history.push("/")}
+                  />
+                </Col>
+              )
+          }} />       
         </Row>
 
         <Row className="main-view justify-content-sm-center">
