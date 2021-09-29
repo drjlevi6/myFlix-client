@@ -4,3 +4,5 @@ node_modules
 src/components/.DS_Store
 prev/*
 dist/*
+prev
+dist
