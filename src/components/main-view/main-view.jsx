@@ -28,9 +28,7 @@ export default class MainView extends React.Component {
       movies: [],
       user: null
     };
-    console.log("MainView: constructor");
     mainView = this;
-    console.log("MainView: constructor: mainView", mainView);
   }
 
   componentDidMount() {
@@ -93,7 +91,6 @@ export default class MainView extends React.Component {
   render() {
     const { movies, user } = this.state;
     console.log("main-view.render().this.state:", this.state);
-    console.log("main-view.render().{movies, user}:", {movies, user});
     var mainView = this;
  
     /* <!--If there is no user, the LoginView is rendered. 
