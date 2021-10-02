@@ -26531,8 +26531,11 @@ var _reactDefault = parcelHelpers.interopDefault(_react);
 var _propTypes = require("prop-types");
 var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
 var _movieCardScss = require("./movie-card.scss"); // (might need it later)
+var _genreView = require("../genre-view/genre-view");
 var _button = require("react-bootstrap/Button");
 var _buttonDefault = parcelHelpers.interopDefault(_button);
+var _row = require("react-bootstrap/Row");
+var _rowDefault = parcelHelpers.interopDefault(_row);
 var _card = require("react-bootstrap/Card");
 var _cardDefault = parcelHelpers.interopDefault(_card);
 var _reactRouterDom = require("react-router-dom");
@@ -26543,13 +26546,18 @@ class MovieCard extends _reactDefault.default.Component {
     // capitalized (differs from course text)
     openMovieView(cardProps) {
     }
+    openGenreView() {
+        console.log('movie-card.openGenreView()');
+    //console.log('movie-card.openGenreView(): this:', this);
+    //console.log(movie.genre.name);
+    }
     render() {
         const { movie  } = this.props;
         return(/*#__PURE__*/ _reactDefault.default.createElement(_cardDefault.default, {
             className: "card",
             __source: {
                 fileName: "src/components/movie-card/movie-card.jsx",
-                lineNumber: 21
+                lineNumber: 30
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_cardDefault.default.Img, {
@@ -26558,31 +26566,37 @@ class MovieCard extends _reactDefault.default.Component {
             src: movie.imagePath,
             __source: {
                 fileName: "src/components/movie-card/movie-card.jsx",
-                lineNumber: 22
+                lineNumber: 31
             },
             __self: this
         }), /*#__PURE__*/ _reactDefault.default.createElement(_cardDefault.default.Body, {
             __source: {
                 fileName: "src/components/movie-card/movie-card.jsx",
-                lineNumber: 23
+                lineNumber: 32
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_cardDefault.default.Title, {
             __source: {
                 fileName: "src/components/movie-card/movie-card.jsx",
-                lineNumber: 24
+                lineNumber: 33
             },
             __self: this
-        }, movie.title), /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
+        }, movie.title), /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
+            __source: {
+                fileName: "src/components/movie-card/movie-card.jsx",
+                lineNumber: 34
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
             as: _reactRouterDom.Link,
             to: `/movies/${movie._id}`,
             variant: "primary",
             __source: {
                 fileName: "src/components/movie-card/movie-card.jsx",
-                lineNumber: 25
+                lineNumber: 35
             },
             __self: this
-        }, "Open")))); // end return
+        }, "Open"))))); // end return
     }
 }
 MovieCard.propTypes = {
@@ -26598,7 +26612,7 @@ MovieCard.propTypes = {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"6TuXu","prop-types":"1tgq3","./movie-card.scss":"cF5gT","react-bootstrap/Button":"9CzHT","react-bootstrap/Card":"MoOk8","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J","react-router-dom":"cpyQW","../movie-view/movie-view":"ikZdr"}],"cF5gT":[function() {},{}],"MoOk8":[function(require,module,exports) {
+},{"react":"6TuXu","prop-types":"1tgq3","./movie-card.scss":"cF5gT","react-bootstrap/Button":"9CzHT","react-bootstrap/Card":"MoOk8","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J","react-router-dom":"cpyQW","../movie-view/movie-view":"ikZdr","../genre-view/genre-view":"8WCoL","react-bootstrap/Row":"c0x1x"}],"cF5gT":[function() {},{}],"MoOk8":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _extends = require("@babel/runtime/helpers/esm/extends");
@@ -28689,7 +28703,31 @@ function getWidth(node, client) {
 }
 exports.default = getWidth;
 
-},{"./isWindow":"e9RKY","./offset":"g9pCB","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"054li":[function(require,module,exports) {
+},{"./isWindow":"e9RKY","./offset":"g9pCB","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"8WCoL":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$5f0a = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$5f0a.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+class GenreView extends _reactDefault.default.Component {
+    constructor(){
+        super();
+        alert("GenreView instantiated");
+    }
+}
+exports.default = GenreView;
+
+  $parcel$ReactRefreshHelpers$5f0a.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"054li":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$02dd = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
