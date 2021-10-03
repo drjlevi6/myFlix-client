@@ -6,9 +6,13 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
+import { Link } from "react-router-dom";
 import { scrollParent } from 'dom-helpers';
 
 export class MovieView extends React.Component { 
+  showGenreView() {
+    console.log('MovieView.showGenreView:', movie);
+  }
 
   render() {
     const { movie, onBackClick } = this.props;
@@ -31,6 +35,18 @@ export class MovieView extends React.Component {
             <Col>
             <span className="label">Description:&nbsp;</span>
             <span className="value movie-description">{movie.description}</span>
+            </Col>
+          </Row>
+          <Row>
+            <Col xs={4}>
+            <Button className='genre-button'  variant='primary' 
+              as={Link} to={`/movies/genre/${movie.title}`}>Genre:
+            </Button>
+            </Col>
+            <Col xs={4}>
+            <Button className='director-button'
+              variant='primary' >Director:
+            </Button>
             </Col>
           </Row>
           <Row className="back-button-row">

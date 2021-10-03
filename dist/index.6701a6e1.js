@@ -27417,29 +27417,33 @@ var _col = require("react-bootstrap/Col");
 var _colDefault = parcelHelpers.interopDefault(_col);
 var _button = require("react-bootstrap/Button");
 var _buttonDefault = parcelHelpers.interopDefault(_button);
+var _reactRouterDom = require("react-router-dom");
 var _domHelpers = require("dom-helpers");
 class MovieView extends _reactDefault.default.Component {
+    showGenreView() {
+        console.log('MovieView.showGenreView:', movie);
+    }
     render() {
         const { movie , onBackClick  } = this.props;
         return(/*#__PURE__*/ _reactDefault.default.createElement(_containerDefault.default, {
             className: "movie-view",
             __source: {
                 fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 17
+                lineNumber: 21
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
             className: "movie-poster-row",
             __source: {
                 fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 19
+                lineNumber: 23
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
             xs: 6,
             __source: {
                 fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 20
+                lineNumber: 24
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("img", {
@@ -27447,68 +27451,106 @@ class MovieView extends _reactDefault.default.Component {
             src: movie.imagePath,
             __source: {
                 fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 21
+                lineNumber: 25
             },
             __self: this
         }))), /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
             className: "movie-title-row",
             __source: {
                 fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 24
+                lineNumber: 28
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
             __source: {
                 fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 25
+                lineNumber: 29
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("span", {
             className: "label",
             __source: {
                 fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 26
+                lineNumber: 30
             },
             __self: this
         }, "Title: "), /*#__PURE__*/ _reactDefault.default.createElement("span", {
             className: "value",
             __source: {
                 fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 27
+                lineNumber: 31
             },
             __self: this
         }, movie.title))), /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
             className: "movie-description-row",
             __source: {
                 fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 30
+                lineNumber: 34
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
             __source: {
                 fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 31
+                lineNumber: 35
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("span", {
             className: "label",
             __source: {
                 fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 32
+                lineNumber: 36
             },
             __self: this
         }, "Description:\xa0"), /*#__PURE__*/ _reactDefault.default.createElement("span", {
             className: "value movie-description",
             __source: {
                 fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 33
+                lineNumber: 37
             },
             __self: this
         }, movie.description))), /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
+            __source: {
+                fileName: "src/components/movie-view/movie-view.jsx",
+                lineNumber: 40
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
+            xs: 4,
+            __source: {
+                fileName: "src/components/movie-view/movie-view.jsx",
+                lineNumber: 41
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
+            className: "genre-button",
+            variant: "primary",
+            as: _reactRouterDom.Link,
+            to: `/movies/genre/${movie.title}`,
+            __source: {
+                fileName: "src/components/movie-view/movie-view.jsx",
+                lineNumber: 42
+            },
+            __self: this
+        }, "Genre:")), /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
+            xs: 4,
+            __source: {
+                fileName: "src/components/movie-view/movie-view.jsx",
+                lineNumber: 46
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
+            className: "director-button",
+            variant: "primary",
+            __source: {
+                fileName: "src/components/movie-view/movie-view.jsx",
+                lineNumber: 47
+            },
+            __self: this
+        }, "Director:"))), /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
             className: "back-button-row",
             __source: {
                 fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 36
+                lineNumber: 52
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
@@ -27519,7 +27561,7 @@ class MovieView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 38
+                lineNumber: 54
             },
             __self: this
         }, "Back"))));
@@ -27539,7 +27581,7 @@ MovieView.propTypes = {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"6TuXu","prop-types":"1tgq3","./movie-view.scss":"kvL93","react-bootstrap/Container":"2PRIq","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0","react-bootstrap/Button":"9CzHT","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J","dom-helpers":"4VatF"}],"kvL93":[function() {},{}],"4VatF":[function(require,module,exports) {
+},{"react":"6TuXu","prop-types":"1tgq3","./movie-view.scss":"kvL93","react-bootstrap/Container":"2PRIq","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0","react-bootstrap/Button":"9CzHT","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J","dom-helpers":"4VatF","react-router-dom":"cpyQW"}],"kvL93":[function() {},{}],"4VatF":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "addEventListener", ()=>_addEventListenerDefault.default
