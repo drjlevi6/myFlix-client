@@ -27425,25 +27425,27 @@ class MovieView extends _reactDefault.default.Component {
     }
     render() {
         const { movie , onBackClick  } = this.props;
+        console.log('MovieView.render().this.props:', this.props);
+        console.log('MovieView.render().this.state:', this.state);
         return(/*#__PURE__*/ _reactDefault.default.createElement(_containerDefault.default, {
             className: "movie-view",
             __source: {
                 fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 21
+                lineNumber: 23
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
             className: "movie-poster-row",
             __source: {
                 fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 23
+                lineNumber: 24
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
             xs: 6,
             __source: {
                 fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 24
+                lineNumber: 25
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("img", {
@@ -27451,74 +27453,74 @@ class MovieView extends _reactDefault.default.Component {
             src: movie.imagePath,
             __source: {
                 fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 25
+                lineNumber: 26
             },
             __self: this
         }))), /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
             className: "movie-title-row",
             __source: {
                 fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 28
+                lineNumber: 29
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
             __source: {
                 fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 29
+                lineNumber: 30
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("span", {
             className: "label",
             __source: {
                 fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 30
+                lineNumber: 31
             },
             __self: this
         }, "Title: "), /*#__PURE__*/ _reactDefault.default.createElement("span", {
             className: "value",
             __source: {
                 fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 31
+                lineNumber: 32
             },
             __self: this
         }, movie.title))), /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
             className: "movie-description-row",
             __source: {
                 fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 34
+                lineNumber: 35
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
             __source: {
                 fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 35
+                lineNumber: 36
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("span", {
             className: "label",
             __source: {
                 fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 36
+                lineNumber: 37
             },
             __self: this
         }, "Description:\xa0"), /*#__PURE__*/ _reactDefault.default.createElement("span", {
             className: "value movie-description",
             __source: {
                 fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 37
+                lineNumber: 38
             },
             __self: this
         }, movie.description))), /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
             __source: {
                 fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 40
+                lineNumber: 41
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
             xs: 4,
             __source: {
                 fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 41
+                lineNumber: 42
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
@@ -27528,14 +27530,14 @@ class MovieView extends _reactDefault.default.Component {
             to: `/movies/genre/${movie.title}`,
             __source: {
                 fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 42
+                lineNumber: 43
             },
             __self: this
         }, "Genre:")), /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
             xs: 4,
             __source: {
                 fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 46
+                lineNumber: 47
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
@@ -27543,14 +27545,14 @@ class MovieView extends _reactDefault.default.Component {
             variant: "primary",
             __source: {
                 fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 47
+                lineNumber: 48
             },
             __self: this
         }, "Director:"))), /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
             className: "back-button-row",
             __source: {
                 fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 52
+                lineNumber: 53
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
@@ -27561,7 +27563,7 @@ class MovieView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 54
+                lineNumber: 55
             },
             __self: this
         }, "Back"))));
