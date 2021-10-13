@@ -26267,6 +26267,7 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "GenreView", ()=>GenreView
 );
+var _genreViewScss = require("./genre-view.scss");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _container = require("react-bootstrap/Container");
@@ -26286,31 +26287,25 @@ class GenreView extends _reactDefault.default.Component {
     }
     render() {
         const { movie , onBackClick  } = this.props;
-        /*
-      let dataAlert = 
-        new (<Alert>
-          <Alert.Heading>dataAlert</Alert.Heading>
-        </Alert>);
-        */ console.log("genre-view:", this.props);
         return(/*#__PURE__*/ _reactDefault.default.createElement(_containerDefault.default, {
             className: "movie-view",
             __source: {
                 fileName: "src/components/genre-view/genre-view.jsx",
-                lineNumber: 25
+                lineNumber: 21
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
             className: "movie-poster-row",
             __source: {
                 fileName: "src/components/genre-view/genre-view.jsx",
-                lineNumber: 26
+                lineNumber: 22
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
             xs: 6,
             __source: {
                 fileName: "src/components/genre-view/genre-view.jsx",
-                lineNumber: 27
+                lineNumber: 23
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("img", {
@@ -26318,39 +26313,39 @@ class GenreView extends _reactDefault.default.Component {
             src: movie.imagePath,
             __source: {
                 fileName: "src/components/genre-view/genre-view.jsx",
-                lineNumber: 28
+                lineNumber: 24
             },
             __self: this
         }))), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Alert, {
             variant: "info",
             __source: {
                 fileName: "src/components/genre-view/genre-view.jsx",
-                lineNumber: 31
+                lineNumber: 27
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Alert.Heading, {
             __source: {
                 fileName: "src/components/genre-view/genre-view.jsx",
-                lineNumber: 32
+                lineNumber: 28
             },
             __self: this
         }, "Title: ", movie.title), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Alert.Heading, {
             __source: {
                 fileName: "src/components/genre-view/genre-view.jsx",
-                lineNumber: 33
+                lineNumber: 29
             },
             __self: this
         }, "Genre: ", movie.genre.name), /*#__PURE__*/ _reactDefault.default.createElement("p", {
             __source: {
                 fileName: "src/components/genre-view/genre-view.jsx",
-                lineNumber: 34
+                lineNumber: 30
             },
             __self: this
         }, movie.genre.description)), /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
             className: "back-button-row",
             __source: {
                 fileName: "src/components/genre-view/genre-view.jsx",
-                lineNumber: 36
+                lineNumber: 32
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
@@ -26361,7 +26356,7 @@ class GenreView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "src/components/genre-view/genre-view.jsx",
-                lineNumber: 37
+                lineNumber: 33
             },
             __self: this
         }, "Back"))));
@@ -26373,7 +26368,7 @@ class GenreView extends _reactDefault.default.Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"6TuXu","react-bootstrap/Container":"2PRIq","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0","react-bootstrap/Button":"9CzHT","react-router-dom":"cpyQW","dom-helpers":"4VatF","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J","react-bootstrap":"h2YVd"}],"2PRIq":[function(require,module,exports) {
+},{"react":"6TuXu","react-bootstrap/Container":"2PRIq","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0","react-bootstrap/Button":"9CzHT","react-router-dom":"cpyQW","dom-helpers":"4VatF","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J","react-bootstrap":"h2YVd","./genre-view.scss":"3BqnD"}],"2PRIq":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _extends = require("@babel/runtime/helpers/esm/extends");
@@ -39521,7 +39516,7 @@ Tooltip.defaultProps = defaultProps;
 Tooltip.displayName = 'Tooltip';
 exports.default = Tooltip;
 
-},{"@babel/runtime/helpers/esm/extends":"bKAu6","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"3Rubg","classnames":"bOXOh","react":"6TuXu","prop-types-extra/lib/isRequiredForA11y":"1p075","./ThemeProvider":"eeqfi","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"ikZdr":[function(require,module,exports) {
+},{"@babel/runtime/helpers/esm/extends":"bKAu6","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"3Rubg","classnames":"bOXOh","react":"6TuXu","prop-types-extra/lib/isRequiredForA11y":"1p075","./ThemeProvider":"eeqfi","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"3BqnD":[function() {},{}],"ikZdr":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$3741 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
