@@ -42,6 +42,15 @@
   margin-bottom: 12px;
   /* margin-top doesn't work for some reason */
 }
+
+.genre-director-div {
+  display: flex;
+  justify-content: space-around;
+}
+
+.genre-director-div a {
+  width: 50%;
+}
 .header-text {
   display: block;
   font-size: large;

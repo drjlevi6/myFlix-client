@@ -39,16 +39,15 @@ export class MovieView extends React.Component {
             </Col>
           </Row>
           <Row>
-            <Col xs={4}>
+            <div className='genre-director-div'>
             <Button className='genre-button'  variant='primary' 
               as={Link} to={`/movies/genre/${movie.title}`}>Genre:
             </Button>
-            </Col>
-            <Col xs={4}>
             <Button className='director-button'
-              variant='primary' >Director:
+              variant='primary' variant='primary' 
+              as={Link} to={`/movies/director/${movie.title}`}>Director:
             </Button>
-            </Col>
+            </div>
           </Row>
           <Row className="back-button-row">
 

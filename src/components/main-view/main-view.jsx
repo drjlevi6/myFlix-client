@@ -10,6 +10,8 @@ import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
 import { LoginView } from '../login-view/login-view';
 import { RegistrationView } from '../registration-view/registration-view';
+import { GenreView } from '../genre-view/genre-view';
+import { DirectorView } from '../director-view/director-view';
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -126,7 +128,7 @@ export default class MainView extends React.Component {
             ))
           }} />
 
-          <Route path="/movies/:movieId"
+          <Route exact path="/movies/:movieId"
             render={({ match, history }) => {
               return (
                 <Col md={8}>
@@ -137,17 +139,27 @@ export default class MainView extends React.Component {
                 </Col>
               )
           }} />       
-          <Route path="/genre"
+          <Route exact path="/movies/genre/:title"
             render={({ match, history }) => {
+              
               return (
                 <Col md={8}>
-                  <MovieView 
-                    movie={movies.find(  m => (m._id === match.params.movieId))} 
-                    onBackClick={() => history.push("/")}
-                  />
+                  <GenreView 
+                    genre={movies.find(  m => (m.title === match.params.title)).genre}
+                    movie={movies.find(  m => (m.title === match.params.title))} 
+                    onBackClick={() => history.push("/")}/>
                 </Col>
               )
-          }} />       
+          }} />  
+          <Route exact path='/movies/director/:name'   
+            render={({ match, history }) => {  
+              return (
+                <Col md={8}>
+                  <DirectorView />
+                </Col>
+              )
+          }} />  
+
         </Row>
 
         <Row className="main-view justify-content-sm-center">
