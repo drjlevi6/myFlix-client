@@ -26,6 +26,7 @@ var mainView;
 export default class MainView extends React.Component {
   constructor(){
     super();
+    localStorage.clear();
     this.state = {
       movies: [],
       user: null
