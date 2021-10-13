@@ -51,6 +51,16 @@
 .genre-director-div a {
   width: 50%;
 }
+
+.genre-button {
+  margin-right: 10px;
+  margin-bottom: 12px;
+}
+
+.director-button {
+  margin-left: 10px;
+  margin-bottom: 12px;
+}
 .header-text {
   display: block;
   font-size: large;

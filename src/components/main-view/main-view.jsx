@@ -142,12 +142,12 @@ export default class MainView extends React.Component {
           }} />       
           <Route exact path="/movies/genre/:title"
             render={({ match, history }) => {
-              
+              let mTitle = match.params.title;
               return (
                 <Col md={8}>
                   <GenreView 
-                    genre={movies.find(  m => (m.title === match.params.title)).genre}
-                    movie={movies.find(  m => (m.title === match.params.title))} 
+                    genre={movies.find(  m => (m.title === mTitle)).genre}
+                    movie={movies.find(  m => (m.title === mTitle))} 
                     onBackClick={() => history.push("/")}/>
                 </Col>
               )

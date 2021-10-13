@@ -21668,12 +21668,13 @@ class MainView extends _reactDefault.default.Component {
             exact: true,
             path: "/movies/genre/:title",
             render: ({ match , history  })=>{
+                let mTitle = match.params.title;
                 return(/*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
                     md: 8
                 }, /*#__PURE__*/ _reactDefault.default.createElement(_genreView.GenreView, {
-                    genre: movies.find((m)=>m.title === match.params.title
+                    genre: movies.find((m)=>m.title === mTitle
                     ).genre,
-                    movie: movies.find((m)=>m.title === match.params.title
+                    movie: movies.find((m)=>m.title === mTitle
                     ),
                     onBackClick: ()=>history.push("/")
                 })));
