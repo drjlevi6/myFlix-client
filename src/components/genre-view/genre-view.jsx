@@ -1,3 +1,5 @@
+import './genre-view.scss';
+
 import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -5,6 +7,7 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import { Link } from "react-router-dom";
 import { scrollParent } from 'dom-helpers';
+import { Alert } from 'react-bootstrap';
 
 export class GenreView extends React.Component {
     constructor(){
@@ -13,7 +16,7 @@ export class GenreView extends React.Component {
 
     render() {
       const { movie, onBackClick } = this.props;
-      console.log(this.props);
+      
       return (
         <Container className="movie-view">
             <Row className="movie-poster-row">
@@ -21,27 +24,18 @@ export class GenreView extends React.Component {
               <img crossOrigin="anonymous" src={movie.imagePath} />
               </Col>
             </Row>
-            <Row className="movie-title-row">
-              <Col>
-              <span className="label">Title: </span>
-              <span className="value">{movie.title}</span>
-              </Col>
-            </Row>
-            <Row className="movie-description-row">
-              <Col>
-              <span className="label">Genre:{movie.genre.name}&nbsp;</span>
-              <span className="value movie-description">{movie.genre.description}</span>
-              </Col>
-            </Row>
+            <Alert variant='info'>
+              <Alert.Heading>Title: {movie.title}</Alert.Heading>
+              <Alert.Heading>Genre: {movie.genre.name}</Alert.Heading>
+              <p>{movie.genre.description}</p>
+            </Alert>
             <Row className="back-button-row">
-  
               <Button className="back-button"
                 variant="dark" onClick={() => { onBackClick(null); }}>
                 Back
-              </Button>
-  
+              </Button> 
             </Row>
-        </Container>
+     </Container>
       );
      }
 }
