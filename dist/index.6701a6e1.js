@@ -21688,6 +21688,7 @@ class MainView extends _reactDefault.default.Component {
             exact: true,
             path: "/movies/director/:name",
             render: ({ match , history  })=>{
+                console.log('main-view: director endpoint hit');
                 let mTitle = match.params.title;
                 return(/*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
                     md: 8
@@ -21706,14 +21707,14 @@ class MainView extends _reactDefault.default.Component {
             className: "main-view justify-content-sm-center",
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 170
+                lineNumber: 171
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
             className: "d-grid",
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 171
+                lineNumber: 172
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
@@ -21722,7 +21723,7 @@ class MainView extends _reactDefault.default.Component {
             onClick: this.onLoggedOut,
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 172
+                lineNumber: 173
             },
             __self: this
         }, "Log Out"))))));
@@ -44042,7 +44043,7 @@ class DirectorView extends _reactDefault.default.Component {
                 lineNumber: 20
             },
             __self: this
-        }, "MovieView rendered"));
+        }, "DirectorView rendered"));
     }
 }
 

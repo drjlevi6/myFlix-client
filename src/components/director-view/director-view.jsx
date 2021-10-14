@@ -17,7 +17,7 @@ export class DirectorView extends React.Component {
     const { movie, onBackClick } = this.props;
     console.log('director-view.movie:', movie);
     return (
-      <h3>MovieView rendered</h3>
+      <h3>DirectorView rendered</h3>
     )
   }
 }

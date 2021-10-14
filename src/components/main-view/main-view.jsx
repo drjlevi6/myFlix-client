@@ -154,6 +154,7 @@ export default class MainView extends React.Component {
           }} />  
           <Route exact path='/movies/director/:name'   
             render={({ match, history }) => {
+              console.log('main-view: director endpoint hit');
               let mTitle = match.params.title;
               return (
                 <Col md={8}>
