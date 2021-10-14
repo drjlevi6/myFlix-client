@@ -39602,29 +39602,35 @@ class MovieView extends _reactDefault.default.Component {
                 lineNumber: 31
             },
             __self: this
-        }, movie.title), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Alert.Heading, {
+        }, movie.title), /*#__PURE__*/ _reactDefault.default.createElement("hr", {
             __source: {
                 fileName: "src/components/movie-view/movie-view.jsx",
                 lineNumber: 32
             },
             __self: this
-        }, "Description:"), /*#__PURE__*/ _reactDefault.default.createElement("p", {
+        }), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Alert.Heading, {
             __source: {
                 fileName: "src/components/movie-view/movie-view.jsx",
                 lineNumber: 33
             },
             __self: this
+        }, "Description:"), /*#__PURE__*/ _reactDefault.default.createElement("p", {
+            __source: {
+                fileName: "src/components/movie-view/movie-view.jsx",
+                lineNumber: 34
+            },
+            __self: this
         }, movie.description)), /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
             __source: {
                 fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 36
+                lineNumber: 37
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
             className: "genre-director-div",
             __source: {
                 fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 37
+                lineNumber: 38
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
@@ -39634,7 +39640,7 @@ class MovieView extends _reactDefault.default.Component {
             to: `/movies/genre/${movie.title}`,
             __source: {
                 fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 38
+                lineNumber: 39
             },
             __self: this
         }, "Genre:"), /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
@@ -39645,14 +39651,14 @@ class MovieView extends _reactDefault.default.Component {
             to: `/movies/director/${movie.title}`,
             __source: {
                 fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 41
+                lineNumber: 42
             },
             __self: this
         }, "Director:"))), /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
             className: "back-button-row",
             __source: {
                 fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 48
+                lineNumber: 49
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
@@ -39663,7 +39669,7 @@ class MovieView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 49
+                lineNumber: 50
             },
             __self: this
         }, "Back"))));

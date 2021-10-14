@@ -29,6 +29,7 @@ export class MovieView extends React.Component {
         <Alert className='title-description-alert' variant='info'>
           <Alert.Heading>Title:</Alert.Heading>
           <p>{movie.title}</p>
+          <hr />
           <Alert.Heading>Description:</Alert.Heading>
           <p>{movie.description}</p>
         </Alert>
