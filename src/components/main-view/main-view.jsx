@@ -153,10 +153,12 @@ export default class MainView extends React.Component {
               )
           }} />  
           <Route exact path='/movies/director/:name'   
-            render={({ match, history }) => {  
+            render={({ match, history }) => {
+              let mTitle = match.params.title;
               return (
                 <Col md={8}>
-                  <DirectorView />
+                  <DirectorView 
+                    director={movies.find(  m => (m.title === mTitle)).director}                  />
                 </Col>
               )
           }} />  
