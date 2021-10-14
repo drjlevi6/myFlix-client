@@ -44032,7 +44032,6 @@ class DirectorView extends _reactDefault.default.Component {
     }
     render() {
         const { movie , onBackClick  } = this.props;
-        // project brief requires name, bio, birth year, death year
         let director = movie.director;
         return(/*#__PURE__*/ _reactDefault.default.createElement(_containerDefault.default, {
             className: "director-view",
@@ -44124,7 +44123,25 @@ class DirectorView extends _reactDefault.default.Component {
                 lineNumber: 36
             },
             __self: this
-        }, director.death))));
+        }, director.death)), /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
+            className: "back-button-row",
+            __source: {
+                fileName: "src/components/director-view/director-view.jsx",
+                lineNumber: 38
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
+            className: "back-button",
+            variant: "dark",
+            onClick: ()=>{
+                onBackClick(null);
+            },
+            __source: {
+                fileName: "src/components/director-view/director-view.jsx",
+                lineNumber: 39
+            },
+            __self: this
+        }, "Back"))));
     }
 }
 
