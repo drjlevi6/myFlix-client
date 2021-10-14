@@ -16,7 +16,7 @@ export class GenreView extends React.Component {
 
     render() {
       const { movie, onBackClick } = this.props;
-      
+
       return (
         <Container className="movie-view">
             <Row className="movie-poster-row">
@@ -24,7 +24,7 @@ export class GenreView extends React.Component {
               <img crossOrigin="anonymous" src={movie.imagePath} />
               </Col>
             </Row>
-            <Alert variant='info'>
+            <Alert className='data-area' variant='info'>
               <Alert.Heading>Title: {movie.title}</Alert.Heading>
               <Alert.Heading>Genre: {movie.genre.name}</Alert.Heading>
               <p>{movie.genre.description}</p>

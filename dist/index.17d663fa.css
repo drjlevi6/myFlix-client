@@ -22,8 +22,8 @@
   margin: 3px;
   padding: 0px;
 }
-.movie-poster-row {
-  margin-bottom: 12px;
+.col-6 {
+  margin-bottom: 6px;
 }
 .label {
   font-weight: 700;

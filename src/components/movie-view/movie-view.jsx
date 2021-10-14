@@ -7,6 +7,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import { Link } from "react-router-dom";
+import { Alert } from 'react-bootstrap';
 import { scrollParent } from 'dom-helpers';
 
 export class MovieView extends React.Component { 
@@ -18,28 +19,24 @@ export class MovieView extends React.Component {
     const { movie, onBackClick } = this.props;
     console.log('MovieView.render().this.props:', this.props);
     console.log('MovieView.render().this.state:', this.state);
-
+ 
     return (
       <Container className="movie-view">
-          <Row className="movie-poster-row">
-            <Col xs={6}>
-            <img crossOrigin="anonymous" src={movie.imagePath} />
-            </Col>
-          </Row>
-          <Row className="movie-title-row">
-            <Col>
-            <span className="label">Title: </span>
-            <span className="value">{movie.title}</span>
-            </Col>
-          </Row>
-          <Row className="movie-description-row">
-            <Col>
-            <span className="label">Description:&nbsp;</span>
-            <span className="value movie-description">{movie.description}</span>
-            </Col>
-          </Row>
-          <Row>
-            <div className='genre-director-div'>
+        <Row className="movie-poster-row">
+          <Col xs={6}>
+          <img crossOrigin="anonymous" src={movie.imagePath} />
+          </Col>
+        </Row>
+
+        <Alert className='data-area' variant='info'>
+          <Alert.Heading>Title:</Alert.Heading>
+          <p>{movie.title}</p>
+          <Alert.Heading>Description:</Alert.Heading>
+          <p>{movie.description}</p>
+        </Alert>
+
+        <Row>
+          <div className='genre-director-div'>
             <Button className='genre-button'  variant='primary' 
               as={Link} to={`/movies/genre/${movie.title}`}>Genre:
             </Button>
@@ -47,16 +44,16 @@ export class MovieView extends React.Component {
               variant='primary' variant='primary' 
               as={Link} to={`/movies/director/${movie.title}`}>Director:
             </Button>
-            </div>
-          </Row>
-          <Row className="back-button-row">
+          </div>
+        </Row>
 
-            <Button className="back-button"
-              variant="dark" onClick={() => { onBackClick(null); }}>
-              Back
-            </Button>
+        <Row className="back-button-row">
+          <Button className="back-button"
+            variant="dark" onClick={() => { onBackClick(null); }}>
+            Back
+          </Button>
+        </Row>
 
-          </Row>
       </Container>
     );
   }
