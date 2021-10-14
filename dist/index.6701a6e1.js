@@ -26366,6 +26366,14 @@ class GenreView extends _reactDefault.default.Component {
         }, "Back"))));
     }
 }
+GenreView.propTypes = {
+    movie: PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired,
+        imagePath: PropTypes.string.isRequired
+    }).isRequired,
+    onBackClick: PropTypes.func.isRequired
+};
 
   $parcel$ReactRefreshHelpers$5f0a.postlude(module);
 } finally {

@@ -18,7 +18,7 @@ export class GenreView extends React.Component {
       const { movie, onBackClick } = this.props;
 
       return (
-        <Container className="movie-view">
+        <Container className="movie-view">  
             <Row className="movie-poster-row">
               <Col xs={6}>
               <img crossOrigin="anonymous" src={movie.imagePath} />
@@ -38,4 +38,13 @@ export class GenreView extends React.Component {
      </Container>
       );
      }
+}
+
+GenreView.propTypes = {
+  movie: PropTypes.shape({
+		title: PropTypes.string.isRequired,
+		description: PropTypes.string.isRequired,
+		imagePath: PropTypes.string.isRequired
+  }).isRequired,
+  onBackClick: PropTypes.func.isRequired
 }
