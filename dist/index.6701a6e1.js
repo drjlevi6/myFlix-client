@@ -44027,19 +44027,22 @@ var _col = require("react-bootstrap/Col");
 var _colDefault = parcelHelpers.interopDefault(_col);
 var _button = require("react-bootstrap/Button");
 var _buttonDefault = parcelHelpers.interopDefault(_button);
+var _reactBootstrap = require("react-bootstrap");
 var _reactRouterDom = require("react-router-dom");
 class DirectorView extends _reactDefault.default.Component {
     constructor(){
         super();
     }
     render() {
-        return(/*#__PURE__*/ _reactDefault.default.createElement("h1", {
+        //    const { movie, onBackClick } = this.props;
+        const { movie  } = this.props; //event. need onBackClick?
+        return(/*#__PURE__*/ _reactDefault.default.createElement("h3", {
             __source: {
                 fileName: "src/components/director-view/director-view.jsx",
-                lineNumber: 17
+                lineNumber: 20
             },
             __self: this
-        }, " DirectorView instantiated"));
+        }, " Director: ", movie.director.name));
     }
 }
 
@@ -44048,6 +44051,6 @@ class DirectorView extends _reactDefault.default.Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"6TuXu","prop-types":"1tgq3","react-bootstrap/Container":"2PRIq","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0","react-bootstrap/Button":"9CzHT","react-router-dom":"cpyQW","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"25uA3":[function() {},{}],"jUTZ8":[function() {},{}]},["6a0zu","dLPEP"], "dLPEP", "parcelRequireaec4")
+},{"react":"6TuXu","prop-types":"1tgq3","react-bootstrap/Container":"2PRIq","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0","react-bootstrap/Button":"9CzHT","react-router-dom":"cpyQW","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J","react-bootstrap":"h2YVd"}],"25uA3":[function() {},{}],"jUTZ8":[function() {},{}]},["6a0zu","dLPEP"], "dLPEP", "parcelRequireaec4")
 
 //# sourceMappingURL=index.6701a6e1.js.map
