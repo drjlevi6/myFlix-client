@@ -14,10 +14,10 @@ export class DirectorView extends React.Component {
   }
 
   render() {
-//    const { movie, onBackClick } = this.props;
-    const { movie } = this.props;  //event. need onBackClick?
+    const { movie, onBackClick } = this.props;
+    console.log('director-view.movie:', movie);
     return (
-      <h3> Director: {movie.director.name}</h3>
+      <h3>MovieView rendered</h3>
     )
   }
 }
