@@ -44032,14 +44032,27 @@ class DirectorView extends _reactDefault.default.Component {
     }
     render() {
         const { movie , onBackClick  } = this.props;
-        console.log('director-view.movie:', movie.director.name);
-        return(/*#__PURE__*/ _reactDefault.default.createElement("h3", {
+        let director = movie.director;
+        return(/*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Alert, {
+            variant: "info",
             __source: {
                 fileName: "src/components/director-view/director-view.jsx",
                 lineNumber: 20
             },
             __self: this
-        }, "DirectorView: ", movie.director.name));
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Alert.Heading, {
+            __source: {
+                fileName: "src/components/director-view/director-view.jsx",
+                lineNumber: 21
+            },
+            __self: this
+        }, "Director:"), /*#__PURE__*/ _reactDefault.default.createElement("p", {
+            __source: {
+                fileName: "src/components/director-view/director-view.jsx",
+                lineNumber: 22
+            },
+            __self: this
+        }, director.name)));
     }
 }
 

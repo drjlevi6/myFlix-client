@@ -15,9 +15,12 @@ export class DirectorView extends React.Component {
 
   render() {
     const { movie, onBackClick } = this.props;
-    console.log('director-view.movie:', movie.director.name);
+    let director = movie.director;
     return (
-      <h3>DirectorView: {movie.director.name}</h3>
+      <Alert variant='info'>
+        <Alert.Heading>Director:</Alert.Heading>
+        <p>{director.name}</p>
+      </Alert>
     )
   }
 }
