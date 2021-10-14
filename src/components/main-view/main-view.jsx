@@ -80,7 +80,6 @@ export default class MainView extends React.Component {
       headers: { Authorization: `Bearer ${token}`}
     })
     .then(response => {
-      //console.log("main-view.getMovies().response:", response);
       // Assign the result to the state
       this.setState({
         movies: response.data
@@ -93,7 +92,6 @@ export default class MainView extends React.Component {
 
   render() {
     const { movies, user } = this.state;
-    console.log("main-view.render().this.state:", this.state);
     var mainView = this;
  
     /* <!--If there is no user, the LoginView is rendered. 
@@ -152,9 +150,8 @@ export default class MainView extends React.Component {
                 </Col>
               )
           }} />  
-          <Route exact path='/movies/director/:name'   
+          <Route exact path='/movies/director/:title'   
             render={({ match, history }) => {
-              console.log('main-view: director endpoint hit');
               let mTitle = match.params.title;
               return (
                 <Col md={8}>

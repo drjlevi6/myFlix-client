@@ -17,8 +17,7 @@ export class MovieView extends React.Component {
 
   render() {
     const { movie, onBackClick } = this.props;
-    console.log('MovieView.render().this.props:', this.props);
- 
+  
     return (
       <Container className="movie-view">
         <Row className="movie-poster-row">
