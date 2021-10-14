@@ -157,8 +157,10 @@ export default class MainView extends React.Component {
               let mTitle = match.params.title;
               return (
                 <Col md={8}>
-                  <DirectorView 
-                    director={movies.find(  m => (m.title === mTitle)).director}                  />
+                  <DirectorView
+                    movie={movies.find( m => (m.title === mTitle))}
+                    onBackClick={() => history.push("/")}
+                  />
                 </Col>
               )
           }} />  
