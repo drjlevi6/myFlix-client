@@ -39582,7 +39582,7 @@ class MovieView extends _reactDefault.default.Component {
             },
             __self: this
         }))), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Alert, {
-            className: "data-area",
+            className: "title-description-alert",
             variant: "info",
             __source: {
                 fileName: "src/components/movie-view/movie-view.jsx",

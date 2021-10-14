@@ -41,7 +41,7 @@
 .genre-director-div {
   display: flex;
   justify-content: space-around;
-  margin-bottom: 12px;
+  margin-bottom: 20px;
 }
 
 .genre-director-div a {
