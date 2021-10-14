@@ -44032,27 +44032,99 @@ class DirectorView extends _reactDefault.default.Component {
     }
     render() {
         const { movie , onBackClick  } = this.props;
+        // project brief requires name, bio, birth year, death year
         let director = movie.director;
-        return(/*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Alert, {
-            variant: "info",
-            __source: {
-                fileName: "src/components/director-view/director-view.jsx",
-                lineNumber: 20
-            },
-            __self: this
-        }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Alert.Heading, {
+        return(/*#__PURE__*/ _reactDefault.default.createElement(_containerDefault.default, {
+            className: "director-view",
             __source: {
                 fileName: "src/components/director-view/director-view.jsx",
                 lineNumber: 21
             },
             __self: this
-        }, "Director:"), /*#__PURE__*/ _reactDefault.default.createElement("p", {
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
+            className: "movie-poster-row",
             __source: {
                 fileName: "src/components/director-view/director-view.jsx",
                 lineNumber: 22
             },
             __self: this
-        }, director.name)));
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
+            xs: 6,
+            __source: {
+                fileName: "src/components/director-view/director-view.jsx",
+                lineNumber: 23
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("img", {
+            crossOrigin: "anonymous",
+            src: movie.imagePath,
+            __source: {
+                fileName: "src/components/director-view/director-view.jsx",
+                lineNumber: 24
+            },
+            __self: this
+        }))), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Alert, {
+            variant: "info",
+            __source: {
+                fileName: "src/components/director-view/director-view.jsx",
+                lineNumber: 27
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Alert.Heading, {
+            __source: {
+                fileName: "src/components/director-view/director-view.jsx",
+                lineNumber: 28
+            },
+            __self: this
+        }, "Director:"), /*#__PURE__*/ _reactDefault.default.createElement("p", {
+            __source: {
+                fileName: "src/components/director-view/director-view.jsx",
+                lineNumber: 29
+            },
+            __self: this
+        }, director.name), /*#__PURE__*/ _reactDefault.default.createElement("hr", {
+            __source: {
+                fileName: "src/components/director-view/director-view.jsx",
+                lineNumber: 30
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Alert.Heading, {
+            __source: {
+                fileName: "src/components/director-view/director-view.jsx",
+                lineNumber: 31
+            },
+            __self: this
+        }, "Bio:"), /*#__PURE__*/ _reactDefault.default.createElement("p", {
+            __source: {
+                fileName: "src/components/director-view/director-view.jsx",
+                lineNumber: 32
+            },
+            __self: this
+        }, director.bio), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Alert.Heading, {
+            __source: {
+                fileName: "src/components/director-view/director-view.jsx",
+                lineNumber: 33
+            },
+            __self: this
+        }, "Birth year:"), /*#__PURE__*/ _reactDefault.default.createElement("p", {
+            __source: {
+                fileName: "src/components/director-view/director-view.jsx",
+                lineNumber: 34
+            },
+            __self: this
+        }, director.birth), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Alert.Heading, {
+            __source: {
+                fileName: "src/components/director-view/director-view.jsx",
+                lineNumber: 35
+            },
+            __self: this
+        }, "Death year:"), /*#__PURE__*/ _reactDefault.default.createElement("p", {
+            __source: {
+                fileName: "src/components/director-view/director-view.jsx",
+                lineNumber: 36
+            },
+            __self: this
+        }, director.death))));
     }
 }
 

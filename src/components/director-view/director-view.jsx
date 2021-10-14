@@ -15,12 +15,27 @@ export class DirectorView extends React.Component {
 
   render() {
     const { movie, onBackClick } = this.props;
+    // project brief requires name, bio, birth year, death year
     let director = movie.director;
     return (
-      <Alert variant='info'>
-        <Alert.Heading>Director:</Alert.Heading>
-        <p>{director.name}</p>
-      </Alert>
-    )
+      <Container className="director-view">
+        <Row className="movie-poster-row">
+          <Col xs={6}>
+          <img crossOrigin="anonymous" src={movie.imagePath} />
+          </Col>
+        </Row>
+        <Alert variant='info'>
+          <Alert.Heading>Director:</Alert.Heading>
+          <p>{director.name}</p>
+          <hr />
+          <Alert.Heading>Bio:</Alert.Heading>
+          <p>{director.bio}</p>
+          <Alert.Heading>Birth year:</Alert.Heading>
+          <p>{director.birth}</p>
+          <Alert.Heading>Death year:</Alert.Heading>
+          <p>{director.death}</p>
+        </Alert>
+      </Container>
+    );
   }
 }
