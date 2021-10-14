@@ -30,25 +30,18 @@
 }
 
 .movie-poster-row {
-  margin-bottom: 5px;
-}
-
-.movie-title-row {
-  margin-bottom: 5px;
-}
-
-.movie-description-row {
-  margin-bottom: 5px;
+  margin-bottom: 6px;
 }
 
 .back-button {
-  margin-bottom: 12px;
+  margin-bottom: 6px;
   /* margin-top doesn't work for some reason */
 }
 
 .genre-director-div {
   display: flex;
   justify-content: space-around;
+  margin-bottom: 12px;
 }
 
 .genre-director-div a {
@@ -56,13 +49,11 @@
 }
 
 .genre-button {
-  margin-right: 10px;
-  margin-bottom: 12px;
+  margin-right: 6px;
 }
 
 .director-button {
-  margin-left: 10px;
-  margin-bottom: 12px;
+  margin-left: 6px;
 }
 .header-text {
   display: block;

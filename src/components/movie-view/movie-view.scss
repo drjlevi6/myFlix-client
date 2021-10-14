@@ -1,29 +1,21 @@
-$G_D_button_side_margin: 10px;
+$G_D_button_side_margin: 6px;
 $G_D_button_bottom_margin: 12px;
 .label {
     font-weight: 700;
 }
 
 .movie-poster-row {
-    margin-bottom: 5px;
-}
-
-.movie-title-row {
-    margin-bottom: 5px;
-}
-
-.movie-description-row {
-    margin-bottom: 5px;
+    margin-bottom: 6px;
 }
 
 .back-button {
-    margin-bottom: 12px; /* margin-top doesn't work for some reason */
- 
+    margin-bottom: 6px; /* margin-top doesn't work for some reason */
 }
 
 .genre-director-div {
     display: flex;
     justify-content: space-around;
+    margin-bottom: $G_D_button_bottom_margin;
 }
 
 .genre-director-div a {
@@ -32,10 +24,8 @@ $G_D_button_bottom_margin: 12px;
 
 .genre-button {
     margin-right: $G_D_button_side_margin;
-    margin-bottom: $G_D_button_bottom_margin;
 }
 
 .director-button{
     margin-left: $G_D_button_side_margin;
-    margin-bottom: $G_D_button_bottom_margin;
 }
