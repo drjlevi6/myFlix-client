@@ -21659,7 +21659,7 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 130
+                lineNumber: 129
             },
             __self: this
         }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
@@ -21679,7 +21679,7 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 141
+                lineNumber: 140
             },
             __self: this
         }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
@@ -21697,21 +21697,21 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 153
+                lineNumber: 152
             },
             __self: this
         })), /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
             className: "main-view justify-content-sm-center",
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 168
+                lineNumber: 167
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
             className: "d-grid",
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 169
+                lineNumber: 168
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
@@ -21720,7 +21720,7 @@ class MainView extends _reactDefault.default.Component {
             onClick: this.onLoggedOut,
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 170
+                lineNumber: 169
             },
             __self: this
         }, "Log Out"))))));
@@ -39646,7 +39646,6 @@ class MovieView extends _reactDefault.default.Component {
         }, "Genre:"), /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
             className: "director-button",
             variant: "primary",
-            variant: "primary",
             as: _reactRouterDom.Link,
             to: `/movies/director/${movie.title}`,
             __source: {
@@ -39658,7 +39657,7 @@ class MovieView extends _reactDefault.default.Component {
             className: "back-button-row",
             __source: {
                 fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 49
+                lineNumber: 48
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
@@ -39669,7 +39668,7 @@ class MovieView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 50
+                lineNumber: 49
             },
             __self: this
         }, "Back"))));

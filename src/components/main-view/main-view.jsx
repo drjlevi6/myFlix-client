@@ -117,16 +117,15 @@ export default class MainView extends React.Component {
 
        return (
       <Container>
-       <Router>
-       <Row className="main-view justify-content-md-center">
-       <Route exact path="/" render={() => {
+        <Router>
+        <Row className="main-view justify-content-md-center">
+          <Route exact path="/" render={() => {
             return movies.map(m => (
               <Col xs={12} sm={6} md={4} lg={4} key={m._id}>
                 <MovieCard movie={m} />
               </Col>
             ))
           }} />
-
           <Route exact path="/movies/:movieId"
             render={({ match, history }) => {
               return (
@@ -174,8 +173,8 @@ export default class MainView extends React.Component {
           </Col>
         </Row>
       
-       </Router>
-       </Container>
+      </Router>
+      </Container>
     );
   } // end if
 } // end render
