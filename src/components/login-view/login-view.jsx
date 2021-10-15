@@ -28,8 +28,8 @@ export function LoginView(props) {
       the username to our parent component (child to parent 
       communication) */
     .then (response => {
-      console.log("loginview.handleSubmit().response:", response);
       const data = response.data;
+      console.log('handleSubmit: response.data:', response.data)
       props.onLoggedIn(data);
     })
     .catch(e => {
