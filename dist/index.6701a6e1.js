@@ -21630,7 +21630,7 @@ class MainView extends _reactDefault.default.Component {
             path: "/",
             render: ()=>{
                 return movies.map((m)=>/*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
-                        xs: 12,
+                        xs: 7,
                         sm: 6,
                         md: 4,
                         lg: 4,
