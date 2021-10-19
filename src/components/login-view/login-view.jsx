@@ -1,5 +1,6 @@
 import axios from 'axios'; // 3.6
 import React, { useState } from 'react';
+import { Redirect } from 'react-router';
 import {RegistrationView} from '../registration-view/registration-view'
 import { Collapse } from 'bootstrap';
 import './login-view.scss';
@@ -15,6 +16,7 @@ export function LoginView(props) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [showRegister, setShowRegister] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -30,6 +32,7 @@ export function LoginView(props) {
     .then (response => {
       const data = response.data;
       console.log('handleSubmit: response.data:', response.data)
+      setLoggedIn(true);
       props.onLoggedIn(data);
     })
     .catch(e => {
@@ -48,7 +51,9 @@ export function LoginView(props) {
   if(showRegister) {
     return <RegistrationView back={onRequestToRegister} />
   }
-
+  if (loggedIn) {
+    return <Redirect to='/user' />
+  }
   // give Buttons 'className="d-grid gap-2"' to allow full width
   return ( // onClick={onRequestToRegister}>register: 
     <Container>

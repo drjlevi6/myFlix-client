@@ -8,6 +8,7 @@ import Button from 'react-bootstrap/Button';
 import { Link } from "react-router-dom";
 import { scrollParent } from 'dom-helpers';
 import { Alert } from 'react-bootstrap';
+import PropTypes from 'prop-types';
 
 export class GenreView extends React.Component {
     constructor(){

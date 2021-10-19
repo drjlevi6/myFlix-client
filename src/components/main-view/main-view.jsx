@@ -12,6 +12,7 @@ import { LoginView } from '../login-view/login-view';
 import { RegistrationView } from '../registration-view/registration-view';
 import { GenreView } from '../genre-view/genre-view';
 import { DirectorView } from '../director-view/director-view';
+import { ProfileView } from '../profile-view/profile-view';
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -66,8 +67,11 @@ export default class MainView extends React.Component {
   onLoggedIn(authData) {
 
     var mainView = this;
+    console.log('main-view.onLoggedIn().this:', this);
+    let User = authData.user.Username;
+   // window.location.pathname = '/' + User;
     this.setState({
-      user: authData.user.Username
+      user: User
     });
 
     localStorage.setItem('token', authData.token);
@@ -100,10 +104,12 @@ export default class MainView extends React.Component {
     if (!user) {
       return (
         <Row>
+          <Router>
           <Col>
             <LoginView onLoggedIn={user => 
               this.onLoggedIn(user)} />
           </Col>
+          </Router>
         </Row>
       )
     }
@@ -137,6 +143,15 @@ export default class MainView extends React.Component {
                 </Col>
               )
           }} />       
+          <Route exact path="/user"
+            render={({ match, history }) => {
+              return (
+                <Col md={8}>
+                  <ProfileView 
+                  />
+                </Col>
+              )
+          }} />       
           <Route exact path="/movies/genre/:title"
             render={({ match, history }) => {
               let mTitle = match.params.title;
@@ -145,7 +160,7 @@ export default class MainView extends React.Component {
                   <GenreView 
                     genre={movies.find(  m => (m.title === mTitle)).genre}
                     movie={movies.find(  m => (m.title === mTitle))} 
-                    onBackClick={() => history.push("/")}/>
+                    onBackClick={() => history.goBack()}/>
                 </Col>
               )
           }} />  
@@ -156,7 +171,7 @@ export default class MainView extends React.Component {
                 <Col md={8}>
                   <DirectorView
                     movie={movies.find( m => (m.title === mTitle))}
-                    onBackClick={() => history.push("/")}
+                    onBackClick={() => history.goBack()}
                   />
                 </Col>
               )
