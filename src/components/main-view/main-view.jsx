@@ -145,7 +145,7 @@ export default class MainView extends React.Component {
           <Route exact path="/user"
             render={({ match, history }) => {
               return (
-                <Col md={8}>
+                <Col>
                   <ProfileView 
                   />
                 </Col>
@@ -177,7 +177,7 @@ export default class MainView extends React.Component {
           }} />  
 
         </Row>
-        
+
         <Row className="back-button-row">
           <Button className="back-button"
             variant="dark" onClick={() => history.back()}>

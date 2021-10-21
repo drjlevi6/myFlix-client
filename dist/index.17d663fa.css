@@ -81,6 +81,19 @@
 .form-and-unregister-row {
   justify-content: space-between;
 }
+
+.all-movies-button-column {
+  text-align: right;
+}
+
+/*
+.main-form {
+    width: 80%;
+}
+*/
+.submit-div {
+  text-align: right;
+}
 @charset "UTF-8";/*!
  * Bootstrap v5.1.1 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
