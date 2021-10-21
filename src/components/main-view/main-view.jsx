@@ -177,6 +177,13 @@ export default class MainView extends React.Component {
           }} />  
 
         </Row>
+        
+        <Row className="back-button-row">
+          <Button className="back-button"
+            variant="dark" onClick={() => history.back()}>
+            Back
+          </Button>
+        </Row>
 
         <Row className="main-view justify-content-sm-center">
           <Col className="d-grid">

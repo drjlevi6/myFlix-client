@@ -21,12 +21,12 @@ export class ProfileView extends React.Component{
 										</Col>
 								</Row>
 
-								<Row classNam='form-and-unregister-row'>
+								<Row className='form-and-unregister-row'>
 									<Col className='sm={10} form-column'>
 										<Form className='main-form'>
 											<Form.Group as={Row} controlId="formBasicEmail">
 												<Col sm={6}>
-													<Form.Label>Email address</Form.Label>
+													<Form.Label>Username:</Form.Label>
 												</Col>
 												<Col>
 													<Form.Control type="email" 
@@ -36,13 +36,34 @@ export class ProfileView extends React.Component{
 
 											<Form.Group as={Row} className="mb-3" 
 													controlId="formBasicPassword">
-												<Form.Label>Password</Form.Label>
-												<Form.Control type="password" placeholder="Password" />
+												<Col sm={6}>
+													<Form.Label>Password:</Form.Label>
+												</Col>
+												<Col>
+													<Form.Control type="password" placeholder="Password" />
+												</Col>
 											</Form.Group>
-											<Form.Group as={Row} className="mb-3" 
-													controlId="formBasicCheckbox">
-												<Form.Check type="checkbox" label="Check me out" />
+
+											<Form.Group as={Row} controlId="formBasicEmail">
+												<Col sm={6}>
+													<Form.Label>Email:</Form.Label>
+												</Col>
+												<Col>
+													<Form.Control type="email" 
+														placeholder="Enter email" />
+												</Col>
 											</Form.Group>
+
+											<Form.Group as={Row} controlId="formBasicEmail">
+												<Col sm={4}>
+													<Form.Label>Date of Birth:</Form.Label>
+												</Col>
+												<Col>
+													<Form.Control type="DOB" 
+														placeholder="Enter date of birth" />
+												</Col>
+											</Form.Group>
+
 											<Button variant="primary" type="submit">
 												Submit
 											</Button>

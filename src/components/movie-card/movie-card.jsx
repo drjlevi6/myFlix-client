@@ -41,12 +41,6 @@ export class MovieCard extends React.Component {
               </Row>
           </Card.Body>          
         </Card>
-        <Row className="back-button-row">
-          <Button className="back-button"
-            variant="dark" onClick={() => history.back()}>
-            Back
-          </Button>
-        </Row>
         </Container>
     ); // end return
   }
