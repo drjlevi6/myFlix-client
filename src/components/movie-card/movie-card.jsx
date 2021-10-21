@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import "./movie-card.scss"; // (might need it later)
 import '../genre-view/genre-view';
 
+import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Card from 'react-bootstrap/Card';
@@ -27,6 +28,7 @@ export class MovieCard extends React.Component {
     const { movie } = this.props;
 
     return (
+      <Container>
       <Card className="card">
         <Card.Img crossOrigin="anonymous" variant="top" src={movie.imagePath} />
         <Card.Body>
@@ -38,6 +40,7 @@ export class MovieCard extends React.Component {
             </Row>
         </Card.Body>
       </Card>
+      </Container>
     ); // end return
   }
 }
