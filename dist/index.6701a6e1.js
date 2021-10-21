@@ -21550,7 +21550,6 @@ class MainView extends _reactDefault.default.Component {
         var mainView1 = this;
         console.log('main-view.onLoggedIn().this:', this);
         let User = authData.user.Username;
-        // window.location.pathname = '/' + User;
         this.setState({
             user: User
         });
@@ -21580,19 +21579,19 @@ class MainView extends _reactDefault.default.Component {
     *passed as a prop to the LoginView--> */ if (!user) return(/*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 106
+                lineNumber: 105
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.BrowserRouter, {
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 107
+                lineNumber: 106
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 108
+                lineNumber: 107
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_loginView.LoginView, {
@@ -21600,7 +21599,7 @@ class MainView extends _reactDefault.default.Component {
             ,
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 109
+                lineNumber: 108
             },
             __self: this
         })))));
@@ -21612,27 +21611,27 @@ class MainView extends _reactDefault.default.Component {
             className: "main-view",
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 122
+                lineNumber: 121
             },
             __self: this
         }));
         return(/*#__PURE__*/ _reactDefault.default.createElement(_containerDefault.default, {
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 125
+                lineNumber: 124
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.BrowserRouter, {
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 126
+                lineNumber: 125
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
             className: "main-view justify-content-md-center",
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 127
+                lineNumber: 126
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
@@ -21652,7 +21651,7 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 128
+                lineNumber: 127
             },
             __self: this
         }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
@@ -21669,7 +21668,7 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 135
+                lineNumber: 134
             },
             __self: this
         }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
@@ -21682,7 +21681,7 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 146
+                lineNumber: 145
             },
             __self: this
         }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
@@ -21702,7 +21701,7 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 155
+                lineNumber: 154
             },
             __self: this
         }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
@@ -21720,21 +21719,21 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 167
+                lineNumber: 166
             },
             __self: this
         })), /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
             className: "main-view justify-content-sm-center",
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 182
+                lineNumber: 181
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
             className: "d-grid",
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 183
+                lineNumber: 182
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
@@ -21743,7 +21742,7 @@ class MainView extends _reactDefault.default.Component {
             onClick: this.onLoggedOut,
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 184
+                lineNumber: 183
             },
             __self: this
         }, "Log Out"))))));
@@ -21758,7 +21757,7 @@ exports.default = MainView;
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"6TuXu","axios":"iYoWk","prop-types":"1tgq3","./main-view.scss":"jyMAr","react-router-dom":"cpyQW","../movie-card/movie-card":"6EiBJ","../movie-view/movie-view":"ikZdr","../login-view/login-view":"054li","../registration-view/registration-view":"aP2YV","../genre-view/genre-view":"8WCoL","../director-view/director-view":"ck15y","react-bootstrap/Container":"2PRIq","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0","react-bootstrap/Button":"9CzHT","react-bootstrap/Card":"MoOk8","react-dom":"gkWJK","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J","../profile-view/profile-view":"2E7Aw"}],"iYoWk":[function(require,module,exports) {
+},{"react":"6TuXu","axios":"iYoWk","prop-types":"1tgq3","./main-view.scss":"jyMAr","react-router-dom":"cpyQW","../movie-card/movie-card":"6EiBJ","../movie-view/movie-view":"ikZdr","../login-view/login-view":"054li","../registration-view/registration-view":"aP2YV","../genre-view/genre-view":"8WCoL","../director-view/director-view":"ck15y","../profile-view/profile-view":"2E7Aw","react-bootstrap/Container":"2PRIq","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0","react-bootstrap/Button":"9CzHT","react-bootstrap/Card":"MoOk8","react-dom":"gkWJK","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"iYoWk":[function(require,module,exports) {
 module.exports = require('./lib/axios');
 
 },{"./lib/axios":"3QmO2"}],"3QmO2":[function(require,module,exports) {
@@ -26307,6 +26306,8 @@ var _buttonDefault = parcelHelpers.interopDefault(_button);
 var _reactRouterDom = require("react-router-dom");
 var _domHelpers = require("dom-helpers");
 var _reactBootstrap = require("react-bootstrap");
+var _propTypes = require("prop-types");
+var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
 class GenreView extends _reactDefault.default.Component {
     constructor(){
         super();
@@ -26317,21 +26318,21 @@ class GenreView extends _reactDefault.default.Component {
             className: "movie-view",
             __source: {
                 fileName: "src/components/genre-view/genre-view.jsx",
-                lineNumber: 21
+                lineNumber: 22
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
             className: "movie-poster-row",
             __source: {
                 fileName: "src/components/genre-view/genre-view.jsx",
-                lineNumber: 22
+                lineNumber: 23
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
             xs: 6,
             __source: {
                 fileName: "src/components/genre-view/genre-view.jsx",
-                lineNumber: 23
+                lineNumber: 24
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("img", {
@@ -26339,7 +26340,7 @@ class GenreView extends _reactDefault.default.Component {
             src: movie.imagePath,
             __source: {
                 fileName: "src/components/genre-view/genre-view.jsx",
-                lineNumber: 24
+                lineNumber: 25
             },
             __self: this
         }))), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Alert, {
@@ -26347,32 +26348,32 @@ class GenreView extends _reactDefault.default.Component {
             variant: "info",
             __source: {
                 fileName: "src/components/genre-view/genre-view.jsx",
-                lineNumber: 27
+                lineNumber: 28
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Alert.Heading, {
             __source: {
                 fileName: "src/components/genre-view/genre-view.jsx",
-                lineNumber: 28
+                lineNumber: 29
             },
             __self: this
         }, "Title: ", movie.title), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Alert.Heading, {
             __source: {
                 fileName: "src/components/genre-view/genre-view.jsx",
-                lineNumber: 29
+                lineNumber: 30
             },
             __self: this
         }, "Genre: ", movie.genre.name), /*#__PURE__*/ _reactDefault.default.createElement("p", {
             __source: {
                 fileName: "src/components/genre-view/genre-view.jsx",
-                lineNumber: 30
+                lineNumber: 31
             },
             __self: this
         }, movie.genre.description)), /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
             className: "back-button-row",
             __source: {
                 fileName: "src/components/genre-view/genre-view.jsx",
-                lineNumber: 32
+                lineNumber: 33
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
@@ -26383,7 +26384,7 @@ class GenreView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "src/components/genre-view/genre-view.jsx",
-                lineNumber: 33
+                lineNumber: 34
             },
             __self: this
         }, "Back"))));
@@ -26395,7 +26396,7 @@ class GenreView extends _reactDefault.default.Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"./genre-view.scss":"3BqnD","react":"6TuXu","react-bootstrap/Container":"2PRIq","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0","react-bootstrap/Button":"9CzHT","react-router-dom":"cpyQW","dom-helpers":"4VatF","react-bootstrap":"h2YVd","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"3BqnD":[function() {},{}],"2PRIq":[function(require,module,exports) {
+},{"./genre-view.scss":"3BqnD","react":"6TuXu","react-bootstrap/Container":"2PRIq","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0","react-bootstrap/Button":"9CzHT","react-router-dom":"cpyQW","dom-helpers":"4VatF","react-bootstrap":"h2YVd","prop-types":"1tgq3","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"3BqnD":[function() {},{}],"2PRIq":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _extends = require("@babel/runtime/helpers/esm/extends");
@@ -39726,6 +39727,7 @@ var _axios = require("axios"); // 3.6
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
+var _reactRouter = require("react-router");
 var _registrationView = require("../registration-view/registration-view");
 var _bootstrap = require("bootstrap");
 var _loginViewScss = require("./login-view.scss");
@@ -39744,6 +39746,7 @@ function LoginView(props) {
     const [username, setUsername] = _react.useState('');
     const [password, setPassword] = _react.useState('');
     const [showRegister, setShowRegister] = _react.useState(false);
+    const [loggedIn, setLoggedIn] = _react.useState(false);
     const handleSubmit = (e)=>{
         e.preventDefault();
         console.log("login-view.handleSubmit().e:", e);
@@ -39753,11 +39756,13 @@ function LoginView(props) {
         })/* then call props.onLoggedIn(username), which provides 
       the username to our parent component (child to parent 
       communication) */ .then((response)=>{
-            console.log("loginview.handleSubmit().response:", response);
             const data = response.data;
+            console.log('handleSubmit: response.data:', response.data);
+            setLoggedIn(true);
             props.onLoggedIn(data);
         }).catch((e1)=>{
-            console.log('no such user');
+            console.log(e1);
+            alert(String(e1));
         });
     };
     function onRequestToRegister() {
@@ -39768,7 +39773,15 @@ function LoginView(props) {
         back: onRequestToRegister,
         __source: {
             fileName: "src/components/login-view/login-view.jsx",
-            lineNumber: 47
+            lineNumber: 52
+        },
+        __self: this
+    }));
+    if (loggedIn) return(/*#__PURE__*/ _reactDefault.default.createElement(_reactRouter.Redirect, {
+        to: "/user",
+        __source: {
+            fileName: "src/components/login-view/login-view.jsx",
+            lineNumber: 55
         },
         __self: this
     }));
@@ -39776,40 +39789,40 @@ function LoginView(props) {
     return(/*#__PURE__*/ _reactDefault.default.createElement(_containerDefault.default, {
         __source: {
             fileName: "src/components/login-view/login-view.jsx",
-            lineNumber: 52
+            lineNumber: 59
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
         __source: {
             fileName: "src/components/login-view/login-view.jsx",
-            lineNumber: 53
+            lineNumber: 60
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
         className: "justify-content-md-center header-text",
         __source: {
             fileName: "src/components/login-view/login-view.jsx",
-            lineNumber: 54
+            lineNumber: 61
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
         __source: {
             fileName: "src/components/login-view/login-view.jsx",
-            lineNumber: 55
+            lineNumber: 62
         },
         __self: this
     }, "Log in or")), /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
         className: "justify-content-md-center",
         __source: {
             fileName: "src/components/login-view/login-view.jsx",
-            lineNumber: 59
+            lineNumber: 66
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
         className: "d-grid gap-2",
         __source: {
             fileName: "src/components/login-view/login-view.jsx",
-            lineNumber: 60
+            lineNumber: 67
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
@@ -39818,19 +39831,19 @@ function LoginView(props) {
         onClick: onRequestToRegister,
         __source: {
             fileName: "src/components/login-view/login-view.jsx",
-            lineNumber: 61
+            lineNumber: 68
         },
         __self: this
     }, "Register"))), /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
         __source: {
             fileName: "src/components/login-view/login-view.jsx",
-            lineNumber: 67
+            lineNumber: 74
         },
         __self: this
     }, "\xa0"), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default, {
         __source: {
             fileName: "src/components/login-view/login-view.jsx",
-            lineNumber: 69
+            lineNumber: 76
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
@@ -39838,39 +39851,39 @@ function LoginView(props) {
         controlId: "formUsername",
         __source: {
             fileName: "src/components/login-view/login-view.jsx",
-            lineNumber: 70
+            lineNumber: 77
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
         __source: {
             fileName: "src/components/login-view/login-view.jsx",
-            lineNumber: 71
+            lineNumber: 78
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
         xs: 3,
         __source: {
             fileName: "src/components/login-view/login-view.jsx",
-            lineNumber: 72
+            lineNumber: 79
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Label, {
         __source: {
             fileName: "src/components/login-view/login-view.jsx",
-            lineNumber: 73
+            lineNumber: 80
         },
         __self: this
     }, "Username:"))), /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
         className: "justify-content-md-center",
         __source: {
             fileName: "src/components/login-view/login-view.jsx",
-            lineNumber: 76
+            lineNumber: 83
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
         __source: {
             fileName: "src/components/login-view/login-view.jsx",
-            lineNumber: 77
+            lineNumber: 84
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control, {
@@ -39881,46 +39894,46 @@ function LoginView(props) {
         ,
         __source: {
             fileName: "src/components/login-view/login-view.jsx",
-            lineNumber: 78
+            lineNumber: 85
         },
         __self: this
     })))), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
         controlId: "formPassword",
         __source: {
             fileName: "src/components/login-view/login-view.jsx",
-            lineNumber: 85
+            lineNumber: 92
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
         __source: {
             fileName: "src/components/login-view/login-view.jsx",
-            lineNumber: 86
+            lineNumber: 93
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
         xs: 3,
         __source: {
             fileName: "src/components/login-view/login-view.jsx",
-            lineNumber: 87
+            lineNumber: 94
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Label, {
         __source: {
             fileName: "src/components/login-view/login-view.jsx",
-            lineNumber: 88
+            lineNumber: 95
         },
         __self: this
     }, "Password:"))), /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
         className: "justify-content-md-center mb-2",
         __source: {
             fileName: "src/components/login-view/login-view.jsx",
-            lineNumber: 91
+            lineNumber: 98
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
         __source: {
             fileName: "src/components/login-view/login-view.jsx",
-            lineNumber: 92
+            lineNumber: 99
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control, {
@@ -39931,21 +39944,21 @@ function LoginView(props) {
         ,
         __source: {
             fileName: "src/components/login-view/login-view.jsx",
-            lineNumber: 93
+            lineNumber: 100
         },
         __self: this
     })))), /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
         className: "justify-content-md-center",
         __source: {
             fileName: "src/components/login-view/login-view.jsx",
-            lineNumber: 102
+            lineNumber: 109
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
         className: "d-grid gap-2",
         __source: {
             fileName: "src/components/login-view/login-view.jsx",
-            lineNumber: 103
+            lineNumber: 110
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
@@ -39954,7 +39967,7 @@ function LoginView(props) {
         onClick: handleSubmit,
         __source: {
             fileName: "src/components/login-view/login-view.jsx",
-            lineNumber: 104
+            lineNumber: 111
         },
         __self: this
     }, "Submit")))))));
@@ -39965,7 +39978,7 @@ function LoginView(props) {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"axios":"iYoWk","react":"6TuXu","../registration-view/registration-view":"aP2YV","bootstrap":"6Rnl7","./login-view.scss":"lS4BK","react-bootstrap/Form":"5ykgY","react-bootstrap/Button":"9CzHT","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0","react-bootstrap/Container":"2PRIq","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"aP2YV":[function(require,module,exports) {
+},{"axios":"iYoWk","react":"6TuXu","react-router":"l4MNa","../registration-view/registration-view":"aP2YV","bootstrap":"6Rnl7","./login-view.scss":"lS4BK","react-bootstrap/Form":"5ykgY","react-bootstrap/Button":"9CzHT","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0","react-bootstrap/Container":"2PRIq","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"aP2YV":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$8dd4 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -44202,15 +44215,73 @@ var _col = require("react-bootstrap/Col");
 var _colDefault = parcelHelpers.interopDefault(_col);
 var _container = require("react-bootstrap/Container");
 var _containerDefault = parcelHelpers.interopDefault(_container);
+var _reactRouterDom = require("react-router-dom");
 class ProfileView extends _reactDefault.default.Component {
     render() {
-        return(/*#__PURE__*/ _reactDefault.default.createElement("h1", {
+        return(/*#__PURE__*/ _reactDefault.default.createElement(_containerDefault.default, {
             __source: {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 12
+                lineNumber: 14
             },
             __self: this
-        }, "ProfileView created"));
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
+            __source: {
+                fileName: "src/components/profile-view/profile-view.jsx",
+                lineNumber: 15
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
+            __source: {
+                fileName: "src/components/profile-view/profile-view.jsx",
+                lineNumber: 16
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("h3", {
+            __source: {
+                fileName: "src/components/profile-view/profile-view.jsx",
+                lineNumber: 16
+            },
+            __self: this
+        }, "< Profile")), /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
+            __source: {
+                fileName: "src/components/profile-view/profile-view.jsx",
+                lineNumber: 17
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
+            as: _reactRouterDom.Link,
+            to: "/",
+            variant: "info",
+            __source: {
+                fileName: "src/components/profile-view/profile-view.jsx",
+                lineNumber: 18
+            },
+            __self: this
+        }, "All Movies"))), /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
+            __source: {
+                fileName: "src/components/profile-view/profile-view.jsx",
+                lineNumber: 23
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
+            __source: {
+                fileName: "src/components/profile-view/profile-view.jsx",
+                lineNumber: 24
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
+            __source: {
+                fileName: "src/components/profile-view/profile-view.jsx",
+                lineNumber: 26
+            },
+            __self: this
+        })), /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
+            __source: {
+                fileName: "src/components/profile-view/profile-view.jsx",
+                lineNumber: 29
+            },
+            __self: this
+        })));
     }
 }
 
@@ -44219,6 +44290,6 @@ class ProfileView extends _reactDefault.default.Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"6TuXu","./profile-view.scss":"gb0ga","react-bootstrap/Form":"5ykgY","react-bootstrap/Button":"9CzHT","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0","react-bootstrap/Container":"2PRIq","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"gb0ga":[function() {},{}],"25uA3":[function() {},{}],"jUTZ8":[function() {},{}]},["6a0zu","dLPEP"], "dLPEP", "parcelRequireaec4")
+},{"react":"6TuXu","./profile-view.scss":"gb0ga","react-bootstrap/Form":"5ykgY","react-bootstrap/Button":"9CzHT","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0","react-bootstrap/Container":"2PRIq","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J","react-router-dom":"cpyQW"}],"gb0ga":[function() {},{}],"25uA3":[function() {},{}],"jUTZ8":[function() {},{}]},["6a0zu","dLPEP"], "dLPEP", "parcelRequireaec4")
 
 //# sourceMappingURL=index.6701a6e1.js.map
