@@ -21727,6 +21727,13 @@ class MainView extends _reactDefault.default.Component {
                 lineNumber: 181
             },
             __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
+            className: "d-grid",
+            __source: {
+                fileName: "src/components/main-view/main-view.jsx",
+                lineNumber: 182
+            },
+            __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
             className: "back-button",
             variant: "dark",
@@ -21734,21 +21741,21 @@ class MainView extends _reactDefault.default.Component {
             ,
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 182
+                lineNumber: 183
             },
             __self: this
-        }, "Back")), /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
+        }, "Back"))), /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
             className: "main-view justify-content-sm-center",
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 188
+                lineNumber: 190
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
             className: "d-grid",
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 189
+                lineNumber: 191
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
@@ -21757,7 +21764,7 @@ class MainView extends _reactDefault.default.Component {
             onClick: this.onLoggedOut,
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 190
+                lineNumber: 192
             },
             __self: this
         }, "Log Out"))))));
@@ -26305,7 +26312,7 @@ MovieCard.propTypes = {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"6TuXu","prop-types":"1tgq3","./movie-card.scss":"cF5gT","../genre-view/genre-view":"8WCoL","react-bootstrap/Button":"9CzHT","react-bootstrap/Row":"c0x1x","react-bootstrap/Card":"MoOk8","react-router-dom":"cpyQW","../movie-view/movie-view":"ikZdr","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J","react-bootstrap/Container":"2PRIq"}],"cF5gT":[function() {},{}],"8WCoL":[function(require,module,exports) {
+},{"react":"6TuXu","prop-types":"1tgq3","./movie-card.scss":"cF5gT","../genre-view/genre-view":"8WCoL","react-bootstrap/Container":"2PRIq","react-bootstrap/Button":"9CzHT","react-bootstrap/Row":"c0x1x","react-bootstrap/Card":"MoOk8","react-router-dom":"cpyQW","../movie-view/movie-view":"ikZdr","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"cF5gT":[function() {},{}],"8WCoL":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$5f0a = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
