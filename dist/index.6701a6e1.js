@@ -26222,19 +26222,20 @@ class MovieCard extends _reactDefault.default.Component {
     //console.log('movie-card.openGenreView(): this:', this);
     //console.log(movie.genre.name);
     }
+    //     <Container>    
     render() {
         const { movie  } = this.props;
         return(/*#__PURE__*/ _reactDefault.default.createElement(_containerDefault.default, {
             __source: {
                 fileName: "src/components/movie-card/movie-card.jsx",
-                lineNumber: 31
+                lineNumber: 32
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_cardDefault.default, {
             className: "card",
             __source: {
                 fileName: "src/components/movie-card/movie-card.jsx",
-                lineNumber: 32
+                lineNumber: 33
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_cardDefault.default.Img, {
@@ -26243,25 +26244,25 @@ class MovieCard extends _reactDefault.default.Component {
             src: movie.imagePath,
             __source: {
                 fileName: "src/components/movie-card/movie-card.jsx",
-                lineNumber: 33
+                lineNumber: 34
             },
             __self: this
         }), /*#__PURE__*/ _reactDefault.default.createElement(_cardDefault.default.Body, {
             __source: {
                 fileName: "src/components/movie-card/movie-card.jsx",
-                lineNumber: 34
+                lineNumber: 35
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_cardDefault.default.Title, {
             __source: {
                 fileName: "src/components/movie-card/movie-card.jsx",
-                lineNumber: 35
+                lineNumber: 36
             },
             __self: this
         }, movie.title), /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
             __source: {
                 fileName: "src/components/movie-card/movie-card.jsx",
-                lineNumber: 36
+                lineNumber: 37
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
@@ -26270,10 +26271,27 @@ class MovieCard extends _reactDefault.default.Component {
             variant: "primary",
             __source: {
                 fileName: "src/components/movie-card/movie-card.jsx",
-                lineNumber: 37
+                lineNumber: 38
             },
             __self: this
-        }, "Open")))))); // end return
+        }, "Open")))), /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
+            className: "back-button-row",
+            __source: {
+                fileName: "src/components/movie-card/movie-card.jsx",
+                lineNumber: 44
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
+            className: "back-button",
+            variant: "dark",
+            onClick: ()=>history.back()
+            ,
+            __source: {
+                fileName: "src/components/movie-card/movie-card.jsx",
+                lineNumber: 45
+            },
+            __self: this
+        }, "Back")))); // end return
     }
 }
 MovieCard.propTypes = {

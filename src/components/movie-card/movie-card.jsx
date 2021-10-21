@@ -23,24 +23,31 @@ export class MovieCard extends React.Component {
     //console.log('movie-card.openGenreView(): this:', this);
     //console.log(movie.genre.name);
   }
-
+//     <Container>    
+ 
   render() {
     const { movie } = this.props;
 
-    return (
-      <Container>
-      <Card className="card">
-        <Card.Img crossOrigin="anonymous" variant="top" src={movie.imagePath} />
-        <Card.Body>
-          <Card.Title>{movie.title}</Card.Title>
-            <Row>
-             <Button as={Link} to={`/movies/${movie._id}`} variant="primary" >
-                Open
-              </Button>
-            </Row>
-        </Card.Body>
-      </Card>
-      </Container>
+   return (
+    <Container>
+        <Card className="card">
+          <Card.Img crossOrigin="anonymous" variant="top" src={movie.imagePath} />
+          <Card.Body>
+            <Card.Title>{movie.title}</Card.Title>
+              <Row>
+              <Button as={Link} to={`/movies/${movie._id}`} variant="primary" >
+                  Open
+                </Button>
+              </Row>
+          </Card.Body>          
+        </Card>
+        <Row className="back-button-row">
+          <Button className="back-button"
+            variant="dark" onClick={() => history.back()}>
+            Back
+          </Button>
+        </Row>
+        </Container>
     ); // end return
   }
 }
