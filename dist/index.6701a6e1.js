@@ -26307,7 +26307,7 @@ MovieCard.propTypes = {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"6TuXu","prop-types":"1tgq3","./movie-card.scss":"cF5gT","../genre-view/genre-view":"8WCoL","react-bootstrap/Button":"9CzHT","react-bootstrap/Row":"c0x1x","react-bootstrap/Card":"MoOk8","react-router-dom":"cpyQW","../movie-view/movie-view":"ikZdr","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J","react-bootstrap/Container":"2PRIq"}],"cF5gT":[function() {},{}],"8WCoL":[function(require,module,exports) {
+},{"react":"6TuXu","prop-types":"1tgq3","./movie-card.scss":"cF5gT","../genre-view/genre-view":"8WCoL","react-bootstrap/Container":"2PRIq","react-bootstrap/Button":"9CzHT","react-bootstrap/Row":"c0x1x","react-bootstrap/Card":"MoOk8","react-router-dom":"cpyQW","../movie-view/movie-view":"ikZdr","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"cF5gT":[function() {},{}],"8WCoL":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$5f0a = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -44251,6 +44251,7 @@ class ProfileView extends _reactDefault.default.Component {
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
+            className: "profile-and-all-movies-row",
             __source: {
                 fileName: "src/components/profile-view/profile-view.jsx",
                 lineNumber: 15
@@ -44284,30 +44285,124 @@ class ProfileView extends _reactDefault.default.Component {
             },
             __self: this
         }, "All Movies"))), /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
-            __source: {
-                fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 23
-            },
-            __self: this
-        }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
+            classNam: "form-and-unregister-row",
             __source: {
                 fileName: "src/components/profile-view/profile-view.jsx",
                 lineNumber: 24
             },
             __self: this
-        }), /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
+            className: "sm={10} form-column",
+            __source: {
+                fileName: "src/components/profile-view/profile-view.jsx",
+                lineNumber: 25
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default, {
+            className: "main-form",
             __source: {
                 fileName: "src/components/profile-view/profile-view.jsx",
                 lineNumber: 26
             },
             __self: this
-        })), /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
+            as: _rowDefault.default,
+            controlId: "formBasicEmail",
+            __source: {
+                fileName: "src/components/profile-view/profile-view.jsx",
+                lineNumber: 27
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
+            sm: 6,
+            __source: {
+                fileName: "src/components/profile-view/profile-view.jsx",
+                lineNumber: 28
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Label, {
             __source: {
                 fileName: "src/components/profile-view/profile-view.jsx",
                 lineNumber: 29
             },
             __self: this
-        })));
+        }, "Email address")), /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
+            __source: {
+                fileName: "src/components/profile-view/profile-view.jsx",
+                lineNumber: 31
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control, {
+            type: "email",
+            placeholder: "Enter email",
+            __source: {
+                fileName: "src/components/profile-view/profile-view.jsx",
+                lineNumber: 32
+            },
+            __self: this
+        }))), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
+            as: _rowDefault.default,
+            className: "mb-3",
+            controlId: "formBasicPassword",
+            __source: {
+                fileName: "src/components/profile-view/profile-view.jsx",
+                lineNumber: 37
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Label, {
+            __source: {
+                fileName: "src/components/profile-view/profile-view.jsx",
+                lineNumber: 39
+            },
+            __self: this
+        }, "Password"), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control, {
+            type: "password",
+            placeholder: "Password",
+            __source: {
+                fileName: "src/components/profile-view/profile-view.jsx",
+                lineNumber: 40
+            },
+            __self: this
+        })), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
+            as: _rowDefault.default,
+            className: "mb-3",
+            controlId: "formBasicCheckbox",
+            __source: {
+                fileName: "src/components/profile-view/profile-view.jsx",
+                lineNumber: 42
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Check, {
+            type: "checkbox",
+            label: "Check me out",
+            __source: {
+                fileName: "src/components/profile-view/profile-view.jsx",
+                lineNumber: 44
+            },
+            __self: this
+        })), /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
+            variant: "primary",
+            type: "submit",
+            __source: {
+                fileName: "src/components/profile-view/profile-view.jsx",
+                lineNumber: 46
+            },
+            __self: this
+        }, "Submit"))), /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
+            className: "sm-2",
+            __source: {
+                fileName: "src/components/profile-view/profile-view.jsx",
+                lineNumber: 51
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
+            variant: "dark",
+            __source: {
+                fileName: "src/components/profile-view/profile-view.jsx",
+                lineNumber: 52
+            },
+            __self: this
+        }, "Unregister")))));
     }
 }
 
