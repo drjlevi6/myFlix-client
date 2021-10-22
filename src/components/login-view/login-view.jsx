@@ -20,7 +20,6 @@ export function LoginView(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-      console.log("login-view.handleSubmit().e:", e);
     /* Send a request to the server for authentication */
     axios.post('https://drjs-myflix-app.herokuapp.com/login', {
       Username: username,

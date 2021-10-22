@@ -66,7 +66,6 @@ export default class MainView extends React.Component {
 
   onLoggedIn(authData) {
     var mainView = this;
-    console.log('main-view.onLoggedIn().this:', this);
     let User = authData.user.Username;
     this.setState({
       user: User

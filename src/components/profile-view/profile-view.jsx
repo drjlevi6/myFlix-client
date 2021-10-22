@@ -67,7 +67,7 @@ export class ProfileView extends React.Component{
 									<div className='submit-div'>
 									<Button className='submit-form-button' variant="primary" 
 											type="submit">
-										Submit
+										Update
 									</Button>
 									</div>
 								</Form>
