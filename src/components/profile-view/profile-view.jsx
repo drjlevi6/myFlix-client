@@ -14,7 +14,7 @@ export class ProfileView extends React.Component{
 		return(
 				<Container className='profile-view-container'>
 						<Row className='profile-and-all-movies-row'>
-								<Col><h3>&lt; Profile</h3></Col>
+								<Col><h4>&lt; Profile</h4></Col>
 								<Col className='all-movies-button-column'>
 								<Button as={Link} to='/' variant='info'>
 										All Movies
