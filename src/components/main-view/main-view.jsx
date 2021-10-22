@@ -185,7 +185,7 @@ export default class MainView extends React.Component {
           </Col>
         </Row>
 
-        <Row className="main-view justify-content-sm-center">
+        <Row className="logout-button-div justify-content-sm-center">
           <Col className="d-grid">
             <Button className="return-button" variant="dark"
             onClick={this.onLoggedOut}>
