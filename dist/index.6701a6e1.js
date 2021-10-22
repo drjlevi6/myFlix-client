@@ -44463,6 +44463,7 @@ class ProfileView extends _reactDefault.default.Component {
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
+            className: "submit-form-button",
             variant: "primary",
             type: "submit",
             __source: {
@@ -44472,17 +44473,18 @@ class ProfileView extends _reactDefault.default.Component {
             __self: this
         }, "Submit")))), /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
             className: "unregister-column",
-            sm: 4,
-            __source: {
-                fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 74
-            },
-            __self: this
-        }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
-            variant: "dark",
+            sm: 5,
             __source: {
                 fileName: "src/components/profile-view/profile-view.jsx",
                 lineNumber: 75
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
+            className: "unregister-button",
+            variant: "dark",
+            __source: {
+                fileName: "src/components/profile-view/profile-view.jsx",
+                lineNumber: 76
             },
             __self: this
         }, "Unregister"))))); //end return

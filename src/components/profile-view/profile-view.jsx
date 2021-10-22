@@ -65,17 +65,18 @@ export class ProfileView extends React.Component{
 										</Col>
 									</Form.Group>
 									<div className='submit-div'>
-									<Button variant="primary" type="submit">
+									<Button className='submit-form-button' variant="primary" 
+											type="submit">
 										Submit
 									</Button>
 									</div>
 								</Form>
 							</Col>
-						<Col className='unregister-column' sm={4} >
-							<Button variant='dark'>
-								Unregister
-							</Button>
-						</Col>
+							<Col className='unregister-column' sm={5} >
+								<Button className='unregister-button' variant='dark'>
+									Unregister
+								</Button>
+							</Col>
 					</Row>
 				</Container>
 		) //end return
