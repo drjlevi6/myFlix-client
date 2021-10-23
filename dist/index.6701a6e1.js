@@ -499,7 +499,7 @@ class MyFlixApplication extends _reactDefault.default.Component {
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
-            className: "d-grid mb-3",
+            className: "mainview-column d-grid mb-3",
             __source: {
                 fileName: "src/index.jsx",
                 lineNumber: 22
@@ -39736,25 +39736,7 @@ class MovieView extends _reactDefault.default.Component {
                 lineNumber: 42
             },
             __self: this
-        }, "Director:"))), /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
-            className: "back-button-row",
-            __source: {
-                fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 48
-            },
-            __self: this
-        }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
-            className: "back-button",
-            variant: "dark",
-            onClick: ()=>{
-                onBackClick(null);
-            },
-            __source: {
-                fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 49
-            },
-            __self: this
-        }, "Back"))));
+        }, "Director:")))));
     }
 }
 MovieView.propTypes = {

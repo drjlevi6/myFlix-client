@@ -9,21 +9,35 @@
 }
 
 .router-container {
-    /*display: block;
-    /*position: relative;*/
+    display: block;
+    position: fixed;
     /*max-height: 700px;*/
+    height: 99%;
+    /* border: solid red 1px;
+    border-radius: 25px; 
+    */
+    padding-bottom:115px;
 
 }
 
 .main-view-row {
-    max-height: 800px;
+    height: 100%;
         /* This or max-height shoves bottom buttons up, 
         but not cards*/
     overflow: auto;
+    /*border: solid green 1px;
+    border-radius: 15px;*/
 }
 
 .bottom-buttons-div {
+   /* position: relative;*/
+    width: 80%;
     padding: 10px;
     border: solid black 2px;
     border-radius: 10px;
+    margin-top: 20px;
+    bottom: 10px;
+}
+.router-container {
+   /* border: solid red 1px;*/
 }

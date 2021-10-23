@@ -10,22 +10,37 @@
 }
 
 .router-container {
-  /*display: block;
-  /*position: relative;*/
+  display: block;
+  position: fixed;
   /*max-height: 700px;*/
+  height: 99%;
+  /* border: solid red 1px;
+  border-radius: 25px; 
+  */
+  padding-bottom: 115px;
 }
 
 .main-view-row {
-  max-height: 800px;
+  height: 100%;
   /* This or max-height shoves bottom buttons up, 
   but not cards*/
   overflow: auto;
+  /*border: solid green 1px;
+  border-radius: 15px;*/
 }
 
 .bottom-buttons-div {
+  /* position: relative;*/
+  width: 80%;
   padding: 10px;
   border: solid black 2px;
   border-radius: 10px;
+  margin-top: 20px;
+  bottom: 10px;
+}
+
+.router-container {
+  /* border: solid red 1px;*/
 }
 /* Need following entry to force uniform card height */
 .col-lg-4 {
@@ -95,6 +110,7 @@
 
 .form-and-unregister-row {
   justify-content: space-between;
+  height: 75%;
 }
 
 .all-movies-button-column {
@@ -137,11 +153,17 @@
   border: dashed green 3px;
   padding: 0px;
 }
+*/
+.app-container {
+  /*padding: 0px;*/
+  /*margin: 0px;*/
+  /*border: dashed red 2px;*/
+}
 
-.container {
-  padding: 0px;
-  margin: 0px;
-  border: dashed red 2px;
+/*
+.mainview-column {
+ /*border: solid blue 1px;
+  height: 100%;
 }
 */
 /*# sourceMappingURL=index.17d663fa.css.map */
