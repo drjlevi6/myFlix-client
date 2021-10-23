@@ -1,10 +1,29 @@
-/*
 .app-container {
-    display: flex;
-    border: solid blue 1px;
+    /* max-height: 700px; */ /* has no effect */
+    /*display: block;*/
 }
-.container {
-    border: solid red 1px;
+
+.card {
+  display: block;
     padding: 0px;
 }
-*/
+
+.router-container {
+    /*display: block;
+    /*position: relative;*/
+    /*max-height: 700px;*/
+
+}
+
+.main-view-row {
+    max-height: 800px;
+        /* This or max-height shoves bottom buttons up, 
+        but not cards*/
+    overflow: auto;
+}
+
+.bottom-buttons-div {
+    padding: 10px;
+    border: solid black 2px;
+    border-radius: 10px;
+}

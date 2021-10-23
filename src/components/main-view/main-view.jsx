@@ -33,7 +33,34 @@ export default class MainView extends React.Component {
       user: null
     };
     mainView = this;
+    this.installEventListener();
   }
+
+  /* Install an event listener to detect changes in window
+    height; this will require an adjustment in the max height
+    of the MainView's bottom-buttons division.
+  */
+  installEventListener() {
+    const handleEvtOutput = document.getElementById('handleEvtOutput');
+    var curWinHeight = window.innerHeight;
+    var winHeightNew;
+    document.defaultView.addEventListener('resize',  (event) => {
+      console.log(event);
+      curWinHeight = this.moveBottomButtonsDiv(curWinHeight);
+    });
+  }
+
+  moveBottomButtonsDiv(oldWinHeight) {
+    let newWinHeight = window.innerHeight;
+   console.log('moveBottomButtonsDif: Starting window height is',
+   oldWinHeight);
+   console.log(
+    document.getElementsByClassName("bottom-buttons-div").length,
+    '\n', 'New window height:', newWinHeight
+   );
+   return newWinHeight;
+  }
+
 
   componentDidMount() {
     let accessToken = localStorage.getItem('token');
@@ -90,11 +117,11 @@ export default class MainView extends React.Component {
       console.log(error);
     });
    }
-
+  
   render() {
     const { movies, user } = this.state;
     var mainView = this;
- 
+    
     /* <!--If there is no user, the LoginView is rendered. 
     If there is a user logged in, the user details are 
     *passed as a prop to the LoginView--> */
@@ -115,86 +142,90 @@ export default class MainView extends React.Component {
     // If the state of `selectedMovie` is not null, that 
     //  selected movie will be returned otherwise, all 
     //  *movies will be returned.--> */
-    if (movies.length === 0)
+    if (movies.length === 0) {
        return <div className="main-view" />
+    }
 
        return (
-      <Container>
-        <Router>
-        <Row className="main-view justify-content-md-center">
-          <Route exact path="/" render={() => {
-            return movies.map(m => (
-              <Col xs={7} sm={6} md={4} lg={4} key={m._id}>
-                <MovieCard movie={m} />
+        <Container className='router-container'>
+          <Router className='router'>
+          <Row className="main-view-row justify-content-md-center">
+            <Route exact path="/" render={() => {
+              return movies.map(m => (
+                <Col xs={7} sm={4} md={4} lg={4} key={m._id}>
+                  <MovieCard movie={m} />
+                </Col>
+              ))
+            }} />
+            <Route exact path="/movies/:movieId"
+              render={({ match, history }) => {
+                return (
+                  <Col md={8}>
+                    <MovieView 
+                      movie={movies.find(
+                          m => (m._id === match.params.movieId)
+                      )} 
+                      onBackClick={() => history.push("/")}
+                    />
+                  </Col>
+                )
+            }} />       
+            <Route exact path="/user"
+              render={({ match, history }) => {
+                return (
+                  <Col>
+                    <ProfileView 
+                    />
+                  </Col>
+                )
+            }} />       
+            <Route exact path="/movies/genre/:title"
+              render={({ match, history }) => {
+                let mTitle = match.params.title;
+                return (
+                  <Col md={8}>
+                    <GenreView 
+                      genre={movies.find(
+                          m => ( m.title === mTitle )
+                      ).genre}
+                      movie={movies.find(  m => (m.title === mTitle))} 
+                      onBackClick={() => history.goBack()}/>
+                  </Col>
+                )
+            }} />  
+            <Route exact path='/movies/director/:title'   
+              render={({ match, history }) => {
+                let mTitle = match.params.title;
+                return (
+                  <Col md={8}>
+                    <DirectorView
+                      movie={movies.find( m => (m.title === mTitle))}
+                      onBackClick={() => history.goBack()}
+                    />
+                  </Col>
+                )
+            }} />  
+          </Row>
+          <div className='bottom-buttons-div'>
+            <Row className="back-button-row">
+              <Col className="d-grid">
+                <Button className="back-button"
+                  variant="dark" onClick={() => history.back()}>
+                  Back
+                </Button>
               </Col>
-            ))
-          }} />
-          <Route exact path="/movies/:movieId"
-            render={({ match, history }) => {
-              return (
-                <Col md={8}>
-                  <MovieView 
-                    movie={movies.find(  m => (m._id === match.params.movieId))} 
-                    onBackClick={() => history.push("/")}
-                  />
-                </Col>
-              )
-          }} />       
-          <Route exact path="/user"
-            render={({ match, history }) => {
-              return (
-                <Col>
-                  <ProfileView 
-                  />
-                </Col>
-              )
-          }} />       
-          <Route exact path="/movies/genre/:title"
-            render={({ match, history }) => {
-              let mTitle = match.params.title;
-              return (
-                <Col md={8}>
-                  <GenreView 
-                    genre={movies.find(  m => (m.title === mTitle)).genre}
-                    movie={movies.find(  m => (m.title === mTitle))} 
-                    onBackClick={() => history.goBack()}/>
-                </Col>
-              )
-          }} />  
-          <Route exact path='/movies/director/:title'   
-            render={({ match, history }) => {
-              let mTitle = match.params.title;
-              return (
-                <Col md={8}>
-                  <DirectorView
-                    movie={movies.find( m => (m.title === mTitle))}
-                    onBackClick={() => history.goBack()}
-                  />
-                </Col>
-              )
-          }} />  
+            </Row>
+            <Row className="logout-button-row justify-content-sm-center">
+              <Col className="d-grid">
+                <Button className="logout--button" variant="dark"
+                onClick={this.onLoggedOut}>
+                  Log Out
+                </Button>
+              </Col>
+            </Row>
+          </div>
 
-        </Row>
-
-        <Row className="back-button-row">
-        <Col className="d-grid">
-          <Button className="back-button"
-            variant="dark" onClick={() => history.back()}>
-            Back
-          </Button>
-          </Col>
-        </Row>
-
-        <Row className="logout-button-div justify-content-sm-center">
-          <Col className="d-grid">
-            <Button className="return-button" variant="dark"
-            onClick={this.onLoggedOut}>
-              Log Out
-            </Button>
-          </Col>
-        </Row>
-      
-      </Router>
+        </Router>
       </Container>
     );
   } // end if

@@ -29,13 +29,15 @@ export class MovieCard extends React.Component {
     const { movie } = this.props;
 
    return (
-    <Container>
+    <Container className='movie-card-container'>
         <Card className="card">
-          <Card.Img crossOrigin="anonymous" variant="top" src={movie.imagePath} />
+          <Card.Img crossOrigin="anonymous" variant="top" 
+            src={movie.imagePath} />
           <Card.Body>
             <Card.Title>{movie.title}</Card.Title>
               <Row>
-              <Button as={Link} to={`/movies/${movie._id}`} variant="primary" >
+              <Button as={Link} to={`/movies/${movie._id}`} 
+                variant="primary" >
                   Open
                 </Button>
               </Row>

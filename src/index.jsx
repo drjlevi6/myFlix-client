@@ -19,7 +19,7 @@ class MyFlixApplication extends React.Component {
     return (
       <Container>
         <Row>
-          <Col className="d-grid mb-2">
+          <Col className="d-grid mb-3">
             <MainView className="mainView"/>
           </Col>
         </Row>

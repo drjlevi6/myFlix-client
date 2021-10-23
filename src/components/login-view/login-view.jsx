@@ -30,7 +30,6 @@ export function LoginView(props) {
       communication) */
     .then (response => {
       const data = response.data;
-      console.log('handleSubmit: response.data:', response.data)
       setLoggedIn(true);
       props.onLoggedIn(data);
     })
