@@ -44463,11 +44463,18 @@ class ProfileView extends _reactDefault.default.Component {
                 lineNumber: 63
             },
             __self: this
-        }))), /*#__PURE__*/ _reactDefault.default.createElement("div", {
-            className: "submit-div",
+        }))), /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
+            className: "update-unregister-row",
             __source: {
                 fileName: "src/components/profile-view/profile-view.jsx",
                 lineNumber: 67
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
+            className: "update-button-col",
+            __source: {
+                fileName: "src/components/profile-view/profile-view.jsx",
+                lineNumber: 68
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
@@ -44476,15 +44483,14 @@ class ProfileView extends _reactDefault.default.Component {
             type: "submit",
             __source: {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 68
+                lineNumber: 69
             },
             __self: this
-        }, "Update")))), /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
+        }, "Update")), /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
             className: "unregister-column",
-            sm: 5,
             __source: {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 75
+                lineNumber: 74
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
@@ -44492,10 +44498,10 @@ class ProfileView extends _reactDefault.default.Component {
             variant: "dark",
             __source: {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 76
+                lineNumber: 75
             },
             __self: this
-        }, "Unregister"))))); //end return
+        }, "Unregister")))))))); //end return
     }
 }
 

@@ -64,18 +64,20 @@ export class ProfileView extends React.Component{
 												placeholder="Enter date of birth" />
 										</Col>
 									</Form.Group>
-									<div className='submit-div'>
+									<Row className='update-unregister-row'>
+										<Col className='update-button-col'>
 									<Button className='submit-form-button' variant="primary" 
 											type="submit">
 										Update
 									</Button>
-									</div>
+									</Col>
+									<Col className='unregister-column'>
+							<Button className='unregister-button' variant='dark'>
+								Unregister
+							</Button>
+							</Col>									
+						</Row>
 								</Form>
-							</Col>
-							<Col className='unregister-column' sm={5} >
-								<Button className='unregister-button' variant='dark'>
-									Unregister
-								</Button>
 							</Col>
 					</Row>
 				</Container>
