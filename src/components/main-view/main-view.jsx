@@ -33,21 +33,6 @@ export default class MainView extends React.Component {
       user: null
     };
     mainView = this;
-    this.installEventListener();
-  }
-
-  /* Install an event listener to detect changes in window
-    height; this will require an adjustment in the max height
-    of the MainView's bottom-buttons division.
-  */
-  installEventListener() {
-    const handleEvtOutput = document.getElementById('handleEvtOutput');
-    var curWinHeight = window.innerHeight;
-    var winHeightNew;
-    document.defaultView.addEventListener('resize',  (event) => {
-      console.log(event);
-      curWinHeight = this.moveBottomButtonsDiv(curWinHeight);
-    });
   }
 
   moveBottomButtonsDiv(oldWinHeight) {
