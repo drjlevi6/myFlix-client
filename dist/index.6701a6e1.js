@@ -44311,7 +44311,6 @@ class ProfileView extends _reactDefault.default.Component {
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
             as: _rowDefault.default,
-            controlId: "formBasicEmail",
             __source: {
                 fileName: "src/components/profile-view/profile-view.jsx",
                 lineNumber: 28
@@ -44417,7 +44416,6 @@ class ProfileView extends _reactDefault.default.Component {
             __self: this
         }))), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
             as: _rowDefault.default,
-            controlId: "formBasicEmail",
             __source: {
                 fileName: "src/components/profile-view/profile-view.jsx",
                 lineNumber: 58

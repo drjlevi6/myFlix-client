@@ -25,7 +25,7 @@ export class ProfileView extends React.Component{
 						<Row className='form-and-unregister-row'>
 							<Col sm={7} className='form-column'>
 								<Form className='main-form'>
-									<Form.Group as={Row} controlId="formBasicEmail">
+									<Form.Group as={Row} >
 										<Col sm={4} >
 											<Form.Label>Username:</Form.Label>
 										</Col>
@@ -55,7 +55,7 @@ export class ProfileView extends React.Component{
 										</Col>
 									</Form.Group>
 
-									<Form.Group as={Row} controlId="formBasicEmail">
+									<Form.Group as={Row} >
 										<Col sm={4}>
 											<Form.Label>Date of Birth:</Form.Label>
 										</Col>
