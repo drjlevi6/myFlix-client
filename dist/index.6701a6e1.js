@@ -44311,6 +44311,7 @@ class ProfileView extends _reactDefault.default.Component {
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
             as: _rowDefault.default,
+            className: "form-group-username-row",
             __source: {
                 fileName: "src/components/profile-view/profile-view.jsx",
                 lineNumber: 28
@@ -44346,7 +44347,7 @@ class ProfileView extends _reactDefault.default.Component {
         }))), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
             as: _rowDefault.default,
             className: "mb-3",
-            controlId: "formBasicPassword",
+            controlId: "formPassword",
             __source: {
                 fileName: "src/components/profile-view/profile-view.jsx",
                 lineNumber: 38
@@ -44463,7 +44464,7 @@ class ProfileView extends _reactDefault.default.Component {
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
-            className: "submit-form-button",
+            className: "submit-update-button",
             variant: "primary",
             type: "submit",
             __source: {

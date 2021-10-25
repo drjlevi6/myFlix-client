@@ -108,8 +108,9 @@
   border-color: darkblue;
 }
 
-.form-and-unregister-row {
-  justify-content: space-between;
+.update-unregister-row {
+  /*flex-wrap: nowrap;*/
+  justify-content: center;
   height: 75%;
 }
 
@@ -119,6 +120,7 @@
 
 /**/
 .main-form {
+  flex-wrap: nowrap;
   justify-content: center;
 }
 
@@ -126,8 +128,13 @@
   text-align: right;
 }
 
-.submit-form-button {
-  /*margin-bottom: 20px;*/
+.update-button-col {
+  width: 100px;
+}
+
+.submit-update-button {
+  width: 100px;
+  align-self: right;
 }
 @charset "UTF-8";/*!
  * Bootstrap v5.1.1 (https://getbootstrap.com/)

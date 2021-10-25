@@ -25,7 +25,7 @@ export class ProfileView extends React.Component{
 						<Row className='form-and-unregister-row'>
 							<Col sm={7} className='form-column'>
 								<Form className='main-form'>
-									<Form.Group as={Row} >
+									<Form.Group as={Row} className='form-group-username-row'>
 										<Col sm={4} >
 											<Form.Label>Username:</Form.Label>
 										</Col>
@@ -36,7 +36,7 @@ export class ProfileView extends React.Component{
 									</Form.Group>
 
 									<Form.Group as={Row} className="mb-3" 
-											controlId="formBasicPassword">
+											controlId="formPassword">
 										<Col sm={4}>
 											<Form.Label>Password:</Form.Label>
 										</Col>
@@ -66,17 +66,17 @@ export class ProfileView extends React.Component{
 									</Form.Group>
 									<Row className='update-unregister-row'>
 										<Col className='update-button-col'>
-									<Button className='submit-form-button' variant="primary" 
-											type="submit">
-										Update
-									</Button>
-									</Col>
-									<Col className='unregister-column'>
-							<Button className='unregister-button' variant='dark'>
-								Unregister
-							</Button>
-							</Col>									
-						</Row>
+											<Button className='submit-update-button' variant="primary" 
+													type="submit">
+												Update
+											</Button>
+										</Col>
+										<Col className='unregister-column'>
+											<Button className='unregister-button' variant='dark'>
+												Unregister
+											</Button>
+										</Col>									
+									</Row>
 								</Form>
 							</Col>
 					</Row>
