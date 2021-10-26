@@ -44295,7 +44295,6 @@ class ProfileView extends _reactDefault.default.Component {
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
-            sm: 7,
             className: "form-column",
             __source: {
                 fileName: "src/components/profile-view/profile-view.jsx",
@@ -44318,7 +44317,7 @@ class ProfileView extends _reactDefault.default.Component {
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
-            sm: 4,
+            xs: 4,
             __source: {
                 fileName: "src/components/profile-view/profile-view.jsx",
                 lineNumber: 29
@@ -44354,7 +44353,7 @@ class ProfileView extends _reactDefault.default.Component {
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
-            sm: 4,
+            xs: 4,
             __source: {
                 fileName: "src/components/profile-view/profile-view.jsx",
                 lineNumber: 40
@@ -44389,7 +44388,7 @@ class ProfileView extends _reactDefault.default.Component {
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
-            sm: 4,
+            xs: 4,
             __source: {
                 fileName: "src/components/profile-view/profile-view.jsx",
                 lineNumber: 49
@@ -44423,7 +44422,7 @@ class ProfileView extends _reactDefault.default.Component {
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
-            sm: 4,
+            xs: 4,
             __source: {
                 fileName: "src/components/profile-view/profile-view.jsx",
                 lineNumber: 59
@@ -44443,7 +44442,6 @@ class ProfileView extends _reactDefault.default.Component {
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control, {
             type: "date",
-            placeholder: "Enter date of birth",
             __source: {
                 fileName: "src/components/profile-view/profile-view.jsx",
                 lineNumber: 63
@@ -44453,14 +44451,15 @@ class ProfileView extends _reactDefault.default.Component {
             className: "update-unregister-row",
             __source: {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 67
+                lineNumber: 66
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
-            className: "update-button-col",
+            className: "update-button-col button-column",
+            xs: 6,
             __source: {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 68
+                lineNumber: 67
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
@@ -44469,14 +44468,14 @@ class ProfileView extends _reactDefault.default.Component {
             type: "submit",
             __source: {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 69
+                lineNumber: 68
             },
             __self: this
         }, "Update")), /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
-            className: "unregister-column",
+            className: "unregister-column button-column",
             __source: {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 74
+                lineNumber: 73
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
@@ -44484,7 +44483,7 @@ class ProfileView extends _reactDefault.default.Component {
             variant: "dark",
             __source: {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 75
+                lineNumber: 74
             },
             __self: this
         }, "Unregister")))))))); //end return

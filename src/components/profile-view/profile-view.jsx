@@ -23,10 +23,10 @@ export class ProfileView extends React.Component{
 						</Row>
 
 						<Row className='form-and-unregister-row'>
-							<Col sm={7} className='form-column'>
+							<Col className='form-column'>
 								<Form className='main-form'>
 									<Form.Group as={Row} className='form-group-username-row'>
-										<Col sm={4} >
+										<Col xs={4} >
 											<Form.Label>Username:</Form.Label>
 										</Col>
 										<Col>
@@ -37,7 +37,7 @@ export class ProfileView extends React.Component{
 
 									<Form.Group as={Row} className="mb-3" 
 											controlId="formPassword">
-										<Col sm={4}>
+										<Col xs={4}>
 											<Form.Label>Password:</Form.Label>
 										</Col>
 										<Col>
@@ -46,7 +46,7 @@ export class ProfileView extends React.Component{
 									</Form.Group>
 
 									<Form.Group as={Row} controlId="formBasicEmail">
-										<Col sm={4}>
+										<Col xs={4}>
 											<Form.Label>Email:</Form.Label>
 										</Col>
 										<Col>
@@ -56,22 +56,21 @@ export class ProfileView extends React.Component{
 									</Form.Group>
 
 									<Form.Group as={Row} >
-										<Col sm={4}>
+										<Col xs={4}>
 											<Form.Label>Date of Birth:</Form.Label>
 										</Col>
 										<Col>
-											<Form.Control type="date" 
-												placeholder="Enter date of birth" />
+											<Form.Control type="date" />
 										</Col>
 									</Form.Group>
 									<Row className='update-unregister-row'>
-										<Col className='update-button-col'>
+										<Col className='update-button-col button-column' xs={6}>
 											<Button className='submit-update-button' variant="primary" 
 													type="submit">
 												Update
 											</Button>
 										</Col>
-										<Col className='unregister-column'>
+										<Col className='unregister-column button-column'>
 											<Button className='unregister-button' variant='dark'>
 												Unregister
 											</Button>
