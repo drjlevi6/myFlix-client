@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './profile-view.scss';
+import Axios from 'axios';
 
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
@@ -9,6 +10,18 @@ import Container from 'react-bootstrap/Container';
 import {Link} from 'react-router-dom';
 
 export class ProfileView extends React.Component{
+	updateHandler = e => { 
+		e.preventDefault();
+		Axios.put('https://drjs-myflix-app.herokuapp.com/users/' + 
+			localStorage.getItem('user'), { 
+				Username, Password, Email, Birthday
+			},
+			{
+				headers: {
+					'Authorization': `Bearer ${localStorage.getItem('token')}`
+				}
+			})
+	}
 	render(){// will need asynchronous calls
 		var form_Label_width = '5';
 		return(
@@ -24,7 +37,7 @@ export class ProfileView extends React.Component{
 
 						<Row className='form-and-unregister-row'>
 							<Col className='form-column'>
-								<Form className='main-form'>
+								<Form className='main-form' onSubmit={ this.updateHandler }>
 									<Form.Group as={Row} className='form-group-username-row'>
 										<Col xs={4} >
 											<Form.Label>Username:</Form.Label>
