@@ -10,18 +10,49 @@ import Container from 'react-bootstrap/Container';
 import {Link} from 'react-router-dom';
 
 export class ProfileView extends React.Component{
+	state = {
+		Username: '',
+		Password: '',
+		Email: '',
+		Birthday: ''
+	}
 	updateHandler = e => { 
 		e.preventDefault();
-		Axios.put('https://drjs-myflix-app.herokuapp.com/users/' + 
-			localStorage.getItem('user'), { 
-				Username, Password, Email, Birthday
+		console.log('profile-view.updateHandler.this.state:', this.state);
+		console.log('profile-view.updateHandler: localStorage.getItem(\'token\'):', 
+			localStorage.getItem('token'));
+					Axios.put('https://drjs-myflix-app.herokuapp.com/users/${user}',
+			{ 
+				Username: this.state.Username,
+				Password: this.state.Password,
+				Email: this.state.Email,
+				Birthday: this.state.Birthday
 			},
 			{
 				headers: {
-					'Authorization': `Bearer ${localStorage.getItem('token')}`
+					'Authorization': `Bearer ${'token'}`
 				}
 			})
+			.then (
+				response => console.log(response)
+			)
+			.catch (
+				error => console.log(error)
+			)
 	}
+
+	changeHandler = e => {
+			if (e.target.name === "Username") {
+				this.setState( { Username: e.target.value } );
+			} else if (e.target.name === "Password") {
+				this.setState( { Password: e.target.value})
+			} else if (e.target.name === "Email") {
+				this.setState( { Email: e.target.value})
+			} else if (e.target.name === "Birthday") {
+				this.setState( { Birthday: e.target.value})
+			}
+	}
+
 	render(){// will need asynchronous calls
 		var form_Label_width = '5';
 		return(
@@ -44,6 +75,9 @@ export class ProfileView extends React.Component{
 										</Col>
 										<Col>
 											<Form.Control type="text" 
+												defaultValue={this.state.Username}
+												onChange={this.changeHandler}
+												name="Username"
 												placeholder="Enter username" />
 										</Col>
 									</Form.Group>
@@ -54,7 +88,10 @@ export class ProfileView extends React.Component{
 											<Form.Label>Password:</Form.Label>
 										</Col>
 										<Col>
-											<Form.Control type="password" placeholder="Password" />
+											<Form.Control type="password" placeholder="Password" 
+												defaultValue={this.state.Password}
+												onChange={this.changeHandler}
+												name="Password"											/>
 										</Col>
 									</Form.Group>
 
@@ -64,6 +101,9 @@ export class ProfileView extends React.Component{
 										</Col>
 										<Col>
 											<Form.Control type="email" 
+												defaultValue={this.state.Email}
+												onChange={this.changeHandler}
+												name="Email"
 												placeholder="Enter email" />
 										</Col>
 									</Form.Group>
@@ -73,7 +113,10 @@ export class ProfileView extends React.Component{
 											<Form.Label>Date of Birth:</Form.Label>
 										</Col>
 										<Col>
-											<Form.Control type="date" />
+											<Form.Control type="text" 
+												defaultValue={this.state.Birthday}
+												onChange={this.changeHandler}
+												name="Birthday"/>
 										</Col>
 									</Form.Group>
 									<Row className='update-unregister-row'>
