@@ -19,6 +19,8 @@ export class ProfileView extends React.Component{
 	updateHandler = e => { 
 		e.preventDefault();
 		console.log('profile-view.updateHandler.this.state:', this.state);
+		console.log('profile-view.updateHandler.user:', {user});
+
 		console.log('profile-view.updateHandler: localStorage.getItem(\'token\'):', 
 			localStorage.getItem('token'));
 					Axios.put('https://drjs-myflix-app.herokuapp.com/users/${user}',
@@ -30,7 +32,7 @@ export class ProfileView extends React.Component{
 			},
 			{
 				headers: {
-					'Authorization': `Bearer ${'token'}`
+					'Authorization': `Bearer ${localStorage.getItem('token')}`
 				}
 			})
 			.then (

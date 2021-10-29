@@ -44254,7 +44254,10 @@ class ProfileView extends _reactDefault.default.Component {
     updateHandler = (e)=>{
         e.preventDefault();
         console.log('profile-view.updateHandler.this.state:', this.state);
-        console.log('profile-view.updateHandler: localStorage:', localStorage.getItem('token'));
+        console.log('profile-view.updateHandler.user:', {
+            user
+        });
+        console.log('profile-view.updateHandler: localStorage.getItem(\'token\'):', localStorage.getItem('token'));
         _axiosDefault.default.put('https://drjs-myflix-app.herokuapp.com/users/${user}', {
             Username: this.state.Username,
             Password: this.state.Password,
@@ -44262,7 +44265,7 @@ class ProfileView extends _reactDefault.default.Component {
             Birthday: this.state.Birthday
         }, {
             headers: {
-                'Authorization': `Bearer ${'token'}`
+                'Authorization': `Bearer ${localStorage.getItem('token')}`
             }
         }).then((response)=>console.log(response)
         ).catch((error)=>console.log(error)
@@ -44288,33 +44291,33 @@ class ProfileView extends _reactDefault.default.Component {
             className: "profile-view-container",
             __source: {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 58
+                lineNumber: 61
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
             className: "profile-and-all-movies-row",
             __source: {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 59
+                lineNumber: 62
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
             __source: {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 60
+                lineNumber: 63
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("h4", {
             __source: {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 60
+                lineNumber: 63
             },
             __self: this
         }, "< Profile")), /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
             className: "all-movies-button-column",
             __source: {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 61
+                lineNumber: 64
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
@@ -44323,21 +44326,21 @@ class ProfileView extends _reactDefault.default.Component {
             variant: "info",
             __source: {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 62
+                lineNumber: 65
             },
             __self: this
         }, "All Movies"))), /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
             className: "form-and-unregister-row",
             __source: {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 68
+                lineNumber: 71
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
             className: "form-column",
             __source: {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 69
+                lineNumber: 72
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default, {
@@ -44345,7 +44348,7 @@ class ProfileView extends _reactDefault.default.Component {
             onSubmit: this.updateHandler,
             __source: {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 70
+                lineNumber: 73
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
@@ -44353,26 +44356,26 @@ class ProfileView extends _reactDefault.default.Component {
             className: "form-group-username-row",
             __source: {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 71
+                lineNumber: 74
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
             xs: 4,
             __source: {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 72
+                lineNumber: 75
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Label, {
             __source: {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 73
+                lineNumber: 76
             },
             __self: this
         }, "Username:")), /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
             __source: {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 75
+                lineNumber: 78
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control, {
@@ -44383,7 +44386,7 @@ class ProfileView extends _reactDefault.default.Component {
             placeholder: "Enter username",
             __source: {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 76
+                lineNumber: 79
             },
             __self: this
         }))), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
@@ -44392,26 +44395,26 @@ class ProfileView extends _reactDefault.default.Component {
             controlId: "formPassword",
             __source: {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 84
+                lineNumber: 87
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
             xs: 4,
             __source: {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 86
+                lineNumber: 89
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Label, {
             __source: {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 87
+                lineNumber: 90
             },
             __self: this
         }, "Password:")), /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
             __source: {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 89
+                lineNumber: 92
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control, {
@@ -44422,7 +44425,7 @@ class ProfileView extends _reactDefault.default.Component {
             name: "Password",
             __source: {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 90
+                lineNumber: 93
             },
             __self: this
         }))), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
@@ -44430,26 +44433,26 @@ class ProfileView extends _reactDefault.default.Component {
             controlId: "formBasicEmail",
             __source: {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 97
+                lineNumber: 100
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
             xs: 4,
             __source: {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 98
+                lineNumber: 101
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Label, {
             __source: {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 99
+                lineNumber: 102
             },
             __self: this
         }, "Email:")), /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
             __source: {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 101
+                lineNumber: 104
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control, {
@@ -44460,33 +44463,33 @@ class ProfileView extends _reactDefault.default.Component {
             placeholder: "Enter email",
             __source: {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 102
+                lineNumber: 105
             },
             __self: this
         }))), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
             as: _rowDefault.default,
             __source: {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 110
+                lineNumber: 113
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
             xs: 4,
             __source: {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 111
+                lineNumber: 114
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Label, {
             __source: {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 112
+                lineNumber: 115
             },
             __self: this
         }, "Date of Birth:")), /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
             __source: {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 114
+                lineNumber: 117
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control, {
@@ -44496,14 +44499,14 @@ class ProfileView extends _reactDefault.default.Component {
             name: "Birthday",
             __source: {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 115
+                lineNumber: 118
             },
             __self: this
         }))), /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
             className: "update-unregister-row",
             __source: {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 121
+                lineNumber: 124
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
@@ -44511,7 +44514,7 @@ class ProfileView extends _reactDefault.default.Component {
             xs: 6,
             __source: {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 122
+                lineNumber: 125
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
@@ -44520,14 +44523,14 @@ class ProfileView extends _reactDefault.default.Component {
             type: "submit",
             __source: {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 123
+                lineNumber: 126
             },
             __self: this
         }, "Update")), /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
             className: "unregister-column button-column",
             __source: {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 128
+                lineNumber: 131
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
@@ -44535,7 +44538,7 @@ class ProfileView extends _reactDefault.default.Component {
             variant: "dark",
             __source: {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 129
+                lineNumber: 132
             },
             __self: this
         }, "Unregister")))))))); //end return
