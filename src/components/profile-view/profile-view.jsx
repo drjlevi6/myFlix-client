@@ -19,11 +19,18 @@ export class ProfileView extends React.Component{
 	updateHandler = e => { 
 		e.preventDefault();
 		console.log('profile-view.updateHandler.this.state:', this.state);
-		console.log('profile-view.updateHandler.user:', {user});
+		console.log('profile-view.updateHandler.user:', localStorage.getItem('user'));
 
 		console.log('profile-view.updateHandler: localStorage.getItem(\'token\'):', 
 			localStorage.getItem('token'));
-					Axios.put('https://drjs-myflix-app.herokuapp.com/users/${user}',
+		let endpoint = 
+		'https://drjs-myflix-app.herokuapp.com/users/' + localStorage.getItem('user');
+		console.log('profile-view.updateHandler.endpoint:', endpoint);
+		let bearerToken = localStorage.getItem('token');
+		console.log('profile-view.updateHandler.bearerToken:', bearerToken);
+//					Axios.put('https://drjs-myflix-app.herokuapp.com/users/' +
+//					localStorage.getItem('user')),
+			Axios.put(endpoint,
 			{ 
 				Username: this.state.Username,
 				Password: this.state.Password,
@@ -32,7 +39,7 @@ export class ProfileView extends React.Component{
 			},
 			{
 				headers: {
-					'Authorization': `Bearer ${localStorage.getItem('token')}`
+					'Authorization': `Bearer ${bearerToken}` //${localStorage.getItem('token')}`
 				}
 			})
 			.then (
