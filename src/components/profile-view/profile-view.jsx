@@ -23,9 +23,11 @@ export class ProfileView extends React.Component{
 
 		console.log('profile-view.updateHandler: localStorage.getItem(\'token\'):', 
 			localStorage.getItem('token'));
+
 		let endpoint = 
 		'https://drjs-myflix-app.herokuapp.com/users/' + localStorage.getItem('user');
 		console.log('profile-view.updateHandler.endpoint:', endpoint);
+
 		let bearerToken = localStorage.getItem('token');
 		console.log('profile-view.updateHandler.bearerToken:', bearerToken);
 //					Axios.put('https://drjs-myflix-app.herokuapp.com/users/' +
@@ -46,7 +48,7 @@ export class ProfileView extends React.Component{
 				response => console.log(response)
 			)
 			.catch (
-				error => console.log(error)
+				error => console.log("Axios put error:", error)
 			)
 	}
 
