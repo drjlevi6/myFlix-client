@@ -196,7 +196,7 @@ export default class MainView extends React.Component {
               <Col className="d-grid">
                 <Button className="back-button"
                   variant="dark" onClick={() => history.back()}>
-                  Back
+                  Go Back
                 </Button>
               </Col>
             </Row>

@@ -21758,7 +21758,7 @@ class MainView extends _reactDefault.default.Component {
                 lineNumber: 197
             },
             __self: this
-        }, "Back"))), /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
+        }, "Go Back"))), /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
             className: "logout-button-row justify-content-sm-center",
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
