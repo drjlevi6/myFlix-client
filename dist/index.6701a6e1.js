@@ -44497,7 +44497,7 @@ class ProfileView extends _reactDefault.default.Component {
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control, {
-            type: "text",
+            type: "date",
             defaultValue: this.state.Birthday,
             onChange: this.changeHandler,
             name: "Birthday",

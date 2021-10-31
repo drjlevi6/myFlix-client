@@ -124,7 +124,7 @@ export class ProfileView extends React.Component{
 											<Form.Label>Date of Birth:</Form.Label>
 										</Col>
 										<Col>
-											<Form.Control type="text" 
+											<Form.Control type="date" 
 												defaultValue={this.state.Birthday}
 												onChange={this.changeHandler}
 												name="Birthday"/>
