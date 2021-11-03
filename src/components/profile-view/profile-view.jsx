@@ -45,7 +45,10 @@ export class ProfileView extends React.Component{
 				}
 			})
 			.then (
-				response => console.log(response)
+				response => {
+					console.log(response);
+					localStorage.setItem('user', this.state.Username);
+				}
 			)
 			.catch (
 				error => console.log("Axios put error:", error)

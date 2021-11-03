@@ -9,15 +9,39 @@ import Button from 'react-bootstrap/Button';
 import { Link } from "react-router-dom";
 import { Alert } from 'react-bootstrap';
 import { scrollParent } from 'dom-helpers';
+import Axios from 'axios';
 
 export class MovieView extends React.Component { 
   showGenreView() {
     console.log('MovieView.showGenreView:', movie);
   }
 
-  render() {
+  addToFavorites = (e) => {
+    e.preventDefault();
+    let Username = localStorage.getItem('user');
+    let movieId = this.props.movie._id;
+    let token = localStorage.getItem('token');
+    let endpoint = 
+		'https://drjs-myflix-app.herokuapp.com/users/' + Username + '/movies/' + movieId;
+    Axios.post(endpoint, {}, { headers: { 'Authorization': `Bearer ${token}` } })
+    .then( result => console.log(result) )
+    .catch( error => console.log(error) )
+  }
+
+  removeFromFavorites = (e) => {
+    e.preventDefault();
+    let Username = localStorage.getItem('user');
+    let movieId = this.props.movie._id;
+    let token = localStorage.getItem('token');
+    let endpoint = 
+		'https://drjs-myflix-app.herokuapp.com/users/' + Username + '/movies/' + movieId;
+    Axios.delete(endpoint, { headers: { 'Authorization': `Bearer ${token}` } })
+    .then( result => console.log(result) )
+    .catch( error => console.log(error) )
+  }
+ render() {
     const { movie, onBackClick } = this.props;
-  
+    console.log('movie-view.movie:', movie);
     return (
       <Container className="movie-view">
         <Row className="movie-poster-row">
@@ -43,6 +67,14 @@ export class MovieView extends React.Component {
               as={Link} to={`/movies/director/${movie.title}`}>Director:
             </Button>
           </div>
+        </Row>
+        <Row>
+        <Button onClick={this.addToFavorites}>
+            Add to Favorites
+          </Button>
+          <Button onClick={this.removeFromFavorites}>
+            Remove from Favorites
+          </Button>
         </Row>
 
       </Container>
