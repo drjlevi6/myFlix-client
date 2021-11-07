@@ -21758,27 +21758,20 @@ class MainView extends _reactDefault.default.Component {
                 lineNumber: 197
             },
             __self: this
-        }, "Go Back"))), /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
-            className: "logout-button-row justify-content-sm-center",
-            __source: {
-                fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 203
-            },
-            __self: this
-        }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
+        }, "Go Back")), /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
             className: "d-grid",
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 204
+                lineNumber: 202
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
-            className: "logout--button",
+            className: "logout-button",
             variant: "dark",
             onClick: this.onLoggedOut,
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 205
+                lineNumber: 203
             },
             __self: this
         }, "Log Out")))))));
@@ -39792,7 +39785,7 @@ MovieView.propTypes = {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"6TuXu","prop-types":"1tgq3","./movie-view.scss":"kvL93","react-bootstrap/Container":"2PRIq","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0","react-bootstrap/Button":"9CzHT","react-router-dom":"cpyQW","react-bootstrap":"h2YVd","dom-helpers":"4VatF","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J","axios":"iYoWk"}],"kvL93":[function() {},{}],"054li":[function(require,module,exports) {
+},{"react":"6TuXu","prop-types":"1tgq3","./movie-view.scss":"kvL93","react-bootstrap/Container":"2PRIq","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0","react-bootstrap/Button":"9CzHT","react-router-dom":"cpyQW","react-bootstrap":"h2YVd","dom-helpers":"4VatF","axios":"iYoWk","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"kvL93":[function() {},{}],"054li":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$02dd = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;

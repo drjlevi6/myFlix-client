@@ -32,7 +32,7 @@
 .bottom-buttons-div {
    /* position: relative;*/
     width: 100%;
-    padding: 10px;
+    padding: 2px;
     border: solid black 3px;
     border-radius: 10px;
     /*margin-top: 20px;*/
@@ -40,4 +40,21 @@
 }
 .router-container {
    /* border: solid red 1px;*/
+}
+
+.back-logout-buttons-col {
+    padding: 0px;
+}
+.back-button-row {
+    margin: 0px;
+}
+
+.back-button {
+    height: 38px;
+    margin: 4px;
+}
+
+.logout-button {
+    height: 38px;
+    margin: 4px;
 }

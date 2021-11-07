@@ -199,10 +199,8 @@ export default class MainView extends React.Component {
                   Go Back
                 </Button>
               </Col>
-            </Row>
-            <Row className="logout-button-row justify-content-sm-center">
-              <Col className="d-grid">
-                <Button className="logout--button" variant="dark"
+             <Col className="d-grid">
+                <Button className="logout-button" variant="dark"
                 onClick={this.onLoggedOut}>
                   Log Out
                 </Button>
