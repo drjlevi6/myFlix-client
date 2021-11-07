@@ -142,6 +142,12 @@ export default class MainView extends React.Component {
                 </Col>
               ))
             }} />
+            <Route path="/register" render={() => {
+              return <Col>
+                <RegistrationView />
+              </Col>
+            }} />
+
             <Route exact path="/movies/:movieId"
               render={({ match, history }) => {
                 return (

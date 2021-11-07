@@ -40,7 +40,8 @@
 }
 
 .router-container {
-  /* border: solid red 1px;*/
+  /*border: solid red 1px;*/
+  padding-bottom: 70px;
 }
 
 .back-logout-buttons-col {
@@ -127,6 +128,25 @@
 }
 .header-text {
   padding: 10px;
+}
+
+.username-textfield-column {
+  display: flex;
+  flex-shrink: 1;
+}
+
+.login-form {
+  text-align: right;
+}
+
+.username-password-headers-column {
+  flex-shrink: 0;
+  padding-top: 7px;
+  margin-right: 10px;
+}
+
+.login-button-row {
+  text-align: right;
 }
 .update-unregister-row {
   flex-wrap: nowrap;

@@ -54,66 +54,50 @@ export function LoginView(props) {
   }
   // give Buttons 'className="d-grid gap-2"' to allow full width
   return ( // onClick={onRequestToRegister}>register: 
-    <Container>
-      <Col>
-        <Row className="justify-content-md-center header-text">
-          <Col>
-            Log In Or Register:
-          </Col>
-        </Row>
-        <Row className="justify-content-md-center" >
-          <Col className="d-grid gap-2">
-            <Button className="register-button" variant="dark" 
-              onClick={onRequestToRegister}>
-              Register
-            </Button>
-          </Col>
-        </Row>
-        <Row>&nbsp;</Row>
+    <Container className='login-body-container'>
 
-      <Form>
-       <Form.Group className="mb-2" controlId="formUsername">
-        <Row>
-          <Col xs={3}>
-            <Form.Label>Username:</Form.Label>
-          </Col>
+        <Row className="justify-content-md-center header-text">
+            Log In To myFlix:
         </Row>
-        <Row className="justify-content-md-center">
-           <Col>
-             <Form.Control type="text" placeholder="Enter username"
+        <Form className='login-form'>
+        <Form.Group className="mb-2" controlId="formUsername">
+          <Row className='username-row'>
+            <Col className='username-password-headers-column' xs={3} sm={2}>
+              <Form.Label>Username:</Form.Label>
+            </Col>
+            <Col className='username-textfield-column'>
+              <Form.Control type="text" placeholder="Enter username"
               value={username} onChange={e => 
               setUsername(e.target.value)} />
-          </Col>
-        </Row>
-       </Form.Group>
+           </Col>
+          </Row>
+        </Form.Group>
 
         <Form.Group controlId="formPassword">
           <Row>
-            <Col xs={3}>
+            <Col className='username-password-headers-column' xs={3} sm={2}>
               <Form.Label>Password:</Form.Label>
             </Col>
-          </Row>
-          <Row className="justify-content-md-center mb-2">
             <Col>
               <Form.Control type="password" 
-                 placeholder="Password" value={password} 
+                placeholder="Password" value={password} 
                 onChange={
                   e => setPassword(e.target.value)
                 } />
             </Col>
           </Row>
         </Form.Group>
+        </Form>
 
-        <Row  className="justify-content-md-center">
-          <Col className="d-grid gap-2">
-          <Button variant="dark" type="submit" 
+        <Row className="login-button-row justify-content-xs-right">
+          <Col className='login-column'>
+          <Button className='right' variant="primary" type="submit" 
             onClick={handleSubmit}>
             Log In
           </Button>
           </Col>
-         </Row>
-      </Form>
-      </Col>
+        </Row>
+
     </Container>
   );
 }
