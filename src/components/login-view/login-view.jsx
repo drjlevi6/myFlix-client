@@ -58,7 +58,7 @@ export function LoginView(props) {
       <Col>
         <Row className="justify-content-md-center header-text">
           <Col>
-            Log in or
+            Log In Or Register:
           </Col>
         </Row>
         <Row className="justify-content-md-center" >
@@ -108,7 +108,7 @@ export function LoginView(props) {
           <Col className="d-grid gap-2">
           <Button variant="dark" type="submit" 
             onClick={handleSubmit}>
-            Submit
+            Log In
           </Button>
           </Col>
          </Row>

@@ -39882,7 +39882,7 @@ function LoginView(props) {
             lineNumber: 60
         },
         __self: this
-    }, "Log in or")), /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
+    }, "Log In Or Register:")), /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
         className: "justify-content-md-center",
         __source: {
             fileName: "src/components/login-view/login-view.jsx",
@@ -40041,7 +40041,7 @@ function LoginView(props) {
             lineNumber: 109
         },
         __self: this
-    }, "Submit")))))));
+    }, "Log In")))))));
 }
 
   $parcel$ReactRefreshHelpers$02dd.postlude(module);

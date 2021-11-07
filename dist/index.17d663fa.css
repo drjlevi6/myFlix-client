@@ -125,7 +125,9 @@
   background-color: darkblue;
   border-color: darkblue;
 }
-
+.header-text {
+  padding: 10px;
+}
 .update-unregister-row {
   flex-wrap: nowrap;
   flex-direction: row;
