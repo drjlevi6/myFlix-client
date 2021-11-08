@@ -41,18 +41,22 @@ export class MovieView extends React.Component {
   }
  render() {
     const { movie, onBackClick } = this.props;
-    console.log('movie-view.movie: this.props:', this.props);
+    
     return (
       <Container className="movie-view">
         <Row className="movie-poster-row">
         <Col className='alert-column' xs={8}>
+        <Row className='movie-title-row'>
+          <Alert className='movie-title-alert' variant='info'>
+            <Alert.Heading>{movie.title}</Alert.Heading>
+          </Alert>
+        </Row>
+        <Row className='movie-description-row'>
         <Alert className='title-description-alert' variant='info'>
-          <Alert.Heading>Title:</Alert.Heading>
-          <p>{movie.title}</p>
-          <hr />
           <Alert.Heading>Description:</Alert.Heading>
           <p>{movie.description}</p>
         </Alert>
+        </Row>
         </Col>
 
         <Col className='profile-image-column' xs={4}>

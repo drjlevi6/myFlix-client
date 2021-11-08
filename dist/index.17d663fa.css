@@ -86,15 +86,10 @@
   margin-bottom: 6px;
 }
 
-/*.profile-image-column{
-    text-align: center;
-}*/
-/*.return-to-profile-row{
-    text-align: center;
-}*/
-/*.return-to-profile-subcolumn{
-    text-align: center;
-}*/
+.movie-title-alert {
+  text-align: center;
+}
+
 .return-to-profile-button {
   /*align-items: center;
   align-self: center;*/
