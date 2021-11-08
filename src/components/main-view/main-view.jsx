@@ -136,6 +136,12 @@ export default class MainView extends React.Component {
           <Router className='router'>
           <Row className="main-view-row justify-content-md-center">
             <Route exact path="/" render={() => {
+              if (!user) return 
+                <Col>
+                  <LoginView onLoggedIn={
+                    user => this.onLoggedIn(user)
+                  } />
+                </Col>
               return movies.map(m => (
                 <Col xs={7} sm={4} md={4} lg={4} key={m._id}>
                   <MovieCard movie={m} />
