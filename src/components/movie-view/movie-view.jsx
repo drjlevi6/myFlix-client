@@ -41,15 +41,11 @@ export class MovieView extends React.Component {
   }
  render() {
     const { movie, onBackClick } = this.props;
-    console.log('movie-view.movie:', movie);
+    console.log('movie-view.movie: this.props:', this.props);
     return (
       <Container className="movie-view">
         <Row className="movie-poster-row">
-          <Col xs={6}>
-          <img crossOrigin="anonymous" src={movie.imagePath} />
-          </Col>
-        </Row>
-
+        <Col className='alert-column' xs={8}>
         <Alert className='title-description-alert' variant='info'>
           <Alert.Heading>Title:</Alert.Heading>
           <p>{movie.title}</p>
@@ -57,6 +53,25 @@ export class MovieView extends React.Component {
           <Alert.Heading>Description:</Alert.Heading>
           <p>{movie.description}</p>
         </Alert>
+        </Col>
+
+        <Col className='profile-image-column' xs={4}>
+        <Row className='return-to-profile-row'>
+          <Col className='filler' xs={2}>&nbsp;</Col>
+          <Col className='return-to-profile-subcolumn' xs={8}>
+            <Button className='return-to-profile-button' variant='secondary'
+            onClick={onBackClick}>
+              Return To Profile
+            </Button>
+          </Col>
+        </Row>
+        <Row className='image-row'>
+          <img className='movie-image' xs={4}
+            crossOrigin="anonymous" src={movie.imagePath} />
+        </Row>
+          </Col>
+
+        </Row>
 
         <Row>
           <div className='genre-director-div'>

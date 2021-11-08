@@ -92,7 +92,7 @@ export class ProfileView extends React.Component{
 												defaultValue={this.state.Username}
 												onChange={this.changeHandler}
 												name="Username"
-												placeholder="Enter username" />
+												placeholder={this.state.Username} />
 										</Col>
 									</Form.Group>
 
