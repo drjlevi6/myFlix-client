@@ -5,7 +5,7 @@ import "./movie-view.scss"; // file is currently empty, but we might need it lat
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Button from 'react-bootstrap/Button';
+import {Button, ToggleButtonGroup} from 'react-bootstrap/Button';
 import { Link } from "react-router-dom";
 import { Alert } from 'react-bootstrap';
 import { scrollParent } from 'dom-helpers';
@@ -43,15 +43,21 @@ export class MovieView extends React.Component {
     const { movie, onBackClick } = this.props;
     
     return (
-      <Container className="movie-view">
-        <Row className="movie-poster-row">
-        <Col className='alert-column' xs={8}>
+      <Container className="movie-view-container">
+        <Row className="movie-poster-row" xs={8}>
+        <Col className='alert-column'>
         <Row className='movie-title-row'>
+          <Col className='movie-title-subcolumn' xs={7}>
           <Alert className='movie-title-alert' variant='info'>
             <Alert.Heading>{movie.title}</Alert.Heading>
           </Alert>
+          </Col>
+          <Col className='add-remove-button-group' xs={5}>
+            <Row className='add-remove-text'>Manage Favorites:
+             </Row>
+          </Col>
         </Row>
-        <Row className='movie-description-row'>
+        <Row className='movie-description-row' xs={9}>
         <Alert className='title-description-alert' variant='info'>
           <Alert.Heading>Description:</Alert.Heading>
           <p>{movie.description}</p>
@@ -59,10 +65,9 @@ export class MovieView extends React.Component {
         </Row>
         </Col>
 
-        <Col className='profile-image-column' xs={4}>
+        <Col className='profile-image-column' xs={3}>
         <Row className='return-to-profile-row'>
-          <Col className='filler' xs={2}>&nbsp;</Col>
-          <Col className='return-to-profile-subcolumn' xs={8}>
+          <Col className='return-to-profile-subcolumn' xs={12}>
             <Button className='return-to-profile-button' variant='secondary'
             onClick={onBackClick}>
               Return To Profile
