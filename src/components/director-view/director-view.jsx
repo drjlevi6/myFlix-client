@@ -35,12 +35,6 @@ export class DirectorView extends React.Component {
           <Alert.Heading>Death year:</Alert.Heading>
           <p>{director.death}</p>
         </Alert>
-        <Row className="back-button-row">
-          <Button className="back-button"
-            variant="dark" onClick={() => { onBackClick(null); }}>
-            Back
-          </Button> 
-        </Row>
       </Container>
     );
   }

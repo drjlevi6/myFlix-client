@@ -30,12 +30,6 @@ export class GenreView extends React.Component {
               <Alert.Heading>Genre: {movie.genre.name}</Alert.Heading>
               <p>{movie.genre.description}</p>
             </Alert>
-            <Row className="back-button-row">
-              <Button className="back-button"
-                variant="dark" onClick={() => { onBackClick(null); }}>
-                Back
-              </Button> 
-            </Row>
      </Container>
       );
      }

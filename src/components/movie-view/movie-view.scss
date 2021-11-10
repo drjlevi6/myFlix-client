@@ -8,12 +8,34 @@ $G_D_button_bottom_margin: 20px;
     font-weight: 700;
 }
 
+.add-remove-text {
+    text-align: center;
+    font-weight: 700;
+}
+
+.add-remove-buttons-row{
+    display: flex;
+}
+
+.add-remove-buttons-row button {
+    width: 50%;
+}
+
+.profile-image-column {
+    margin-left: 20px;
+}
+
 .movie-poster-row {
     margin-bottom: 6px;
 }
 
 .movie-title-alert {
     text-align: left;
+}
+
+.genre-director-header {
+    padding-top: 6px;
+    font-weight: 700;
 }
 
 
