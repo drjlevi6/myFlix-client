@@ -65,14 +65,12 @@ export class ProfileView extends React.Component{
 
 	render(){// will need asynchronous calls
 		var form_Label_width = '5';
-		console.log('profile-view.state:', this.state);
-		let movies = localStorage.getItem('movies');
-		console.log('movies.length', movies.length);
-		console.log('movies[0]', movies[0]);
+		let movies = this.props.movies;
 		let favorite_ids = localStorage.getItem('favorite_ids');
-		/*let favorite_movies = movies.filter(
+		let favorite_movies = movies.filter(
 			movie => favorite_ids.includes(movie._id)
-		)*/
+		)
+		console.log('profile-view.render.favorite_movies:', favorite_movies);
 		return(
 				<Container className='profile-view-container'>
 						<Row className='profile-and-all-movies-row'>

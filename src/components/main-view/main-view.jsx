@@ -95,11 +95,7 @@ export default class MainView extends React.Component {
     })
     .then(response => {     // response.data is the array of movies
       // Assign the result to the state (jl: and also localStorage)
-      console.log('response.data.length:', response.data.length);
-      localStorage.setItem('movies', response.data);
-      console.log('localStorage.getItem(\'movies\').length:', 
-        localStorage.getItem('movies').length);
-      this.setState({
+       this.setState({
         movies: response.data
       });
     })
@@ -173,10 +169,10 @@ export default class MainView extends React.Component {
                 )
             }} />       
             <Route exact path="/user"
-              render={({ match, history }) => {
+              render={({ match, history }) => {;
                 return (
                   <Col>
-                    <ProfileView 
+                    <ProfileView movies={this.state.movies}
                     />
                   </Col>
                 )
