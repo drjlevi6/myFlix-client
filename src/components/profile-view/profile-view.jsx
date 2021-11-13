@@ -19,10 +19,6 @@ export class ProfileView extends React.Component{
 	updateHandler = e => { 
 		e.preventDefault();
 		console.log('profile-view.updateHandler.this.state:', this.state);
-		console.log('profile-view.updateHandler.user:', localStorage.getItem('user'));
-
-		console.log('profile-view.updateHandler: localStorage.getItem(\'token\'):', 
-			localStorage.getItem('token'));
 
 		let endpoint = 
 		'https://drjs-myflix-app.herokuapp.com/users/' + localStorage.getItem('user');
@@ -69,6 +65,14 @@ export class ProfileView extends React.Component{
 
 	render(){// will need asynchronous calls
 		var form_Label_width = '5';
+		console.log('profile-view.state:', this.state);
+		let movies = localStorage.getItem('movies');
+		console.log('movies.length', movies.length);
+		console.log('movies[0]', movies[0]);
+		let favorite_ids = localStorage.getItem('favorite_ids');
+		/*let favorite_movies = movies.filter(
+			movie => favorite_ids.includes(movie._id)
+		)*/
 		return(
 				<Container className='profile-view-container'>
 						<Row className='profile-and-all-movies-row'>

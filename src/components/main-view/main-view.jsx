@@ -84,7 +84,7 @@ export default class MainView extends React.Component {
     });
 
     localStorage.setItem('token', authData.token);
-    localStorage.setItem('favorites', authData.user.FavoriteMovies);
+    localStorage.setItem('favorite_ids', authData.user.FavoriteMovies);
     localStorage.setItem('user', authData.user.Username);
     this.getMovies(authData.token);
   }
@@ -93,8 +93,12 @@ export default class MainView extends React.Component {
     axios.get('https://drjs-myflix-app.herokuapp.com/movies', {
       headers: { Authorization: `Bearer ${token}`}
     })
-    .then(response => {
-      // Assign the result to the state
+    .then(response => {     // response.data is the array of movies
+      // Assign the result to the state (jl: and also localStorage)
+      console.log('response.data.length:', response.data.length);
+      localStorage.setItem('movies', response.data);
+      console.log('localStorage.getItem(\'movies\').length:', 
+        localStorage.getItem('movies').length);
       this.setState({
         movies: response.data
       });

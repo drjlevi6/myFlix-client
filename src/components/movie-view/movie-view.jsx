@@ -15,8 +15,8 @@ export class MovieView extends React.Component {
   state = {favorite: false};
   genre_director_width = 3;
   componentDidMount(){
-    let favoriteMovies = localStorage.getItem('favorites');
-    this.setState({favorite: favoriteMovies.includes(this.props.movie._id)});
+    let favoriteMovieIds = localStorage.getItem('favorite_ids');
+    this.setState({favorite: favoriteMovieIds.includes(this.props.movie._id)});
 }
   showGenreView() {
     console.log('MovieView.showGenreView:', movie);
@@ -32,9 +32,9 @@ export class MovieView extends React.Component {
     Axios.post(endpoint, {}, { headers: { 'Authorization': `Bearer ${token}` } })
     .then( result => {
       console.log(result);
-      let favoriteMovies = localStorage.getItem('favorites').split(',');
-      favoriteMovies.push(this.props.movie._id);
-      localStorage.setItem('favorites', favoriteMovies);
+      let favoriteMovieIds = localStorage.getItem('favorite_ids').split(',');
+      favoriteMovieIds.push(this.props.movie._id);
+      localStorage.setItem('favorite_ids', favoriteMovieIds);
       this.setState({favorite: true});
      } )
     .catch( error => console.log(error) )
@@ -51,10 +51,10 @@ export class MovieView extends React.Component {
     Axios.delete(endpoint, { headers: { 'Authorization': `Bearer ${token}` } })
     .then( result => {
       console.log(result);
-      let favoriteMovies = localStorage.getItem('favorites').split(',');
-      let indexToRemove = favoriteMovies.indexOf(this.props.movie._id);
-      favoriteMovies.splice(indexToRemove, 1);
-      localStorage.setItem('favorites', favoriteMovies);
+      let favoriteMovieIds = localStorage.getItem('favorite_ids').split(',');
+      let indexToRemove = favoriteMovieIds.indexOf(this.props.movie._id);
+      favoriteMovieIds.splice(indexToRemove, 1);
+      localStorage.setItem('favorite_ids', favoriteMovieIds);
       this.setState({favorite: false});
     })
     .catch( error => console.log(error) )
