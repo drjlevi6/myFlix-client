@@ -111,6 +111,7 @@ export default class MainView extends React.Component {
     /* <!--If there is no user, the LoginView is rendered. 
     If there is a user logged in, the user details are 
     *passed as a prop to the LoginView--> */
+
     if (!user) {
       return (
         <Row>
@@ -128,13 +129,14 @@ export default class MainView extends React.Component {
     // If the state of `selectedMovie` is not null, that 
     //  selected movie will be returned otherwise, all 
     //  *movies will be returned.--> */
+
     if (movies.length === 0) {
        return <div className="main-view" />
     }
 
-       return (
-        <Container className='router-container'>
-          <Router className='router'>
+    return (
+      <Container className='router-container'>
+        <Router className='router'>
           <Row className="main-view-row justify-content-md-center">
             <Route exact path="/" render={() => {
               if (!user) return 
@@ -169,7 +171,7 @@ export default class MainView extends React.Component {
                 )
             }} />       
             <Route exact path="/user"
-              render={({ match, history }) => {;
+              render={({ match, history }) => {
                 return (
                   <Col>
                     <ProfileView movies={this.state.movies}
@@ -212,7 +214,7 @@ export default class MainView extends React.Component {
                   Go Back
                 </Button>
               </Col>
-             <Col className="d-grid">
+              <Col className="d-grid">
                 <Button className="logout-button" variant="dark"
                 onClick={this.onLoggedOut}>
                   Log Out
@@ -220,12 +222,11 @@ export default class MainView extends React.Component {
               </Col>
             </Row>
           </div>
-
         </Router>
       </Container>
-    );
+    );  // end return
   } // end if
-} // end render
+  } // end render
 
 // There's no MainView.propTypes because no props are passed to MainView
 // during instantiation.

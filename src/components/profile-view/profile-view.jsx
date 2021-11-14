@@ -8,6 +8,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import {Link} from 'react-router-dom';
+import { BrowserRouter as Router, Route } from "react-router-dom"; 
 
 export class ProfileView extends React.Component{
 	state = {
@@ -151,6 +152,18 @@ export class ProfileView extends React.Component{
 								</Form>
 							</Col>
 					</Row>
+					<Router className='router'>
+						<Row className='favorite-movies-row'>
+							<Route render={favorite_movies.map(movie => {
+									return (
+										<Col key={movie._id}>
+											movie.imagePath
+										</Col>
+									)
+								})
+								} />
+						</Row>
+					</Router>
 				</Container>
 		) //end return
 	}	//end render
