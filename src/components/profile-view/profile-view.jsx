@@ -7,6 +7,7 @@ import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
+import Card from 'react-bootstrap/Card';
 import {Link} from 'react-router-dom';
 import { BrowserRouter as Router, Route } from "react-router-dom"; 
 
@@ -53,15 +54,16 @@ export class ProfileView extends React.Component{
 	}
 
 	changeHandler = e => {
-			if (e.target.name === "Username") {
-				this.setState( { Username: e.target.value } );
-			} else if (e.target.name === "Password") {
-				this.setState( { Password: e.target.value})
-			} else if (e.target.name === "Email") {
-				this.setState( { Email: e.target.value})
-			} else if (e.target.name === "Birthday") {
-				this.setState( { Birthday: e.target.value})
-			}
+		console.log('profile-view.changeHandler.this:', this);
+		if (e.target.name === "Username") {
+			this.setState( { Username: e.target.value } );
+		} else if (e.target.name === "Password") {
+			this.setState( { Password: e.target.value})
+		} else if (e.target.name === "Email") {
+			this.setState( { Email: e.target.value})
+		} else if (e.target.name === "Birthday") {
+			this.setState( { Birthday: e.target.value})
+		}
 	}
 
 	render(){// will need asynchronous calls
@@ -71,7 +73,7 @@ export class ProfileView extends React.Component{
 		let favorite_movies = movies.filter(
 			movie => favorite_ids.includes(movie._id)
 		)
-		console.log('profile-view.render.favorite_movies:', favorite_movies);
+
 		return(
 				<Container className='profile-view-container'>
 						<Row className='profile-and-all-movies-row'>
@@ -151,19 +153,29 @@ export class ProfileView extends React.Component{
 									</Row>
 								</Form>
 							</Col>
+							<Row className='favorites-header-row xs={12}'>
+							<Col className='favorites-header-column'>
+								<h4>Favorite Movies:</h4>
+							</Col>
 					</Row>
-					<Router className='router'>
-						<Row className='favorite-movies-row'>
-							<Route render={favorite_movies.map(movie => {
-									return (
-										<Col key={movie._id}>
-											movie.imagePath
-										</Col>
-									)
-								})
-								} />
-						</Row>
-					</Router>
+					</Row>
+					<Row className='favorite-movie-cards-row'>	
+					<Col className='movie-card-column'xs={6}>
+						<Card>
+							<Card.Img crossOrigin="anonymous" variant="top" 
+								src={favorite_movies[0].imagePath} />
+							<Card.Body>
+								<Card.Title>{favorite_movies[0].title}</Card.Title>
+									<Row>
+									<Button as={Link} to={`/movies/${favorite_movies[0]._id}`} 
+										variant="primary" >
+											Remove
+										</Button>
+									</Row>
+							</Card.Body>          
+						</Card>
+						</Col>
+					</Row>
 				</Container>
 		) //end return
 	}	//end render
