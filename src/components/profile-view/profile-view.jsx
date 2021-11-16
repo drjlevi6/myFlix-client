@@ -5,9 +5,9 @@ import Axios from 'axios';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
+import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
-import Card from 'react-bootstrap/Card';
 import {Link} from 'react-router-dom';
 import { BrowserRouter as Router, Route } from "react-router-dom"; 
 
@@ -16,7 +16,9 @@ export class ProfileView extends React.Component{
 		Username: '',
 		Password: '',
 		Email: '',
-		Birthday: ''
+		Birthday: '',
+		favorite_movies: [],
+		movie_to_delete = null
 	}
 	updateHandler = e => { 
 		e.preventDefault();
@@ -54,26 +56,63 @@ export class ProfileView extends React.Component{
 	}
 
 	changeHandler = e => {
-		console.log('profile-view.changeHandler.this:', this);
-		if (e.target.name === "Username") {
-			this.setState( { Username: e.target.value } );
-		} else if (e.target.name === "Password") {
-			this.setState( { Password: e.target.value})
-		} else if (e.target.name === "Email") {
-			this.setState( { Email: e.target.value})
-		} else if (e.target.name === "Birthday") {
-			this.setState( { Birthday: e.target.value})
-		}
+			if (e.target.name === "Username") {
+				this.setState( { Username: e.target.value } );
+			} else if (e.target.name === "Password") {
+				this.setState( { Password: e.target.value})
+			} else if (e.target.name === "Email") {
+				this.setState( { Email: e.target.value})
+			} else if (e.target.name === "Birthday") {
+				this.setState( { Birthday: e.target.value})
+			}
 	}
+	addToFavorites = (e) => {
+    e.preventDefault();
+    let Username = localStorage.getItem('user');
+    let movieId = this.props.movie._id;
+    let token = localStorage.getItem('token');
+    let endpoint = 
+		'https://drjs-myflix-app.herokuapp.com/users/' + Username + '/movies/' + movieId;
+    Axios.post(endpoint, {}, { headers: { 'Authorization': `Bearer ${token}` } })
+    .then( result => {
+      console.log(result);
+      let favoriteMovieIds = localStorage.getItem('favorite_ids').split(',');
+      favoriteMovieIds.push(this.props.movie._id);
+      localStorage.setItem('favorite_ids', favoriteMovieIds);
+      this.setState({favorite: true});
+     } )
+    .catch( error => console.log(error) )
+  }
 
+	removeFromFavorites = (e) => {
+		e.preventDefault();
+		let Username = localStorage.getItem('user');
+		//let movieId = this.props.movie._id;
+		console.log('profile-view.removeFromFavorites.e', e)
+		let token = localStorage.getItem('token');
+		let endpoint = 
+				'https://drjs-myflix-app.herokuapp.com/users/' + 
+			Username + '/movies/' + movieId;
+		Axios.delete(endpoint, { headers: { 'Authorization': `Bearer ${token}` } })
+		.then( result => {
+			console.log(result);
+			let favoriteMovieIds = localStorage.getItem('favorite_ids').split(',');
+			let indexToRemove = favoriteMovieIds.indexOf(this.props.movie._id);
+			favoriteMovieIds.splice(indexToRemove, 1);
+			localStorage.setItem('favorite_ids', favoriteMovieIds);
+			this.setState({favorite: false});
+		})
+		.catch( error => console.log(error) )
+		}
+		
 	render(){// will need asynchronous calls
 		var form_Label_width = '5';
 		let movies = this.props.movies;
 		let favorite_ids = localStorage.getItem('favorite_ids');
-		let favorite_movies = movies.filter(
+		var favorite_movies = movies.filter(
 			movie => favorite_ids.includes(movie._id)
 		)
-
+		console.log('profile-view.render()');
 		return(
 				<Container className='profile-view-container'>
 						<Row className='profile-and-all-movies-row'>
@@ -153,28 +192,35 @@ export class ProfileView extends React.Component{
 									</Row>
 								</Form>
 							</Col>
-							<Row className='favorites-header-row xs={12}'>
-							<Col className='favorites-header-column'>
-								<h4>Favorite Movies:</h4>
-							</Col>
 					</Row>
-					</Row>
-					<Row className='favorite-movie-cards-row'>	
-					<Col className='movie-card-column'xs={6}>
-						<Card>
-							<Card.Img crossOrigin="anonymous" variant="top" 
-								src={favorite_movies[0].imagePath} />
-							<Card.Body>
-								<Card.Title>{favorite_movies[0].title}</Card.Title>
-									<Row>
-									<Button as={Link} to={`/movies/${favorite_movies[0]._id}`} 
-										variant="primary" >
-											Remove
-										</Button>
-									</Row>
-							</Card.Body>          
-						</Card>
+					<Row className='favorites-header-row'>
+						<Col className='favorites-column d-grid'>
+							<h5>Favorite Movies:</h5>
 						</Col>
+					</Row>
+					<Row className='favorite-cards-row'> {
+						favorite_movies.map(
+							(favorite_movie) => {
+								return (
+									<Col className='favorite-cards-column' 
+										key={favorite_movie._id} xs={5} md={4} lg={3}>
+											<Card className='card'>
+												<Card.Img crossOrigin="anonymous" variant="top" 
+													src={favorite_movie.imagePath} />
+												<Card.Body>
+													<Card.Title>{favorite_movie.title}</Card.Title>
+													<Row>
+													<Button onClick={this.removeFromFavorites} size="sm">
+															Remove
+														</Button>
+													</Row>
+												</Card.Body>      
+												</Card>
+									</Col>
+								)
+							}
+						)
+					}
 					</Row>
 				</Container>
 		) //end return

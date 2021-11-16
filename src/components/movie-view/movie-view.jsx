@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import "./movie-view.scss"; // file is currently empty, but we might need it later.
 
+
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -73,7 +74,7 @@ export class MovieView extends React.Component {
           </Alert>
           </Col>
           <Col className='add-remove-button-group' xs={5}>
-            <Row className='add-remove-text d-grid'>Manage Favorites:</Row>
+            <Row className='add-remove-text d-grid'>Favorite Movies</Row>
             <Row className='add-remove-buttons-row'>
               <Button onClick={this.addToFavorites} 
                 disabled={this.state.favorite} size="sm">

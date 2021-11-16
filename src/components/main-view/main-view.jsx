@@ -36,8 +36,16 @@ export default class MainView extends React.Component {
   }
 
   moveBottomButtonsDiv(oldWinHeight) {
-    return window.innerHeight;
+    let newWinHeight = window.innerHeight;
+   console.log('moveBottomButtonsDif: Starting window height is',
+   oldWinHeight);
+   console.log(
+    document.getElementsByClassName("bottom-buttons-div").length,
+    '\n', 'New window height:', newWinHeight
+   );
+   return newWinHeight;
   }
+
 
   componentDidMount() {
     let accessToken = localStorage.getItem('token');
