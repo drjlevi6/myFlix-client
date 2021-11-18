@@ -18,7 +18,7 @@ export class ProfileView extends React.Component{
 		Email: '',
 		Birthday: '',
 		favorite_movies: [],
-		movie_to_delete = null
+		movie_to_delete: null
 	}
 	updateHandler = e => { 
 		e.preventDefault();
@@ -66,28 +66,10 @@ export class ProfileView extends React.Component{
 				this.setState( { Birthday: e.target.value})
 			}
 	}
-	addToFavorites = (e) => {
-    e.preventDefault();
-    let Username = localStorage.getItem('user');
-    let movieId = this.props.movie._id;
-    let token = localStorage.getItem('token');
-    let endpoint = 
-		'https://drjs-myflix-app.herokuapp.com/users/' + Username + '/movies/' + movieId;
-    Axios.post(endpoint, {}, { headers: { 'Authorization': `Bearer ${token}` } })
-    .then( result => {
-      console.log(result);
-      let favoriteMovieIds = localStorage.getItem('favorite_ids').split(',');
-      favoriteMovieIds.push(this.props.movie._id);
-      localStorage.setItem('favorite_ids', favoriteMovieIds);
-      this.setState({favorite: true});
-     } )
-    .catch( error => console.log(error) )
-  }
 
-	removeFromFavorites = (e) => {
+	removeFromFavorites = (e, movieId) => {
 		e.preventDefault();
 		let Username = localStorage.getItem('user');
-		//let movieId = this.props.movie._id;
 		console.log('profile-view.removeFromFavorites.e', e)
 		let token = localStorage.getItem('token');
 		let endpoint = 
@@ -97,13 +79,29 @@ export class ProfileView extends React.Component{
 		.then( result => {
 			console.log(result);
 			let favoriteMovieIds = localStorage.getItem('favorite_ids').split(',');
-			let indexToRemove = favoriteMovieIds.indexOf(this.props.movie._id);
+			let indexToRemove = favoriteMovieIds.indexOf(movieId);
 			favoriteMovieIds.splice(indexToRemove, 1);
 			localStorage.setItem('favorite_ids', favoriteMovieIds);
-			this.setState({favorite: false});
+			this.forceUpdate();
 		})
 		.catch( error => console.log(error) )
 		}
+	
+		removeUser = () => {
+			let token = localStorage.getItem('token');
+			let Username = localStorage.getItem('user');
+			let endpoint = 
+			'https://drjs-myflix-app.herokuapp.com/users/' + Username;
+		Axios.delete(endpoint, { headers: { 'Authorization': `Bearer ${token}` } })
+	.then( result => {
+		console.log('removeUser.result', result);
+		localStorage.clear();
+		window.location.href='/';
+		alert('User ' + Username + ' was removed.');
+	})
+	.catch( error => console.log(error) )
+	}
+
 		
 	render(){// will need asynchronous calls
 		var form_Label_width = '5';
@@ -178,14 +176,15 @@ export class ProfileView extends React.Component{
 										</Col>
 									</Form.Group>
 									<Row className='update-unregister-row'>
-										<Col className='update-button-col button-column' xs={6}>
+										<Col className='update-button-col button-column' xs={3}>
 											<Button className='submit-update-button' variant="primary" 
 													type="submit">
 												Update
 											</Button>
 										</Col>
-										<Col className='unregister-column button-column'>
-											<Button className='unregister-button' variant='dark'>
+										<Col className='unregister-column button-column' xs={3}>
+											<Button className='unregister-button' 
+											onClick={this.removeUser} variant='dark'>
 												Unregister
 											</Button>
 										</Col>									
@@ -198,6 +197,7 @@ export class ProfileView extends React.Component{
 							<h5>Favorite Movies:</h5>
 						</Col>
 					</Row>
+					<Row>{!favorite_movies.length && <div style={{textAlign: 'center'}}>(None)</div>}</Row>
 					<Row className='favorite-cards-row'> {
 						favorite_movies.map(
 							(favorite_movie) => {
@@ -210,7 +210,9 @@ export class ProfileView extends React.Component{
 												<Card.Body>
 													<Card.Title>{favorite_movie.title}</Card.Title>
 													<Row>
-													<Button onClick={this.removeFromFavorites} size="sm">
+													<Button onClick={
+														e => this.removeFromFavorites(e, favorite_movie._id)} 
+															size="sm">
 															Remove
 														</Button>
 													</Row>

@@ -41,6 +41,7 @@ export function LoginView(props) {
   };
   
   
+  
   function onRequestToRegister() {
     console.log("login-view.onRequestToRegister");
     setShowRegister(!showRegister)
@@ -89,11 +90,18 @@ export function LoginView(props) {
         </Form.Group>
         </Form>
 
-        <Row className="login-button-row justify-content-xs-right">
-          <Col className='login-column'>
+        <Row className='login-button-row justify-content-xs-right'
+          xs={10}>
+          <Col className='login-column' xs={3}>
           <Button className='right' variant="primary" type="submit" 
             onClick={handleSubmit}>
             Log In
+          </Button>
+          </Col>
+          <Col className='register-column' xs={3}>
+          <Button className='register-button' variant="primary" type="submit" 
+            onClick={onRequestToRegister}>
+            Register
           </Button>
           </Col>
         </Row>

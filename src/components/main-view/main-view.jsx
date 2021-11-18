@@ -33,6 +33,7 @@ export default class MainView extends React.Component {
       user: null
     };
     mainView = this;
+    console.log('MainView');
   }
 
   moveBottomButtonsDiv(oldWinHeight) {
@@ -49,6 +50,7 @@ export default class MainView extends React.Component {
 
   componentDidMount() {
     let accessToken = localStorage.getItem('token');
+    console.log('componentDidMount');
     if (accessToken !== null) {
       this.setState({
         user: localStorage.getItem('user')
@@ -165,7 +167,7 @@ export default class MainView extends React.Component {
                       movie={movies.find(
                           m => (m._id === match.params.movieId)
                       )} 
-                      onBackClick={() => history.push("/")}
+                      onBackClick={() => history.push("/user")}
                     />
                   </Col>
                 )

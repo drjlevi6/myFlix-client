@@ -19,4 +19,12 @@
 
 .login-button-row {
   text-align: right;
+  justify-content: flex-end;
+
+  /*padding: 10px 0px 10px 0px;*/
+}
+
+.register-column {
+  text-align: left;
+  padding: 0px;
 }
