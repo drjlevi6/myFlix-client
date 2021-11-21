@@ -33,7 +33,6 @@ export default class MainView extends React.Component {
       user: null
     };
     mainView = this;
-    console.log('MainView');
   }
 
   moveBottomButtonsDiv(oldWinHeight) {
@@ -50,7 +49,6 @@ export default class MainView extends React.Component {
 
   componentDidMount() {
     let accessToken = localStorage.getItem('token');
-    console.log('componentDidMount');
     if (accessToken !== null) {
       this.setState({
         user: localStorage.getItem('user')
