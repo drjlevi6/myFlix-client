@@ -43,7 +43,6 @@ export function LoginView(props) {
   
   
   function onRequestToRegister() {
-    console.log("login-view.onRequestToRegister");
     setShowRegister(!showRegister)
   }
 

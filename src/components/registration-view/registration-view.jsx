@@ -43,10 +43,11 @@ export class RegistrationView extends React.Component {
     )
     .then(response => {
       console.log(
-        "registration-view.onSubmitRegistrationHandler.response:\n" + 
+        "registration-view.onSubmitRegistrationHandler.response\n" + 
           response
       )
       const data = response.data;
+      alert(response.data.Username + ' was registered.');
       this.props.back()
     })
     .catch(e => {
