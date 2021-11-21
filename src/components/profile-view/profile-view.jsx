@@ -110,7 +110,6 @@ export class ProfileView extends React.Component{
 		var favorite_movies = movies.filter(
 			movie => favorite_ids.includes(movie._id)
 		)
-		console.log('profile-view.render()');
 		return(
 				<Container className='profile-view-container'>
 						<Row className='profile-and-all-movies-row'>
@@ -211,7 +210,7 @@ export class ProfileView extends React.Component{
 													<Card.Title>{favorite_movie.title}</Card.Title>
 													<Row>
 													<Button onClick={
-														e => this.removeFromFavorites(e, favorite_movie._id)} 
+														e => this.removeFromFavorites(e, favorite_movie._id)}
 															size="sm">
 															Remove
 														</Button>
