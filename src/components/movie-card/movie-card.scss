@@ -1,14 +1,9 @@
 /* Need following entry to force uniform card height */
-.col-lg-4 {
+.main-card-col{
     border: solid black 2px;
     border-radius: 15px;
     margin: 3px;
     padding:0px;
-}
-
-.col-xl-3 {
-    border: solid black 2px;
-    border-radius: 15px;
-    margin: 3px;
-    padding:0px;
+    min-width: 200px;
+    min-height: 430px;
 }

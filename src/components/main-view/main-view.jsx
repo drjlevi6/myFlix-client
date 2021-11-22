@@ -145,11 +145,16 @@ export default class MainView extends React.Component {
                     user => this.onLoggedIn(user)
                   } />
                 </Col>
-              return movies.map(m => (
-                <Col xs={7} sm={4} md={4} lg={4} key={m._id}>
-                  <MovieCard movie={m} />
-                </Col>
-              ))
+              return( 
+
+                  /* How can I put a button here? */ 
+
+                movies.map(m => (
+                  <Col xs={7} sm={5} md={4} lg={3} xl={2} key={m._id}>
+                    <MovieCard movie={m} />
+                  </Col>
+                ))
+              )
             }} />
             <Route path="/register" render={() => {
               return <Col>

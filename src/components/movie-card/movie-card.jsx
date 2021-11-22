@@ -6,6 +6,7 @@ import '../genre-view/genre-view';
 import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import { Link } from "react-router-dom";
 import MovieVew from "../movie-view/movie-view";
@@ -28,27 +29,24 @@ export class MovieCard extends React.Component {
   render() {
     const { movie } = this.props;
 
-   return (
-    <Container className='movie-card-container'>
-      <div class='app-name-row' xs={2}>
-        <h4>myFlix</h4>
-      </div>
-      <div className='cards-row'>
-        <Card className="card">
-          <Card.Img crossOrigin="anonymous" variant="top" 
-            src={movie.imagePath} />
-          <Card.Body>
-            <Card.Title>{movie.title}</Card.Title>
-              <Row>
-              <Button as={Link} to={`/movies/${movie._id}`} 
-                variant="primary" >
-                  Open
-                </Button>
-              </Row>
-          </Card.Body>          
-        </Card>
-        </div>
-        </Container>
+    return (
+      <Container className='movie-card-container'>
+        <Col className='main-card-col'>
+          <Card className="card">
+            <Card.Img crossOrigin="anonymous" variant="top" 
+              src={movie.imagePath} />
+            <Card.Body>
+              <Card.Title>{movie.title}</Card.Title>
+                <Row>
+                <Button as={Link} to={`/movies/${movie._id}`} 
+                  variant="primary" >
+                    Open
+                  </Button>
+                </Row>
+            </Card.Body>          
+          </Card>
+        </Col>
+      </Container>
     ); // end return
   }
 }
