@@ -30,6 +30,10 @@ export class MovieCard extends React.Component {
 
    return (
     <Container className='movie-card-container'>
+      <div class='app-name-row' xs={2}>
+        <h4>myFlix</h4>
+      </div>
+      <div className='cards-row'>
         <Card className="card">
           <Card.Img crossOrigin="anonymous" variant="top" 
             src={movie.imagePath} />
@@ -43,6 +47,7 @@ export class MovieCard extends React.Component {
               </Row>
           </Card.Body>          
         </Card>
+        </div>
         </Container>
     ); // end return
   }
