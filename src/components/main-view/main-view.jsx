@@ -155,7 +155,7 @@ export default class MainView extends React.Component {
                       <Col className='top-row-profile-button-column'>
                         <Button className='profile-button' variant='dark'
                           onClick={() => history.back()}>
-                            Profile
+                            Return To Profile
                         </Button>
                       </Col>
                     </Row>
