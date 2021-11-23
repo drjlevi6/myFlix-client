@@ -138,7 +138,7 @@ export class RegistrationView extends React.Component {
           </Form.Group>
 
         <Row className="justify-content-md-center">
-          <Button variant="dark" className="submit-registration-button" 
+          <Button className="submit-registration-button" 
             type="submit">
             Submit
           </Button>
