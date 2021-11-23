@@ -6,6 +6,7 @@
 .card {
   display: block;
     padding: 0px;
+    z-index: 0;
 }
 
 .router-container {
@@ -17,7 +18,7 @@
     border-radius: 25px; 
     */
     padding-bottom:115px;
-
+    z-index: 0;
 }
 
 .main-view-row {
@@ -27,6 +28,51 @@
     overflow: auto;
     /*border: solid green 1px;
     border-radius: 15px;*/
+}
+
+.top-text-and-controls-div {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 20px;
+    margin-left: 20px;
+    border: solid black 3px;
+    border-radius: 15px;
+    padding: 8px;
+    z-index: 100;
+    background-color: rgb(255, 255, 255);
+}
+
+.app-name-profile-row {
+    padding: 0px;
+ /*   border: solid red 2px;*/
+}
+
+.top-row-text-column {
+    text-align: right;
+}
+
+.top-row-profile-button-column {
+    text-align: right;
+}
+
+/*.filter-sort-controls-row {
+    border: solid green 2px;
+    <slash-star> React Bootstrap doesn't seem to allow me 
+        to set either margin or padding here <star-slash>
+}*/
+.movie-cards-row {
+    position: relative;
+    top: 75px;
+    /*height: 50%;*/
+    /*border: solid blue 2px;*/
+    padding-top: 20px; /* padding-top allowed, not margin-top */
+    z-index: 0;
+}
+
+.filter-button-column {
+    padding-left: 0px;
+    text-align: right;
 }
 
 .bottom-buttons-div {

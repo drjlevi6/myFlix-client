@@ -104,7 +104,7 @@ export default class MainView extends React.Component {
     });
    }
   
-  render() {
+  render() {  // React allows "className" in <div>s! 
     const { movies, user } = this.state;
     var mainView = this;
     
@@ -146,15 +146,37 @@ export default class MainView extends React.Component {
                   } />
                 </Col>
               return( 
-
-                  /* How can I put a button here? */ 
-
-                movies.map(m => (
-                  <Col xs={7} sm={5} md={4} lg={3} xl={2} key={m._id}>
-                    <MovieCard movie={m} />
-                  </Col>
-                ))
-              )
+                <div>
+                  <div className='top-text-and-controls-div'>
+                    <Row className='app-name-profile-row'>
+                      <Col className='top-row-text-column' xs={2}>
+                        <h4>myFlix</h4>
+                      </Col>
+                      <Col className='top-row-profile-button-column'>
+                        <Button className='profile-button' variant='dark'
+                          onClick={() => history.back()}>
+                            Profile
+                        </Button>
+                      </Col>
+                    </Row>
+                    <Row className='filter-sort-controls-row'>
+                      <Col className='filter-button-column' xs={2}>
+                        <Button>Filter</Button>
+                      </Col>
+                      <Col className='sort-button-column' xs={2}>
+                        <Button>Sort</Button>
+                      </Col>
+                    </Row>
+                  </div>
+                  <Row className='movie-cards-row'>
+                    {movies.map(m => (
+                      <Col xs={7} sm={5} md={4} lg={3} xl={2} key={m._id}>
+                        <MovieCard movie={m} />
+                      </Col>
+                    ))}
+                  </Row>
+                </div>
+              ) // e
             }} />
             <Route path="/register" render={() => {
               return <Col>
