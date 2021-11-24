@@ -21,6 +21,9 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
 import { render } from 'react-dom';
+import InputGroup from 'react-bootstrap/InputGroup';
+import FormControl from 'react-bootstrap/FormControl';
+import { scrollLeft } from 'dom-helpers';
 
 var mainView;
 
@@ -35,6 +38,20 @@ export default class MainView extends React.Component {
     mainView = this;
   }
 
+  matchTextInputToMovies() {  // give it a listener
+      let nameInput = document.querySelector('#searchForm');
+      console.log('text area value:', nameInput.value);
+      /*
+      nameInput.addEventListener('input', function () {
+          //let inputLow = nameInput.value.toLowerCase();
+          let movieCardList = document.querySelectorAll('.card');
+          console.log('movieCardList:', movieCardList);
+          movieCardList.forEach( (card) => {
+              console.log(card);
+          });
+      });*/
+  }
+
   moveBottomButtonsDiv(oldWinHeight) {
     let newWinHeight = window.innerHeight;
    console.log('moveBottomButtonsDif: Starting window height is',
@@ -45,7 +62,6 @@ export default class MainView extends React.Component {
    );
    return newWinHeight;
   }
-
 
   componentDidMount() {
     let accessToken = localStorage.getItem('token');
@@ -133,7 +149,8 @@ export default class MainView extends React.Component {
     if (movies.length === 0) {
        return <div className="main-view" />
     }
-
+    let filter_sort_column_width = 6;
+    let return_to_profile_column_width = 12 - filter_sort_column_width;
     return (
       <Container className='router-container'>
         <Router className='router'>
@@ -147,27 +164,38 @@ export default class MainView extends React.Component {
                 </Col>
               return( 
                 <div>
-                  <div className='top-text-and-controls-div'>
-                    <Row className='app-name-profile-row'>
-                      <Col className='top-row-text-column' xs={2}>
-                        <h4>myFlix</h4>
-                      </Col>
-                      <Col className='top-row-profile-button-column'>
-                        <Button className='profile-button' variant='dark'
-                          onClick={() => history.back()}>
-                            Return To Profile
-                        </Button>
-                      </Col>
-                    </Row>
-                    <Row className='filter-sort-controls-row'>
-                      <Col className='filter-button-column' xs={2}>
-                        <Button>Filter</Button>
-                      </Col>
-                      <Col className='sort-button-column' xs={2}>
-                        <Button>Sort</Button>
-                      </Col>
-                    </Row>
-                  </div>
+                  <Row className='top-text-and-controls-row'>
+                    <Col className='filter-sort-controls-column' 
+                        xs={filter_sort_column_width}>
+                      <Row className='filter-sort-text-row'>
+                        <h5 classNname='filter-sort-text'>
+                          Filter/Sort Movies By Name:
+                        </h5>
+                      </Row>
+                      <Row className='filter-sort-controls-row'>
+                        <Col className='filter-input-group-column' xs={9}>
+                          <InputGroup className='filter-input-group'>
+                            <InputGroup.Text className='input-group-filter-text' xs={9}>
+                              Filter
+                            </InputGroup.Text>
+                            <FormControl className='filter-textarea' id='searchForm'
+                              type='text' placeholder="Movie Name" onKeyPress={this.matchTextInputToMovies}
+                             />
+                          </InputGroup>
+                        </Col>
+                        <Col className='sort-button-column' xs={3}>
+                          <Button className='sort-button'>Sort</Button>
+                        </Col>
+                      </Row>
+                    </Col>
+                    <Col className='return-to-profile-column'
+                        xs={12-filter_sort_column_width}>
+                      <Button className='profile-button' variant='dark'
+                        onClick={() => history.back()}>
+                          Return To Profile
+                      </Button>
+                    </Col>
+                  </Row>                  
                   <Row className='movie-cards-row'>
                     {movies.map(m => (
                       <Col xs={7} sm={5} md={4} lg={3} xl={2} key={m._id}>

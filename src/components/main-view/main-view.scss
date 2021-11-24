@@ -30,29 +30,43 @@
     border-radius: 15px;*/
 }
 
-.top-text-and-controls-div {
+.top-text-and-controls-row {
     position: fixed;
     top: 0px;
-    left: 0px;
+    left: 40px;
     right: 20px;
     margin-left: 20px;
     border: solid black 3px;
     border-radius: 15px;
     padding: 8px;
     z-index: 100;
-    background-color: rgb(255, 255, 255);
-}
-
-.app-name-profile-row {
-    padding: 0px;
- /*   border: solid red 2px;*/
-}
-
-.top-row-text-column {
-    text-align: right;
+    background-color: white;
 }
 
 .top-row-profile-button-column {
+    text-align: right;
+}
+
+.filter-sort-controls-column {
+    border: solid 5px steelblue;
+    border-radius: 5px;
+    padding-top:7px;
+
+}
+
+.filter-sort-text-row {
+    color: steelblue;
+}
+.sort-button-column {
+    text-align: right;
+}
+
+.sort-button {
+    border: white solid 2px;
+}
+
+.return-to-profile-column {
+    /*border: solid purple 2px;*/
     text-align: right;
 }
 
