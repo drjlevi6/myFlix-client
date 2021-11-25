@@ -39,12 +39,17 @@ export default class MainView extends React.Component {
     window.addEventListener('resize', this.adjustTopControlsRowHeight);
   }
 
+  // Adjust top of movie-cards dynamically, according to height of top row.
   adjustTopControlsRowHeight() {
-    if (document.getElementsByClassName('top-text-and-controls-row').length === 1) {
-      console.log('present');
-    } else {
-      console.log('absent');
-    };
+    let all_top_text_and_controls_rows = 
+      document.getElementsByClassName('top-text-and-controls-row');
+
+    if (all_top_text_and_controls_rows.length > 0) {
+      let top_text_controls_row = all_top_text_and_controls_rows[0];
+      let top_row_height = window.getComputedStyle(top_text_controls_row).height;
+      let cards_row = document.getElementsByClassName('movie-cards-row')[0];
+      cards_row.style.top = top_row_height;
+    }
   } 
 
   matchTextInputToMovies() {  // give it a listener
