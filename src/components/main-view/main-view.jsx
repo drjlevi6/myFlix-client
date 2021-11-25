@@ -36,7 +36,16 @@ export default class MainView extends React.Component {
       user: null
     };
     mainView = this;
+    window.addEventListener('resize', this.adjustTopControlsRowHeight);
   }
+
+  adjustTopControlsRowHeight() {
+    if (document.getElementsByClassName('top-text-and-controls-row').length === 1) {
+      console.log('present');
+    } else {
+      console.log('absent');
+    };
+  } 
 
   matchTextInputToMovies() {  // give it a listener
       let nameInput = document.querySelector('#searchForm');
