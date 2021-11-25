@@ -32,7 +32,6 @@ export class MovieView extends React.Component {
 		'https://drjs-myflix-app.herokuapp.com/users/' + Username + '/movies/' + movieId;
     Axios.post(endpoint, {}, { headers: { 'Authorization': `Bearer ${token}` } })
     .then( result => {
-      console.log(result);
       let favoriteMovieIds = localStorage.getItem('favorite_ids').split(',');
       favoriteMovieIds.push(this.props.movie._id);
       localStorage.setItem('favorite_ids', favoriteMovieIds);
