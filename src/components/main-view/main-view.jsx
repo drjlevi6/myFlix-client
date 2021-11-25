@@ -40,7 +40,9 @@ export default class MainView extends React.Component {
 
   matchTextInputToMovies() {  // give it a listener
       let nameInput = document.querySelector('#searchForm');
-      console.log('text area value:', nameInput.value);
+      nameInput.addEventListener('input', () => {
+        console.log('matchTextInputToMovies():', nameInput.value);
+      });
       /*
       nameInput.addEventListener('input', function () {
           //let inputLow = nameInput.value.toLowerCase();
@@ -168,7 +170,7 @@ export default class MainView extends React.Component {
                     <Col className='filter-sort-controls-column' 
                         xs={filter_sort_column_width}>
                       <Row className='filter-sort-text-row'>
-                        <h5 classNname='filter-sort-text'>
+                        <h5 className='filter-sort-text'>
                           Filter/Sort Movies By Name:
                         </h5>
                       </Row>
