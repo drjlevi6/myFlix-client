@@ -52,22 +52,20 @@ export default class MainView extends React.Component {
     }
   } 
 
-  matchTextInputToMovies() {  // give it a listener
-      let nameInput = document.querySelector('#searchForm');
-      nameInput.addEventListener('input', () => {
-        console.log('matchTextInputToMovies():', nameInput.value);
-      });
-      /*
-      nameInput.addEventListener('input', function () {
-          //let inputLow = nameInput.value.toLowerCase();
-          let movieCardList = document.querySelectorAll('.card');
-          console.log('movieCardList:', movieCardList);
-          movieCardList.forEach( (card) => {
-              console.log(card);
-          });
-      });*/
+  filterMovieCardsByName() {  // give it a listener
+    let nameInput = document.querySelector('#searchForm');
+    nameInput.addEventListener('input', () => {
+      console.log('filterMovieCardsByName():', nameInput.value);
+    });
+    let movieCardList = document.querySelectorAll('.card');
+        for (let i=0; i<movieCardList.length; i++) {
+          let movieTitleLower = 
+            movieCardList[i].querySelector('.card-title').innerText.toLowerCase();
+          console.log('movieTitleLower;', movieTitleLower);
+        }
   }
 
+  // 
   moveBottomButtonsDiv(oldWinHeight) {
     let newWinHeight = window.innerHeight;
    console.log('moveBottomButtonsDif: Starting window height is',
@@ -138,6 +136,7 @@ export default class MainView extends React.Component {
   
   render() {  // React allows "className" in <div>s! 
     const { movies, user } = this.state;
+    localStorage.setItem('movies', movies); // used in MainView if there are MovieCards
     var mainView = this;
     
     /* <!--If there is no user, the LoginView is rendered. 
@@ -195,7 +194,8 @@ export default class MainView extends React.Component {
                               Filter
                             </InputGroup.Text>
                             <FormControl className='filter-textarea' id='searchForm'
-                              type='text' placeholder="Movie Name" onKeyPress={this.matchTextInputToMovies}
+                              type='text' placeholder="Movie Name" 
+                                onKeyPress={this.filterMovieCardsByName}
                              />
                           </InputGroup>
                         </Col>
