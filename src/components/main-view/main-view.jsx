@@ -31,19 +31,39 @@ export default class MainView extends React.Component {
   constructor(){
     super();
     localStorage.clear();
-    this.state = {
-      movies: [],
-      user: null
-    };
+    this.state = { movies: [], user: null };
     mainView = this;
     window.addEventListener('resize', this.adjustTopControlsRowHeight);
+  }
+
+  filterMovieCardsByName() { 
+    // give text area a listener
+    let nameInput = document.querySelector('#searchForm');
+    console.log('filterMovieCardsByName().nameInput:', nameInput);
+    var searchStringLower;
+    nameInput.addEventListener('input', () => {
+      searchStringLower = nameInput.value.toLowerCase();
+      console.log('searchStringLower:', searchStringLower);
+    })  // end nameInput.addEventListener
+    .then(
+      (searchStringLower) => {
+        console.log('Entering \'.then\' block');
+        let movieCardList = document.querySelectorAll('.card');
+        for (let i=0; i<movieCardList.length; i++) {
+          let movieTitleLower = 
+            movieCardList[i].querySelector('.card-title').innerText.toLowerCase();
+          console.log('\'' +  movieTitleLower + '\'.includes(\'' + searchStringLower + '\'):', 
+            movieTitleLower.includes(searchStringLower));
+        } 
+      }, 
+      () => {console.log('Search was rejected.')}
+    )
   }
 
   // Adjust top of movie-cards dynamically, according to height of top row.
   adjustTopControlsRowHeight() {
     let all_top_text_and_controls_rows = 
       document.getElementsByClassName('top-text-and-controls-row');
-
     if (all_top_text_and_controls_rows.length > 0) {
       let top_text_controls_row = all_top_text_and_controls_rows[0];
       let top_row_height = window.getComputedStyle(top_text_controls_row).height;
@@ -52,31 +72,6 @@ export default class MainView extends React.Component {
     }
   } 
 
-  // Get user input, "lower-cased", from input form
-
-  filterMovieCardsByName() {  // give it a listener
-    let nameInput = document.querySelector('#searchForm');
-    console.log('nameInput:', nameInput);
-    var searchStringLower;
-    nameInput.addEventListener('input', () => {
-      console.log('nameInput.value:', nameInput.value);
-      searchStringLower = nameInput.value.toLowerCase();
-      console.log('searchStringLower:', searchStringLower);
-    })
-    return searchStringLower
-    .then( (searchStringLower) => {
-      console.log('.then');
-      let movieCardList = document.querySelectorAll('.card');
-      for (let i=0; i<movieCardList.length; i++) {
-        let movieTitleLower = 
-          movieCardList[i].querySelector('.card-title').innerText.toLowerCase();
-          console.log('\'' +  movieTitleLower + '\'.includes(\'' + 
-            searchStringLower + '\'):', 
-            movieTitleLower.includes(searchStringLower));
-      }  
-    })
-}
-  // 
   moveBottomButtonsDiv(oldWinHeight) {
     let newWinHeight = window.innerHeight;
    console.log('moveBottomButtonsDif: Starting window height is',
@@ -308,7 +303,7 @@ export default class MainView extends React.Component {
       </Container>
     );  // end return
   } // end if
-  } // end render
+} // end class
 
 // There's no MainView.propTypes because no props are passed to MainView
 // during instantiation.
