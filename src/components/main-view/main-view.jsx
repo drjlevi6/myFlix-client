@@ -37,9 +37,9 @@ export default class MainView extends React.Component {
   }
 
   filterMovieCardsByName() { 
+    console.log('filterMovieCardsByName().nameInput:', nameInput);
     // give text area a listener
     let nameInput = document.querySelector('#searchForm');
-    console.log('filterMovieCardsByName().nameInput:', nameInput);
     var searchStringLower;
     nameInput.addEventListener('input', () => {
       searchStringLower = nameInput.value.toLowerCase();
