@@ -52,19 +52,30 @@ export default class MainView extends React.Component {
     }
   } 
 
+  // Get user input, "lower-cased", from input form
+
   filterMovieCardsByName() {  // give it a listener
     let nameInput = document.querySelector('#searchForm');
+    console.log('nameInput:', nameInput);
+    var searchStringLower;
     nameInput.addEventListener('input', () => {
-      console.log('filterMovieCardsByName():', nameInput.value);
-    });
-    let movieCardList = document.querySelectorAll('.card');
-        for (let i=0; i<movieCardList.length; i++) {
-          let movieTitleLower = 
-            movieCardList[i].querySelector('.card-title').innerText.toLowerCase();
-          console.log('movieTitleLower;', movieTitleLower);
-        }
-  }
-
+      console.log('nameInput.value:', nameInput.value);
+      searchStringLower = nameInput.value.toLowerCase();
+      console.log('searchStringLower:', searchStringLower);
+    })
+    return searchStringLower
+    .then( (searchStringLower) => {
+      console.log('.then');
+      let movieCardList = document.querySelectorAll('.card');
+      for (let i=0; i<movieCardList.length; i++) {
+        let movieTitleLower = 
+          movieCardList[i].querySelector('.card-title').innerText.toLowerCase();
+          console.log('\'' +  movieTitleLower + '\'.includes(\'' + 
+            searchStringLower + '\'):', 
+            movieTitleLower.includes(searchStringLower));
+      }  
+    })
+}
   // 
   moveBottomButtonsDiv(oldWinHeight) {
     let newWinHeight = window.innerHeight;
