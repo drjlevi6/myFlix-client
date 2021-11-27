@@ -37,17 +37,16 @@ export default class MainView extends React.Component {
   }
 
   filterMovieCardsByName() { 
-    console.log('filterMovieCardsByName().nameInput:', nameInput);
-    // give text area a listener
-    let nameInput = document.querySelector('#searchForm');
     var searchStringLower;
+    let nameInput = document.querySelector('#searchForm');
+    console.log('filterMovieCardsByName().nameInput:', nameInput);
     nameInput.addEventListener('input', () => {
       searchStringLower = nameInput.value.toLowerCase();
       console.log('searchStringLower:', searchStringLower);
     })  // end nameInput.addEventListener
     .then(
-      (searchStringLower) => {
-        console.log('Entering \'.then\' block');
+      () => {
+        console.log('\'.then\' block, no searchStringLower:');
         let movieCardList = document.querySelectorAll('.card');
         for (let i=0; i<movieCardList.length; i++) {
           let movieTitleLower = 
@@ -55,8 +54,7 @@ export default class MainView extends React.Component {
           console.log('\'' +  movieTitleLower + '\'.includes(\'' + searchStringLower + '\'):', 
             movieTitleLower.includes(searchStringLower));
         } 
-      }, 
-      () => {console.log('Search was rejected.')}
+      }
     )
   }
 
