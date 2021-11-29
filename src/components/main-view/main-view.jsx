@@ -21,6 +21,7 @@ import Card from 'react-bootstrap/Card';
 import { render } from 'react-dom';
 import InputGroup from 'react-bootstrap/InputGroup';
 import FormControl from 'react-bootstrap/FormControl';
+import { scrollLeft } from 'dom-helpers';
 
 var mainView;
 
@@ -55,7 +56,7 @@ export default class MainView extends React.Component {
     (filterRejection) => {
       console.log('filterRejection: Failure');
     }, false);
-
+  
     async function getUserString(nameInput) {
       let searchStringLower = nameInput.value.toLowerCase();
       localStorage.setItem('searchStringLower', searchStringLower);
@@ -64,21 +65,15 @@ export default class MainView extends React.Component {
       return (localStorage.getItem('searchStringLower')) ? 
         localStorage.getItem('searchStringLower') : null;
     }
-
     let movieCardList = document.querySelectorAll('.card');
+    searchStringLower = localStorage.getItem('searchStringLower');
     for (let i=0; i<movieCardList.length; i++) {
       let movieTitleLower = 
         movieCardList[i].querySelector('.card-title').innerText.toLowerCase();
-      console.log('\'' +  movieTitleLower + '\'.includes(\'' + 
-        localStorage.getItem('searchStringLower') + '\'):', 
-        movieTitleLower.includes(localStorage.getItem('searchStringLower')));
+      console.log('\'' +  movieTitleLower + '\'.includes(\'' + searchStringLower + '\'):', 
+        movieTitleLower.includes(searchStringLower));
     } 
-  }
-  getStorage() {
-    let s = localStorage.getItem( 'searchStringLower');
-    console.log('searchStringLower from localStorage:', s);
-    return s;
-  }
+ }
 
   // Adjust top of movie-cards dynamically, according to height of top row.
   adjustTopControlsRowHeight() {
