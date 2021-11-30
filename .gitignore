@@ -1,6 +1,7 @@
 \.DS_Store
 node_modules
 \.parcel-cache
+src/.DS_Store
 src/components/\.DS_Store
 prev/
 dist/
