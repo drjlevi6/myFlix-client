@@ -29,30 +29,16 @@ export default class MainView extends React.Component {
   constructor(){
     super();
     localStorage.clear();
-    this.state = { movies: [], user: null };
+    this.state = { movies: [], user: null, search_string: '' };
     mainView = this;
     window.addEventListener('resize', this.adjustTopControlsRowHeight);
   }
 
-  filterMovieCardsByName() { 
-    let nameInput = document.querySelector('#searchForm');
-    nameInput.addEventListener('input', () => {
-      var userInputLow = nameInput.value.toLowerCase();
-
-      let movies = 
-        Array.from(document.getElementsByClassName('card'));
-
-      var filtered_movies = movies.filter(movie => {
-        let movieTitleLow = 
-          movie.getElementsByClassName('card-title')[0].innerText.toLowerCase();
-        console.log(movieTitleLow, 'contains', userInputLow + ':',
-          movieTitleLow.includes(userInputLow));
-        movieTitleLow.includes(userInputLow);
-      });
-
-      console.log('filtered_movies:', filtered_movies);
-    });
-  }
+  filterMovieCardsByName = (e) => {
+    let search_string = e.target.value.toLowerCase();
+    // console.log(e, search_string);
+    this.setState( {search_string})
+    }
 
   // Adjust top of movie-cards dynamically, according to height of top row.
   adjustTopControlsRowHeight() {
@@ -135,10 +121,12 @@ export default class MainView extends React.Component {
    }
   
   render() {  // React allows "className" in <div>s! 
-    const { movies, user } = this.state;
-    localStorage.setItem('movies', movies); // used in MainView if there are MovieCards
+    const { movies, user, search_string } = this.state;
+
     var mainView = this;
-    
+    let filtered_movies = !search_string ? movies : 
+      movies.filter(movie => movie.title.toLowerCase().
+        includes(search_string.toLowerCase()));
     /* <!--If there is no user, the LoginView is rendered. 
     If there is a user logged in, the user details are 
     *passed as a prop to the LoginView--> */
@@ -188,18 +176,18 @@ export default class MainView extends React.Component {
                         </h5>
                       </Row>
                       <Row className='filter-sort-controls-row'>
-                        <Col className='filter-input-group-column' xs={9}>
+                        <Col className='filter-input-group-column' xs={8}>
                           <InputGroup className='filter-input-group'>
-                            <InputGroup.Text className='input-group-filter-text' xs={9}>
+                            <InputGroup.Text className='input-group-filter-text' xs={10}>
                               Filter
                             </InputGroup.Text>
                             <FormControl className='filter-textarea' id='searchForm'
                               type='text' placeholder="Movie Name" 
-                                onKeyPress={this.filterMovieCardsByName}
+                                onChange={this.filterMovieCardsByName}
                              />
                           </InputGroup>
                         </Col>
-                        <Col className='sort-button-column' xs={3}>
+                        <Col className='sort-button-column' xs={2}>
                           <Button className='sort-button'>Sort</Button>
                         </Col>
                       </Row>
@@ -213,7 +201,7 @@ export default class MainView extends React.Component {
                     </Col>
                   </Row>                  
                   <Row className='movie-cards-row'>
-                    {movies.map(m => (
+                    {filtered_movies.map(m => (
                       <Col xs={7} sm={5} md={4} lg={3} xl={2} key={m._id}>
                         <MovieCard movie={m} />
                       </Col>

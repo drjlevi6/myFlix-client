@@ -34,7 +34,7 @@
     position: fixed;
     top: 0px;
     left: 40px;
-    right: 20px;
+    right: 40px;
     margin-left: 20px;
     border: solid rgb(43, 108, 161) 3px;
     border-radius: 15px;
@@ -55,14 +55,14 @@
 }
 
 .filter-sort-text-row {
-    color: steelblue;
+    color: rgb(6, 61, 105);
 }
 .sort-button-column {
     text-align: right;
 }
 
 .sort-button {
-    border: white solid 2px;
+    right: 0px;
 }
 
 .return-to-profile-column {
