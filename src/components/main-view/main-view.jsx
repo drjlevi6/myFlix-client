@@ -35,58 +35,24 @@ export default class MainView extends React.Component {
   }
 
   filterMovieCardsByName() { 
-    var searchStringLower = null;
     let nameInput = document.querySelector('#searchForm');
-    console.log('filterMovieCardsByName().nameInput:', nameInput);
+    nameInput.addEventListener('input', () => {
+      var userInputLow = nameInput.value.toLowerCase();
 
-    let filterPromise = new Promise((filterResult, filterRejection) => {
-      nameInput.addEventListener('input', () => {
-        let userInput = getUserString(nameInput);
-        if (userInput) {
-          filterResult(userInput)
-        } else {
-          filterRejection();
-        }; 
+      let movies = 
+        Array.from(document.getElementsByClassName('card'));
+
+      var filtered_movies = movies.filter(movie => {
+        let movieTitleLow = 
+          movie.getElementsByClassName('card-title')[0].innerText.toLowerCase();
+        console.log(movieTitleLow, 'contains', userInputLow + ':',
+          movieTitleLow.includes(userInputLow));
+        movieTitleLow.includes(userInputLow);
       });
+
+      console.log('filtered_movies:', filtered_movies);
     });
-    filterPromise
-    .then( (filterResult) => {
-      console.log('filterResult:', localStorage.getItem('searchStringLower'));
-    },
-    (filterRejection) => {
-      console.log('filterRejection: Failure');
-    }, false);
-
-    let movieCardColumnList = document.querySelectorAll('.main-card-col');
-    searchStringLower = localStorage.getItem('searchStringLower');
-    var card_i = null;
-    for (let i=0; i<movieCardColumnList.length; i++) {
-      card_i = movieCardColumnList[i]; // (for convenience only)
-      [card_i.style.display, card_i.style.width] = 
-(card_i.querySelector('.card-title').innerText.toLowerCase().includes(searchStringLower)) ? 
-      ['flex', '100%'] : ['none', '0%'];
-    }
-
-   let movieCardList = document.querySelectorAll('.card');
-    searchStringLower = localStorage.getItem('searchStringLower');
-    for (let i=0; i<movieCardList.length; i++) {
-      let movieTitleLower = 
-        movieCardList[i].querySelector('.card-title').innerText.toLowerCase();
-      console.log('\'' +  movieTitleLower + '\'.includes(\'' + searchStringLower + '\'):', 
-        movieTitleLower.includes(searchStringLower));
-    }
-
-    async function getUserString(nameInput) {
-      let searchStringLower = nameInput.value.toLowerCase();
-      localStorage.setItem('searchStringLower', searchStringLower);
-      console.log('\nnameInput.addEventListener.searchStringLower:',
-        searchStringLower);
-      return (localStorage.getItem('searchStringLower')) ? 
-        localStorage.getItem('searchStringLower') : null;
-    }
- }
-  
-
+  }
 
   // Adjust top of movie-cards dynamically, according to height of top row.
   adjustTopControlsRowHeight() {
