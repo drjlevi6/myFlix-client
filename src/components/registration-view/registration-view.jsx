@@ -47,10 +47,6 @@ export class RegistrationView extends React.Component {
     })
     .catch(e => {
       console.log('registration-view.onSubmitRegistrationHandler: \n', e.response);
-  //    for (let key in e) {
-   //     console.log('registration-view.onSubmitRegistrationHandler: \n',
-   //       key, e[key]);
-   //   }
       alert(e.response.data);
     });
 
