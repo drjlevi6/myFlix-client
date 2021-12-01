@@ -193,7 +193,7 @@ export default class MainView extends React.Component {
                       </Row>
                     </Col>
                     <Col className='return-to-profile-column'
-                        xs={12-filter_sort_column_width}>
+                        xs={12 - filter_sort_column_width}>
                       <Button className='profile-button' variant='dark'
                         onClick={() => history.back()}>
                           Return To Profile
@@ -266,8 +266,8 @@ export default class MainView extends React.Component {
             }} />  
           </Row>
           <div className='bottom-buttons-div'>
-            <Row className="back-button-row">
-              <Col className="d-grid">
+            <Row className="back-buttons-row">
+              <Col className="back-buttons-col d-grid">
                 <Button className="back-button"
                   variant="dark" onClick={() => history.back()}>
                   Go Back

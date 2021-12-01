@@ -40,7 +40,7 @@
     border-radius: 15px;
     padding: 8px;
     z-index: 100;
-    background-color: white;
+    background-color: rgb(163, 207, 228);
 }
 
 .top-row-profile-button-column {
@@ -101,8 +101,9 @@
    /* position: relative;*/
     width: 100%;
     padding: 2px;
-    border: solid black 3px;
+    border: solid rgb(43, 108, 161) 3px;
     border-radius: 10px;
+    background-color: rgb(163, 207, 228);
     /*margin-top: 20px;*/
     /*bottom: 10px;*/ 
 }
@@ -114,8 +115,12 @@
 .back-logout-buttons-col {
     padding: 0px;
 }
-.back-button-row {
+.back-buttons-row {
     margin: 0px;
+}
+
+.back-buttons-col {
+    background-color: gray;
 }
 
 .back-button {
