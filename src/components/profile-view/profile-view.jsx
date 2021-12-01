@@ -70,7 +70,6 @@ export class ProfileView extends React.Component{
 	removeFromFavorites = (e, movieId) => {
 		e.preventDefault();
 		let Username = localStorage.getItem('user');
-		console.log('profile-view.removeFromFavorites.e', e)
 		let token = localStorage.getItem('token');
 		let endpoint = 
 				'https://drjs-myflix-app.herokuapp.com/users/' + 
