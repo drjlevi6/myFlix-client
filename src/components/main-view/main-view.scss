@@ -40,7 +40,7 @@
     border-radius: 15px;
     padding: 8px;
     z-index: 100;
-    background-color: white;
+    background-color: rgb(163, 207, 228);
 }
 
 .top-row-profile-button-column {
@@ -48,15 +48,20 @@
 }
 
 .filter-sort-controls-column {
-    border: solid 5px steelblue;
+    border: solid 5px rgb(50, 94, 131);
+    background-color: rgb(50, 94, 131);
     border-radius: 5px;
     padding-top:7px;
-
 }
 
 .filter-sort-text-row {
-    color: steelblue;
+    background-color: rgb(50, 94, 131);
 }
+
+.filter-sort-text {
+    color: orange;
+}
+
 .sort-button-column {
     text-align: right;
 }
@@ -90,14 +95,13 @@
 }
 
 .bottom-buttons-div {
-   /* position: relative;*/
     width: 100%;
     padding: 2px;
-    border: solid black 3px;
+    border: solid rgb(100, 100, 100) 3px;
     border-radius: 10px;
-    /*margin-top: 20px;*/
-    /*bottom: 10px;*/ 
+    background-color: rgb(170, 170, 170);
 }
+
 .router-container {
    /*border: solid red 1px;*/
    padding-bottom: 70px;
