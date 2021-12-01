@@ -29,7 +29,8 @@ export default class MainView extends React.Component {
   constructor(){
     super();
     localStorage.clear();
-    this.state = { movies: [], user: null, search_string: '' };
+    this.state = { movies: [], user: null, search_string: '',
+      do_sort: false };
     mainView = this;
     window.addEventListener('resize', this.adjustTopControlsRowHeight);
   }
@@ -38,6 +39,14 @@ export default class MainView extends React.Component {
     let search_string = e.target.value.toLowerCase();
     this.setState( {search_string})
   }
+
+  // Sort all movies by title "case-insensitively".
+  sortMoviesByTitle = () => {
+    const { movies, do_sort } = this.state;
+    console.log('sortMoviesByTitle: Movies[0].title (lower-case) =', 
+      movies[0].title.toLowerCase());
+  }
+
   // Adjust top of movie-cards dynamically, according to height of top row.
   adjustTopControlsRowHeight() {
     let all_top_text_and_controls_rows = 
@@ -119,8 +128,8 @@ export default class MainView extends React.Component {
    }
   
   render() {  // React allows "className" in <div>s! 
-    const { movies, user, search_string } = this.state;
-    let filtered_movies = !search_string ? movies : 
+    const { movies, user, search_string, do_sort } = this.state;
+    let modified_movies = !search_string ? movies : 
       movies.filter(movie => movie.title.toLowerCase().
       includes(search_string.toLowerCase()));
 
@@ -185,7 +194,10 @@ export default class MainView extends React.Component {
                           </InputGroup>
                         </Col>
                         <Col className='sort-button-column' xs={3}>
-                          <Button className='sort-button'>Sort</Button>
+                          <Button className='sort-button' type='button'
+                            onClick={this.sortMoviesByTitle}>
+                              Sort
+                          </Button>
                         </Col>
                       </Row>
                     </Col>
@@ -198,7 +210,7 @@ export default class MainView extends React.Component {
                     </Col>
                   </Row>                  
                   <Row className='movie-cards-row'>
-                    {filtered_movies.map(m => (
+                    {modified_movies.map(m => (
                       <Col xs={7} sm={5} md={4} lg={3} xl={2} key={m._id}>
                         <MovieCard movie={m} />
                       </Col>
