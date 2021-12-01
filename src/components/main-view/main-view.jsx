@@ -36,7 +36,6 @@ export default class MainView extends React.Component {
 
   filterMovieCardsByName = (e) => {
     let search_string = e.target.value.toLowerCase();
-    console.log(e, search_string);
     this.setState( {search_string})
   }
   // Adjust top of movie-cards dynamically, according to height of top row.
