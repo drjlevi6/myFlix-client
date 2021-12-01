@@ -37,14 +37,18 @@ export default class MainView extends React.Component {
 
   filterMovieCardsByName = (e) => {
     let search_string = e.target.value.toLowerCase();
-    this.setState( {search_string})
+    let do_sort = false;
+    this.setState( {search_string, do_sort})
   }
 
   // Sort all movies by title "case-insensitively".
   sortMoviesByTitle = () => {
-    const { movies, do_sort } = this.state;
+    const {movies }  = this.state;
+    var { search_string, do_sort } = this.state;
+    [search_string,do_sort] = ['', true];
     console.log('sortMoviesByTitle: Movies[0].title (lower-case) =', 
       movies[0].title.toLowerCase());
+    this.setState( {search_string, do_sort})
   }
 
   // Adjust top of movie-cards dynamically, according to height of top row.
@@ -129,9 +133,22 @@ export default class MainView extends React.Component {
   
   render() {  // React allows "className" in <div>s! 
     const { movies, user, search_string, do_sort } = this.state;
-    let modified_movies = !search_string ? movies : 
-      movies.filter(movie => movie.title.toLowerCase().
+    console.log('movies:', movies);
+      let modified_movies = null;
+
+    if (do_sort) {
+      console.log('do_sort, search_string:', do_sort, ',', search_string);
+      modified_movies = movies.sort((m,n) => { 
+        return (m.title.toLowerCase() < n.title.toLowerCase()) ? -1 : 1 
+      });
+    } else if (search_string) {
+      console.log('search_string, do_sort:', search_string, ',', do_sort);
+      modified_movies = movies;
+      modified_movies = movies.filter(movie => movie.title.toLowerCase().
       includes(search_string.toLowerCase()));
+    } else {
+      modified_movies = movies;
+    };
 
     /* <!--If there is no user, the LoginView is rendered. 
     If there is a user logged in, the user details are 
