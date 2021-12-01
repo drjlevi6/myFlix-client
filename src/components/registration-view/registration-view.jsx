@@ -28,11 +28,6 @@ export class RegistrationView extends React.Component {
     if (!Username || !Password || !Email) {
       return;
     }
-    console.log(
-      "registration-view.onSubmitRegistrationHandler:" + 
-        "\nUsername: " + Username + "\nPassword: " +  Password + 
-        "\nEmail: "+ Email + "\nBirthday: " + Birthday
-      );
     axios.post('https://drjs-myflix-app.herokuapp.com/users', 
       {
         Username:  Username,
