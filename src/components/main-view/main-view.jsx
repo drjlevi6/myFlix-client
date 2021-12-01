@@ -178,7 +178,7 @@ export default class MainView extends React.Component {
                       <Row className='filter-sort-controls-row'>
                         <Col className='filter-input-group-column' xs={8}>
                           <InputGroup className='filter-input-group'>
-                            <InputGroup.Text className='input-group-filter-text' xs={10}>
+                            <InputGroup.Text className='input-group-filter-text' xs={5}>
                               Filter
                             </InputGroup.Text>
                             <FormControl className='filter-textarea' id='searchForm'
@@ -187,7 +187,7 @@ export default class MainView extends React.Component {
                              />
                           </InputGroup>
                         </Col>
-                        <Col className='sort-button-column' xs={2}>
+                        <Col className='sort-button-column' xs={3}>
                           <Button className='sort-button'>Sort</Button>
                         </Col>
                       </Row>

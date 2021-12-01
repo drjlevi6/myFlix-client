@@ -48,21 +48,29 @@
 }
 
 .filter-sort-controls-column {
-    border: solid 5px steelblue;
+    border: solid 5px rgb(50, 94, 131);
+    background-color: rgb(50, 94, 131);
     border-radius: 5px;
     padding-top:7px;
 
 }
 
 .filter-sort-text-row {
-    color: rgb(6, 61, 105);
+    background-color: rgb(50, 94, 131);
 }
+
+.filter-sort-text {
+    color: orange;
+}
+
 .sort-button-column {
     text-align: right;
+    /*border: solid white 1px;*/
+    background-color: rgb(48, 124, 246);
 }
 
 .sort-button {
-    right: 0px;
+    border: solid red 5px;
 }
 
 .return-to-profile-column {
