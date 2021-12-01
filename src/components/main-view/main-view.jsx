@@ -36,10 +36,9 @@ export default class MainView extends React.Component {
 
   filterMovieCardsByName = (e) => {
     let search_string = e.target.value.toLowerCase();
-    // console.log(e, search_string);
+    console.log(e, search_string);
     this.setState( {search_string})
-    }
-
+  }
   // Adjust top of movie-cards dynamically, according to height of top row.
   adjustTopControlsRowHeight() {
     let all_top_text_and_controls_rows = 
@@ -122,11 +121,11 @@ export default class MainView extends React.Component {
   
   render() {  // React allows "className" in <div>s! 
     const { movies, user, search_string } = this.state;
-
     var mainView = this;
     let filtered_movies = !search_string ? movies : 
       movies.filter(movie => movie.title.toLowerCase().
-        includes(search_string.toLowerCase()));
+      includes(search_string.toLowerCase()));
+
     /* <!--If there is no user, the LoginView is rendered. 
     If there is a user logged in, the user details are 
     *passed as a prop to the LoginView--> */
@@ -176,9 +175,9 @@ export default class MainView extends React.Component {
                         </h5>
                       </Row>
                       <Row className='filter-sort-controls-row'>
-                        <Col className='filter-input-group-column' xs={8}>
+                        <Col className='filter-input-group-column' xs={9}>
                           <InputGroup className='filter-input-group'>
-                            <InputGroup.Text className='input-group-filter-text' xs={5}>
+                            <InputGroup.Text className='input-group-filter-text' xs={9}>
                               Filter
                             </InputGroup.Text>
                             <FormControl className='filter-textarea' id='searchForm'
@@ -193,7 +192,7 @@ export default class MainView extends React.Component {
                       </Row>
                     </Col>
                     <Col className='return-to-profile-column'
-                        xs={12 - filter_sort_column_width}>
+                        xs={12-filter_sort_column_width}>
                       <Button className='profile-button' variant='dark'
                         onClick={() => history.back()}>
                           Return To Profile
@@ -266,8 +265,8 @@ export default class MainView extends React.Component {
             }} />  
           </Row>
           <div className='bottom-buttons-div'>
-            <Row className="back-buttons-row">
-              <Col className="back-buttons-col d-grid">
+            <Row className="back-button-row">
+              <Col className="d-grid">
                 <Button className="back-button"
                   variant="dark" onClick={() => history.back()}>
                   Go Back

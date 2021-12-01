@@ -34,13 +34,13 @@
     position: fixed;
     top: 0px;
     left: 40px;
-    right: 40px;
+    right: 20px;
     margin-left: 20px;
     border: solid rgb(43, 108, 161) 3px;
     border-radius: 15px;
     padding: 8px;
     z-index: 100;
-    background-color: rgb(163, 207, 228);
+    background-color: white;
 }
 
 .top-row-profile-button-column {
@@ -48,27 +48,21 @@
 }
 
 .filter-sort-controls-column {
-    border: solid 5px rgb(50, 94, 131);
-    background-color: rgb(50, 94, 131);
+    border: solid 5px steelblue;
     border-radius: 5px;
     padding-top:7px;
 
 }
 
 .filter-sort-text-row {
-    background-color: rgb(50, 94, 131);
+    color: steelblue;
 }
-
-.filter-sort-text {
-    color: orange;
-}
-
 .sort-button-column {
     text-align: right;
 }
 
 .sort-button {
-    //border: solid red 5px;
+    border: white solid 2px;
 }
 
 .return-to-profile-column {
@@ -99,9 +93,8 @@
    /* position: relative;*/
     width: 100%;
     padding: 2px;
-    border: solid rgb(43, 108, 161) 3px;
+    border: solid black 3px;
     border-radius: 10px;
-    background-color: rgb(163, 207, 228);
     /*margin-top: 20px;*/
     /*bottom: 10px;*/ 
 }
@@ -113,12 +106,8 @@
 .back-logout-buttons-col {
     padding: 0px;
 }
-.back-buttons-row {
+.back-button-row {
     margin: 0px;
-}
-
-.back-buttons-col {
-    //background-color: gray;
 }
 
 .back-button {
