@@ -120,7 +120,6 @@ export default class MainView extends React.Component {
   
   render() {  // React allows "className" in <div>s! 
     const { movies, user, search_string } = this.state;
-    var mainView = this;
     let filtered_movies = !search_string ? movies : 
       movies.filter(movie => movie.title.toLowerCase().
       includes(search_string.toLowerCase()));
