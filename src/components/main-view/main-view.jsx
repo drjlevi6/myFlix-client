@@ -35,7 +35,8 @@ export default class MainView extends React.Component {
     window.addEventListener('resize', this.adjustTopControlsRowHeight);
   }
 
-  filterMovieCardsByName = (e) => {
+  // Filter movie-cards per user search string  (case-insensitive)
+  filterMovieCards = (e) => {
     const {movies, search_string, do_sort, modified_movies} = this.state;
     this.setState( {
         search_string: e.target.value.toLowerCase(),
@@ -43,14 +44,10 @@ export default class MainView extends React.Component {
     });
   }
 
-  // Sort all movies by title "case-insensitively".
+  // Sort all movies by title (case-insensitive)
   sortMoviesByTitle = () => {
-    const {movies }  = this.state;
-    var { search_string, do_sort } = this.state;
-    [search_string,do_sort] = ['', true];
-    console.log('sortMoviesByTitle: Movies[0].title (lower-case) =', 
-      movies[0].title.toLowerCase());
-    this.setState( {search_string, do_sort})
+    const {movies, search_string, do_sort, modified_movies }  = this.state;
+    this.setState({ search_string: '', do_sort: true })
   }
 
   // Adjust top of movie-cards dynamically, according to height of top row.
@@ -69,10 +66,12 @@ export default class MainView extends React.Component {
     let newWinHeight = window.innerHeight;
    console.log('moveBottomButtonsDif: Starting window height is',
    oldWinHeight);
+   /*
    console.log(
     document.getElementsByClassName("bottom-buttons-div").length,
     '\n', 'New window height:', newWinHeight
    );
+   */
    return newWinHeight;
   }
 
@@ -87,7 +86,7 @@ export default class MainView extends React.Component {
   }
 
   onLoggedOut() {
-    console.log("main-view.onLoggedOut()");
+ //   console.log("main-view.onLoggedOut()");
     localStorage.removeItem('token');
     localStorage.removeItem('user');
     window.location.pathname="/";
@@ -134,31 +133,35 @@ export default class MainView extends React.Component {
    }
 
   revertMovieCards = () => {
-    const { movies, search_string, do_sort, modified_movies } = this.state;
+    const { movies, search_string, do_sort } = this.state;
+    var {modified_movies} = this.state
+    modified_movies = deepCopy(movies);
     this.setState( {
-      modified_movies: movies, search_strting: '', do_sort: false
+      search_string: '', do_sort: false,
+      modified_movies
     } );
-    //console.log('Reverted movies:', modified_movies);
+    //console.log('revertMovieCards, modified_movies:', modified_movies);
+    //console.log('revertMovieCards, movies:', movies);
   }
   
   render() {  // React allows "className" in <div>s! 
     const { movies, user, search_string, do_sort } = this.state;
-    console.log('movies:', movies);
+    //console.log('Render, movies:', movies);
       let modified_movies = null;
 
     if (search_string) {
      modified_movies = deepCopy(movies).filter(movie => movie.title.toLowerCase().
         includes(search_string.toLowerCase()));
-        console.log('Filtered movies:', modified_movies);
+        //console.log('Render, filtered movies:', modified_movies);
     }else if (do_sort) {
       modified_movies = deepCopy(movies).sort((m,n) => { 
         return (m.title.toLowerCase() < n.title.toLowerCase()) ? -1 : 1 
       });
-      console.log('Sorted movies:', modified_movies);
+      //console.log('Sorted movies:', modified_movies);
      
     } else {
       modified_movies = movies;
-      console.log(movies);
+      //console.log('render, "else":', movies);
 
     }
 
@@ -217,7 +220,7 @@ export default class MainView extends React.Component {
                             </InputGroup.Text>
                             <FormControl className='filter-textarea' id='searchForm'
                               type='text' placeholder="Movie Name" 
-                                onChange={this.filterMovieCardsByName}
+                                onChange={this.filterMovieCards}
                              />
                           </InputGroup>
                         </Col>
