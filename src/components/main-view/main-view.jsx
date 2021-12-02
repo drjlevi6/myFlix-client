@@ -62,14 +62,7 @@ export default class MainView extends React.Component {
   } 
 
   moveBottomButtonsDiv(oldWinHeight) {
-    let newWinHeight = window.innerHeight;
-   console.log('moveBottomButtonsDif: Starting window height is',
-   oldWinHeight);
-   console.log(
-    document.getElementsByClassName("bottom-buttons-div").length,
-    '\n', 'New window height:', newWinHeight
-   );
-   return newWinHeight;
+    return window.innerHeight;
   }
 
   componentDidMount() {
@@ -131,7 +124,6 @@ export default class MainView extends React.Component {
   
   render() {  // React allows "className" in <div>s! 
     const { movies, user, search_string, do_sort } = this.state;
-    console.log('movies:', movies);
       let modified_movies = null;
 
     if (do_sort) {
