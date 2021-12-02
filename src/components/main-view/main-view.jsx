@@ -46,6 +46,8 @@ export default class MainView extends React.Component {
     const {movies }  = this.state;
     var { search_string, do_sort } = this.state;
     [search_string,do_sort] = ['', true];
+    console.log('sortMoviesByTitle: Movies[0].title (lower-case) =', 
+      movies[0].title.toLowerCase());
     this.setState( {search_string, do_sort})
   }
 
@@ -62,7 +64,14 @@ export default class MainView extends React.Component {
   } 
 
   moveBottomButtonsDiv(oldWinHeight) {
-    return window.innerHeight;
+    let newWinHeight = window.innerHeight;
+   console.log('moveBottomButtonsDif: Starting window height is',
+   oldWinHeight);
+   console.log(
+    document.getElementsByClassName("bottom-buttons-div").length,
+    '\n', 'New window height:', newWinHeight
+   );
+   return newWinHeight;
   }
 
   componentDidMount() {
@@ -121,22 +130,29 @@ export default class MainView extends React.Component {
       console.log(error);
     });
    }
+
+   revertMovieCards(){
+     console.log('revertMovieCards()');
+   }
   
   render() {  // React allows "className" in <div>s! 
     const { movies, user, search_string, do_sort } = this.state;
+    console.log('movies:', movies);
       let modified_movies = null;
 
-    if (do_sort) {
-      console.log('do_sort, search_string:', do_sort, ',', search_string);
-      modified_movies = deepCopy(movies).sort((m,n) => { 
+    if (search_string) {
+     modified_movies = movies.filter(movie => movie.title.toLowerCase().
+        includes(search_string.toLowerCase()));
+
+        console.log('modified_movies:', modified_movies);
+    } else {
+      modified_movies = movies.sort((m,n) => { 
         return (m.title.toLowerCase() < n.title.toLowerCase()) ? -1 : 1 
       });
-    } else if (search_string) {
-      modified_movies = deepCopy(movies).filter(movie => movie.title.toLowerCase().
-      includes(search_string.toLowerCase()));
-    } else {
       modified_movies = movies;
-    };
+      console.log(movies);
+
+    }
 
     /* <!--If there is no user, the LoginView is rendered. 
     If there is a user logged in, the user details are 
@@ -164,7 +180,6 @@ export default class MainView extends React.Component {
        return <div className="main-view" />
     }
     let filter_sort_column_width = 6;
-    let return_to_profile_column_width = 12 - filter_sort_column_width;
     return (
       <Container className='router-container'>
         <Router className='router'>
@@ -207,15 +222,23 @@ export default class MainView extends React.Component {
                       </Row>
                     </Col>
                     <Col className='return-to-profile-column'
-                        xs={12-filter_sort_column_width}>
-                      <Button className='profile-button' variant='dark'
-                        onClick={() => history.back()}>
-                          Return To Profile
-                      </Button>
-                    </Col>
+                        xs={3}>
+                      <Row className='return-to-profile-row'>
+                        <Button className='profile-button' variant='dark'
+                          onClick={() => history.back()}>
+                            Return To Profile
+                        </Button>
+                      </Row>
+                      <Row className='revert-row'>
+                        <Button className='button' variant='dark'
+                          onClick={this.revertMovieCards}>
+                            Revert Cards
+                        </Button>
+                      </Row>
+                   </Col>
                   </Row>                  
                   <Row className='movie-cards-row'>
-                    {modified_movies.map(m => (
+                    {movies.map(m => (
                       <Col xs={7} sm={5} md={4} lg={3} xl={2} key={m._id}>
                         <MovieCard movie={m} />
                       </Col>
@@ -300,15 +323,6 @@ export default class MainView extends React.Component {
     );  // end return
   } // end if
 } // end class
-
-// Makes a deep copy (clone) of its argument (specifically, the 
-// movies array) to prevent its being inadvertently replaced by its
-// sorted version.
-// Thanks Atta-Ur-Rehman Shah, 
-//  https://attacomsian.com/blog/javascript-deep-clone-array 
-function deepCopy(json_able) {
-  return JSON.parse(JSON.stringify(json_able));
-}
 
 // There's no MainView.propTypes because no props are passed to MainView
 // during instantiation.

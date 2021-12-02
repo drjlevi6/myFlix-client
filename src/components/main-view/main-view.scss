@@ -32,6 +32,7 @@
 
 .top-text-and-controls-row {
     position: fixed;
+    justify-content: space-between;
     top: 0px;
     left: 40px;
     right: 40px;
@@ -73,6 +74,10 @@
 .return-to-profile-column {
     /*border: solid purple 2px;*/
     text-align: right;
+}
+
+.revert-row {
+    padding-top: 8px;
 }
 
 /*.filter-sort-controls-row {
