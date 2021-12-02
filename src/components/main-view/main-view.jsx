@@ -46,8 +46,6 @@ export default class MainView extends React.Component {
     const {movies }  = this.state;
     var { search_string, do_sort } = this.state;
     [search_string,do_sort] = ['', true];
-    console.log('sortMoviesByTitle: Movies[0].title (lower-case) =', 
-      movies[0].title.toLowerCase());
     this.setState( {search_string, do_sort})
   }
 
@@ -138,13 +136,11 @@ export default class MainView extends React.Component {
 
     if (do_sort) {
       console.log('do_sort, search_string:', do_sort, ',', search_string);
-      modified_movies = movies.sort((m,n) => { 
+      modified_movies = deepCopy(movies).sort((m,n) => { 
         return (m.title.toLowerCase() < n.title.toLowerCase()) ? -1 : 1 
       });
     } else if (search_string) {
-      console.log('search_string, do_sort:', search_string, ',', do_sort);
-      modified_movies = movies;
-      modified_movies = movies.filter(movie => movie.title.toLowerCase().
+      modified_movies = deepCopy(movies).filter(movie => movie.title.toLowerCase().
       includes(search_string.toLowerCase()));
     } else {
       modified_movies = movies;
@@ -312,6 +308,15 @@ export default class MainView extends React.Component {
     );  // end return
   } // end if
 } // end class
+
+// Makes a deep copy (clone) of its argument (specifically, the 
+// movies array) to prevent its being inadvertently replaced by its
+// sorted version.
+// Thanks Atta-Ur-Rehman Shah, 
+//  https://attacomsian.com/blog/javascript-deep-clone-array 
+function deepCopy(json_able) {
+  return JSON.parse(JSON.stringify(json_able));
+}
 
 // There's no MainView.propTypes because no props are passed to MainView
 // during instantiation.
