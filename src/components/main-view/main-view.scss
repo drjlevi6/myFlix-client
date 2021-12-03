@@ -65,6 +65,8 @@
 
 .sort-button-column {
     text-align: right;
+    padding-right: 0px;
+    margin-right: 0px;
 }
 
 .sort-button {
@@ -80,11 +82,16 @@
     padding-top: 8px;
 }
 
-/*.filter-sort-controls-row {
-    border: solid green 2px;
-    <slash-star> React Bootstrap doesn't seem to allow me 
-        to set either margin or padding here <star-slash>
-}*/
+.filter-sort-controls-row {
+    //border: solid green 2px;
+    justify-content: space-between;
+    /* React Bootstrap doesn't seem to allow me 
+        to set either margin or padding here */
+}
+
+.filter-input-group-column {
+    padding-right: 0px;
+}
 .movie-cards-row {
     position: relative;
     top: 112px;

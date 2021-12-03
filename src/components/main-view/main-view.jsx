@@ -150,9 +150,13 @@ export default class MainView extends React.Component {
       });
       console.log('render, after filter, modified_movies:', modified_movies);
     }else if (do_sort) {
+      console.log('render, do_sort:', do_sort);
       modified_movies = deepCopy(movies).sort((m,n) => { 
+        console.log('sorting, comparing', m.title.toLowerCase(), 'and',
+          n.title.toLowerCase());
         return (m.title.toLowerCase() < m.title.toLowerCase()) ? -1 : 1 
       });
+      console.log('render, after sort, modified_movies:', modified_movies);
     } else {
       modified_movies = deepCopy(movies);
     }
@@ -205,9 +209,9 @@ export default class MainView extends React.Component {
                         </h5>
                       </Row>
                       <Row className='filter-sort-controls-row'>
-                        <Col className='filter-input-group-column' xs={9}>
+                        <Col className='filter-input-group-column' xs={8}>
                           <InputGroup className='filter-input-group'>
-                            <InputGroup.Text className='input-group-filter-text' xs={9}>
+                            <InputGroup.Text className='input-group-filter-text'>
                               Filter
                             </InputGroup.Text>
                             <FormControl className='filter-textarea' id='searchForm'
@@ -216,7 +220,7 @@ export default class MainView extends React.Component {
                              />
                           </InputGroup>
                         </Col>
-                        <Col className='sort-button-column' xs={3}>
+                        <Col className='sort-button-column'>
                           <Button className='sort-button' type='button'
                             onClick={this.sortMoviesByTitle}>
                               Sort
