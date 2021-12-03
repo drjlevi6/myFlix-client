@@ -37,7 +37,7 @@ export default class MainView extends React.Component {
 
   // Filter movie-cards per user search string  (case-insensitive)
   filterMovieCards = (e) => {
-    const {movies, search_string, do_sort, modified_movies} = this.state;
+    const {search_string, do_sort} = this.state;
     this.setState( {
         search_string: e.target.value.toLowerCase(),
         do_sort: false
@@ -45,12 +45,24 @@ export default class MainView extends React.Component {
   }
 
   // Sort all movies by title (case-insensitive)
+  // We do the sorting in render()'s "else if (do_sort)" case:
+  // If we did the sorting here and set do_sort to false,
+  // using render()'s "else" case would conflict with the needs of the link
+  // from profile-view's "All Movies" button.
   sortMoviesByTitle = () => {
-    const {movies, search_string, do_sort, modified_movies }  = this.state;
-    this.setState({ search_string: '', do_sort: true })
+    const { search_string, do_sort }  = this.state;
+    this.setState({ search_string: '', do_sort: true });
   }
 
-  // Adjust top of movie-cards dynamically, according to height of top row.
+  revertMovieCards = () => {
+    const { movies, search_string, do_sort, modified_movies } = this.state;
+    this.setState({
+      search_string: '', do_sort: false,
+      modified_movies: deepCopy(movies)
+    });
+  }
+  
+// Adjust top of movie-cards dynamically, according to height of top row.
   adjustTopControlsRowHeight() {
     let all_top_text_and_controls_rows = 
       document.getElementsByClassName('top-text-and-controls-row');
@@ -63,16 +75,7 @@ export default class MainView extends React.Component {
   } 
 
   moveBottomButtonsDiv(oldWinHeight) {
-    let newWinHeight = window.innerHeight;
-   console.log('moveBottomButtonsDif: Starting window height is',
-   oldWinHeight);
-   /*
-   console.log(
-    document.getElementsByClassName("bottom-buttons-div").length,
-    '\n', 'New window height:', newWinHeight
-   );
-   */
-   return newWinHeight;
+    return window.innerHeight;
   }
 
   componentDidMount() {
@@ -86,7 +89,6 @@ export default class MainView extends React.Component {
   }
 
   onLoggedOut() {
- //   console.log("main-view.onLoggedOut()");
     localStorage.removeItem('token');
     localStorage.removeItem('user');
     window.location.pathname="/";
@@ -132,37 +134,27 @@ export default class MainView extends React.Component {
     });
    }
 
-  revertMovieCards = () => {
-    const { movies, search_string, do_sort } = this.state;
-    var {modified_movies} = this.state
-    modified_movies = deepCopy(movies);
-    this.setState( {
-      search_string: '', do_sort: false,
-      modified_movies
-    } );
-    //console.log('revertMovieCards, modified_movies:', modified_movies);
-    //console.log('revertMovieCards, movies:', movies);
-  }
-  
   render() {  // React allows "className" in <div>s! 
     const { movies, user, search_string, do_sort } = this.state;
-    //console.log('Render, movies:', movies);
-      let modified_movies = null;
+    var {modified_movies} = this.state;
+    //modified_movies = deepCopy(movies);
+    console.log('render, movies (initial):', movies);
 
     if (search_string) {
-     modified_movies = deepCopy(movies).filter(movie => movie.title.toLowerCase().
-        includes(search_string.toLowerCase()));
-        //console.log('Render, filtered movies:', modified_movies);
+      console.log('render, search_string:', search_string);
+      console.log('render, before filter, movies:', movies);
+      modified_movies = movies.filter(movie => {
+        movie.title.toLowerCase().includes(search_string.toLowerCase())
+        console.log('filter result:',
+        (movie.title.toLowerCase().includes(search_string.toLowerCase())))
+      });
+      console.log('render, after filter, modified_movies:', modified_movies);
     }else if (do_sort) {
       modified_movies = deepCopy(movies).sort((m,n) => { 
-        return (m.title.toLowerCase() < n.title.toLowerCase()) ? -1 : 1 
+        return (m.title.toLowerCase() < m.title.toLowerCase()) ? -1 : 1 
       });
-      //console.log('Sorted movies:', modified_movies);
-     
     } else {
-      modified_movies = movies;
-      //console.log('render, "else":', movies);
-
+      modified_movies = deepCopy(movies);
     }
 
     /* <!--If there is no user, the LoginView is rendered. 
