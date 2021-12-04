@@ -30,41 +30,31 @@ export default class MainView extends React.Component {
     super();
     localStorage.clear();
     this.state = { movies: [], user: null, search_string_low: '',
-      do_sort: false, modified_movies: [] };
-    mainView = this;
+      do_sort: false};
     window.addEventListener('resize', this.adjustTopControlsRowHeight);
   }
 
-  // search movie-cards per user search string  (case-insensitive)
+  // Search movie-cards per user search string (case-insensitive)
   searchMovieCards = (e) => {
-    const {movies, search_string_low, do_sort} = this.state;
-    var {modified_movies} = this.state;
-    let searched_movies = movies.filter(
-      movie => movie.title.toLowerCase().includes(search_string_low)
-    )
-    modified_movies = searched_movies;
+    const {search_string_low, do_sort} = this.state;
+
     this.setState( {
         search_string_low: e.target.value.toLowerCase(),
-        do_sort: false,
-        modified_movies: searched_movies
+        do_sort: false
       });
   }
 
   // Sort all movies by title (case-insensitive)
-  // We do the sorting in render()'s "else if (do_sort)" case:
-  // If we did the sorting here and set do_sort to false,
-  // using render()'s "else" case would conflict with the needs of the link
-  // from profile-view's "All Movies" button.
+  // Here we just set a flag; actual sorting is in render().
   sortMoviesByTitle = () => {
     const { search_string_low, do_sort }  = this.state;
     this.setState({ search_string_low: '', do_sort: true });
   }
 
+  // "Convenience" button
   revertMovieCards = () => {
-    const { movies, search_string_low, do_sort, modified_movies } = this.state;
     this.setState({
-      search_string_low: '', do_sort: false,
-      modified_movies: deepCopy(movies)
+      search_string_low: '', do_sort: false//,
     });
   }
   
@@ -142,8 +132,8 @@ export default class MainView extends React.Component {
 
   render() {  // React allows "className" in <div>s! 
     const { movies, user, search_string_low, do_sort } = this.state;
-    var {modified_movies} = this.state;
 
+    let modified_movies = deepCopy(movies);
     if(search_string_low) {
       modified_movies = movies.filter(m =>
           m.title.toLowerCase().includes(search_string_low)
@@ -151,8 +141,6 @@ export default class MainView extends React.Component {
     } else if (do_sort) {
       modified_movies = deepCopy(movies).sort((m,n) =>  
         (m.title.toLowerCase() < n.title.toLowerCase()) ? -1 : 1)
-    } else {
-      modified_movies = deepCopy(movies);
     }
 
     /* <!--If there is no user, the LoginView is rendered. 
