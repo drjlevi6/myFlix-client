@@ -35,18 +35,18 @@ export default class MainView extends React.Component {
     window.addEventListener('resize', this.adjustTopControlsRowHeight);
   }
 
-  // Filter movie-cards per user search string  (case-insensitive)
-  filterMovieCards = (e) => {
+  // search movie-cards per user search string  (case-insensitive)
+  searchMovieCards = (e) => {
     const {movies, search_string_low, do_sort} = this.state;
     var {modified_movies} = this.state;
-    let filtered_movies = movies.filter(
+    let searched_movies = movies.filter(
       movie => movie.title.toLowerCase().includes(search_string_low)
     )
-    modified_movies = filtered_movies;
+    modified_movies = searched_movies;
     this.setState( {
         search_string_low: e.target.value.toLowerCase(),
         do_sort: false,
-        modified_movies: filtered_movies
+        modified_movies: searched_movies
       });
   }
 
@@ -180,7 +180,7 @@ export default class MainView extends React.Component {
     if (movies.length === 0) {
        return <div className="main-view" />
     }
-    let filter_sort_column_width = 6;
+    let search_sort_column_width = 6;
     return (
       <Container className='router-container'>
         <Router className='router'>
@@ -195,22 +195,22 @@ export default class MainView extends React.Component {
               return( 
                 <div>
                   <Row className='top-text-and-controls-row'>
-                    <Col className='filter-sort-controls-column' 
-                        xs={filter_sort_column_width}>
-                      <Row className='filter-sort-text-row'>
-                        <h5 className='filter-sort-text'>
-                          Filter/Sort Movies By Name:
+                    <Col className='search-sort-controls-column' 
+                        xs={search_sort_column_width}>
+                      <Row className='search-sort-text-row'>
+                        <h5 className='search-sort-text'>
+                          Search/Sort Movies By Title:
                         </h5>
                       </Row>
-                      <Row className='filter-sort-controls-row'>
-                        <Col className='filter-input-group-column' xs={8}>
-                          <InputGroup className='filter-input-group'>
-                            <InputGroup.Text className='input-group-filter-text'>
-                              Filter
+                      <Row className='search-sort-controls-row'>
+                        <Col className='search-input-group-column' xs={8}>
+                          <InputGroup className='search-input-group'>
+                            <InputGroup.Text className='input-group-search-text'>
+                              Search
                             </InputGroup.Text>
-                            <FormControl className='filter-textarea' id='searchForm'
+                            <FormControl className='search-textarea' id='searchForm'
                               type='text' placeholder="Movie Name" 
-                                onChange={this.filterMovieCards}
+                                onChange={this.searchMovieCards}
                              />
                           </InputGroup>
                         </Col>

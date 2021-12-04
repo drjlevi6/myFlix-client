@@ -48,18 +48,18 @@
     text-align: right;
 }
 
-.filter-sort-controls-column {
+.search-sort-controls-column {
     border: solid 5px rgb(50, 94, 131);
     background-color: rgb(50, 94, 131);
     border-radius: 5px;
     padding-top:7px;
 }
 
-.filter-sort-text-row {
+.search-sort-text-row {
     background-color: rgb(50, 94, 131);
 }
 
-.filter-sort-text {
+.search-sort-text {
     color: orange;
 }
 
@@ -82,14 +82,14 @@
     padding-top: 8px;
 }
 
-.filter-sort-controls-row {
+.search-sort-controls-row {
     //border: solid green 2px;
     justify-content: space-between;
     /* React Bootstrap doesn't seem to allow me 
         to set either margin or padding here */
 }
 
-.filter-input-group-column {
+.search-input-group-column {
     padding-right: 0px;
 }
 .movie-cards-row {
@@ -101,7 +101,7 @@
     z-index: 0;
 }
 
-.filter-button-column {
+.search-button-column {
     padding-left: 0px;
     text-align: right;
 }
