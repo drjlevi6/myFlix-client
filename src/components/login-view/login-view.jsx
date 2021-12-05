@@ -56,8 +56,8 @@ export function LoginView(props) {
   // give Buttons 'className="d-grid gap-2"' to allow full width
   return ( // onClick={onRequestToRegister}>register: 
     <Container className='login-body-container'>
-        <Row className='splashScreenRow'>
-          <Alert variant="primary">
+        <Row className='splash-screen-row'>
+          <Alert className='splash-screen-alert' variant="primary">
             <Alert.Heading>
               Welcome to Dr. Levi’s myFlix movie application!
             </Alert.Heading>
