@@ -59,10 +59,10 @@ export function LoginView(props) {
         <Row className='splashScreenRow'>
           <Alert variant="primary">
             <Alert.Heading>
-              Welcome to Dr. Levi’s movie application!
+              Welcome to Dr. Levi’s myFlix movie application!
             </Alert.Heading>
             Please login or register to view our lists of movies, directors, 
-genres and more!
+              genres and more!
           </Alert>
         </Row>
         <Form className='login-form'>
