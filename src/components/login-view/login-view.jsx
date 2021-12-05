@@ -10,6 +10,7 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Alert from 'react-bootstrap/Alert';
 import Container from 'react-bootstrap/Container';
 
 export function LoginView(props) {
@@ -55,9 +56,14 @@ export function LoginView(props) {
   // give Buttons 'className="d-grid gap-2"' to allow full width
   return ( // onClick={onRequestToRegister}>register: 
     <Container className='login-body-container'>
-
-        <Row className="justify-content-md-center header-text">
-            Log In To myFlix:
+        <Row className='splashScreenRow'>
+          <Alert variant="primary">
+            <Alert.Heading>
+              Welcome to Dr. Levi’s movie application!
+            </Alert.Heading>
+            Please login or register to view our lists of movies, directors, 
+genres and more!
+          </Alert>
         </Row>
         <Form className='login-form'>
         <Form.Group className="mb-2" controlId="formUsername">
