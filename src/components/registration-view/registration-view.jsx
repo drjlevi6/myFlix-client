@@ -128,14 +128,19 @@ export class RegistrationView extends React.Component {
           </Row>
           </Form.Group>
 
-        <Row className="justify-content-md-center">
-          <Button className="submit-registration-button" 
-            type="submit">
-            Submit
-          </Button>
-          <Button variant="dark" onClick={this.props.back} >
-            Return to Login
-          </Button>
+        <Row className='bottom-buttons-row'>
+          <Col className='register-button-col' xs={3}>
+            <Button className='register-button'  
+              type="submit">
+              Register
+            </Button>
+            </Col>
+          <Col className='return-button-col' xs={4}>
+            <Button className='return-button'
+              variant="dark" onClick={this.props.back} >
+              Return to Login
+            </Button>
+            </Col>
          </Row>
 
         </Form>
