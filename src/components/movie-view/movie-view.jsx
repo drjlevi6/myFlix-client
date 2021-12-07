@@ -14,7 +14,7 @@ import Axios from 'axios';
 
 export class MovieView extends React.Component { 
   state = {favorite: false};
-  genre_director_width = 3;
+  genre_director_width = 4;
   componentDidMount(){
     let favoriteMovieIds = localStorage.getItem('favorite_ids');
     this.setState({favorite: favoriteMovieIds.includes(this.props.movie._id)});
@@ -64,73 +64,78 @@ export class MovieView extends React.Component {
     
     return (
       <Container className="movie-view-container">
-        <Row className="movie-poster-row" xs={8}>
-        <Col className='alert-column'>
-        <Row className='movie-title-row'>
-          <Col className='movie-title-subcolumn' xs={7}>
+        <Row className="movie-title-row">
           <Alert className='movie-title-alert' variant='info'>
             <Alert.Heading>{movie.title}</Alert.Heading>
           </Alert>
-          </Col>
-          <Col className='add-remove-button-group' xs={5}>
-            <Row className='add-remove-text d-grid'>Favorite Movies</Row>
-            <Row className='add-remove-buttons-row'>
-              <Button onClick={this.addToFavorites} 
-                disabled={this.state.favorite} size="sm">
-                  Add
-              </Button>
-              <Button onClick={this.removeFromFavorites} 
-                disabled={!this.state.favorite} size="sm">
-                  Remove
-              </Button>
+        </Row>
+        <Row className='middle-row'>
+           <Col className='genre-director-col' xs={7}>
+            <Row className='genre-director-row' id='GENRE-ROW'>
+              <Col className='genre-director-header-col' 
+                xs={this.genre_director_width}>
+                  Genre:
+              </Col>
+              <Col className='genre-director-button-column'>
+                <Button className='genre-director-button' variant="link"
+                  as={Link} to={`/movies/genre/${movie.title}`}>
+                  {movie.genre.name}
+                </Button>
+              </Col>
             </Row>
+            <Row className='genre-director-row' id='DIRECTOR-ROW'>
+              <Col className='genre-director-header-col' 
+                xs={this.genre_director_width}>
+                Director:
+              </Col>
+              <Col className='genre-director-button-column'>
+                <Button className='genre-director-button' variant="link"
+                  as={Link} to={`/movies/director/${movie.title}`}>
+                  {movie.director.name}
+                </Button>
+              </Col>
+            </Row>
+            <Row className='add-remove-text'>Favorite Movies</Row>
+            <Col className='add-remove-buttons-col'xs={6}>
+              <Row className='add-remove-buttons-row'>
+                <Button conClick={this.addToFavorites} 
+                  disabled={this.state.favorite} size="sm">
+                    Add
+                </Button>
+                </Row>
+                <Row className='add-remove-buttons-row'>
+                  <Button onClick={this.removeFromFavorites} 
+                      disabled={!this.state.favorite} size="sm">
+                    Remove
+                  </Button>
+              </Row>
+            </Col>
+          </Col>
+          <Col className='image-col' xs={5}>
+            <img className='movie-image'
+              crossOrigin="anonymous" src={movie.imagePath} />
           </Col>
         </Row>
-       <Row className='director-genre-rows'>
-          <Col className='genre-director-header' xs={this.genre_director_width}>
-            Genre:
-          </Col>
-          <Col className='genre-director-button-column'>
-            <Button className='genre-director-button' variant="link"
-            as={Link} to={`/movies/genre/${movie.title}`}>
-              {movie.genre.name}
-            </Button>
-          </Col>
-        </Row>
-        <Row className='director-genre-rows'>
-          <Col className='genre-director-header' xs={this.genre_director_width}>
-            Director:
-          </Col>
-          <Col className='genre-director-button-column'>
-            <Button className='genre-director-button' variant="link"
-            as={Link} to={`/movies/director/${movie.title}`}>
-              {movie.director.name}
-            </Button>
-          </Col>
-        </Row>
-         <Row className='movie-description-row' xs={9}>
-        <Alert className='title-description-alert' variant='info'>
-          <Alert.Heading>Description:</Alert.Heading>
-          <p>{movie.description}</p>
-        </Alert>
-        </Row>
-         </Col>
 
-        <Col className='profile-image-column' xs={4}>
+        <Col className='profile-image-column' xs={5}>
         <Row className='return-to-profile-row'>
           <Col className='return-to-profile-subcolumn' xs={12}>
-            <Button className='return-to-profile-button' variant='secondary'
-            onClick={onBackClick}>
-              Return To Profile
-            </Button>
           </Col>
         </Row>
-        <Row className='image-row'>
-          <img className='movie-image' xs={4}
-            crossOrigin="anonymous" src={movie.imagePath} />
-        </Row>
-          </Col>
+      </Col>
 
+
+        <Row className='movie-description-row' xs={9}>
+          <Alert className='title-description-alert' variant='info'>
+            <Alert.Heading>Description:</Alert.Heading>
+            <p>{movie.description}</p>
+          </Alert>
+        </Row>
+        <Row className='return-to-profile-button-row'>
+          <Button className='return-to-profile-button' variant='secondary'
+              onClick={onBackClick}>
+            Return To Profile
+          </Button>
         </Row>
       </Container>
     );

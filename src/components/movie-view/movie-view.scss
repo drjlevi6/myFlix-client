@@ -17,22 +17,29 @@ $G_D_button_bottom_margin: 20px;
     margin-left: 20px;
 }
 
-.image-row {
+/*.image-row {
     padding-top: 10px;
-}
-
-.movie-poster-row {
-    margin-bottom: 6px;
-}
+}*/
 
 .movie-title-alert {
-    text-align: left;
+    text-align: center;
 }
 
-.genre-director-header {
+.genre-director-rows {
+    border: dashed orange  2px;
+}
+
+.middle-row {
+    justify-content: space-between;
+}
+
+.genre-director-header-col {
     padding-top: 6px;
     font-weight: 700;
 }
+/*.movie-image {
+    margin-left: 20%;
+}*/
 
 profile-button {
      /*align-items: center;
@@ -44,10 +51,10 @@ profile-button {
     margin-bottom: 6px; /* margin-top doesn't work for some reason */
 }
 
-.genre-director-div {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: $G_D_button_bottom_margin;
+.genre-director-col {
+    background-color: rgb(203, 253, 253);
+    flex-shrink: 10;
+    border: lightblue solid 2px;
 }
 
 .genre-director-div a {
@@ -60,4 +67,14 @@ profile-button {
 
 .director-button{
     margin-left: $G_D_button_side_margin;
+}
+
+.add-remove-text {
+    padding-top: 30px;
+    padding-bottom: 10px;
+    padding-left: 6%;
+}
+
+.movie-description-row {
+    padding-top: 20px;
 }
