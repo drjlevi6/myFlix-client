@@ -32,6 +32,7 @@ export default class MainView extends React.Component {
     this.state = { movies: [], user: null, search_string_low: '',
       do_sort: false};
     window.addEventListener('resize', this.adjustTopControlsRowHeight);
+    this.adjustTopControlsRowHeight();
   }
 
   // Search movie-cards per user search string (case-insensitive)
@@ -132,7 +133,6 @@ export default class MainView extends React.Component {
 
   render() {  // React allows "className" in <div>s! 
     const { movies, user, search_string_low, do_sort } = this.state;
-
     let modified_movies = deepCopy(movies);
     if(search_string_low) {
       modified_movies = movies.filter(m =>
