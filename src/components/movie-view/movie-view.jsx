@@ -98,7 +98,7 @@ export class MovieView extends React.Component {
             <Row className='add-remove-text'>Favorite Movies</Row>
             <Col className='add-remove-buttons-col'xs={6}>
               <Row className='add-remove-buttons-row'>
-                <Button conClick={this.addToFavorites} 
+                <Button onClick={this.addToFavorites} 
                   disabled={this.state.favorite} size="sm">
                     Add
                 </Button>
@@ -111,7 +111,7 @@ export class MovieView extends React.Component {
               </Row>
             </Col>
           </Col>
-          <Col className='image-col' xs={5}>
+          <Col className='movie-image-col' xs={4}>
             <img className='movie-image'
               crossOrigin="anonymous" src={movie.imagePath} />
           </Col>
