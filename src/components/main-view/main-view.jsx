@@ -12,6 +12,7 @@ import { RegistrationView } from '../registration-view/registration-view';
 import { GenreView } from '../genre-view/genre-view';
 import { DirectorView } from '../director-view/director-view';
 import { ProfileView } from '../profile-view/profile-view';
+import {setMovieCardsTop} from '../common_components/common_components';
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -64,18 +65,16 @@ export default class MainView extends React.Component {
     let all_top_text_and_controls_rows = 
       document.getElementsByClassName('top-text-and-controls-row');
     if (all_top_text_and_controls_rows.length > 0) {
-      let top_text_controls_row = all_top_text_and_controls_rows[0];
-      let top_row_height = window.getComputedStyle(top_text_controls_row).height;
-      let cards_row = document.getElementsByClassName('movie-cards-row')[0];
-      cards_row.style.top = top_row_height;
+      setMovieCardsTop();
     }
-  } 
+  }
 
   moveBottomButtonsDiv(oldWinHeight) {
     return window.innerHeight;
   }
 
   componentDidMount() {
+    this.adjustTopControlsRowHeight();
     let accessToken = localStorage.getItem('token');
     if (accessToken !== null) {
       this.setState({
@@ -182,7 +181,8 @@ export default class MainView extends React.Component {
                 </Col>
               return( 
                 <div>
-                  <Row className='top-text-and-controls-row'>
+                  <Row className='top-text-and-controls-row'
+                    id='top-text-and-controls-row'>
                     <Col className='search-sort-controls-column' 
                         xs={search_sort_column_width}>
                       <Row className='search-sort-text-row'>

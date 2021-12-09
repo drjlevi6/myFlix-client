@@ -10,25 +10,25 @@ import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import { Link } from "react-router-dom";
 import MovieVew from "../movie-view/movie-view";
+import {setMovieCardsTop} from '../common_components/common_components';
 
 
 export class MovieCard extends React.Component {
   // that movie's imagePath, title, description are not
   // capitalized (differs from course text)
-
-  openMovieView(cardProps) {
-  }
-
-  openGenreView() {
-    console.log('movie-card.openGenreView()');
-    //console.log('movie-card.openGenreView(): this:', this);
-    //console.log(movie.genre.name);
-  }
-//     <Container>    
  
+  componentDidMount() {
+    setMovieCardsTop();
+    /*
+    let top_controls_row =document.getElementById('top-text-and-controls-row')
+    let top_row_height = window.getComputedStyle(top_controls_row).height;
+    let cards_row = document.getElementsByClassName('movie-cards-row')[0];
+    cards_row.style.top = top_row_height;
+    */
+  }
   render() {
     const { movie } = this.props;
-
+    console.log('movie-Card.render()');
     return (
       <Container className='movie-card-container'>
         <Col className='main-card-col'>
