@@ -15,7 +15,7 @@ import Axios from 'axios';
 
 export class MovieView extends React.Component { 
   state = {favorite: false};
-  genre_director_width = 5;
+  genre_director_width = 3;
   componentDidMount(){
     let favoriteMovieIds = localStorage.getItem('favorite_ids');
     this.setState({favorite: favoriteMovieIds.includes(this.props.movie._id)});
@@ -71,7 +71,7 @@ export class MovieView extends React.Component {
           </Alert>
         </Row>
         <Row className='middle-row'>
-           <Col className='genre-director-col' xs={6}>
+           <Col className='genre-director-col' xs={7}>
             <Row className='genre-director-row' id='genre-row'>
               <Col className='genre-director-header-col' 
                 xs={this.genre_director_width}>
