@@ -22,7 +22,6 @@ export class MovieCard extends React.Component {
   }
   render() {
     const { movie } = this.props;
-    console.log('movie-Card.render()');
     return (
       <Container className='movie-card-container'>
         <Col className='main-card-col'>
