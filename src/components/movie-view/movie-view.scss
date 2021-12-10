@@ -17,12 +17,17 @@ $G_D_button_bottom_margin: 20px;
     margin-left: 20px;
 }
 
-/*.image-row {
+.image-row {
     padding-top: 10px;
-}*/
+}
 
 .movie-title-alert {
     text-align: center;
+}
+
+.movie-image-col {
+    //display: flex;
+    border: solid red 2px;
 }
 
 .genre-director-rows {
@@ -39,9 +44,10 @@ $G_D_button_bottom_margin: 20px;
     font-weight: 700;
     //border: solid blue 1px;
 }
-/*.movie-image {
+.movie-image {
     margin-left: 20%;
-}*/
+    max-width: 100%;
+}
 
 profile-button {
      /*align-items: center;

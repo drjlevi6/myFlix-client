@@ -7,6 +7,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
+import  Image from 'react-bootstrap/Image';
 import { Link } from "react-router-dom";
 import { Alert } from 'react-bootstrap';
 import { scrollParent } from 'dom-helpers';
@@ -70,7 +71,7 @@ export class MovieView extends React.Component {
           </Alert>
         </Row>
         <Row className='middle-row'>
-           <Col className='genre-director-col' xs={7}>
+           <Col className='genre-director-col' xs={6}>
             <Row className='genre-director-row' id='genre-row'>
               <Col className='genre-director-header-col' 
                 xs={this.genre_director_width}>
@@ -112,7 +113,7 @@ export class MovieView extends React.Component {
             </Col>
           </Col>
           <Col className='movie-image-col' xs={5} sm={5} md={6} lg={4}>
-            <img className='movie-image'
+            <Image className='movie-image' fluid
               crossOrigin="anonymous" src={movie.imagePath} />
           </Col>
         </Row>
