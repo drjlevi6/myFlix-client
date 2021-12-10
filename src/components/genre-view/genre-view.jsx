@@ -17,6 +17,7 @@ export class GenreView extends React.Component {
 
     render() {
       const { movie, onBackClick } = this.props;
+      console.log(this.props);
 
       return (
         <Container className="movie-view">  

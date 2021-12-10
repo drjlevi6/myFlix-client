@@ -14,7 +14,7 @@ import Axios from 'axios';
 
 export class MovieView extends React.Component { 
   state = {favorite: false};
-  genre_director_width = 4;
+  genre_director_width = 5;
   componentDidMount(){
     let favoriteMovieIds = localStorage.getItem('favorite_ids');
     this.setState({favorite: favoriteMovieIds.includes(this.props.movie._id)});
@@ -71,12 +71,12 @@ export class MovieView extends React.Component {
         </Row>
         <Row className='middle-row'>
            <Col className='genre-director-col' xs={7}>
-            <Row className='genre-director-row' id='GENRE-ROW'>
+            <Row className='genre-director-row' id='genre-row'>
               <Col className='genre-director-header-col' 
                 xs={this.genre_director_width}>
                   Genre:
               </Col>
-              <Col className='genre-director-button-column'>
+              <Col className='genre-director-button-col'>
                 <Button className='genre-director-button' variant="link"
                   as={Link} to={`/movies/genre/${movie.title}`}>
                   {movie.genre.name}
@@ -88,7 +88,7 @@ export class MovieView extends React.Component {
                 xs={this.genre_director_width}>
                 Director:
               </Col>
-              <Col className='genre-director-button-column'>
+              <Col className='genre-director-button-col'>
                 <Button className='genre-director-button' variant="link"
                   as={Link} to={`/movies/director/${movie.title}`}>
                   {movie.director.name}
@@ -111,7 +111,7 @@ export class MovieView extends React.Component {
               </Row>
             </Col>
           </Col>
-          <Col className='movie-image-col' xs={4}>
+          <Col className='movie-image-col' xs={5} sm={5} md={6} lg={4}>
             <img className='movie-image'
               crossOrigin="anonymous" src={movie.imagePath} />
           </Col>

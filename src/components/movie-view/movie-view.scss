@@ -31,11 +31,13 @@ $G_D_button_bottom_margin: 20px;
 
 .middle-row {
     justify-content: space-between;
+    flex-wrap: nowrap;
 }
 
 .genre-director-header-col {
     padding-top: 6px;
     font-weight: 700;
+    //border: solid blue 1px;
 }
 /*.movie-image {
     margin-left: 20%;
@@ -60,6 +62,11 @@ profile-button {
 .genre-director-div a {
     width:50%;
 }
+.genre-director-button-col {
+    //border: solid red 1px;
+    text-align: left;
+    align-items: left;
+}
 
 .genre-button {
     margin-right: $G_D_button_side_margin;
@@ -76,19 +83,20 @@ profile-button {
 }
 
 .movie-image-col {
-    border: solid red 2px;
-    text-align: left;
-    align-content: left;
-    align-items: left;
-    justify-content: space-after;
-    background-color: blue;
+    display: flex;
+   // border: solid red 2px;
+    text-align: right;
+    justify-content: space-before;
+    margin: 0px;
+    padding-right: 0px;
 }
 
 .movie-image {
     margin: 0px;
     padding: 0px;
-    align-self: left;
-    align-content: left;
+    align-self: right;
+    align-content: right;
+    //left: 0%;
 }
 
 .movie-description-row {
