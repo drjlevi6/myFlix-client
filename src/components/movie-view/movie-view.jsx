@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import "./movie-view.scss"; // file is currently empty, but we might need it later.
+import "./movie-view.scss"; 
 
 
 import Container from 'react-bootstrap/Container';
@@ -18,7 +18,9 @@ export class MovieView extends React.Component {
   genre_director_width = 3;
   componentDidMount(){
     let favoriteMovieIds = localStorage.getItem('favorite_ids');
-    this.setState({favorite: favoriteMovieIds.includes(this.props.movie._id)});
+    this.setState({
+        favorite: favoriteMovieIds.includes(this.props.movie._id)
+    });
 }
   showGenreView() {
     console.log('MovieView.showGenreView:', movie);
@@ -29,11 +31,14 @@ export class MovieView extends React.Component {
     let Username = localStorage.getItem('user');
     let movieId = this.props.movie._id;
     let token = localStorage.getItem('token');
-    let endpoint = 
-		'https://drjs-myflix-app.herokuapp.com/users/' + Username + '/movies/' + movieId;
-    Axios.post(endpoint, {}, { headers: { 'Authorization': `Bearer ${token}` } })
+    let endpoint = 'https://drjs-myflix-app.herokuapp.com/users/' + 
+      Username + '/movies/' + movieId;
+    Axios.post(
+      endpoint, {}, { headers: { 'Authorization': `Bearer ${token}` } 
+    })
     .then( result => {
-      let favoriteMovieIds = localStorage.getItem('favorite_ids').split(',');
+      let favoriteMovieIds = 
+        localStorage.getItem('favorite_ids').split(',');
       favoriteMovieIds.push(this.props.movie._id);
       localStorage.setItem('favorite_ids', favoriteMovieIds);
       this.setState({favorite: true});
@@ -49,11 +54,15 @@ export class MovieView extends React.Component {
     let endpoint = 
 		  'https://drjs-myflix-app.herokuapp.com/users/' + 
       Username + '/movies/' + movieId;
-    Axios.delete(endpoint, { headers: { 'Authorization': `Bearer ${token}` } })
+    Axios.delete(endpoint, { 
+      headers: { 'Authorization': `Bearer ${token}` }
+    })
     .then( result => {
       console.log(result);
-      let favoriteMovieIds = localStorage.getItem('favorite_ids').split(',');
-      let indexToRemove = favoriteMovieIds.indexOf(this.props.movie._id);
+      let favoriteMovieIds = 
+        localStorage.getItem('favorite_ids').split(',');
+      let indexToRemove = 
+        favoriteMovieIds.indexOf(this.props.movie._id);
       favoriteMovieIds.splice(indexToRemove, 1);
       localStorage.setItem('favorite_ids', favoriteMovieIds);
       this.setState({favorite: false});
@@ -114,7 +123,8 @@ export class MovieView extends React.Component {
           </Col>
 
           <Card style={{ width: '20vh' }}>
-            <Card.Img variant="top" crossOrigin="anonymous" src={movie.imagePath} />
+            <Card.Img variant="top" crossOrigin="anonymous" 
+              src={movie.imagePath} />
           </Card>
         </Row>
 
