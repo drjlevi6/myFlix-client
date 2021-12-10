@@ -7,7 +7,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
-import  Image from 'react-bootstrap/Image';
+import  Card from 'react-bootstrap/Card';
 import { Link } from "react-router-dom";
 import { Alert } from 'react-bootstrap';
 import { scrollParent } from 'dom-helpers';
@@ -112,19 +112,18 @@ export class MovieView extends React.Component {
               </Row>
             </Col>
           </Col>
-          <Col className='movie-image-col' xs={5} sm={5} md={6} lg={4}>
-            <Image className='movie-image' fluid
-              crossOrigin="anonymous" src={movie.imagePath} />
-          </Col>
+
+          <Card style={{ width: '20vh' }}>
+            <Card.Img variant="top" crossOrigin="anonymous" src={movie.imagePath} />
+          </Card>
         </Row>
 
         <Col className='profile-image-column' xs={5}>
-        <Row className='return-to-profile-row'>
-          <Col className='return-to-profile-subcolumn' xs={12}>
-          </Col>
-        </Row>
-      </Col>
-
+          <Row className='return-to-profile-row'>
+            <Col className='return-to-profile-subcolumn' xs={12}>
+            </Col>
+          </Row>
+        </Col>
 
         <Row className='movie-description-row' xs={9}>
           <Alert className='title-description-alert' variant='info'>
@@ -132,12 +131,14 @@ export class MovieView extends React.Component {
             <p>{movie.description}</p>
           </Alert>
         </Row>
+
         <Row className='return-to-profile-button-row'>
           <Button className='return-to-profile-button' variant='secondary'
               onClick={onBackClick}>
             Return To Profile
           </Button>
         </Row>
+
       </Container>
     );
   }
