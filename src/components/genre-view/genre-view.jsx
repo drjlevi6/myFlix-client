@@ -29,7 +29,7 @@ export class GenreView extends React.Component {
             <Row className="movie-poster-row">
               <Col xs={3}>
               <Button variant='dark'>
-              &lt;&mdash;<br></br>Movie
+              &lt;&mdash;Movie
                   </Button>
               </Col>
               <Col xs={4}>
