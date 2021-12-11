@@ -1,4 +1,6 @@
 import './genre-view.scss';
+import { MovieCard } from '../movie-card/movie-card';
+import Card from 'react-bootstrap/Card';  //needed?
 
 import React from 'react';
 import Container from 'react-bootstrap/Container';
@@ -17,9 +19,11 @@ export class GenreView extends React.Component {
     }
 
     render() {
-      const { movie, onBackClick } = this.props;
-      console.log(this.props);
-      console.log(this.state);
+      const { movies, movie, onBackClick } = this.props;
+      let this_genres_movies = movies.filter(m => 
+        m.genre.name === movie.genre.name
+      );
+      console.log(this_genres_movies);
       return(
         <Container className="movie-view">  
             <Row className="movie-poster-row">
@@ -46,6 +50,20 @@ export class GenreView extends React.Component {
             </Alert>
             <Row className='matching-movies-text-row'>
               <h6>Some movies with this genre are:</h6>
+            </Row>
+            <Row className='movie-cards-row'>
+            {this_genres_movies.map(m => (
+                      <Row>
+                        <Col>
+                        {m.title}
+                        </Col>
+                        <Col>
+                        <MovieCard movie={m} />
+                        </Col>
+                      </Row>
+
+
+            ))}
             </Row>
         </Container>
       )

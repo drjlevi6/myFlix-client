@@ -16,9 +16,13 @@ import {setMovieCardsTop} from '../common_components/common_components';
 export class MovieCard extends React.Component {
   // that movie's imagePath, title, description are not
   // capitalized (differs from course text)
- 
+  
+  // Do nothing if there's no top-text-and-controls-row element
+  // i.e., current view is genre-view or director-view, not main-view
   componentDidMount() {
-    setMovieCardsTop();
+    if (
+      document.getElementById('top-text-and-controls-row')
+    ) setMovieCardsTop();
   }
   render() {
     const { movie } = this.props;

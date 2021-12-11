@@ -246,8 +246,7 @@ export default class MainView extends React.Component {
               render={({ match, history }) => {
                 return (
                   <Col md={8}>
-                    <MovieView 
-                      movie={movies.find(
+                    <MovieView movie={movies.find(
                           m => (m._id === match.params.movieId)
                       )} 
                       onBackClick={() => history.push("/user")}
@@ -269,7 +268,7 @@ export default class MainView extends React.Component {
                 let mTitle = match.params.title;
                 return (
                   <Col md={8}>
-                    <GenreView 
+                    <GenreView movies={movies}
                       genre={movies.find(
                           m => ( m.title === mTitle )
                       ).genre}
