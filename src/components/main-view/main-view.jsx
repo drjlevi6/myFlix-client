@@ -32,8 +32,6 @@ export default class MainView extends React.Component {
     localStorage.clear();
     this.state = { movies: [], user: null, search_string_low: '',
       do_sort: false};
-    window.addEventListener('resize', this.adjustTopControlsRowHeight);
-    this.adjustTopControlsRowHeight();
   }
 
   // Search movie-cards per user search string (case-insensitive)
@@ -60,21 +58,13 @@ export default class MainView extends React.Component {
     });
   }
   
-// Adjust top of movie-cards dynamically, according to height of top row.
-  adjustTopControlsRowHeight() {
-    let all_top_text_and_controls_rows = 
-      document.getElementsByClassName('top-text-and-controls-row');
-    if (all_top_text_and_controls_rows.length > 0) {
-      setMovieCardsTop();
-    }
-  }
-
   moveBottomButtonsDiv(oldWinHeight) {
     return window.innerHeight;
   }
 
   componentDidMount() {
-    this.adjustTopControlsRowHeight();
+    console.log('main-view: componentDidMount()');
+    window.addEventListener('resize', setMovieCardsTop() );
     let accessToken = localStorage.getItem('token');
     if (accessToken !== null) {
       this.setState({
