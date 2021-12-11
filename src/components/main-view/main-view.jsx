@@ -213,13 +213,13 @@ export default class MainView extends React.Component {
                     <Col className='return-to-profile-column'
                         xs={3}>
                       <Row className='return-to-profile-row'>
-                        <Button className='profile-button' variant='dark'
+                        <Button className='return-revert-button' variant='dark'
                           onClick={() => history.back()}>
                             Return To Profile
                         </Button>
                       </Row>
                       <Row className='revert-row'>
-                        <Button className='button' variant='dark'
+                        <Button className='return-revert-button' variant='dark'
                           onClick={this.revertMovieCards}>
                             Revert Cards
                         </Button>
