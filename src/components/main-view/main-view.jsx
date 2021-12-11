@@ -181,8 +181,8 @@ export default class MainView extends React.Component {
                 </Col>
               return( 
                 <div>
-                  <Row className='top-text-and-controls-row'
-                    id='top-text-and-controls-row'>
+                  <Row className='top-controls-row'
+                    id='top-controls-row'>
                     <Col className='search-sort-controls-column' 
                         xs={search_sort_column_width}>
                       <Row className='search-sort-text-row'>

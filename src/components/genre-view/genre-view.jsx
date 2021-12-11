@@ -23,9 +23,9 @@ export class GenreView extends React.Component {
       let this_genres_movies = movies.filter(m => 
         m.genre.name === movie.genre.name
       );
-      console.log(this_genres_movies);
       return(
         <Container className="movie-view">  
+          <Row className='top-controls-row' id='top-controls-row'>
             <Row className="movie-poster-row">
               <Col xs={3}>
               <Button variant='dark'>
@@ -51,21 +51,15 @@ export class GenreView extends React.Component {
             <Row className='matching-movies-text-row'>
               <h6>Some movies with this genre are:</h6>
             </Row>
-            <Row className='movie-cards-row'>
+          </Row>
+          <Row className='movie-cards-row'>
             {this_genres_movies.map(m => (
-                      <Row>
-                        <Col>
-                        {m.title}
-                        </Col>
-                        <Col>
-                        <MovieCard movie={m} />
-                        </Col>
-                      </Row>
-
-
+              <Col xs={7} sm={6} md={6} lg={4} key={m._id}>
+              <MovieCard movie={m} />
+              </Col>
             ))}
-            </Row>
-        </Container>
+          </Row>
+      </Container>
       )
     }
 }

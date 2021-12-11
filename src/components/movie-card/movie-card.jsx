@@ -10,19 +10,17 @@ import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import { Link } from "react-router-dom";
 import MovieVew from "../movie-view/movie-view";
-import {setMovieCardsTop} from '../common_components/common_components';
-
+import {setMovieCardsTop} from 
+  '../common_components/common_components';
 
 export class MovieCard extends React.Component {
   // that movie's imagePath, title, description are not
   // capitalized (differs from course text)
   
-  // Do nothing if there's no top-text-and-controls-row element
-  // i.e., current view is genre-view or director-view, not main-view
+  // All the views with MovieCards need a top element 
+  // .top-controls-row, or setMovieCardsTop() will crash.
   componentDidMount() {
-    if (
-      document.getElementById('top-text-and-controls-row')
-    ) setMovieCardsTop();
+    setMovieCardsTop();
   }
   render() {
     const { movie } = this.props;
