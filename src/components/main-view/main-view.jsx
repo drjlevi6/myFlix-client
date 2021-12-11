@@ -32,8 +32,15 @@ export default class MainView extends React.Component {
     localStorage.clear();
     this.state = { movies: [], user: null, search_string_low: '',
       do_sort: false};
-    window.addEventListener('resize', this.adjustTopControlsRowHeight);
-    this.adjustTopControlsRowHeight();
+      window.addEventListener('resize', setMovieCardsTop() );
+      console.log('main-view: event listener added');
+      /*
+      window.addEventListener('resize', function() {
+        let header = document.querySelector("#top-controls-row");
+        let {height} = header.getBoundingClientRect();
+        document.querySelector('.movie-cards-row').style.top = `${height}px`;
+      });
+      */
   }
 
   // Search movie-cards per user search string (case-insensitive)
@@ -74,7 +81,9 @@ export default class MainView extends React.Component {
   }
 
   componentDidMount() {
-    this.adjustTopControlsRowHeight();
+    console.log('main-view: componentDidMount()');
+    window.addEventListener('resize', setMovieCardsTop() );
+    //this.adjustTopControlsRowHeight();
     let accessToken = localStorage.getItem('token');
     if (accessToken !== null) {
       this.setState({
@@ -85,6 +94,7 @@ export default class MainView extends React.Component {
   }
 
   onLoggedOut() {
+    console.log('main-view: onLoggedOut()');
     localStorage.removeItem('token');
     localStorage.removeItem('user');
     window.location.pathname="/";

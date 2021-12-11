@@ -19,8 +19,14 @@ export class MovieCard extends React.Component {
   
   // All the views with MovieCards need a top element 
   // .top-controls-row, or setMovieCardsTop() will crash.
+  constructor(){
+    super();
+    console.log('movie-card view instantiated');
+    window.addEventListener('resize', setMovieCardsTop() );
+  }
   componentDidMount() {
     setMovieCardsTop();
+    window.addEventListener('resize', setMovieCardsTop() );
   }
   render() {
     const { movie } = this.props;

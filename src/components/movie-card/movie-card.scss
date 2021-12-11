@@ -1,3 +1,7 @@
+.movie-cards-row{
+    z-index: 1;
+}
+
 /* Need following entry to force uniform card height */
 .main-card-col{
     border: solid black 2px;
@@ -6,4 +10,9 @@
     padding:0px;
     min-width: 200px;
     min-height: 430px;
+    z-index: 1;
+}
+
+.card {
+    z-index: 1;
 }
