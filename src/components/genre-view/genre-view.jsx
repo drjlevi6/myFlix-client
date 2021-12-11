@@ -1,7 +1,8 @@
 import './genre-view.scss';
 import { MovieCard } from '../movie-card/movie-card';
 import Card from 'react-bootstrap/Card';  //needed?
-
+import {setMovieCardsTop} from 
+  '../common_components/common_components';
 import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -14,52 +15,56 @@ import { Alert } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 
 export class GenreView extends React.Component {
-    constructor(){
-      super();
-    }
+  constructor(){
+    super();
+  }
 
-    render() {
-      const { movies, movie, onBackClick } = this.props;
-      let this_genres_movies = movies.filter(m => 
-        m.genre.name === movie.genre.name
-      );
-      return(
-        <Container className="movie-view">  
-          <Row className='top-controls-row' id='top-controls-row'>
-            <Row className="movie-poster-row">
-              <Col xs={3}>
-              <Button variant='dark'>
-              &lt;&mdash;Movie
-                  </Button>
-              </Col>
-              <Col xs={4}>
-                <Alert className='data-area' variant='info'>
-                <Alert.Heading>{movie.genre.name}</Alert.Heading>
-                </Alert>
-              </Col>
-              <Col xs={5}>
-                <ButtonGroup className="movies-profile-buttons" 
-                  aria-label="All-Movies and Profile Buttons">
-                  <Button>All Movies</Button>&nbsp; <Button>Profile</Button>
-                </ButtonGroup>
-              </Col>
-            </Row>
-            <Alert className='data-area' variant='info'>
-              <Alert.Heading>Description:</Alert.Heading>
-              <p>{movie.genre.description}</p>
-            </Alert>
-            <Row className='matching-movies-text-row'>
-              <h6>Some movies with this genre are:</h6>
-            </Row>
+  componentDidMount() {
+    setMovieCardsTop(); //checked 20211211, needed
+  }
+
+  render() {
+    const { movies, movie, onBackClick } = this.props;
+    let this_genres_movies = movies.filter(m => 
+      m.genre.name === movie.genre.name
+    );
+    return(
+      <Container className="movie-view">  
+        <Row className='top-controls-row' id='top-controls-row'>
+          <Row className="movie-poster-row">
+            <Col xs={3}>
+            <Button variant='dark'>
+            &lt;&mdash;Movie
+                </Button>
+            </Col>
+            <Col xs={4}>
+              <Alert className='data-area' variant='info'>
+              <Alert.Heading>{movie.genre.name}</Alert.Heading>
+              </Alert>
+            </Col>
+            <Col xs={5}>
+              <ButtonGroup className="movies-profile-buttons" 
+                aria-label="All-Movies and Profile Buttons">
+                <Button>All Movies</Button>&nbsp; <Button>Profile</Button>
+              </ButtonGroup>
+            </Col>
           </Row>
-          <Row className='movie-cards-row'>
-            {this_genres_movies.map(m => (
-              <Col xs={7} sm={6} md={6} lg={4} key={m._id}>
-              <MovieCard movie={m} />
-              </Col>
-            ))}
+          <Alert className='data-area' variant='info'>
+            <Alert.Heading>Description:</Alert.Heading>
+            <p>{movie.genre.description}</p>
+          </Alert>
+          <Row className='matching-movies-text-row'>
+            <h6>Some movies with this genre are:</h6>
           </Row>
-      </Container>
-      )
-    }
+        </Row>
+        <Row className='movie-cards-row'>
+          {this_genres_movies.map(m => (
+            <Col xs={7} sm={6} md={6} lg={4} key={m._id}>
+            <MovieCard movie={m} />
+            </Col>
+          ))}
+        </Row>
+    </Container>
+    )
+  }
 }

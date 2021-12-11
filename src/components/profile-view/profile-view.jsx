@@ -100,7 +100,6 @@ export class ProfileView extends React.Component{
 	})
 	.catch( error => console.log(error) )
 	}
-
 		
 	render(){// will need asynchronous calls
 		var form_Label_width = '5';
