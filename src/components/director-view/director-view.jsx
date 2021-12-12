@@ -19,11 +19,6 @@ export class DirectorView extends React.Component {
     let director = movie.director;
     return (
       <Container className="director-view">
-        <Row className="movie-poster-row">
-          <Col xs={6}>
-          <img crossOrigin="anonymous" src={movie.imagePath} />
-          </Col>
-        </Row>
         <Alert variant='info'>
           <Alert.Heading>Director:</Alert.Heading>
           <p>{director.name}</p>

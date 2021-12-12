@@ -16,11 +16,18 @@ import Axios from 'axios';
 export class MovieView extends React.Component { 
   state = {favorite: false};
   genre_director_width = 3;
+
   componentDidMount(){
+    const {movie} = this.props;
+    if (typeof movie.director === 'string') {
+      console.log('movie-view, componentDidMount(): ' + 
+      'Please fix missing director info for movie “' + 
+      movie.title + '”.');
+    }
     let favoriteMovieIds = localStorage.getItem('favorite_ids');
     this.setState({
-        favorite: favoriteMovieIds.includes(this.props.movie._id)
-    });
+      favorite: favoriteMovieIds.includes(this.props.movie._id)
+  });
 }
   showGenreView() {
     console.log('MovieView.showGenreView:', movie);
@@ -101,7 +108,8 @@ export class MovieView extends React.Component {
               <Col className='genre-director-button-col'>
                 <Button className='genre-director-button' variant="link"
                   as={Link} to={`/movies/director/${movie.title}`}>
-                  {movie.director.name}
+                  {typeof movie.director === 'string'? movie.director 
+                    : movie.director.name}
                 </Button>
               </Col>
             </Row>

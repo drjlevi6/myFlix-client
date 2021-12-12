@@ -1,6 +1,5 @@
 import './genre-view.scss';
 import { MovieCard } from '../movie-card/movie-card';
-import Card from 'react-bootstrap/Card';  //needed?
 import {setMovieCardsTop} from 
   '../common_components/common_components';
 import React from 'react';
@@ -33,8 +32,9 @@ export class GenreView extends React.Component {
         <Row className='top-controls-row' id='top-controls-row'>
           <Row className="movie-poster-row">
             <Col xs={3}>
-            <Button variant='dark'>
-            &lt;&mdash;Movie
+            <Button className='back-to-movie-button' variant='dark'
+              onClick={() => history.back()}>
+            &lt;&mdash; Movie
                 </Button>
             </Col>
             <Col xs={4}>
@@ -45,7 +45,8 @@ export class GenreView extends React.Component {
             <Col xs={5}>
               <ButtonGroup className="movies-profile-buttons" 
                 aria-label="All-Movies and Profile Buttons">
-                <Button>All Movies</Button>&nbsp; <Button>Profile</Button>
+                <Button as={Link} to='/' >All Movies</Button>&nbsp; 
+                <Button as={Link} to='/user' >Profile</Button>
               </ButtonGroup>
             </Col>
           </Row>
