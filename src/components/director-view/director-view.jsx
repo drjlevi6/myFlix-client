@@ -19,31 +19,30 @@ export class DirectorView extends React.Component {
   }
 
   componentDidMount() {
-    console.log('director-view: componentDidMount()');
     setMovieCardsTop(); //checked 20211211, needed
   }
 
   render() {
     const { movies, movie, onBackClick } = this.props;
-    let this_genres_movies = movies.filter(m => 
-      m.genre.name === movie.genre.name
+    let this_directors_movies = movies.filter(m => 
+      m.director.name === movie.director.name
     );
     return(
       <Container className="movie-view">  
         <Row className='top-controls-row' id='top-controls-row'>
           <Row className="top-buttons-row">
-            <Col className='back-to-movie-col' xs={4}>
+            <Col className='back-to-movie-col' xs={2}>
             <Button className='back-to-movie-button' variant='dark'
               onClick={() => history.back()}>
             &lt;&mdash; Movie
                 </Button>
             </Col>
-            <Col className='genre-name-col' xs={3}>
-              <Alert className='genre-name-alert' variant='info'>
-              <Alert.Heading>{movie.genre.name}</Alert.Heading>
+            <Col className='director-name-col' xs={6}>
+              <Alert className='director-name-alert' variant='info'>
+              <Alert.Heading>{movie.director.name}</Alert.Heading>
               </Alert>
             </Col>
-            <Col className='allMovies-profile-col' xs={5}>
+            <Col className='allMovies-profile-col' xs={4}>
               <ButtonGroup className="movies-profile-buttons" 
                 aria-label="All-Movies and Profile Buttons">
                 <Button as={Link} to='/' variant='dark'>
@@ -56,18 +55,18 @@ export class DirectorView extends React.Component {
             </Col>
           </Row>
           <Alert className='data-area' variant='info'>
-            <Alert.Heading>Description:</Alert.Heading>
-            <p>{movie.genre.description}</p>
+            <Alert.Heading>Mini-Bio:</Alert.Heading>
+            <p>{movie.director.bio}</p>
           </Alert>
           <Row className='matching-movies-text-row'>
             <Col className='matching-movies-text-col' 
               xs={10} sm={7}>
-                Some movies with this genre are:
+                Some movies with this director are:
             </Col>
           </Row>
         </Row>
         <Row className='movie-cards-row'>
-          {this_genres_movies.map(m => (
+          {this_directors_movies.map(m => (
             <Col xs={7} sm={6} md={6} lg={4} key={m._id}>
             <MovieCard movie={m} />
             </Col>
