@@ -19,6 +19,7 @@ export class DirectorView extends React.Component {
   }
 
   componentDidMount() {
+    console.log('director-view: componentDidMount()');
     setMovieCardsTop(); //checked 20211211, needed
   }
 

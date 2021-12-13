@@ -271,7 +271,7 @@ export default class MainView extends React.Component {
                 let mTitle = match.params.title;
                 return (
                   <Col md={8}>
-                    <DirectorView
+                    <DirectorView movies={movies}
                       movie={movies.find( m => (m.title === mTitle))}
                       onBackClick={() => history.goBack()}
                     />

@@ -108,8 +108,7 @@ export class MovieView extends React.Component {
               <Col className='genre-director-button-col'>
                 <Button className='genre-director-button' variant="link"
                   as={Link} to={`/movies/director/${movie.title}`}>
-                  {typeof movie.director === 'string'? movie.director 
-                    : movie.director.name}
+                    {movie.director.name}
                 </Button>
               </Col>
             </Row>
