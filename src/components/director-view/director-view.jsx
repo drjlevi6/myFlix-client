@@ -16,7 +16,7 @@ import PropTypes from 'prop-types';
 export class DirectorView extends React.Component {
   constructor(){
     super();
-  }
+   }
 
   componentDidMount() {
     setMovieCardsTop(); //checked 20211211, needed
@@ -24,6 +24,8 @@ export class DirectorView extends React.Component {
 
   render() {
     const { movies, movie, onBackClick } = this.props;
+    let date_of_death = (movie.director.death != '') ? 
+      movie.director.death : '—';
     let this_directors_movies = movies.filter(m => 
       m.director.name === movie.director.name
     );
@@ -54,10 +56,20 @@ export class DirectorView extends React.Component {
               </ButtonGroup>
             </Col>
           </Row>
+          <Row className='birth-death-row'>
+          <Col className='birth-death-col' xs={3}>
+              Born: {movie.director.birth}
+            </Col>
+            <Col className='birth-death-col' xs={3}>
+              Died: {date_of_death}
+            </Col>
+           </Row>
+          <Row className='mini-bio-row'>
           <Alert className='data-area' variant='info'>
             <Alert.Heading>Mini-Bio:</Alert.Heading>
             <p>{movie.director.bio}</p>
           </Alert>
+          </Row>
           <Row className='matching-movies-text-row'>
             <Col className='matching-movies-text-col' 
               xs={10} sm={7}>
