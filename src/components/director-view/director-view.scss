@@ -1,0 +1,36 @@
+.top-controls-row {
+    background-color: rgb(50, 94, 131); //rgb(163, 207, 228);
+    border: solid, black, 3px;/*rgb(43, 108, 161)*/
+    border-radius: 15px;
+}
+
+.back-to-movie-col{
+    //border: solid red 2px;
+}
+
+.back-to-movie-button{
+    //height: 62.7969px;
+}
+
+.genre-name-col{
+   // border: solid red 2px;
+   flex-grow: 1;
+    min-width: 138px;
+    text-align: center;
+    //max-width: 138px;
+}
+
+.allMovies-profile-col{
+    //border: solid red 2px;
+    text-align: right;
+}
+
+.matching-movies-text-row {
+    text-align: left;
+    font-weight: bold;
+}
+
+.matching-movies-text-col {
+    background-color: rgb(50, 94, 131);
+    color: orange;
+}
