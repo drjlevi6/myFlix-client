@@ -64,7 +64,6 @@ export default class MainView extends React.Component {
 
   componentDidMount() {
     window.addEventListener('resize', setMovieCardsTop );
-    console.log('main-view: listener added');
     let accessToken = localStorage.getItem('token');
     if (accessToken !== null) {
       this.setState({
