@@ -157,7 +157,7 @@ export default class MainView extends React.Component {
     if (movies.length === 0) {
        return <div className="main-view" />
     }
-    let search_sort_column_width = 6;
+    let search_sort_column_width = 8;
     return (
       <Container className='router-container'>
         <Router className='router'>
