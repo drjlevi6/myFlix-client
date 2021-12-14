@@ -30,23 +30,27 @@ export class GenreView extends React.Component {
     return(
       <Container className="movie-view">  
         <Row className='top-controls-row' id='top-controls-row'>
-          <Row className="movie-poster-row">
-            <Col xs={3}>
+          <Row className="top-buttons-row">
+            <Col className='back-to-movie-col' xs={4}>
             <Button className='back-to-movie-button' variant='dark'
               onClick={() => history.back()}>
             &lt;&mdash; Movie
                 </Button>
             </Col>
-            <Col xs={4}>
-              <Alert className='data-area' variant='info'>
+            <Col className='genre-name-col' xs={3}>
+              <Alert className='genre-name-alert' variant='info'>
               <Alert.Heading>{movie.genre.name}</Alert.Heading>
               </Alert>
             </Col>
-            <Col xs={5}>
+            <Col className='allMovies-profile-col' xs={5}>
               <ButtonGroup className="movies-profile-buttons" 
                 aria-label="All-Movies and Profile Buttons">
-                <Button as={Link} to='/' >All Movies</Button>&nbsp; 
-                <Button as={Link} to='/user' >Profile</Button>
+                <Button as={Link} to='/' variant='dark'>
+                  All Movies
+                </Button>&nbsp; 
+                <Button as={Link} to='/user' variant='dark'>
+                  Profile
+                </Button>
               </ButtonGroup>
             </Col>
           </Row>
@@ -55,7 +59,10 @@ export class GenreView extends React.Component {
             <p>{movie.genre.description}</p>
           </Alert>
           <Row className='matching-movies-text-row'>
-            <h6>Some movies with this genre are:</h6>
+            <Col className='matching-movies-text-col' 
+              xs={10} sm={7}>
+                Some movies with this genre are:
+            </Col>
           </Row>
         </Row>
         <Row className='movie-cards-row'>
