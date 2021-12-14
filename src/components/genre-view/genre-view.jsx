@@ -34,7 +34,7 @@ export class GenreView extends React.Component {
             <Col className='back-to-movie-col' xs={4}>
             <Button className='back-to-movie-button' variant='dark'
               onClick={() => history.back()}>
-            &lt;&mdash; Movie
+            &lt; Movie
                 </Button>
             </Col>
             <Col className='genre-name-col' xs={3}>

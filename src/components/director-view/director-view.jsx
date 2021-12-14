@@ -36,7 +36,7 @@ export class DirectorView extends React.Component {
             <Col className='back-to-movie-col' xs={2}>
             <Button className='back-to-movie-button' variant='dark'
               onClick={() => history.back()}>
-            &lt;&mdash; Movie
+            &lt; Movie
                 </Button>
             </Col>
             <Col className='director-name-col' xs={6}>
