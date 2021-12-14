@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+<<<<<<< HEAD
 import "./movie-card.scss"; // (might need it later)
 import '../genre-view/genre-view';
 
@@ -12,6 +13,14 @@ import { Link } from "react-router-dom";
 import MovieVew from "../movie-view/movie-view";
 import {setMovieCardsTop} from 
   '../common_components/common_components';
+=======
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+import Row from 'react-bootstrap/Row';
+import "./movie-card.scss"; // (might need it later)
+
+import { Link } from "react-router-dom";
+>>>>>>> main
 
 export class MovieCard extends React.Component {
   // that movie's imagePath, title, description are not
@@ -25,6 +34,7 @@ export class MovieCard extends React.Component {
   }
   
   render() {
+<<<<<<< HEAD
     const { movie } = this.props;
     return (
       <Container className='movie-card-container'>
@@ -44,6 +54,20 @@ export class MovieCard extends React.Component {
           </Card>
         </Col>
       </Container>
+=======
+    const { movie} = this.props;
+    return (
+      <Card>
+        <Card.Img variant="top" src={movie.ImagePath} />
+        <Card.Body>
+          <Card.Title>{movie.title}</Card.Title>
+          <Card.Text>{movie.Description}</Card.Text>
+          <Link to={`/movies/${movie._id}`}>
+            <Button variant="link">Open</Button>
+          </Link>
+        </Card.Body>
+      </Card>
+>>>>>>> main
     ); // end return
   }
 }
