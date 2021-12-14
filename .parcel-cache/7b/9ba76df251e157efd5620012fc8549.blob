@@ -1,0 +1,34 @@
+
+
+.header-text {
+  display: block;
+  font-size: large;
+  font-weight: bold;
+  margin: 5px;
+  /*align-self: center; */
+  text-align: center;
+}
+.custom-submit-button {
+  color: white;
+  border-radius: 5px;
+  background-color: darkblue;
+  border-color: darkblue;
+}
+/* Styles for elements that can't be styled adequately with react-bootstrap
+	and appear in multiple views. */
+.header-text {
+  display: block;
+  font-size: large;
+  font-weight: bold;
+  margin: 5px;
+  text-align: center;
+}
+
+.my-flix {
+  color: steelblue;
+}
+
+* {
+  X-Content-Type-Options: nosniff;
+}
+/*# sourceMappingURL=index.HASH_REF_c32e5fdf20edc87d60e5b51e17951e9a.css.map */

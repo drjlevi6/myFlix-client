@@ -1,13 +1,26 @@
 import React, { StrictMode } from 'react';
 import axios from 'axios';
+<<<<<<< HEAD
 import PropTypes from 'prop-types';
 import "./main-view.scss";
 
 import { BrowserRouter as Router, Route } from "react-router-dom"; 
+=======
+import "./main-view.scss"; /* file is currently empty, 
+                            but we might need it later. */
+
+import { BrowserRouter as Router, Route } from "react-router-dom"; 
+
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Button from 'react-bootstrap/Button';
+>>>>>>> main
 
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
 import { LoginView } from '../login-view/login-view';
+<<<<<<< HEAD
 import { RegistrationView } from '../registration-view/registration-view';
 import { GenreView } from '../genre-view/genre-view';
 import { DirectorView } from '../director-view/director-view';
@@ -25,10 +38,13 @@ import FormControl from 'react-bootstrap/FormControl';
 import { scrollLeft } from 'dom-helpers';
 
 var mainView;
+=======
+>>>>>>> main
 
 export default class MainView extends React.Component {
   constructor(){
     super();
+<<<<<<< HEAD
     localStorage.clear();
     this.state = { movies: [], user: null, search_string_low: '',
       do_sort: false};
@@ -41,8 +57,32 @@ export default class MainView extends React.Component {
     this.setState( {
         search_string_low: e.target.value.toLowerCase(),
         do_sort: false
-      });
+=======
+    this.state = {
+      movies: [],
+      user: null
+    };
   }
+
+  componentDidMount() {
+    let accessToken = localStorage.getItem('token');
+    if (accessToken !== null) {
+      this.setState({
+        user: localStorage.getItem('user')
+>>>>>>> main
+      });
+      this.getMovies(accessToken);
+    }
+  }
+
+  onLoggedOut() {
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    this.setState({
+      user: null
+    });
+  }
+    
 
   // Sort all movies by title (case-insensitive)
   // Here we just set a flag; actual sorting is in render().
@@ -92,6 +132,7 @@ export default class MainView extends React.Component {
   the `user` property in state to that *particular user*/
 
   onLoggedIn(authData) {
+<<<<<<< HEAD
     var mainView = this;
     let User = authData.user.Username;
     this.setState({
@@ -100,6 +141,14 @@ export default class MainView extends React.Component {
 
     localStorage.setItem('token', authData.token);
     localStorage.setItem('favorite_ids', authData.user.FavoriteMovies);
+=======
+    console.log("main-view.onLoggedIn.authData:", authData);
+    this.setState({
+      user: authData.user.Username
+    });
+
+    localStorage.setItem('token', authData.token);
+>>>>>>> main
     localStorage.setItem('user', authData.user.Username);
     this.getMovies(authData.token);
   }
@@ -108,6 +157,7 @@ export default class MainView extends React.Component {
     axios.get('https://drjs-myflix-app.herokuapp.com/movies', {
       headers: { Authorization: `Bearer ${token}`}
     })
+<<<<<<< HEAD
     .then(response => {     // response.data is the array of movies
       // Assign the result to the state (jl: and also localStorage)
        this.setState({
@@ -130,10 +180,26 @@ export default class MainView extends React.Component {
       modified_movies = deepCopy(movies).sort((m,n) =>  
         (m.title.toLowerCase() < n.title.toLowerCase()) ? -1 : 1)
     }
+=======
+    .then(response => {
+      // Assign the result to the state
+      this.setState({
+        movies: response.data
+      });
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  }
+>>>>>>> main
 
+  render() {
+    const { movies, user } = this.state;
+ 
     /* <!--If there is no user, the LoginView is rendered. 
     If there is a user logged in, the user details are 
     *passed as a prop to the LoginView--> */
+<<<<<<< HEAD
 
     if (!user) {
       return (
@@ -144,6 +210,15 @@ export default class MainView extends React.Component {
               this.onLoggedIn(user)} />
           </Col>
           </Router>
+=======
+    if (!user) {
+      return (
+        <Row>
+          <Col>
+            <LoginView onLoggedIn={user => 
+              this.onLoggedIn(user)} />;
+          </Col>
+>>>>>>> main
         </Row>
       )
     }
@@ -152,6 +227,7 @@ export default class MainView extends React.Component {
     // If the state of `selectedMovie` is not null, that 
     //  selected movie will be returned otherwise, all 
     //  *movies will be returned.--> */
+<<<<<<< HEAD
 
     if (movies.length === 0) {
        return <div className="main-view" />
@@ -307,6 +383,36 @@ export default class MainView extends React.Component {
 function deepCopy(json_able) {
   return JSON.parse(JSON.stringify(json_able));
 }
+=======
+   if (movies.length === 0)
+       return <div className="main-view" />
+
+    return (
+      <Router>
+        <Row className="main-view justify-content-md-center">
+          <Route exact path="/" render={() => {
+            return movies.map(m => (
+              <Col md={3} key={m._id}>
+                <MovieCard movie={m} />
+              </Col>
+            ))
+          }} />
+          <Route path="/movies/:movieId" 
+            render={({ match }) => {
+              return 
+                <Col md={8}>
+                  <MovieView movie={movies.find(
+                    m => m._id === match.params.movieId
+                  )
+                  } />
+                </Col>
+          }} />       
+        </Row>
+       </Router>
+    );
+  } // end if
+} // end render
+>>>>>>> main
 
 // There's no MainView.propTypes because no props are passed to MainView
 // during instantiation.
