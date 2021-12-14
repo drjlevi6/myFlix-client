@@ -6,3 +6,18 @@
 	/*align-self: center; */
 	text-align: center;
 }
+
+.bottom-buttons-row {
+	//align-self: right;
+	//align-items: right;
+	padding-top: 16px;
+	text-align: right;
+	justify-content: flex-end;
+	//border: solid blue 1px;
+}
+
+/*
+.register-button-col {
+	// padding: 0px;	// doesn't override
+}
+*/

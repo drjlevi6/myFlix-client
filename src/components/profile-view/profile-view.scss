@@ -1,0 +1,44 @@
+
+.update-unregister-row {
+    flex-wrap: nowrap;
+    flex-direction: row;
+	justify-content: right;
+    height:75%;
+}
+
+.all-movies-button-column {
+    text-align: right;
+}
+/**/
+.main-form {
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin: 20px 0 20px 0;
+
+}
+
+
+.submit-div {
+    text-align: right;
+}
+
+.update-button-col {
+    /*width: 100px;*/
+    text-align: right;
+}
+
+.submit-update-button {
+    width: 100px;
+    text-align: right;
+}
+
+.favorites-header-row{
+    text-align: center;
+}
+
+.favorite-cards-column {
+    border: solid black 2px;
+    border-radius: 15px;
+    margin: 3px;
+    padding:0px;
+}

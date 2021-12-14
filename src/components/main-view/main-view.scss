@@ -1,0 +1,137 @@
+.app-container {
+    /* max-height: 700px; */ /* has no effect */
+    /*display: block;*/
+}
+
+.card {
+  display: block;
+    padding: 0px;
+    z-index: 0;
+}
+
+.router-container {
+    display: block;
+    position: fixed;
+    /*max-height: 700px;*/
+    height: 99%;
+    /* border: solid red 1px;
+    border-radius: 25px; 
+    */
+    padding-bottom:115px;
+    z-index: 0;
+}
+
+.main-view-row {
+    height: 100%;
+        /* This or max-height shoves bottom buttons up, 
+        but not cards*/
+    overflow: auto;
+    /*border: solid green 1px;
+    border-radius: 15px;*/
+}
+
+.top-controls-row {
+    position: fixed;
+    justify-content: space-between;
+    top: 0px;
+    left: 40px;
+    right: 40px;
+    margin-left: 20px;
+    border: solid rgb(43, 108, 161) 3px;
+    border-radius: 15px;
+    padding: 8px;
+    z-index: 100;
+    background-color: rgb(163, 207, 228);
+}
+
+.top-row-profile-button-column {
+    text-align: right;
+}
+
+.search-sort-controls-column {
+    border: solid 5px rgb(50, 94, 131);
+    background-color: rgb(50, 94, 131);
+    border-radius: 5px;
+    padding-top:7px;
+}
+
+.search-sort-text-row {
+    background-color: rgb(50, 94, 131);
+}
+
+.search-sort-text {
+    color: orange;
+}
+
+.sort-button-column {
+    text-align: right;
+    padding-right: 0px;
+    margin-right: 0px;
+}
+
+.sort-button {
+    border: white solid 2px;
+}
+
+.return-to-profile-column {
+    /*border: solid purple 2px;*/
+    text-align: right;
+}
+
+.revert-row {
+    padding-top: 8px;
+}
+
+.search-sort-controls-row {
+    //border: solid green 2px;
+    justify-content: space-between;
+    /* React Bootstrap doesn't seem to allow me 
+        to set either margin or padding here */
+}
+
+.search-input-group-column {
+    padding-right: 0px;
+}
+.movie-cards-row {
+    position: relative;
+    top: 112px;
+    /*height: 50%;*/
+    /*border: solid blue 2px;*/
+    /*padding-top: 20px; /* padding-top allowed, not margin-top */
+    z-index: 0;
+}
+
+.search-button-column {
+    padding-left: 0px;
+    text-align: right;
+}
+
+.bottom-buttons-div {
+    width: 100%;
+    padding: 2px;
+    border: solid rgb(100, 100, 100) 3px;
+    border-radius: 10px;
+    background-color: rgb(170, 170, 170);
+}
+
+.router-container {
+   /*border: solid red 1px;*/
+   padding-bottom: 70px;
+}
+
+.back-logout-buttons-col {
+    padding: 0px;
+}
+.back-button-row {
+    margin: 0px;
+}
+
+.back-button {
+    height: 38px;
+    margin: 4px;
+}
+
+.logout-button {
+    height: 38px;
+    margin: 4px;
+}

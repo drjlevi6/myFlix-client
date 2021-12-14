@@ -1,0 +1,38 @@
+.header-text {
+  padding: 10px;
+}
+
+.splash-screen-row {
+  padding-top: 16px;
+}
+
+.alert {
+  margin: 0px;
+}
+
+.username-textfield-column{
+  display: flex;
+  flex-shrink: 1;
+}
+
+.login-form {
+  text-align: right;
+}
+
+.username-password-headers-column {
+  flex-shrink: 0;
+  padding-top: 7px;
+  margin-right: 10px;
+}
+
+.login-button-row {
+  text-align: right;
+  justify-content: flex-end;
+
+  /*padding: 10px 0px 10px 0px;*/
+}
+
+.register-column {
+  text-align: left;
+  padding: 0px;
+}

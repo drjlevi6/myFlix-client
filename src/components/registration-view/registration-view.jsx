@@ -3,7 +3,6 @@ import axios from 'axios';
 import { ReactDOM } from "react-dom";
 import "./registration-view.scss"
 import "../button/button.scss"; // Use for custom-styled submit buttons
-import "../universal-components/elements.scss"; // for elements in mult. views
 import Alert from 'react-bootstrap/Alert';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
@@ -22,14 +21,12 @@ export class RegistrationView extends React.Component {
     }; // end this.state
   } // end constructor
 
-  onSubmitHandler = e => {
+  onSubmitRegistrationHandler = e => {
     e.preventDefault();
     const {Username, Password, Email, Birthday} = this.state;
     if (!Username || !Password || !Email) {
       return;
     }
-    console.log("onSubmitHandler: Username = ", Username, 
-    "Password = ", Password, "Email = ", Email, "Birthday = ", Birthday);
     axios.post('https://drjs-myflix-app.herokuapp.com/users', 
       {
         Username:  Username,
@@ -38,22 +35,25 @@ export class RegistrationView extends React.Component {
         Birthday: Birthday
       }
     )
-    .then(
-    console.log("onSubmitHandler: response:", response)
-    )
     .then(response => {
+      console.log(
+        "registration-view.onSubmitRegistrationHandler.response\n" + 
+          response
+      )
       const data = response.data;
+      alert(response.data.Username + ' was registered.');
       this.props.back()
     })
     .catch(e => {
-      console.log('Bad registration parameter');
+      console.log('registration-view.onSubmitRegistrationHandler: \n', e.response);
+      alert(e.response.data);
     });
 
   }
 
   onChangeHandler = e =>  {
     let {name, value} = e.target;
-    console.log("onChangeHandler():", e.target);
+    //console.log("onChangeHandler():", e.target);
     if (name==="Username") {
       this.setState({Username: value})
     } else if (name==="Password") {
@@ -69,7 +69,7 @@ export class RegistrationView extends React.Component {
     return (
       <Container>
         <Col xs={10}>
-        <Form onSubmit={this.onSubmitHandler}>
+        <Form onSubmit={this.onSubmitRegistrationHandler}>
           <Form.Group controlId="header">
           <Row className="justify-content-md-center header-text">
           <Col className="justify-content-md-center">
@@ -127,13 +127,19 @@ export class RegistrationView extends React.Component {
           </Row>
           </Form.Group>
 
-        <Row className="justify-content-md-center">
-          <Button variant="primary" type="submit">
-            Submit
-          </Button>
-          <Button onClick={this.props.back} >
-            Return to Login
-          </Button>
+        <Row className='bottom-buttons-row'>
+          <Col className='register-button-col' xs={3}>
+            <Button className='register-button'  
+              type="submit">
+              Register
+            </Button>
+            </Col>
+          <Col className='return-button-col' xs={4}>
+            <Button className='return-button'
+              variant="dark" onClick={this.props.back} >
+              Return to Login
+            </Button>
+            </Col>
          </Row>
 
         </Form>
