@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import MainView from './components/main-view/main-view';
-import './myBootstrapMin/bootstrap.min.css'; //React Bootstrap introduction
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 import Button from 'react-bootstrap/Button';
 import Alert from 'react-bootstrap/Alert';
