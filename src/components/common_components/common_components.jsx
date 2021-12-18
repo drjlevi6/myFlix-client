@@ -6,6 +6,6 @@ export function setMovieCardsTop() {
     let cards_row = document.getElementsByClassName('movie-cards-row')[0];
     cards_row.style.top = top_row_height;
   }catch{
-    console.log('setMovieCardsTop: no top-controls-row found');
+    //console.log('setMovieCardsTop: no top-controls-row found');
   }
 }
