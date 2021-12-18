@@ -59,7 +59,7 @@ export function LoginView(props) {
         <Row className='splash-screen-row'>
           <Alert className='splash-screen-alert' variant="primary">
             <Alert.Heading>
-              Welcome to Dr. Jonathan’s myFlix movie application!
+              Welcome to Dr. Jonathan Levi’s myFlix movie application!
             </Alert.Heading>
             Please login or register to view our lists of movies, directors, 
               genres and more!
