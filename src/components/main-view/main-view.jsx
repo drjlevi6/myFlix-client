@@ -1,5 +1,6 @@
 import React, { StrictMode } from 'react';
 import axios from 'axios';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import "./main-view.scss";
 
@@ -182,10 +183,12 @@ export default class MainView extends React.Component {
                       <Row className='search-sort-controls-row'>
                         <Col className='search-input-group-column' xs={8}>
                           <InputGroup className='search-input-group'>
-                            <InputGroup.Text className='input-group-search-text'>
+                            <InputGroup.Text 
+                                className='input-group-search-text'>
                               Search
                             </InputGroup.Text>
-                            <FormControl className='search-textarea' id='searchForm'
+                            <FormControl 
+                                className='search-textarea' id='searchForm'
                               type='text' placeholder="Movie Name" 
                                 onChange={this.searchMovieCards}
                              />
@@ -301,7 +304,8 @@ export default class MainView extends React.Component {
   } // end if
 } // end class
 
-// deepCopy: deep clone of a "JSON-able" array (specifically, the movies array)
+// deepCopy: deep clone of a "JSON-able" array 
+//  (specifically, the movies array)
 // Thanks Atta-Ur_Rehman Shah,
 //   https://attacomsian.com/blog/javascript-deep-clone-array
 function deepCopy(json_able) {
