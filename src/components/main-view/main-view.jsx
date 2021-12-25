@@ -5,6 +5,8 @@ import PropTypes from 'prop-types';
 import "./main-view.scss";
 
 import { BrowserRouter as Router, Route } from "react-router-dom"; 
+import { setMovies } from '../../actions/actions';
+//import MoviesList from '../movies-list/movies-list';
 
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
@@ -31,8 +33,7 @@ export default class MainView extends React.Component {
   constructor(){
     super();
     localStorage.clear();
-    this.state = { movies: [], user: null, search_string_low: '',
-      do_sort: false};
+    this.state = { user: null };
   }
 
   // Search movie-cards per user search string (case-insensitive)
@@ -111,53 +112,17 @@ export default class MainView extends React.Component {
     })
     .then(response => {     // response.data is the array of movies
       // Assign the result to the state (jl: and also localStorage)
-       this.setState({
-        movies: response.data
-      });
-    })
+       this.props.setMovies(response.data);
+      })
    .catch(function (error) {
       console.log(error);
     });
    }
 
   render() {  // React allows "className" in <div>s! 
-    const { movies, user, search_string_low, do_sort } = this.state;
-    let modified_movies = deepCopy(movies);
-    if(search_string_low) {
-      modified_movies = movies.filter(m =>
-          m.title.toLowerCase().includes(search_string_low)
-      )
-    } else if (do_sort) {
-      modified_movies = deepCopy(movies).sort((m,n) =>  
-        (m.title.toLowerCase() < n.title.toLowerCase()) ? -1 : 1)
-    }
-
-    /* <!--If there is no user, the LoginView is rendered. 
-    If there is a user logged in, the user details are 
-    *passed as a prop to the LoginView--> */
-
-    if (!user) {
-      return (
-        <Row>
-          <Router>
-          <Col>
-            <LoginView onLoggedIn={user => 
-              this.onLoggedIn(user)} />
-          </Col>
-          </Router>
-        </Row>
-      )
-    }
-
-    // /* <!--Before the movies have been loaded
-    // If the state of `selectedMovie` is not null, that 
-    //  selected movie will be returned otherwise, all 
-    //  *movies will be returned.--> */
-
-    if (movies.length === 0) {
-       return <div className="main-view" />
-    }
-    let search_sort_column_width = 8;
+    let { movies } = this.props;
+    let { user } = this.state;
+  
     return (
       <Container className='router-container'>
         <Router className='router'>
@@ -169,65 +134,10 @@ export default class MainView extends React.Component {
                     user => this.onLoggedIn(user)
                   } />
                 </Col>
-              return( 
-                <div>
-                  <Row className='top-controls-row'
-                    id='top-controls-row'>
-                    <Col className='search-sort-controls-column' 
-                        xs={search_sort_column_width}>
-                      <Row className='search-sort-text-row'>
-                        <h5 className='search-sort-text'>
-                          Search/Sort Movies By Title:
-                        </h5>
-                      </Row>
-                      <Row className='search-sort-controls-row'>
-                        <Col className='search-input-group-column' xs={8}>
-                          <InputGroup className='search-input-group'>
-                            <InputGroup.Text 
-                                className='input-group-search-text'>
-                              Search
-                            </InputGroup.Text>
-                            <FormControl 
-                                className='search-textarea' id='searchForm'
-                              type='text' placeholder="Movie Name" 
-                                onChange={this.searchMovieCards}
-                             />
-                          </InputGroup>
-                        </Col>
-                        <Col className='sort-button-column'>
-                          <Button className='sort-button' type='button'
-                            onClick={this.sortMoviesByTitle}>
-                              Sort
-                          </Button>
-                        </Col>
-                      </Row>
-                    </Col>
-                    <Col className='return-to-profile-column'
-                        xs={3}>
-                      <Row className='return-to-profile-row'>
-                        <Button className='profile-button' variant='dark'
-                          onClick={() => history.back()}>
-                            Return To Profile
-                        </Button>
-                      </Row>
-                      <Row className='revert-row'>
-                        <Button className='button' variant='dark'
-                          onClick={this.revertMovieCards}>
-                            Revert Cards
-                        </Button>
-                      </Row>
-                   </Col>
-                  </Row>                  
-                  <Row className='movie-cards-row'>
-                    {modified_movies.map(m => (
-                      <Col xs={7} sm={5} md={4} lg={3} key={m._id}>
-                        <MovieCard movie={m} />
-                      </Col>
-                    ))}
-                  </Row>
-                </div>
-              ) // e
+                if (movies.length === 0) return <div className="main-view" />;
+                return <MoviesList movies={movies}/>;
             }} />
+
             <Route path="/register" render={() => {
               return <Col>
                 <RegistrationView />

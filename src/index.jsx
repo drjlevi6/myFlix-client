@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import Container from 'react-bootstrap/Container';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
+import moviesApp from './reducers/reducers';
 import MainView from './components/main-view/main-view';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
@@ -11,7 +12,6 @@ import Alert from 'react-bootstrap/Alert';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Form from 'react-bootstrap/Form';
-import moviesApp from './reducers/reducers';
 import { devToolsEnhancer } from 'redux-devtools-extension';
 
 // Import statement to indicate that we need to bundle `./index.scss`
