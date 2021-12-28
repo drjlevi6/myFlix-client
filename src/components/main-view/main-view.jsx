@@ -6,7 +6,7 @@ import "./main-view.scss";
 
 import { BrowserRouter as Router, Route } from "react-router-dom"; 
 import { setMovies } from '../../actions/actions';
-//import MoviesList from '../movies-list/movies-list';
+import MoviesList from '../movies-list/movies-list';
 
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
