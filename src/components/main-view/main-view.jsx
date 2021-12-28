@@ -11,11 +11,13 @@ import MoviesList from '../movies-list/movies-list';
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
 import { LoginView } from '../login-view/login-view';
-import { RegistrationView } from '../registration-view/registration-view';
+import { RegistrationView } 
+  from '../registration-view/registration-view';
 import { GenreView } from '../genre-view/genre-view';
 import { DirectorView } from '../director-view/director-view';
 import { ProfileView } from '../profile-view/profile-view';
-import {setMovieCardsTop} from '../common_components/common_components';
+import {setMovieCardsTop} 
+  from '../common_components/common_components';
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -29,7 +31,7 @@ import { scrollLeft } from 'dom-helpers';
 
 var mainView;
 
-export default class MainView extends React.Component {
+class MainView extends React.Component {
   constructor(){
     super();
     localStorage.clear();
@@ -214,13 +216,10 @@ export default class MainView extends React.Component {
   } // end if
 } // end class
 
-// deepCopy: deep clone of a "JSON-able" array 
-//  (specifically, the movies array)
-// Thanks Atta-Ur_Rehman Shah,
-//   https://attacomsian.com/blog/javascript-deep-clone-array
-function deepCopy(json_able) {
-  return JSON.parse(JSON.stringify(json_able));
+// #7
+let mapStateToProps = state => {
+  return { movies: state.movies }
 }
 
-// There's no MainView.propTypes because no props are passed to MainView
-// during instantiation.
+// #8
+export default connect(mapStateToProps, { setMovies } )(MainView);
