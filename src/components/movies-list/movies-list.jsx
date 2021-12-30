@@ -6,6 +6,6 @@ export class MoviesList extends React.Component {
   }
 
   render() {
-    return(null);
+    return(<div> MoviesList </div>);
   }
 }

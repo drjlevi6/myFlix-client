@@ -6,7 +6,7 @@ import "./main-view.scss";
 
 import { BrowserRouter as Router, Route } from "react-router-dom"; 
 import { setMovies } from '../../actions/actions';
-import MoviesList from '../movies-list/movies-list';
+import { MoviesList } from '../movies-list/movies-list';
 
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
@@ -34,7 +34,7 @@ var mainView;
 class MainView extends React.Component {
   constructor(){
     super();
-    localStorage.clear();
+    //localStorage.clear();
     this.state = { user: null };
   }
 
@@ -101,7 +101,7 @@ class MainView extends React.Component {
     this.setState({
       user: User
     });
-
+    console.log('onLoggedIn', authData, authData.user);
     localStorage.setItem('token', authData.token);
     localStorage.setItem('favorite_ids', authData.user.FavoriteMovies);
     localStorage.setItem('user', authData.user.Username);
@@ -124,18 +124,21 @@ class MainView extends React.Component {
   render() {  // React allows "className" in <div>s! 
     let { movies } = this.props;
     let { user } = this.state;
+    console.log("MainView", user);
   
     return (
       <Container className='router-container'>
         <Router className='router'>
           <Row className="main-view-row justify-content-md-center">
             <Route exact path="/" render={() => {
-              if (!user) return 
+              console.log("path=\/");
+              if (!user) return (
                 <Col>
                   <LoginView onLoggedIn={
                     user => this.onLoggedIn(user)
                   } />
                 </Col>
+              )
                 if (movies.length === 0) return <div className="main-view" />;
                 return <MoviesList movies={movies}/>;
             }} />
