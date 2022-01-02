@@ -5,6 +5,8 @@ import PropTypes from 'prop-types';
 import "./main-view.scss";
 
 import { BrowserRouter as Router, Route } from "react-router-dom"; 
+
+// #0
 import { setMovies } from '../../actions/actions';
 import { MoviesList } from '../movies-list/movies-list';
 
@@ -29,8 +31,8 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import FormControl from 'react-bootstrap/FormControl';
 import { scrollLeft } from 'dom-helpers';
 
-var mainView;
 
+// #2 export keyword removed from here
 class MainView extends React.Component {
   constructor(){
     super();
@@ -96,7 +98,6 @@ class MainView extends React.Component {
   the `user` property in state to that *particular user*/
 
   onLoggedIn(authData) {
-    var mainView = this;
     let User = authData.user.Username;
     this.setState({
       user: User
