@@ -9,9 +9,10 @@ const mapStateToProps = state => {
   return { visibilityFilter };
 };
 
-function MoviesList(props) {
+export function MoviesList(props) {
   const { movies, visibilityFilter } = props;
   let filteredMovies = movies;
+  console.log('MoviesList: movies=', movies);
 
   if (visibilityFilter !== '') {
     filteredMovies = movies.filter(m => 
@@ -27,7 +28,5 @@ function MoviesList(props) {
     </Col>
   ));
 }
-  render() {
-    return(<div> MoviesList </div>);
-  }
-}
+
+export default connect(mapStateToProps)(MoviesList);

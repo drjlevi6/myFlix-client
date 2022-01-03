@@ -129,14 +129,12 @@ class MainView extends React.Component {
     // rather than from the this.state
     let { movies } = this.props;
     let { user } = this.state;
-    console.log("MainView", user);
   
     return (
       <Container className='router-container'>
         <Router className='router'>
           <Row className="main-view-row justify-content-md-center">
             <Route exact path="/" render={() => {
-              console.log("path=\/");
               if (!user) return (
                 <Col>
                   <LoginView onLoggedIn={
