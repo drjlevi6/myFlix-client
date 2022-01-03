@@ -14,7 +14,6 @@ import Alert from 'react-bootstrap/Alert';
 import Container from 'react-bootstrap/Container';
 
 export function LoginView(props) {
-  console.log("Login View Initial");
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [showRegister, setShowRegister] = useState(false);
@@ -49,7 +48,6 @@ export function LoginView(props) {
   function onRequestToRegister() {
     setShowRegister(!showRegister)
   }
-  console.log("LoginView", showRegister, loggedIn);
   if(showRegister) {
     return <RegistrationView back={onRequestToRegister} />
   }
