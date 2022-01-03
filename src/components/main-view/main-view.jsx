@@ -37,6 +37,7 @@ class MainView extends React.Component {
   constructor(){
     super();
     //localStorage.clear();
+    // #3 movies state removed from here
     this.state = { user: null };
   }
 
@@ -115,6 +116,7 @@ class MainView extends React.Component {
     })
     .then(response => {     // response.data is the array of movies
       // Assign the result to the state (jl: and also localStorage)
+      // #4
        this.props.setMovies(response.data);
       })
    .catch(function (error) {
@@ -123,6 +125,7 @@ class MainView extends React.Component {
    }
 
   render() {  // React allows "className" in <div>s! 
+    // #5 movies is extracted from this.props rather than from the this.state
     let { movies } = this.props;
     let { user } = this.state;
     console.log("MainView", user);
