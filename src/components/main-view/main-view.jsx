@@ -125,7 +125,8 @@ class MainView extends React.Component {
    }
 
   render() {  // React allows "className" in <div>s! 
-    // #5 movies is extracted from this.props rather than from the this.state
+    // #5 movies is extracted from this.props
+    // rather than from the this.state
     let { movies } = this.props;
     let { user } = this.state;
     console.log("MainView", user);
@@ -143,7 +144,9 @@ class MainView extends React.Component {
                   } />
                 </Col>
               )
-                if (movies.length === 0) return <div className="main-view" />;
+                if (movies.length === 0) 
+                  return <div className="main-view" />;
+                // #6
                 return <MoviesList movies={movies}/>;
             }} />
 
