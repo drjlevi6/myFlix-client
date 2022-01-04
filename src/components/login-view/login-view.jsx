@@ -1,10 +1,10 @@
 import axios from 'axios'; // 3.6
 import React, { useState } from 'react';
 import { Redirect } from 'react-router';
-import {RegistrationView} from '../registration-view/registration-view'
+import {RegistrationView} from 
+  '../registration-view/registration-view'
 import { Collapse } from 'bootstrap';
 import './login-view.scss';
-//import "../universal-components/elements.scss"; // for elements in mult. views 
 
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
@@ -30,11 +30,11 @@ export function LoginView(props) {
       the username to our parent component (child to parent 
       communication) */
     .then (response => {
-      console.log("handleSubmit:", response.data, props.onLoggedIn);
+      //console.log("handleSubmit:", response.data, props.onLoggedIn);
       const data = response.data;
       //setLoggedIn(true);
       props.onLoggedIn(data);
-      console.log('props.onLoggedIn called');
+      //console.log('props.onLoggedIn called');
     })
     .catch(e => {
       console.log(e);
@@ -60,14 +60,15 @@ export function LoginView(props) {
             <Alert.Heading>
               Welcome to Dr. Jonathan Levi’s myFlix movie application!
             </Alert.Heading>
-            Please login or register to view our lists of movies, directors, 
-              genres and more!
+            Please login or register to view our lists of
+            movies, directors, genres and more!
           </Alert>
         </Row>
         <Form className='login-form'>
         <Form.Group className="mb-2" controlId="formUsername">
           <Row className='username-row'>
-            <Col className='username-password-headers-column' xs={3} sm={2}>
+            <Col className='username-password-headers-column' 
+              xs={3} sm={2}>
               <Form.Label>Username:</Form.Label>
             </Col>
             <Col className='username-textfield-column'>
@@ -80,7 +81,8 @@ export function LoginView(props) {
 
         <Form.Group controlId="formPassword">
           <Row>
-            <Col className='username-password-headers-column' xs={3} sm={2}>
+            <Col className='username-password-headers-column' 
+              xs={3} sm={2}>
               <Form.Label>Password:</Form.Label>
             </Col>
             <Col>
@@ -103,8 +105,8 @@ export function LoginView(props) {
           </Button>
           </Col>
           <Col className='register-column' xs={3}>
-          <Button className='register-button' variant="primary" type="submit" 
-            onClick={onRequestToRegister}>
+          <Button className='register-button' variant="primary" 
+            type="submit" onClick={onRequestToRegister}>
             Register
           </Button>
           </Col>

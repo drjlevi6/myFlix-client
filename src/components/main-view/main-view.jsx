@@ -103,7 +103,6 @@ class MainView extends React.Component {
     this.setState({
       user: User
     });
-    console.log('onLoggedIn', authData, authData.user);
     localStorage.setItem('token', authData.token);
     localStorage.setItem('favorite_ids', authData.user.FavoriteMovies);
     localStorage.setItem('user', authData.user.Username);
@@ -129,7 +128,6 @@ class MainView extends React.Component {
     // rather than from the this.state
     let { movies } = this.props;
     let { user } = this.state;
-  console.log('main-view, user:', user)
     return (
       <Container className='router-container'>
         <Router className='router'>

@@ -7,8 +7,6 @@ import { MovieCard } from '../movie-card/movie-card';
 
 const mapStateToProps = state => {
   const { visibilityFilter } = state;
-  console.log('movies-list.jsx, mapStateToProps, visibilityFilter',
-    visibilityFilter);
   return { visibilityFilter };
 };
 
