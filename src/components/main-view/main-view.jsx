@@ -7,11 +7,11 @@ import "./main-view.scss";
 import { BrowserRouter as Router, Route } from "react-router-dom"; 
 
 // #0
-import { setMovies } from '../../actions/actions';
+import { setMovies, setUser } from '../../actions/actions';
 import MoviesList from '../movies-list/movies-list';
 
 import { MovieCard } from '../movie-card/movie-card';
-import { MovieView } from '../movie-view/movie-view';
+import MovieView from '../movie-view/movie-view';
 import { LoginView } from '../login-view/login-view';
 import { RegistrationView } 
   from '../registration-view/registration-view';
@@ -99,14 +99,16 @@ class MainView extends React.Component {
   the `user` property in state to that *particular user*/
 
   onLoggedIn(authData) {
-    let User = authData.user.Username;
-    this.setState({
-      user: User
-    });
+   // let User = this.newMethod(authData);
+    this.props.setUser(authData.user);
     localStorage.setItem('token', authData.token);
     localStorage.setItem('favorite_ids', authData.user.FavoriteMovies);
     localStorage.setItem('user', authData.user.Username);
     this.getMovies(authData.token);
+  }
+
+  newMethod(authData) {
+    return authData.user.Username;
   }
 
   getMovies(token) {
@@ -126,8 +128,7 @@ class MainView extends React.Component {
   render() {  // React allows "className" in <div>s! 
     // #5 movies is extracted from this.props
     // rather than from the this.state
-    let { movies } = this.props;
-    let { user } = this.state;
+    let { movies, user } = this.props;
     return (
       <Container className='router-container'>
         <Router className='router'>
@@ -224,8 +225,9 @@ class MainView extends React.Component {
 
 // #7
 let mapStateToProps = state => {
-  return { movies: state.movies }
+  return { movies: state.movies, user: state.user }
 }
 
 // #8
-export default connect(mapStateToProps, { setMovies } )(MainView);
+export default connect(mapStateToProps, 
+    { setMovies, setUser } )(MainView);

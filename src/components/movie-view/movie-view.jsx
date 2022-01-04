@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import "./movie-view.scss"; 
-
+import { setUser } from '../../actions/actions';
+import { connect } from 'react-redux';
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -18,7 +19,7 @@ export class MovieView extends React.Component {
   genre_director_width = 3;
 
   componentDidMount(){
-    const {movie} = this.props;
+    const {movie, user} = this.props;
     if (typeof movie.director === 'string') {
       console.log('movie-view, componentDidMount(): ' + 
       'Please fix missing director info for movie “' + 
@@ -26,7 +27,7 @@ export class MovieView extends React.Component {
     }
     let favoriteMovieIds = localStorage.getItem('favorite_ids');
     this.setState({
-      favorite: favoriteMovieIds.includes(this.props.movie._id)
+      favorite: user.FavoriteMovies.includes(this.props.movie._id)
   });
 }
   showGenreView() {
@@ -44,11 +45,12 @@ export class MovieView extends React.Component {
       endpoint, {}, { headers: { 'Authorization': `Bearer ${token}` } 
     })
     .then( result => {
-      let favoriteMovieIds = 
-        localStorage.getItem('favorite_ids').split(',');
-      favoriteMovieIds.push(this.props.movie._id);
-      localStorage.setItem('favorite_ids', favoriteMovieIds);
-      this.setState({favorite: true});
+      this.props.setUser(result.data);
+      this.setState({
+        favorite: result.data.FavoriteMovies.includes(
+          this.props.movie._id
+        )
+      });
      } )
     .catch( error => console.log(error) )
   }
@@ -65,15 +67,13 @@ export class MovieView extends React.Component {
       headers: { 'Authorization': `Bearer ${token}` }
     })
     .then( result => {
-      console.log(result);
-      let favoriteMovieIds = 
-        localStorage.getItem('favorite_ids').split(',');
-      let indexToRemove = 
-        favoriteMovieIds.indexOf(this.props.movie._id);
-      favoriteMovieIds.splice(indexToRemove, 1);
-      localStorage.setItem('favorite_ids', favoriteMovieIds);
-      this.setState({favorite: false});
-    })
+      this.props.setUser(result.data);
+      this.setState({
+        favorite: result.data.FavoriteMovies.includes(
+          this.props.movie._id
+        )
+      });
+  })
     .catch( error => console.log(error) )
   }
  render() {
@@ -169,3 +169,11 @@ MovieView.propTypes = {
   }).isRequired,
   onBackClick: PropTypes.func.isRequired
 };
+
+let mapStateToProps = state => {
+  return { user: state.user }
+}
+
+// #8
+export default connect(mapStateToProps, 
+    { setUser } )(MovieView);
