@@ -43,8 +43,6 @@ export function LoginView(props) {
     });
   };
   
-  
-  
   function onRequestToRegister() {
     setShowRegister(!showRegister)
   }

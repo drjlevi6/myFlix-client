@@ -8,7 +8,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 
 // #0
 import { setMovies } from '../../actions/actions';
-import { MoviesList } from '../movies-list/movies-list';
+import MoviesList from '../movies-list/movies-list';
 
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
@@ -129,7 +129,7 @@ class MainView extends React.Component {
     // rather than from the this.state
     let { movies } = this.props;
     let { user } = this.state;
-  
+  console.log('main-view, user:', user)
     return (
       <Container className='router-container'>
         <Router className='router'>
