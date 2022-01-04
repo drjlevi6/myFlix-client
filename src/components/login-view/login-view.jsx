@@ -32,6 +32,7 @@ export function LoginView(props) {
     .then (response => {
       //console.log("handleSubmit:", response.data, props.onLoggedIn);
       const data = response.data;
+      console.log('LoginView: response.data:', response.data);
       //setLoggedIn(true);
       props.onLoggedIn(data);
       //console.log('props.onLoggedIn called');
