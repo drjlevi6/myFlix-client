@@ -20,6 +20,7 @@ function movies(state = [], action) {
   }
 }
 function user(state = null, action) {
+  console.log('reducers.user.action:', action);
   switch (action.type) {
     case SET_USER:
       return action.value;

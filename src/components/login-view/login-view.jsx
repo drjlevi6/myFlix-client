@@ -18,7 +18,7 @@ export function LoginView(props) {
   const [password, setPassword] = useState('');
   const [showRegister, setShowRegister] = useState(false);
   const [loggedIn, setLoggedIn] = useState(false);
-
+  console.log('LoginView.props:',props);
   const handleSubmit = (e) => {
     e.preventDefault();
     /* Send a request to the server for authentication */

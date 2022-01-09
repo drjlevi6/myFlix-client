@@ -46,7 +46,7 @@ export class ProfileView extends React.Component{
 			})
 			.then (
 				response => {
-					console.log(response);
+					console.log('ProfileView.response:',response);
 					localStorage.setItem('user', this.state.Username);
 				}
 			)
