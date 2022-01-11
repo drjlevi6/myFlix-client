@@ -17,7 +17,7 @@ import { RegistrationView }
   from '../registration-view/registration-view';
 import { GenreView } from '../genre-view/genre-view';
 import { DirectorView } from '../director-view/director-view';
-import { ProfileView } from '../profile-view/profile-view';
+import  ProfileView  from '../profile-view/profile-view';
 import {setMovieCardsTop} 
   from '../common_components/common_components';
 
@@ -77,6 +77,8 @@ class MainView extends React.Component {
         user: localStorage.getItem('user')
       });
       this.getMovies(accessToken);
+    } else if (window.location.pathname !== '/'){
+      window.location.pathname = '/';
     }
   }
 
@@ -170,7 +172,7 @@ class MainView extends React.Component {
               render={({ match, history }) => {
                 return (
                   <Col>
-                    <ProfileView movies={this.state.movies}
+                    <ProfileView movies={movies}
                     />
                   </Col>
                 )

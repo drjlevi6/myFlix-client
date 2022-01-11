@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import './profile-view.scss';
 import Axios from 'axios';
-
+import { setUser } from '../../actions/actions';
+import { connect } from 'react-redux';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
@@ -25,7 +26,8 @@ export class ProfileView extends React.Component{
 		console.log('profile-view.updateHandler.this.state:', this.state);
 
 		let endpoint = 
-		'https://drjs-myflix-app.herokuapp.com/users/' + localStorage.getItem('user');
+		'https://drjs-myflix-app.herokuapp.com/users/' + 
+			localStorage.getItem('user');
 		console.log('profile-view.updateHandler.endpoint:', endpoint);
 
 		let bearerToken = localStorage.getItem('token');
@@ -48,6 +50,8 @@ export class ProfileView extends React.Component{
 				response => {
 					console.log('ProfileView.response:',response);
 					localStorage.setItem('user', this.state.Username);
+					this.props.setUser(response.data);
+					alert('The user data was updated.');
 				}
 			)
 			.catch (
@@ -77,11 +81,7 @@ export class ProfileView extends React.Component{
 		Axios.delete(endpoint, { headers: { 'Authorization': `Bearer ${token}` } })
 		.then( result => {
 			console.log(result);
-			let favoriteMovieIds = localStorage.getItem('favorite_ids').split(',');
-			let indexToRemove = favoriteMovieIds.indexOf(movieId);
-			favoriteMovieIds.splice(indexToRemove, 1);
-			localStorage.setItem('favorite_ids', favoriteMovieIds);
-			this.forceUpdate();
+      this.props.setUser(result.data);
 		})
 		.catch( error => console.log(error) )
 		}
@@ -95,6 +95,7 @@ export class ProfileView extends React.Component{
 	.then( result => {
 		console.log('removeUser.result', result);
 		localStorage.clear();
+		this.props.setUser(null);
 		window.location.href='/';
 		alert('User ' + Username + ' was removed.');
 	})
@@ -102,9 +103,14 @@ export class ProfileView extends React.Component{
 	}
 		
 	render(){// will need asynchronous calls
+		console.log('profile-view: this.props.user:', this.props.user);
+		console.log('profile-view: this.props.movies:', this.props.movies);
+		if(!this.props.user){
+			return null;
+		}
 		var form_Label_width = '5';
 		let movies = this.props.movies;
-		let favorite_ids = localStorage.getItem('favorite_ids');
+		let favorite_ids = this.props.user.FavoriteMovies;
 		var favorite_movies = movies.filter(
 			movie => favorite_ids.includes(movie._id)
 		)
@@ -121,6 +127,7 @@ export class ProfileView extends React.Component{
 
 						<Row className='form-and-unregister-row'>
 							<Col className='form-column'>
+								{ this.props.user.Email}
 								<Form className='main-form' onSubmit={ this.updateHandler }>
 									<Form.Group as={Row} className='form-group-username-row'>
 										<Col xs={4} >
@@ -225,3 +232,11 @@ export class ProfileView extends React.Component{
 		) //end return
 	}	//end render
 }
+
+let mapStateToProps = state => {
+  return { user: state.user }
+}
+
+// #8
+export default connect(mapStateToProps, 
+    { setUser } )(ProfileView);

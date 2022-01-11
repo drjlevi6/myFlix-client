@@ -67,6 +67,7 @@ export class MovieView extends React.Component {
       headers: { 'Authorization': `Bearer ${token}` }
     })
     .then( result => {
+      console.log('movie-view.result.data:', result.data);
       this.props.setUser(result.data);
       this.setState({
         favorite: result.data.FavoriteMovies.includes(
