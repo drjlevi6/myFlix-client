@@ -34,8 +34,8 @@ export function LoginView(props) {
       const data = response.data;
       console.log('LoginView: response.data:', response.data);
       //setLoggedIn(true);
-      props.onLoggedIn(data);
-      //console.log('props.onLoggedIn called');
+       console.log('login-view: will call props.onLoggedIn()');
+       props.onLoggedIn(data);
     })
     .catch(e => {
       console.log(e);

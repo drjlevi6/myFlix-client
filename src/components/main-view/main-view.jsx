@@ -104,6 +104,7 @@ class MainView extends React.Component {
     localStorage.setItem('token', authData.token);
     localStorage.setItem('favorite_ids', authData.user.FavoriteMovies);
     localStorage.setItem('user', authData.user.Username);
+    console.log('main-view.onLoggedIn().authData:', authData);
     this.getMovies(authData.token);
   }
 
